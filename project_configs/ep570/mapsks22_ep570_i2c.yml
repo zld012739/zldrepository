@@ -1,0 +1,38 @@
+I2C_MASTER:
+    IP: __I2C_MASTER
+    CMD: ICW
+    ALT: a 
+    scl:
+        PIN: CPLD_IO50
+        DIRECTION: out
+    sda:
+        PIN: CPLD_IO52
+        DIRECTION: INOUT
+
+I2C_MASTER1:
+    IP: __I2C_MASTER
+    CMD: ICR
+    ALT: b
+    scl:
+        PIN: CPLD_IO50
+        DIRECTION: out
+    sda:
+        PIN: CPLD_IO52
+        DIRECTION: INOUT
+
+
+I2C_SLAVE_FOR_CASE:
+    IP: __I2C_SLAVE_FOR_CASE
+    CMD: ICS
+    scl_slv:
+        PIN: CPLD_IO50
+        DIRECTION: in
+    sda:
+        PIN: CPLD_IO52
+        DIRECTION: INOUT  
+
+
+
+
+
+

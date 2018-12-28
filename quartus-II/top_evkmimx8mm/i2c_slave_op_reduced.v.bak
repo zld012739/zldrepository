@@ -1,0 +1,445 @@
+`timescale	1ns/1ps
+//**********************************************************************
+// File: i2c_slave.v
+// Module:i2c_slave
+// by Robin zhang 
+//**********************************************************************
+module	i2c_slave_op_reduced(
+		reset_n,
+		clock,
+		sda_out,
+		sda_in,
+		scl,
+		sda_en,                      
+		);
+		
+input		clock;   
+input		reset_n;
+input		sda_in;
+input		scl;
+
+
+output 	sda_en;
+reg		sda_en;
+output 	sda_out;
+reg		sda_out;
+
+wire sda_risingedge;
+wire scl_risingedge;
+wire sda_failingedge;
+wire scl_fallingedge;
+
+reg	start_bus_reg;
+reg	stop_bus_reg;
+reg   ack_status;
+reg   read_write_reg;
+reg  [7:0] data_reg;
+
+reg	[3:0]	main_state;
+reg 	[4:0] i2c_state;
+
+reg   addressed;
+
+/*******************************************************************************
+*detect the rising edge and falling edge of scl & sda
+*******************************************************************************/
+reg curr, last;
+always@(posedge clock)
+begin
+	if(!reset_n) begin
+		curr <= 1'b0;
+		last <= 1'b0;
+	end
+	else begin
+    curr <= scl;
+    last <= curr;
+	end
+end
+//Raising edge
+assign scl_risingedge = curr & (~last);
+
+//failing edge
+assign scl_fallingedge = ~curr & (last);
+
+reg sda_curr, sda_last;
+always@(posedge clock)
+begin
+	if(!reset_n) begin
+		sda_curr <= 1'b0;
+		sda_last <= 1'b0;
+	end
+	else begin
+    sda_curr <= sda_in;
+    sda_last <= sda_curr;
+	end
+end
+
+//Raising edge
+assign sda_risingedge = sda_curr & (~sda_last);
+
+//failing edge
+assign sda_fallingedge = ~sda_curr & (sda_last);
+
+
+
+// ----------------------------------------------------------------
+// to test start condition: scl=1, sda_in failing
+always@(posedge clock)
+begin
+  if(!reset_n) begin
+		start_bus_reg <= 1'b0;
+		stop_bus_reg <= 1'b0;
+  end
+  else begin
+		start_bus_reg <= sda_fallingedge & scl;
+		stop_bus_reg <= sda_risingedge & scl;
+  end
+end
+
+
+//----------------- i2c statemachine -------------------------------
+//i2c data in big endian mode
+parameter   data_7   		= 4'h0;
+parameter   data_6   		= 4'h1;
+parameter   data_5   		= 4'h2;
+parameter   data_4   		= 4'h3;
+parameter   data_3   		= 4'h4;
+parameter   data_2   		= 4'h5;
+parameter   data_1   		= 4'h6;
+parameter   data_0   		= 4'h7;
+parameter   data_act   		= 4'h8;
+
+//----------------- main statemachine ------------------------------
+parameter idle_status                =4'h0;
+parameter address_status				 =4'h1;
+parameter read_status                =4'h2;
+parameter write_status	             =4'h3;
+
+
+
+//------------------------------------------------------------------	
+//main state machine
+// this state machine assume below transactions
+// i2c maser  start|send address;  w | 	 | send data |     | ... |     | stop |
+// i2c slave       |        	       | ack |           | ack |     | ack |      | idle |
+// i2c maser  start|send address;  r | 	 |				 | ack |  	 | ack | stop |
+// i2c slave       |        	       | ack | send data |  	 | ... |     |      | idle |
+always @(posedge clock or negedge reset_n)begin
+	if(!reset_n)
+		begin
+			main_state <= idle_status;
+		end
+	else
+		begin
+			case (main_state)
+				idle_status:
+				begin  
+					if(start_bus_reg)	// receive start condition
+					begin
+						main_state	<= address_status;							 
+					end
+					else
+					begin
+						main_state	<= idle_status;						     
+					end									     					  
+				end
+				address_status:
+				begin
+					if (addressed && read_write_reg)
+						begin
+							//write to
+							main_state	<= write_status;
+							
+						end
+					else if (addressed && ~read_write_reg)
+						begin
+							main_state	<= read_status;
+						end
+					else
+						main_state <= address_status;
+				end
+				read_status:	// read data from the master
+				//in read mode, slave must ack to master
+				begin	    
+					if (stop_bus_reg)
+					   //idle the bus when we get the stop condition
+						main_state	<= idle_status;
+					else if(start_bus_reg)
+						//switch to write mode when repeat start
+						main_state	<= address_status;
+					else
+						main_state	<= read_status;
+				end							
+				write_status:	// read data from master
+				//in write mode, master must ack to slaver
+				begin						 
+					if(start_bus_reg)
+						main_state <= read_status;
+					else if (stop_bus_reg)
+						main_state	<= idle_status;				
+					else
+						main_state <= write_status;			    					      
+				end		                        
+				default:	main_state <= idle_status;
+			endcase					 
+		end 
+end
+//------------------------------------------------------------------			
+//i2c state machine
+always @(posedge clock or negedge reset_n) //addr ack output
+begin
+	if(!reset_n)
+	begin
+		//not acked
+		ack_status 		<= 1'b0;
+		// read mode
+		sda_en    		<= 1'b0;
+		read_write_reg	<= 1'b0;
+		i2c_state <= data_7;
+		data_reg <= 5'b0;
+		addressed <= 1'b0;
+	end
+	else
+	begin
+		if (main_state == read_status || main_state == write_status || main_state == address_status)
+		begin
+				case(i2c_state)
+				data_7:
+					begin
+						if(main_state== write_status && scl_fallingedge) //to ack chip address
+							begin
+								//for slaver, set the data in read mode
+								i2c_state <= data_7;
+								sda_en <= 1'b0;
+								addressed <= 1'b0;
+							end
+						else if(main_state==read_status && scl_fallingedge)
+							begin
+								//for slaver, write data
+								sda_en  <= 1'b1;
+								sda_out <= data_reg[7];
+								data_reg <= {data_reg[6:0],data_reg[7]};
+								addressed <= 1'b0;
+							end
+						else if(main_state==address_status && scl_fallingedge) 
+							begin
+								i2c_state <= data_7;
+								sda_en = 1'b0;
+							end
+						else if (scl_risingedge)
+							begin
+								i2c_state      <= data_6;
+							end
+					end
+				data_6:
+					begin
+						if(main_state==write_status  && scl_fallingedge) //to ack chip address  
+							begin
+								//for slaver, nothing to do
+								i2c_state <= data_6;
+							end
+						else if(main_state==read_status  && scl_fallingedge)
+							begin
+								//for slaver, write data
+								sda_en  <= 1'b1;
+								sda_out <= data_reg[7];
+								data_reg <= {data_reg[6:0],data_reg[7]};
+							end
+						else if(main_state==address_status && scl_fallingedge) 
+							begin
+								i2c_state <= data_6;
+							end
+						else if(scl_risingedge)
+							begin
+								i2c_state      <= data_5;
+							end
+					end
+				data_5:
+					begin
+						if(main_state==write_status  && scl_fallingedge) //to ack chip address  
+							begin
+								//for slaver, nothing to do
+								i2c_state <= data_5;
+							end
+						else if(main_state==address_status && scl_fallingedge) 
+							begin
+								i2c_state <= data_5;
+							end
+						else if(main_state==read_status  && scl_fallingedge)
+							begin
+								//for slaver, write data
+								sda_en  <= 1'b1;
+								sda_out <= data_reg[7];
+								data_reg <= {data_reg[6:0],data_reg[7]};
+							end
+						else if(scl_risingedge)
+							begin
+								i2c_state      <= data_4;
+							end
+					end
+				data_4:
+					begin
+						if(main_state== write_status  && scl_fallingedge) //to ack chip address  
+							begin
+								//for slaver, nothing to do
+								i2c_state <= data_4;
+							end
+						else if(main_state==address_status && scl_fallingedge) 
+							begin
+								i2c_state <= data_4;
+							end
+						else if(main_state== read_status && scl_fallingedge)
+							begin
+								//for slaver, write data
+								sda_en  <= 1'b1;
+								sda_out <= data_reg[7];
+								data_reg <= {data_reg[6:0],data_reg[7]};
+							end
+						else if(scl_risingedge)
+							begin
+								i2c_state      <= data_3;
+							end
+					end
+				data_3:
+					begin
+						if(main_state== write_status && scl_fallingedge) //to ack chip address  
+							begin
+								//for slaver, nothing to do
+								i2c_state <= data_3;
+							end
+						else if(main_state==address_status && scl_fallingedge) 
+							begin
+								i2c_state <= data_3;
+							end
+						else if(main_state==read_status && scl_fallingedge)
+							begin
+								//for slaver, write data
+								sda_en  <= 1'b1;
+								sda_out <= data_reg[7];
+								data_reg <= {data_reg[6:0],data_reg[7]};
+							end
+						else if(scl_risingedge)
+							begin
+								i2c_state      <= data_2;
+							end
+					end
+				data_2:
+					begin
+						if(main_state== write_status && scl_fallingedge) //to ack chip address  
+							begin
+								//for slaver, nothing to do
+								i2c_state <= data_2;
+							end
+						else if(main_state==address_status && scl_fallingedge) 
+							begin
+								i2c_state <= data_2;
+							end
+						else if(main_state== read_status  && scl_fallingedge)
+							begin
+								//for slaver, write data
+								sda_en  <= 1'b1;
+								sda_out <= data_reg[7];
+								data_reg <= {data_reg[6:0],data_reg[7]};
+							end
+						else if(scl_risingedge)
+							begin
+								i2c_state      <= data_1;
+							end
+					end
+				data_1:
+					begin
+						if(main_state== write_status && scl_fallingedge) //to ack chip address  
+							begin
+								//for slaver, nothing to do
+								i2c_state <= data_1;
+							end
+						else if(main_state==address_status && scl_fallingedge) 
+							begin
+								i2c_state <= data_1;
+							end
+						else if(main_state == read_status && scl_fallingedge)
+							begin
+								//for slaver, write data
+								sda_en  <= 1'b1;
+								sda_out <= data_reg[7];
+								data_reg <= {data_reg[6:0],data_reg[7]};
+							end
+						else if(scl_risingedge)
+							begin
+								i2c_state      <= data_0;
+							end
+					end
+				data_0:
+					begin
+						if(main_state== write_status && scl_fallingedge) //to ack chip address  
+							begin
+								//for slaver, nothing to do
+								i2c_state <= data_0;
+							end
+						else if(main_state==address_status && scl_fallingedge) 
+							begin
+								i2c_state <= data_0;
+							end
+						else if(main_state== read_status && scl_fallingedge)
+							begin
+								//for slaver, write data
+								sda_en  <= 1'b1;
+								sda_out <= data_reg[7];
+								data_reg <= {data_reg[6:0],data_reg[7]};
+							end
+						else if(scl_risingedge)
+							begin
+								i2c_state      <= data_act;
+								if (main_state==address_status)
+									read_write_reg <= sda_in;
+							end
+					end
+				data_act:
+					begin
+						if(main_state== write_status  && scl_fallingedge) 
+							begin
+								//for slaver, act it
+								sda_en  <= 1'b1;
+								sda_out <= 1'b0;
+								ack_status <= 1'b1;
+							end
+						else if(main_state==address_status && scl_fallingedge) 
+							begin
+								//for slaver, act it
+								sda_en  <= 1'b1;
+								sda_out <= 1'b0;
+								ack_status <= 1'b1;
+								addressed <= 1'b1;
+							end
+						else if(main_state== read_status && scl_fallingedge)
+							begin
+								//for slaver, switch the sda direction
+								sda_en  <= 1'b0;
+								data_reg <= data_reg + 1;
+							end
+						else if(scl_risingedge)
+							begin
+								i2c_state      <= data_7;
+								//read the act status from master
+								if (main_state == write_status)
+									ack_status <= ~sda_in;
+							end
+					end
+				default:	i2c_state <= i2c_state;   
+				endcase
+		end
+		else
+			begin
+				//not acked
+				ack_status 		<= 1'b0;
+				// read mode
+				sda_en    		<= 1'b0;
+				read_write_reg	<= 1'b0;
+				i2c_state <= data_7;
+				data_reg <= 5'b0;				
+			end
+	end
+ end
+
+endmodule
+

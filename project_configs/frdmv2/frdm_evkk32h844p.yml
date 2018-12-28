@@ -1,0 +1,155 @@
+#FRDM: A-B-C-D
+
+#J7:A
+#J8:B
+#J10:C
+#J9:D
+
+#SINGLE: 1
+FLEXIO_UART:
+    IP: __UART8BIT
+    CMD: UST
+    ALT: a
+    rs232_tx8to8:
+        PIN: JJ1_5
+        DIRECTION: out
+    rs232_rx8to8:
+        PIN: JJ1_6
+        DIRECTION: in
+    compara_error:
+        PIN: A35_K70
+        DIRECTION: out
+
+FLEXIO_UART_interrupt_transfer:
+    CMD: FUI
+    rs232_rx8to8:
+        T_PIN: JJ1_5
+        A_PIN: CPLD_IO14 
+        DIRECTION: A2T
+    rs232_tx8to8:
+        T_PIN: JJ1_6
+        A_PIN: CPLD_IO5
+        DIRECTION: T2A
+  
+
+GPIO_Int_In:
+    CMD: GII
+    SW1:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+    LED:
+        T_PIN: CPLD_IO3
+        A_PIN: A35
+        DIRECTION: T2A
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+
+tpm_combined_pwm:
+    CMD: TCP
+    FUNC0:
+        T_PIN: JJ1_9
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_9
+        A_PIN: A40
+        DIRECTION: T2A
+
+tpm_dual_edge_capture:
+    CMD: TDC
+    IP: __PWM_OUT
+    pha:
+        PIN: JJ1_9
+        DIRECTION: out
+
+tpm_input_capture:
+    CMD: TIC
+    IP: __PWM_OUT
+    pha:
+        PIN: JJ1_9
+        DIRECTION: out
+
+tpm_output_compare:
+    CMD: TOC
+    FUNC0:
+        T_PIN: JJ4_1
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ4_1
+        A_PIN: A40
+        DIRECTION: T2A
+
+tpm_pwm_twochannel:
+    CMD: TPT
+    FUNC0:
+        T_PIN: JJ4_1
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ4_1
+        A_PIN: A40
+        DIRECTION: T2A
+
+tpm_simple_pwm:
+    CMD: TSP
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO4
+        A_PIN: A40
+        DIRECTION: T2A
+
+POWER_MODE_SWITCH_1:
+    CMD: PMH
+    SW1:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+
+FLEXIO_PWM:
+    CMD: FWM
+    FUNC0:
+        T_PIN: JJ1_1
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_1
+        A_PIN: A40
+        DIRECTION: T2A
+
+LPUART_7BIT:
+    IP: __UART7BIT
+    CMD: USH
+    ALT: a
+#115200
+    rs232_tx7to7:
+        PIN: JJ1_2
+        DIRECTION: out
+    rs232_rx7to7:
+        PIN: JJ1_4
+        DIRECTION: in
+    compara_error_uart7bit:
+        PIN: A35_K70
+        DIRECTION: out
+
+SHELL:
+    CMD: SHL
+    LED:
+        T_PIN: CPLD_IO3
+        A_PIN: A35
+        DIRECTION: T2A
+
+

@@ -1,0 +1,121 @@
+# do top_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/top.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:54:27 on May 22,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/top.v 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 17:54:27 on May 22,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_ctrl.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:54:27 on May 22,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_ctrl.v 
+# -- Compiling module spi_ctrl
+# 
+# Top level modules:
+# 	spi_ctrl
+# End time: 17:54:27 on May 22,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_master.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:54:27 on May 22,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_master.v 
+# -- Compiling module spi_master
+# 
+# Top level modules:
+# 	spi_master
+# End time: 17:54:27 on May 22,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_slave_cpha0.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:54:28 on May 22,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_slave_cpha0.v 
+# -- Compiling module spi_slave_cpha0
+# 
+# Top level modules:
+# 	spi_slave_cpha0
+# End time: 17:54:28 on May 22,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_slave_b2b.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:54:28 on May 22,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_slave_b2b.v 
+# -- Compiling module spi_slave_b2b
+# 
+# Top level modules:
+# 	spi_slave_b2b
+# End time: 17:54:28 on May 22,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/pwm_out.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:54:28 on May 22,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/pwm_out.v 
+# -- Compiling module pwm_out
+# 
+# Top level modules:
+# 	pwm_out
+# End time: 17:54:28 on May 22,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/speed_select.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:54:28 on May 22,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/speed_select.v 
+# -- Compiling module speed_select
+# 
+# Top level modules:
+# 	speed_select
+# End time: 17:54:28 on May 22,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/uart_rx.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:54:28 on May 22,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/uart_rx.v 
+# -- Compiling module my_uart_rx
+# ** Error: D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/uart_rx.v(15): (vlog-2730) Undefined variable: 'rx_complete_reg'.
+# 
+# ** Error (suppressible): D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/uart_rx.v(32): (vlog-2388) 'rx_complete_reg' already declared in this scope (my_uart_rx).
+# 
+# ** Error: D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/uart_rx.v(44): (vlog-2730) Undefined variable: 'rx_count'.
+# 
+# ** Error: D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/uart_rx.v(46): (vlog-2730) Undefined variable: 'rx_data_temp'.
+# 
+# ** Error (suppressible): D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/uart_rx.v(58): (vlog-2388) 'rx_count' already declared in this scope (my_uart_rx).
+# 
+# ** Error (suppressible): D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/uart_rx.v(85): (vlog-2388) 'rx_data_temp' already declared in this scope (my_uart_rx).
+# 
+# End time: 17:54:28 on May 22,2017, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
+# ** Error: C:/altera_lite/15.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./top_run_msim_rtl_verilog.do line 15
+# C:/altera_lite/15.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull {D:/pr..."
+vsim work.pwm_out
+# vsim work.pwm_out 
+# Start time: 17:55:14 on May 22,2017
+# Loading work.pwm_out
+vsim work.pwm_out
+# End time: 17:55:16 on May 22,2017, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim work.pwm_out 
+# Start time: 17:55:17 on May 22,2017
+# Loading work.pwm_out
+add wave -position insertpoint  \
+sim:/pwm_out/rst_n
+# End time: 17:58:08 on May 22,2017, Elapsed time: 0:02:51
+# Errors: 0, Warnings: 0

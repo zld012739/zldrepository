@@ -1,0 +1,297 @@
+cmp:
+    CMD: CMP
+    CMP_IN:
+        T_PIN: B9
+        A_PIN: B58
+        DIRECTION: A2T
+    LED:
+        T_PIN: CPLD_IO3
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: need fly wire to J12-2 from  R14 D5 side
+
+flexio_pwm:
+    CMD: FPM
+    GREEN_LED0:
+        T_PIN: A4
+        A_PIN: A39
+        DIRECTION: T2A
+    GREEN_LED1:
+        T_PIN: A4
+        A_PIN: A40
+        DIRECTION: T2A
+
+flexio_spi_master:
+    CMD: FSM
+    PCS:
+        T_PIN_1: A6
+        T_PIN_2: B7
+        DIRECTION: T2T
+    SCK:
+        T_PIN_1: A12
+        T_PIN_2: B15
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: A8
+        T_PIN_2: B9
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: B11
+        T_PIN_2: A10
+        DIRECTION: T2T
+
+flexio_spi_slave:
+    CMD: FSS
+    PCS:
+        T_PIN_1: B7
+        T_PIN_2: A6
+        DIRECTION: T2T
+    SCK:
+        T_PIN_1: B15
+        T_PIN_2: A12
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: B9
+        T_PIN_2: A8
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: A10
+        T_PIN_2: B11
+        DIRECTION: T2T
+
+flexio_uart:
+    IP: __UART8BIT
+    CMD: UST
+    ALT: a
+    rs232_tx8to8:
+        PIN: A6
+        DIRECTION: out
+    rs232_rx8to8:
+        PIN: A12
+        DIRECTION: in
+    compara_error:
+        PIN: A35_K70
+        DIRECTION: out
+
+freertos_tickless:
+    CMD: FRS
+    FUNC0:
+        T_PIN_1: B9
+        T_PIN_2: B11
+        DIRECTION: T2T
+
+gpio_input_interrupt:
+    CMD: GII
+    FUNC0:
+        T_PIN: B10
+        A_PIN: B58
+        DIRECTION: A2T
+
+gpio_led_output:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: need fly wire to J12-2 from  R14 D5 side
+
+mcg:
+    CMD: MCG
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+        NOTE: need fly wire to J12-2 from  R14 D5 side
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: need fly wire to J12-2 from  R14 D5 side
+
+power_manager:
+    CMD: PMH
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: CPLD_IO2(T SW3.2)
+
+shell:
+    CMD: SHL
+    FUNC0:
+        T_PIN: A12
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: A12---PTD5---D7---LED_GREEN
+
+spi:
+    CMD: SPI
+    PCS:
+        T_PIN_1: B7
+        T_PIN_2: A6
+        DIRECTION: T2T
+    SCK:
+        T_PIN_1: B15
+        T_PIN_2: A12
+        DIRECTION: T2T
+    SOUT:
+        T_PIN_1: B9
+        T_PIN_2: A8
+        DIRECTION: T2T
+    SIN:
+        T_PIN_1: A10
+        T_PIN_2: B11
+        DIRECTION: T2T
+
+
+SPI_MASTER:
+    IP: __SPI_SLAVE_CPHA0
+    CMD: SPS
+    ALT: a 
+    ss_sck_cpha0:
+        PIN: B15
+        DIRECTION: IN
+    ss_mosi_cpha0:
+        PIN: B9
+        DIRECTION: IN
+    ss_ssel_cpha0:
+        PIN: B7
+        DIRECTION: IN   
+    ss_miso_cpha0:
+        PIN: B11
+        DIRECTION: OUT
+
+SPI_SLAVE:
+    IP: __SPI_MASTER_KL
+    CMD: SIO
+    ALT: a 
+    sm_sck:
+        PIN: A12
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: A8
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: A6
+        DIRECTION: OUT   
+    sm_miso:
+        PIN: A10
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A3
+        DIRECTION: OUT
+
+
+
+tpm_input_capture:
+    CMD: TIC
+    INPUT_PIN:
+        T_PIN: C2
+        A_PIN: B58
+        DIRECTION: A2T
+
+tpm_output_compare:
+    CMD: TOC
+    GREEN_LED0:
+        T_PIN: A12
+        A_PIN: A39
+        DIRECTION: T2A
+    GREEN_LED1:
+        T_PIN: A12
+        A_PIN: A40
+        DIRECTION: T2A
+
+tpm_pwm_twp_channel:
+    CMD: TPT
+    GREEN_LED0:
+        T_PIN: A12
+        A_PIN: A39
+        DIRECTION: T2A
+    GREEN_LED1:
+        T_PIN: A12
+        A_PIN: A40
+        DIRECTION: T2A
+
+tpm_simple_pwm:
+    CMD: TSP
+    GREEN_LED0:
+        T_PIN: A12
+        A_PIN: A39
+        DIRECTION: T2A
+    GREEN_LED1:
+        T_PIN: A12
+        A_PIN: A40
+        DIRECTION: T2A
+
+uart:
+    IP: __UART8BIT
+    CMD: URT
+    ALT: a
+    rs232_tx8to8:
+        PIN: A4
+        DIRECTION: out
+    rs232_rx8to8:
+        PIN: B6
+        DIRECTION: in
+    compara_error:
+        PIN: A35_K70
+        DIRECTION: out
+
+erpc_spi_server:
+    CMD: ESS
+    MOSI:
+        T_PIN: CPLD_IO97
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+        NOTE: dspi salve out
+    MISO:
+        T_PIN: CPLD_IO99
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+        NOTE: dspi salve in
+    DSPI_CLK:
+        T_PIN: CPLD_IO91
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: A2T
+        NOTE: SCK
+    DSPI_PCS:
+        T_PIN: CPLD_IO83
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: A2T
+        NOTE: dspi pcs
+    SLAVE_ACK:
+        T_PIN: CPLD_IO50
+        A_PIN: B58
+        DIRECTION: T2A
+
+
+erpc_spi_client:
+    CMD: ESC
+    MOSI:
+        T_PIN: CPLD_IO97
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+        NOTE: dspi salve out
+    MISO:
+        T_PIN: CPLD_IO99
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+        NOTE: dspi salve in
+    SCK:
+        T_PIN: CPLD_IO91
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+        NOTE: SCK
+    DSPI_PCS:
+        T_PIN: CPLD_IO83
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+        NOTE: dspi pcs
+    SLAVE_ACK:
+        T_PIN: CPLD_IO50
+        A_PIN: B58
+        DIRECTION: A2T

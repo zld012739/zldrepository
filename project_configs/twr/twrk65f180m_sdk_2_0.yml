@@ -1,0 +1,257 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+
+
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+        # NOTE: CPLD_IO3--A19 as cmp_channel
+    FUNC1:
+        T_PIN: B35
+        A_PIN: A35
+        DIRECTION: T2A
+        # NOTE: B35--PTA28(LED_DISPLAY)
+CMSIS_DSPI_VALIDATION:
+    CMD: DSV
+    FUNC0:
+        T_PIN_1: B11
+        T_PIN_2: B10
+        DIRECTION: T2T
+CMSIS_LPUART_VALIDATION:
+    CMD: LUV
+    FUNC0:
+        T_PIN_1: A59
+        T_PIN_2: A58
+        DIRECTION: T2T
+CMSIS_UART_VALIDATION:
+    CMD: URV
+    FUNC0:
+        T_PIN_1: B9
+        T_PIN_2: A10
+        DIRECTION: T2T              
+FTM_COMBINE_PWM:
+    CMD: FCP
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+#CPLD_IO2 connect to B66(FTM2_CH0)
+FTM_DUAL_EDGE_CAPTURE:
+    CMD: FDC
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: A40
+        DIRECTION: A2T
+#CPLD_IO4 connect to A76(FTM2_CH0)
+FTM_INPUT_CAPTURE:
+    CMD: FIC
+    FUNC0:
+        T_PIN: B52
+        A_PIN: B58
+        DIRECTION: A2T
+FTM_OUTPUT_COMPARE:
+    CMD: FOC
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+#CPLD_IO2 connect to B66(FTM2_CH0)
+FTM_PWM_TWOCHANNEL:
+    CMD: FPT
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+#CPLD_IO2 connect to B66(FTM2_CH0)
+FTM_SIMPLE_PWM:
+    CMD: FSP
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+#CPLD_IO2 connect to B66(FTM2_CH0)
+FTM_QUAD_DECODER:
+    IP: __ENC
+    CMD: FQD
+    pha_out:
+        PIN: CPLD_IO2
+        DIRECTION: out
+    phb_out:
+        PIN: CPLD_IO50
+        DIRECTION: out
+#CPLD_IO2 connect to B66(FTM2_CH0)
+#CPLD_IO50 connect to B72(J3.4)
+TPM_TCP:
+    CMD: TCP
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+#CPLD_IO2 connect to B66(FTM2_CH0)
+TPM_TDC:
+    CMD: TDC
+    FUNC1:
+        T_PIN: B52
+        A_PIN: A40
+        DIRECTION: A2T
+TPM_TIC:
+    CMD: TIC
+    FUNC1:
+        T_PIN: B52
+        A_PIN: B58
+        DIRECTION: A2T
+TPM_TOC:
+    CMD: TOC
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+#CPLD_IO2 connect to B66(FTM2_CH0)
+TPM_TPT:
+    CMD: TPT
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+#CPLD_IO2 connect to B66(FTM2_CH0)
+TPM_TSP:
+    CMD: TSP
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+#CPLD_IO2 connect to B66(FTM2_CH0)
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: B52
+        A_PIN: B58
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO5
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO5
+        A_PIN: A40
+        DIRECTION: T2A
+MCG:
+    CMD: MCG
+    FUNC0:
+        T_PIN: CPLD_IO5
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO5
+        A_PIN: A40
+        DIRECTION: T2A
+
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: B52
+        A_PIN: B58
+        DIRECTION: A2T
+
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: B52
+        A_PIN: B58
+        DIRECTION: A2T
+
+TSI:
+  CMD: TSI
+  TOUCH_PAD:
+    T_PIN: CPLD_IO2
+    A_PIN: A35
+    DIRECTION: A2T
+    NOTE: CPLD_IO2(T TSI_PAD--B66)
+  FUNC0:
+    T_PIN: A35
+    A_PIN: A39
+    DIRECTION: T2A
+  FUNC1:
+    T_PIN: A35
+    A_PIN: A40
+    DIRECTION: T2A
+#CPLD_IO2 connect to B66(TSI0_CH11)
+#A35(PTA29)as led
+DSPI_MASTER:
+    CMD: SPI
+    CLK:
+        T_PIN_1: B48
+        T_PIN_2: B7
+        DIRECTION: T2T
+    CS:
+        T_PIN_1: B46
+        T_PIN_2: B9
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: B11
+        T_PIN_2: B44
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: B45
+        T_PIN_2: B10
+        DIRECTION: T2T
+SHELL:
+    CMD: SHL
+    FUNC0:
+        T_PIN: CPLD_IO5
+        A_PIN: A35
+        DIRECTION: T2A

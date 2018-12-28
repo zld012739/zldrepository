@@ -1,0 +1,151 @@
+        #FRDM: A-B-C-D
+SINGLE: 0
+CMP:
+    CMD: CMP
+    CMP_IN:
+        T_PIN: B16
+        A_PIN: B58
+        DIRECTION: A2T
+    LED_OUT:
+        T_PIN: A6
+        A_PIN: A35
+        DIRECTION: T2A 
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: A4
+        A_PIN: B58
+        DIRECTION: A2T
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: A4
+        A_PIN: B58
+        DIRECTION: A2T
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: A6
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A6
+        A_PIN: A40
+        DIRECTION: T2A
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: A4
+        A_PIN: B58
+        DIRECTION: A2T
+POWER_SWITCH:
+    CMD: PMS
+    FUNC0:
+        T_PIN: A4
+        A_PIN: B58
+        DIRECTION: A2T
+DSPI_MASTER:
+    CMD: SPI
+    CLK:
+        T_PIN: A12
+        A_PIN: B7
+        DIRECTION: T2A
+    CS:
+        T_PIN: D9
+        A_PIN: B9
+        DIRECTION: T2A
+    MISO:
+        T_PIN: A10
+        A_PIN: B11
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: A2
+        A_PIN: B10
+        DIRECTION: T2A
+DSPI_SLAVE:
+    CMD: SSI
+    CLK:
+        T_PIN: A12
+        A_PIN: B7
+        DIRECTION: A2T
+    CS:
+        T_PIN: D9
+        A_PIN: B9
+        DIRECTION: A2T
+    MISO:
+        T_PIN: A10
+        A_PIN: B11
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: A2
+        A_PIN: B10
+        DIRECTION: T2A
+MCG:
+    CMD: MCG
+    PWM0:
+        T_PIN: A6
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: A6
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+FTM_COMBINE_PWM:
+    CMD: FCP
+    FUNC0:
+        T_PIN: A6
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A6
+        A_PIN: A40
+        DIRECTION: T2A
+FTM_DUAL_EDGE_CAPTURE:
+    CMD: FDC
+    FUNC0:
+        T_PIN: B8
+        A_PIN: A40
+        DIRECTION: A2T
+FTM_INPUT_CAPTURE:
+    CMD: FIC
+    FUNC0:
+        T_PIN: B8
+        A_PIN: B58
+        DIRECTION: A2T
+FTM_OUTPUT_COMPARE:
+    CMD: FOC
+    FUNC0:
+        T_PIN: B12
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: B12
+        A_PIN: A40
+        DIRECTION: T2A
+FTM_PWM_TWOCHANNEL:
+    CMD: FPT
+    FUNC0:
+        T_PIN: B12
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: B12
+        A_PIN: A40
+        DIRECTION: T2A
+FTM_SIMPLE_PWM:
+    CMD: FSP
+    FUNC0:
+        T_PIN: B12
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: B12
+        A_PIN: A40
+        DIRECTION: T2A
+SHELL:
+    CMD: SHL
+    FUNC0:
+        T_PIN: B14
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: B14---PTE29---LED2

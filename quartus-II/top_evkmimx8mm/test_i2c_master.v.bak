@@ -1,0 +1,168 @@
+`timescale	1ns/1ps
+
+
+/* 
+ * Do not change Module name 
+*/
+module test_i2c_master;
+
+reg rst_n;
+reg clock;
+
+wire sda_m_en;
+wire sda_s_en;
+wire scl;
+
+wire sda_in;
+wire sda_out;
+
+reg[7:0] send_count;
+reg[7:0] send_memory;
+wire[7:0] data;
+
+reg[7:0] data_reg;
+
+wire ack;
+
+
+reg RD_EN;
+reg WR_EN;
+reg WR,RD;
+
+
+reg curr, last;
+always@(posedge clock)
+begin
+	if(!rst_n) begin
+		curr <= 1'b0;
+		last <= 1'b0;
+	end
+	else begin
+    curr <= scl;
+    last <= curr;
+	end
+end
+//failing edge
+assign scl_fallingedge = ~curr & (last);
+
+
+reg[4:0] scl_count;
+always @(posedge clock or negedge rst_n)begin
+	if(!rst_n)begin	
+		WR         <= 1'b0;
+		RD         <= 1'b0;
+		data_reg   <= 'h0;
+		send_memory <= 8'd0;
+		send_count <= 'h0;
+		scl_count <= 'h0;
+	end
+	else 
+		begin
+			if(send_count == 8'd32)
+				begin
+					if (WR)
+						begin
+							WR	<= ~WR;
+							RD <= 1'b0;
+						end
+					if (RD)
+						begin
+							RD	<= ~RD;
+							WR <= 1'b0;
+						end
+					send_count <= 'h0;
+				end
+			else 
+				begin
+					if(RD_EN)
+						begin
+							RD	<= 1'b1;
+							WR <= 1'b0;
+							if (scl_fallingedge)
+								begin
+									//skip the address
+									if (scl_count == 'h8)
+										begin
+											send_count <= send_count + 1'b1;
+											scl_count <= scl_count + 1;
+										end
+									else if (scl_count == 'h9)
+										scl_count <= 'h0;
+									else
+										scl_count <= scl_count + 1;
+								end
+						end
+					else if(WR_EN)
+						begin
+							WR	<= 1'b1;
+							RD <= 1'b0;
+							if (scl_fallingedge)
+								begin
+									//skip the address
+									if (scl_count == 'h8)
+										begin
+											send_memory <= send_memory + 1;
+											send_count 	<= send_count + 1'b1;
+											scl_count <= scl_count + 1;
+										end
+									else if (scl_count == 'h9)
+											begin
+												data_reg    <= send_memory;
+												scl_count <= 'h0;
+											end
+									else
+										scl_count <= scl_count + 1;
+								end
+						end
+				end
+		end	
+end
+
+assign data = WR_EN ? data_reg :  8'hz;
+
+
+I2C_wr_reduced I2C_wr_reduced_instance(
+					.sda_in(sda_in),
+					.sda_out(sda_out),
+					.sda_en(sda_m_en),
+					.scl(scl),
+					.ack_status(ack),
+					.reset_n(rst_n),
+					.clock(clock),
+					.WR(WR),
+					.RD(RD),
+					.data(data)
+);
+
+ 		
+ i2c_slave_op_reduced	i2c_slave_op_reduced_inst(
+			.reset_n(rst_n),
+			.clock(clock),
+			.sda_out(sda_in),
+			.sda_in(sda_out),
+			.sda_en(sda_s_en),
+			.scl(scl)
+       );
+
+
+  initial 
+    begin
+	   clock = 0;
+		#5 WR_EN = 0;
+		#5 RD_EN = 0;
+		//reset
+		#5 rst_n = 1;
+		#5 rst_n = 0;
+		#5 rst_n = 1;
+
+		#10 WR_EN = 1;	
+		#10000000 WR_EN = 0;
+		#10 RD_EN = 1;
+		#10000000 RD_EN = 0; 
+
+      
+    end
+always begin
+    #2 clock = ! clock;
+end
+endmodule

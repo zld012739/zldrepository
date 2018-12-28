@@ -1,0 +1,97 @@
+# do top_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/top.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:35:28 on Jul 11,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/top.v 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 15:35:28 on Jul 11,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/I2C_MASTER.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:35:29 on Jul 11,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/I2C_MASTER.v 
+# -- Compiling module I2C_MASTER
+# 
+# Top level modules:
+# 	I2C_MASTER
+# End time: 15:35:29 on Jul 11,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/I2C_wr.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:35:29 on Jul 11,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/I2C_wr.v 
+# -- Compiling module I2C_wr
+# 
+# Top level modules:
+# 	I2C_wr
+# End time: 15:35:29 on Jul 11,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/i2c_slave.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:35:29 on Jul 11,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/i2c_slave.v 
+# -- Compiling module i2c_slave
+# 
+# Top level modules:
+# 	i2c_slave
+# End time: 15:35:29 on Jul 11,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/i2c_slave_op.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:35:29 on Jul 11,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/i2c_slave_op.v 
+# -- Compiling module i2c_slave_op
+# 
+# Top level modules:
+# 	i2c_slave_op
+# End time: 15:35:29 on Jul 11,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/speed_select.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:35:29 on Jul 11,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/speed_select.v 
+# -- Compiling module speed_select
+# 
+# Top level modules:
+# 	speed_select
+# End time: 15:35:30 on Jul 11,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/uart_rx.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 15:35:30 on Jul 11,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/uart_rx.v 
+# -- Compiling module my_uart_rx
+# ** Error: D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/uart_rx.v(15): (vlog-2730) Undefined variable: 'rx_complete_reg'.
+# 
+# ** Error (suppressible): D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/uart_rx.v(32): (vlog-2388) 'rx_complete_reg' already declared in this scope (my_uart_rx).
+# 
+# ** Error: D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/uart_rx.v(44): (vlog-2730) Undefined variable: 'rx_count'.
+# 
+# ** Error: D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/uart_rx.v(46): (vlog-2730) Undefined variable: 'rx_data_temp'.
+# 
+# ** Error (suppressible): D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/uart_rx.v(58): (vlog-2388) 'rx_count' already declared in this scope (my_uart_rx).
+# 
+# ** Error (suppressible): D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/uart_rx.v(85): (vlog-2388) 'rx_data_temp' already declared in this scope (my_uart_rx).
+# 
+# End time: 15:35:30 on Jul 11,2017, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
+# ** Error: C:/altera_lite/15.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./top_run_msim_rtl_verilog.do line 14
+# C:/altera_lite/15.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c {D:/p..."

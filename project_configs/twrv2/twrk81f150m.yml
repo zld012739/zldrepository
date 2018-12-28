@@ -1,0 +1,34 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+
+
+TPM:
+    CMD: TPM 
+    FUNC0:
+        T_PIN_1: A38
+        T_PIN_2: A34
+        DIRECTION: T2T
+        
+EWM:
+    CMD: EWM 
+    FUNC0:
+        T_PIN_1: CPLD_IO2
+        T_PIN_2: A11
+        DIRECTION: T2T
+        

@@ -1,0 +1,187 @@
+#FRDM: A-B-C-D(frdmk66f)
+SINGLE: 0
+
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW3.1
+FTM:
+    CMD: FTM
+    PWM0:
+        T_PIN: CPLD_IO3
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+        NOTE: D12.4
+    PWM1:
+        T_PIN: CPLD_IO3
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+GPIO_INPUT:
+    CMD: GII
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW3.1
+
+GPIO_LED:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+        NOTE: D12.1
+    FUNC1:
+        T_PIN: CPLD_IO4
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+        NOTE: D12.1
+
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW3.1
+
+MCG:
+    CMD: MCG
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+        NOTE: D12.1   PTC9
+    FUNC1:
+        T_PIN: CPLD_IO4
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+        NOTE: D12.1   PTC9
+
+CMP:
+    CMD: CMP
+    LED1:
+        T_PIN: CPLD_IO4
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: D12.1  PTC9
+    FUNC:
+        T_PIN: B7
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: J1.7 --- B58(k70)
+
+# DSPI_MASTER:
+#     CMD: SPI
+#     CLK:
+#         T_PIN: A12
+#         A_PIN: SPI1_CLK_K70
+#         DIRECTION: T2A
+#     CS:
+#         T_PIN: A6
+#         A_PIN: SPI1_CS0_K70
+#         DIRECTION: T2A
+#     MISO:
+#         T_PIN: A10
+#         A_PIN: SPI1_MISO_K70
+#         DIRECTION: A2T
+#     MOSI:
+#         T_PIN: A8
+#         A_PIN: SPI1_MOSI_K70
+#         DIRECTION: T2A
+# DSPI_SLAVE:
+#     CMD: SSI
+#     CLK:
+#         T_PIN: A12
+#         A_PIN: SPI1_CLK_K70
+#         DIRECTION: A2T
+#     CS:
+#         T_PIN: A6
+#         A_PIN: SPI1_CS0_K70
+#         DIRECTION: A2T
+#     MISO:
+#         T_PIN: A10
+#         A_PIN: SPI1_MISO_K70
+#         DIRECTION: A2T
+#     MOSI:
+#         T_PIN: A8
+#         A_PIN: SPI1_MOSI_K70
+#         DIRECTION: T2A
+# # TPM:
+#     CMD: TPM
+#     PWM0:
+#         T_PIN: CPLD_IO3
+#         A_PIN: PWM0_K70
+#         DIRECTION: T2A
+#     PWM1:
+#         T_PIN: CPLD_IO3
+#         A_PIN: PWM1_K70
+#         DIRECTION: T2A
+
+# WDOG:
+#     CMD: WDG
+#     FUNC0:
+#         T_PIN: CPLD_IO2
+#         A_PIN: B58
+#         DIRECTION: A2T
+
+erpc_spi_server:
+    CMD: ESS
+    DSPI_OUT:
+        T_PIN: A8
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+        NOTE: dspi salve out
+    DSPI_IN:
+        T_PIN: A10
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+        NOTE: dspi salve in
+    DSPI_CLK:
+        T_PIN: A12
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: A2T
+        NOTE: SCK
+    DSPI_PCS:
+        T_PIN: A6
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: A2T
+        NOTE: dspi pcs
+    SLAVE_ACK:
+        T_PIN: CPLD_IO50
+        A_PIN: IRQ_E_K70
+        DIRECTION: T2A
+        NOTE: CPLD_IO5 to B58, populate the proto R11, R12. FRDMCPLD J14 4 fly to J15-6
+
+
+erpc_spi_client:
+    CMD: ESC
+    DSPI_OUT:
+        T_PIN: A8
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+        NOTE: dspi salve out
+    DSPI_IN:
+        T_PIN: A10
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+        NOTE: dspi salve in
+    DSPI_CLK:
+        T_PIN: A12
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+        NOTE: SCK
+    DSPI_PCS:
+        T_PIN: A6
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+        NOTE: dspi pcs
+    SLAVE_ACK:
+        T_PIN: CPLD_IO50
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+        NOTE: CPLD_IO5 to B58, populate the proto R11, R12. FRDMCPLD J14 4 fly to J15-6

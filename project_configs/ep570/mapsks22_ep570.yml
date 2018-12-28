@@ -1,0 +1,194 @@
+#FRDM: A-B-C-D
+SINGLE: 0
+
+POWER_MANAGER:
+    CMD: PMH
+    WAKEUP:
+        T_PIN: CPLD_IO73
+        A_PIN: CPLD_IO2
+        DIRECTION: A2T 
+
+CMP:
+    CMD: CMP
+    CMP_IN:
+        T_PIN: CPLD_IO78 
+        A_PIN: CPLD_IO2
+        DIRECTION: A2T
+    LED_OUT:
+        T_PIN: CPLD_IO57
+        A_PIN: CPLD_IO3
+        DIRECTION: T2A
+
+#we connnect them directly
+#LPUART:
+#    CMD: LUT
+#    TX:
+#        T_PIN: CPLD_IO50
+#        A_PIN: CPLD_IO16
+#        DIRECTION: T2A
+#    RX:
+#        T_PIN: CPLD_IO51
+#        A_PIN: CPLD_IO15
+#        DIRECTION: A2T
+
+DSPI:
+    CMD: DSP
+    PCS:
+        T_PIN_1: CPLD_IO76
+        T_PIN_2: CPLD_IO87
+        DIRECTION: T2T
+    SCK:
+        T_PIN_1: CPLD_IO77
+        T_PIN_2: CPLD_IO86
+        DIRECTION: T2T
+    SOUT:
+        T_PIN_1: CPLD_IO58  
+        T_PIN_2: CPLD_IO84 
+        DIRECTION: T2T
+    SIN:
+        T_PIN_1: CPLD_IO85
+        T_PIN_2: CPLD_IO66
+        DIRECTION: T2T
+EWM:
+    CMD: EWM
+    KEY2:
+        T_PIN: CPLD_IO86
+        A_PIN: CPLD_IO2
+        DIRECTION: A2T
+
+MCG:
+    CMD: MCG
+    FTM0:
+        T_PIN: CPLD_IO57
+        A_PIN: CPLD_IO5
+        DIRECTION: T2A
+    FTM1:
+        T_PIN: CPLD_IO57
+        A_PIN: CPLD_IO4
+        DIRECTION: T2A
+
+TPM:
+    CMD: TPM
+    FTM0:
+        T_PIN: CPLD_IO53
+        A_PIN: CPLD_IO5
+        DIRECTION: T2A
+    FTM1:
+        T_PIN: CPLD_IO53
+        A_PIN: CPLD_IO4
+        DIRECTION: T2A
+
+TIC:
+    CMD: TIC
+    FTM1:
+        T_PIN: CPLD_IO53
+        A_PIN: CPLD_IO4
+        DIRECTION: A2T    
+
+GPIO:
+    CMD: GII
+    BUTTON:
+        T_PIN: CPLD_IO86
+        A_PIN: CPLD_IO2
+        DIRECTION: A2T
+    LED:
+        T_PIN: CPLD_IO57
+        A_PIN: CPLD_IO3
+        DIRECTION: T2A
+
+GPIO_LED:
+    CMD: GLO
+    FTM0:
+        T_PIN: CPLD_IO57
+        A_PIN: CPLD_IO5
+        DIRECTION: T2A
+    FTM1:
+        T_PIN: CPLD_IO57
+        A_PIN: CPLD_IO4
+        DIRECTION: T2A
+
+DSPI_MASTER:
+    IP: __SPI_SLAVE_B2B
+    CMD: SPI
+    ALT: a 
+    ss_sck_b2b:
+        PIN: CPLD_IO77
+        DIRECTION: IN
+    ss_mosi_b2b:
+        PIN: CPLD_IO58
+        DIRECTION: IN
+    ss_ssel_b2b:
+        PIN: CPLD_IO76
+        DIRECTION: IN
+    ss_miso_b2b:
+        PIN: CPLD_IO66
+        DIRECTION: OUT
+
+
+DSPI_SLAVE:
+    CMD: SSI
+    IP: __SPI_MASTER
+    ALT: a
+    sm_sck:
+        PIN: CPLD_IO77
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: CPLD_IO66
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: CPLD_IO76
+        DIRECTION: OUT   
+    sm_miso:
+        PIN: CPLD_IO58
+        DIRECTION: IN
+
+
+FREERTOS_UART:
+    CMD: FRU
+    TX:
+        T_PIN_1: CPLD_IO66
+        T_PIN_2: CPLD_IO84
+        DIRECTION: T2T
+    RX:
+        T_PIN_1: CPLD_IO85
+        T_PIN_2: CPLD_IO58
+        DIRECTION: T2T
+
+# I2C_MASTER:
+#     IP: __I2C_MASTER
+#     CMD: ICW
+#     ALT: a 
+#     scl:
+#         PIN: CPLD_IO50
+#         DIRECTION: out
+#     sda:
+#         PIN: CPLD_IO52
+#         DIRECTION: INOUT
+
+# I2C_MASTER1:
+#     IP: __I2C_MASTER
+#     CMD: ICR
+#     ALT: b
+#     scl:
+#         PIN: CPLD_IO50
+#         DIRECTION: out
+#     sda:
+#         PIN: CPLD_IO52
+#         DIRECTION: INOUT
+
+
+# I2C_SLAVE_FOR_CASE:
+#     IP: __I2C_SLAVE_FOR_CASE
+#     CMD: ICS
+#     scl_slv:
+#         PIN: CPLD_IO50
+#         DIRECTION: in
+#     sda:
+#         PIN: CPLD_IO52
+#         DIRECTION: INOUT  
+
+
+
+
+
+

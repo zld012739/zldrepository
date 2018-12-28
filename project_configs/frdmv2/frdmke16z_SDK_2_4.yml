@@ -1,0 +1,229 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: JJ2_8
+        A_PIN: A35_K70
+        DIRECTION: T2A
+
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: JJ1_6
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: JJ1_6
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: JJ2_6
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_6
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+
+FTM_PWM_TWOCHANNEL:
+    CMD: FPT
+    FUNC0:
+        T_PIN: JJ2_8
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_8
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+FTM_COMBINE_PWM:
+    CMD: FCP
+    FUNC0:
+        T_PIN: JJ2_8
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_8
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+FTM_INPUT_CAPTURE:
+    CMD: FIC
+    FUNC0:
+        T_PIN: JJ3_4
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+
+FTM_DUALEDGE_CAPTURE:
+    CMD: FDC
+    FUNC0:
+        T_PIN: JJ2_4
+        A_PIN: PWM0_K70
+        DIRECTION: A2T
+
+FTM_OUTPUT_COMPARE:
+    CMD: FOC
+    FUNC0:
+        T_PIN: JJ2_4
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_4
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+FTM_SIMPLE_PWM:
+    CMD: FSP
+    FUNC0:
+        T_PIN: JJ1_8
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_8
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+SHELL:
+    CMD: SHL
+    CLK:
+        T_PIN: JJ2_6
+        A_PIN: A35_K70
+        DIRECTION: T2A
+
+PWT:
+    CMD: PWT
+    CLK:
+        T_PIN: JJ2_15
+        A_PIN: PWM0_K70
+        DIRECTION: A2T
+
+
+LPSPI_MASTER:
+    CMD: SPM
+    CLK:
+        T_PIN: JJ3_3
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+    CS:
+        T_PIN: JJ3_6
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+    MISO:
+        T_PIN: JJ3_5
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: JJ3_7
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+
+LPSPI_SLAVE:
+    CMD: SPS
+    CLK:
+        T_PIN: JJ3_3
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+    CS:
+        T_PIN: JJ3_6
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+    MISO:
+        T_PIN: JJ3_5
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: JJ3_7
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: JJ1_6
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+        
+POWER_MODE_SWITCH:
+    CMD: PMS
+    FUNC0:
+        T_PIN: JJ1_6
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+
+USH:
+    IP: __UART7BIT
+    CMD: USH
+    ALT: a
+    rs232_tx7to7:
+        PIN: JJ2_11
+        DIRECTION: out
+    rs232_rx7to7:
+        PIN: JJ3_9
+        DIRECTION: in
+    compara_error_uart7bit:
+        PIN: A35_K70
+        DIRECTION: out
+   
+# UST:
+    # IP: __UART8BIT
+    # CMD: UST
+    # ALT: a
+    # rs232_tx8to8:
+        # PIN: JJ2_15
+        # DIRECTION: out
+    # rs232_rx8to8:
+        # PIN: JJ2_17
+        # DIRECTION: in
+    # compara_error:
+        # PIN: A35_K70
+        # DIRECTION: out
+        
+TSI_SELF:
+    CMD: TSS
+    FUNC0:
+        T_PIN: JJ1_8
+        A_PIN: A35_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+TSI_MU:
+    CMD: TSM
+    FUNC0:
+        T_PIN: JJ2_6
+        A_PIN: A35_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T

@@ -1,0 +1,51 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+
+I2C_B2B_SALVE_SUB:
+    IP: __I2C_MASTER_SUBAD
+    CMD: ISW
+    ALT: a
+    subad_scl:
+        PIN: CPLD_IO100
+        DIRECTION: OUT
+    sda:
+        PIN: CPLD_IO98
+        DIRECTION: INOUT
+
+I2C_B2B_SALVE1_SUB:
+    IP: __I2C_MASTER_SUBAD
+    CMD: ISR
+    ALT: b
+    subad_scl:
+        PIN: CPLD_IO100
+        DIRECTION: OUT
+    sda:
+        PIN: CPLD_IO98
+        DIRECTION: INOUT
+
+I2C_MASTER_EDMA:
+    IP: __I2C_SLAVE_FOR_CASE
+    CMD: ISE
+    ALT: a
+    scl_slv:
+        PIN: CPLD_IO100
+        DIRECTION: IN
+    sda:
+        PIN: CPLD_IO98
+        DIRECTION: INOUT

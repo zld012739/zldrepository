@@ -1,0 +1,302 @@
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC:
+        T_PIN: A11
+        A_PIN: B58_K70
+        DIRECTION: A2T
+    LED:
+        T_PIN: CPLD_IO2
+        A_PIN: A35_K70
+        DIRECTION: T2A
+
+UART7BIT_GND:
+    CMD: USF
+    GND:
+        T_PIN: CPLD_IO4
+        A_PIN: A35_K70
+        DIRECTION: T2A
+
+UART7BIT:
+    IP: __UART7BIT
+    CMD: USH
+    ALT: a
+    rs232_tx7to7:
+        PIN: A41
+        DIRECTION: out
+    rs232_rx7to7:
+        PIN: A42
+        DIRECTION: in
+    compara_error_uart7bit:
+        PIN: A35_K70
+        DIRECTION: out
+
+FLEXIO_PWM:
+    CMD: FWM
+    PWM0:
+        T_PIN: B11
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: B11
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+       
+ACMP:     
+    CMD: CMP 
+    LED: 
+        T_PIN: CPLD_IO3
+        A_PIN: A35_K70
+        DIRECTION: T2A
+    FUNC:
+        T_PIN: CPLD_IO50
+        A_PIN: B58_K70
+        DIRECTION: A2T
+        
+ACMP_ROUND_ROBIN:   
+    CMD: ARR
+    FUNC:
+        T_PIN: CPLD_IO51
+        A_PIN: B58_K70
+        DIRECTION: A2T
+        
+EWM:
+    CMD: EWM
+    FUNC:
+        T_PIN: A11
+        A_PIN: B58_K70
+        DIRECTION: A2T
+
+FLEXIO_SPI_MASTER:
+    CMD: FSM
+    CS:
+        T_PIN_1: B9
+        T_PIN_2: B46
+        DIRECTION: T2T
+    CLK:
+        T_PIN_1: B7
+        T_PIN_2: B48
+        DIRECTION: T2T
+    OUT:
+        T_PIN_1: B10
+        T_PIN_2: B44
+        DIRECTION: T2T
+    IN:
+        T_PIN_1: B45
+        T_PIN_2: B11
+        DIRECTION: T2T     
+
+FLEXIO_SPI_SLAVE:
+    CMD: FSS
+    CS:
+        T_PIN_1: B46
+        T_PIN_2: B9
+        DIRECTION: T2T
+    CLK:
+        T_PIN_1: B48
+        T_PIN_2: B7
+        DIRECTION: T2T
+    OUT:
+        T_PIN_1: B45
+        T_PIN_2: B11
+        DIRECTION: T2T
+    IN:
+        T_PIN_1: B10
+        T_PIN_2: B44
+        DIRECTION: T2T   
+
+FTM_COMBINE_PWM:
+    CMD: FCP
+    PWM0: 
+        T_PIN: CPLD_IO2
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: CPLD_IO2
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+FTM_DUAL_EDGE_CAPTURE:
+    CMD: FDC
+    FUNC:
+        T_PIN: B22
+        A_PIN: PWM0_K70
+        DIRECTION: A2T
+
+FTM_INPUT_CAPTURE:
+    CMD: FIC
+    FUNC:
+        T_PIN: B23
+        A_PIN: B58_K70 
+        DIRECTION: A2T
+
+FTM_OUTPUT_COMPARE:
+    CMD: FOC
+    PWM0: 
+        T_PIN: CPLD_IO2
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: CPLD_IO2
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+FTM_PWM_TWOCHANNEL:
+    CMD: FPT
+    PWM0: 
+        T_PIN: CPLD_IO2
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: CPLD_IO2
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+FTM_SIMPLE_PWM:
+    CMD: FSP
+    PWM0: 
+        T_PIN: CPLD_IO2
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: CPLD_IO2
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+LPIT:
+    CMD: LPIT
+    PWM0: 
+        T_PIN: CPLD_IO2
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: CPLD_IO2
+        A_PIN: PWM1_K70
+        DIRECTION: T2A   
+        
+LPSPI:
+    CMD: SPI
+    CS:
+        T_PIN_1: B9
+        T_PIN_2: B46
+        DIRECTION: T2T
+    CLK:
+        T_PIN_1: B7
+        T_PIN_2: B48
+        DIRECTION: T2T
+    OUT:
+        T_PIN_1: B45
+        T_PIN_2: B11
+        DIRECTION: T2T
+    IN:
+        T_PIN_1: B10
+        T_PIN_2: B44
+        DIRECTION: T2T 
+        
+LPTMR:
+    CMD: LPT
+    PWM0: 
+        T_PIN: CPLD_IO2
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: CPLD_IO2
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+        
+LPUART:
+    CMD: LUT
+    TX:
+        T_PIN_1: A42
+        T_PIN_2: CPLD_IO48
+        DIRECTION: T2T
+    RX:
+        T_PIN_1: CPLD_IO49
+        T_PIN_2: A41
+        DIRECTION: T2T
+        
+PWT:
+    CMD: PWT
+    FUNC:
+        T_PIN: CPLD_IO47
+        A_PIN: PWM0_K70
+        DIRECTION: A2T
+        
+TRGMUX_CLONE_PWM:    
+    CMD: TRG
+    PWM0:
+        T_PIN: B7
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: B7
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+        
+FREERTOS_LPSPI:
+    CMD: FRL
+    CS:
+        T_PIN_1: B46
+        T_PIN_2: B9
+        DIRECTION: T2T
+    CLK:
+        T_PIN_1: B48
+        T_PIN_2: B7
+        DIRECTION: T2T
+    OUT:
+        T_PIN_1: B10
+        T_PIN_2: B44
+        DIRECTION: T2T
+    IN:
+        T_PIN_1: B45
+        T_PIN_2: B11
+        DIRECTION: T2T 
+        
+FREERTOS_TICKLESS:
+    CMD: FRT
+    FUNC:
+        T_PIN: A11
+        A_PIN: B58_K70
+        DIRECTION: A2T
+        
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    PWM0:
+        T_PIN: CPLD_IO2
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: CPLD_IO2
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+       
+SHELL:
+    CMD: SHL
+    FUNC:
+       T_PIN: B59
+       A_PIN: A35_K70
+       DIRECTION: T2A
+       
+POWER_MANAGER:
+    CMD: PMH
+    FUNC:
+       T_PIN: A11
+       A_PIN: B58_K70
+       DIRECTION: A2T
+
+POWER_MODE_SWITCH:
+    CMD: PMS
+    FUNC:
+       T_PIN: A11
+       A_PIN: B58_K70
+       DIRECTION: A2T
+       
+FLEXIO_UART:
+    CMD: FUT
+    TX:
+       T_PIN_1: B11
+       T_PIN_2: CPLD_IO48
+       DIRECTION: T2T
+    RX:
+       T_PIN_1: CPLD_IO49
+       T_PIN_2: B7
+       DIRECTION: T2T

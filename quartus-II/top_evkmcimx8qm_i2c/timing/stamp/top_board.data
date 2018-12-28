@@ -1,0 +1,215 @@
+/*
+ Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+ Your use of Altera Corporation's design tools, logic functions 
+ and other software and tools, and its AMPP partner logic 
+ functions, and any output files from any of the foregoing 
+ (including device programming or simulation files), and any 
+ associated documentation or information are expressly subject 
+ to the terms and conditions of the Altera Program License 
+ Subscription Agreement, the Altera Quartus Prime License Agreement,
+ the Altera MegaCore Function License Agreement, or other 
+ applicable license agreement, including, without limitation, 
+ that your use is for the sole purpose of programming logic 
+ devices manufactured by Altera and sold by Altera or its 
+ authorized distributors.  Please refer to the applicable 
+ agreement for further details.
+*/
+MODELDATA
+/*MODELDATA HEADER*/
+/*
+ This file contains Slow Corner delays for the design using part EPM570T100C5
+ with speed grade 5, core voltage Auto, and temperature 2147483647 Celsius
+
+*/
+DESIGN "top";
+TIMESCALE "1ns";
+
+
+
+
+
+TIMINGDATA
+
+ARCDATA
+pos_BusA[84]__I2C_MASTER:I2C_MASTER_instance|scl_clk__setup:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("2.853");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("2.853");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_BusA[82]__clk__setup:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("1.706");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("1.706");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_BusA[84]__clk__setup:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("2.361");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("2.361");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_rst_n__clk__setup:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("3.994");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("3.994");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_rs232_rx__speed_select:speed_select|buad_clk_rx_reg__setup:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("1.585");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("1.585");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_BusA[84]__I2C_MASTER:I2C_MASTER_instance|scl_clk__hold:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("-1.954");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("-1.954");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_BusA[82]__clk__hold:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("-1.152");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("-1.152");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_BusA[84]__clk__hold:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("-1.807");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("-1.807");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_rst_n__clk__hold:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("-2.575");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("-2.575");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_rs232_rx__speed_select:speed_select|buad_clk_rx_reg__hold:
+RISE_CONSTRAINT( scalar ) {
+VALUES ("-0.524");
+}
+
+FALL_CONSTRAINT( scalar ) {
+VALUES ("-0.524");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_I2C_MASTER:I2C_MASTER_instance|scl_clk__BusA[82]__delay:
+CELL_RISE( scalar ) {
+VALUES ("11.479");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("11.479");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_I2C_MASTER:I2C_MASTER_instance|scl_clk__BusA[84]__delay:
+CELL_RISE( scalar ) {
+VALUES ("13.966");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("13.966");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__BusA[82]__delay:
+CELL_RISE( scalar ) {
+VALUES ("9.932");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("9.932");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__BusA[84]__delay:
+CELL_RISE( scalar ) {
+VALUES ("12.540");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("12.540");
+}
+
+ENDARCDATA
+
+ARCDATA
+pos_clk__led__delay:
+CELL_RISE( scalar ) {
+VALUES ("8.832");
+}
+
+CELL_FALL( scalar ) {
+VALUES ("8.832");
+}
+
+ENDARCDATA
+
+ENDTIMINGDATA
+
+ENDMODELDATA

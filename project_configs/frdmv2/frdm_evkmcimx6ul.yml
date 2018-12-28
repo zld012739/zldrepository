@@ -1,0 +1,97 @@
+
+
+PMH:
+  CMD: PMH
+  SW601:
+      T_PIN: CPLD_IO2
+      A_PIN: B58
+      DIRECTION: A2T
+
+GII:
+  CMD: GII
+  SW601:
+      T_PIN: CPLD_IO2
+      A_PIN: B58
+      DIRECTION: A2T
+
+Tickless:
+  CMD: TKL
+  SW601:
+      T_PIN: CPLD_IO3
+      A_PIN: B58
+      DIRECTION: A2T
+
+ECSPI_MASTER_FreeRTOS: 
+  IP: __SPI_SLAVE_CPHA0
+  CMD: DSM
+  ALT: a 
+  ss_sck_cpha0:
+      PIN: JJ2_12
+      DIRECTION: IN
+  ss_mosi_cpha0:
+      PIN: JJ2_8
+      DIRECTION: IN
+  ss_ssel_cpha0:
+      PIN: JJ2_6
+      DIRECTION: IN
+  ss_miso_cpha0:
+      PIN: JJ2_10
+      DIRECTION: OUT
+
+ECSPI_MASTER_B2B:
+  IP: __SPI_SLAVE_B2B
+  CMD: EMB
+  ALT: a 
+  ss_sck_b2b:
+      PIN: JJ2_12
+      DIRECTION: IN
+  ss_mosi_b2b:
+      PIN: JJ2_8
+      DIRECTION: IN
+  ss_ssel_b2b:
+      PIN: JJ2_6
+      DIRECTION: IN
+  ss_miso_b2b:
+      PIN: JJ2_10
+      DIRECTION: OUT
+  spi_slave_result_b2b:
+      PIN: A35_K70
+      DIRECTION: OUT
+
+DSPI_SLAVER:
+    IP: __SPI_MASTER
+    CMD: DSS
+    ALT: a 
+    sm_sck:
+        PIN: JJ2_12
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: JJ2_8
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: JJ2_6
+        DIRECTION: OUT   
+    sm_miso:
+        PIN: JJ2_10
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A35_K70
+        DIRECTION: OUT
+
+PWM:
+  CMD: PWM
+  FUNC0:
+      T_PIN: CPLD_IO50
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: CPLD_IO50
+      A_PIN: A40
+      DIRECTION: T2A
+
+GPT_CAP:
+  CMD: GPC
+  IP: __PWM_OUT
+  pha:
+    PIN: JJ1_10
+    DIRECTION: out

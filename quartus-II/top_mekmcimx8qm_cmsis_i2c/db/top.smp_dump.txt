@@ -1,0 +1,96 @@
+
+State Machine - |top|Current
+Name Current.IDLE Current.SAVE Current.WAIT Current.S1 
+Current.IDLE 0 0 0 0 
+Current.S1 1 0 0 1 
+Current.WAIT 1 0 1 0 
+Current.SAVE 1 1 0 0 
+
+State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state
+Name data_out_state.data_out0 data_out_state.data_out1 data_out_state.data_out2 data_out_state.data_out3 data_out_state.data_out4 data_out_state.data_out5 data_out_state.data_out6 data_out_state.data_out7 data_out_state.data_out_end 
+data_out_state.data_out7 0 0 0 0 0 0 0 0 0 
+data_out_state.data_out6 0 0 0 0 0 0 1 1 0 
+data_out_state.data_out5 0 0 0 0 0 1 0 1 0 
+data_out_state.data_out4 0 0 0 0 1 0 0 1 0 
+data_out_state.data_out3 0 0 0 1 0 0 0 1 0 
+data_out_state.data_out2 0 0 1 0 0 0 0 1 0 
+data_out_state.data_out1 0 1 0 0 0 0 0 1 0 
+data_out_state.data_out0 1 0 0 0 0 0 0 1 0 
+data_out_state.data_out_end 0 0 0 0 0 0 0 1 1 
+
+State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state
+Name data_in_state.data_in0 data_in_state.data_in1 data_in_state.data_in2 data_in_state.data_in3 data_in_state.data_in4 data_in_state.data_in5 data_in_state.data_in6 data_in_state.data_in7 data_in_state.data_end 
+data_in_state.data_in7 0 0 0 0 0 0 0 0 0 
+data_in_state.data_in6 0 0 0 0 0 0 1 1 0 
+data_in_state.data_in5 0 0 0 0 0 1 0 1 0 
+data_in_state.data_in4 0 0 0 0 1 0 0 1 0 
+data_in_state.data_in3 0 0 0 1 0 0 0 1 0 
+data_in_state.data_in2 0 0 1 0 0 0 0 1 0 
+data_in_state.data_in1 0 1 0 0 0 0 0 1 0 
+data_in_state.data_in0 1 0 0 0 0 0 0 1 0 
+data_in_state.data_end 0 0 0 0 0 0 0 1 1 
+
+State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state
+Name addr_in_state.addr_end addr_in_state.addr_in0 addr_in_state.addr_in1 addr_in_state.addr_in2 addr_in_state.addr_in3 addr_in_state.addr_in4 addr_in_state.addr_in5 addr_in_state.addr_in6 
+addr_in_state.addr_in6 0 0 0 0 0 0 0 0 
+addr_in_state.addr_in5 0 0 0 0 0 0 1 1 
+addr_in_state.addr_in4 0 0 0 0 0 1 0 1 
+addr_in_state.addr_in3 0 0 0 0 1 0 0 1 
+addr_in_state.addr_in2 0 0 0 1 0 0 0 1 
+addr_in_state.addr_in1 0 0 1 0 0 0 0 1 
+addr_in_state.addr_in0 0 1 0 0 0 0 0 1 
+addr_in_state.addr_end 1 0 0 0 0 0 0 1 
+
+State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|ack_state
+Name ack_state.11 ack_state.10 ack_state.01 ack_state.00 
+ack_state.00 0 0 0 0 
+ack_state.01 0 0 1 1 
+ack_state.10 0 1 0 1 
+ack_state.11 1 0 0 1 
+
+State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state
+Name main_state.data_out_ack main_state.data_read main_state.data_in_ack main_state.data_write main_state.addr_ack main_state.write_read_flag main_state.addr_read main_state.idle main_state.if_rep_start 
+main_state.idle 0 0 0 0 0 0 0 0 0 
+main_state.addr_read 0 0 0 0 0 0 1 1 0 
+main_state.write_read_flag 0 0 0 0 0 1 0 1 0 
+main_state.addr_ack 0 0 0 0 1 0 0 1 0 
+main_state.data_write 0 0 0 1 0 0 0 1 0 
+main_state.data_in_ack 0 0 1 0 0 0 0 1 0 
+main_state.data_read 0 1 0 0 0 0 0 1 0 
+main_state.data_out_ack 1 0 0 0 0 0 0 1 0 
+main_state.if_rep_start 0 0 0 0 0 0 0 1 1 
+
+State Machine - |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|sh8in_state
+Name sh8in_state.read_end sh8in_state.read_bit0 sh8in_state.read_bit1 sh8in_state.read_bit2 sh8in_state.read_bit3 sh8in_state.read_bit4 sh8in_state.read_bit5 sh8in_state.read_bit6 sh8in_state.read_bit7 sh8in_state.read_begin 
+sh8in_state.read_begin 0 0 0 0 0 0 0 0 0 0 
+sh8in_state.read_bit7 0 0 0 0 0 0 0 0 1 1 
+sh8in_state.read_bit6 0 0 0 0 0 0 0 1 0 1 
+sh8in_state.read_bit5 0 0 0 0 0 0 1 0 0 1 
+sh8in_state.read_bit4 0 0 0 0 0 1 0 0 0 1 
+sh8in_state.read_bit3 0 0 0 0 1 0 0 0 0 1 
+sh8in_state.read_bit2 0 0 0 1 0 0 0 0 0 1 
+sh8in_state.read_bit1 0 0 1 0 0 0 0 0 0 1 
+sh8in_state.read_bit0 0 1 0 0 0 0 0 0 0 1 
+sh8in_state.read_end 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|sh8out_state
+Name sh8out_state.bitend sh8out_state.bit0 sh8out_state.bit1 sh8out_state.bit2 sh8out_state.bit3 sh8out_state.bit4 sh8out_state.bit5 sh8out_state.bit6 sh8out_state.bit7 
+sh8out_state.bit7 0 0 0 0 0 0 0 0 0 
+sh8out_state.bit6 0 0 0 0 0 0 0 1 1 
+sh8out_state.bit5 0 0 0 0 0 0 1 0 1 
+sh8out_state.bit4 0 0 0 0 0 1 0 0 1 
+sh8out_state.bit3 0 0 0 0 1 0 0 0 1 
+sh8out_state.bit2 0 0 0 1 0 0 0 0 1 
+sh8out_state.bit1 0 0 1 0 0 0 0 0 1 
+sh8out_state.bit0 0 1 0 0 0 0 0 0 1 
+sh8out_state.bitend 1 0 0 0 0 0 0 0 1 
+
+State Machine - |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|main_state
+Name main_state.ackn main_state.stop main_state.data_read main_state.addr_write main_state.write_start main_state.ready main_state.idle 
+main_state.idle 0 0 0 0 0 0 0 
+main_state.ready 0 0 0 0 0 1 1 
+main_state.write_start 0 0 0 0 1 0 1 
+main_state.addr_write 0 0 0 1 0 0 1 
+main_state.data_read 0 0 1 0 0 0 1 
+main_state.stop 0 1 0 0 0 0 1 
+main_state.ackn 1 0 0 0 0 0 1 

@@ -1,0 +1,42 @@
+#FRDM: A-B-C-D
+
+#J7:A
+#J8:B
+#J10:C
+#J9:D
+
+#SINGLE: 1
+
+
+I2C_MASTER:
+    IP: __I2C_MASTER
+    CMD: ICW
+    ALT: a 
+    scl:
+        PIN: JJ1_6
+        DIRECTION: out
+    sda:
+        PIN: JJ1_8
+        DIRECTION: INOUT
+
+I2C_MASTER1:
+    IP: __I2C_MASTER
+    CMD: ICR
+    ALT: b
+    scl:
+        PIN: JJ1_6
+        DIRECTION: out
+    sda:
+        PIN: JJ1_8
+        DIRECTION: INOUT
+
+
+I2C_SLAVE_FOR_CASE:
+    IP: __I2C_SLAVE_FOR_CASE
+    CMD: ICS
+    scl_slv:
+        PIN: JJ1_6
+        DIRECTION: in
+    sda:
+        PIN: JJ1_8
+        DIRECTION: INOUT

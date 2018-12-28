@@ -1,0 +1,24 @@
+module sw_pulse(clk,rst_n,sw_en,sw_out);
+
+input clk;
+input rst_n;
+input sw_en;
+output sw_out;
+
+reg sw_signal;
+
+always @ (posedge clk or negedge rst_n) 
+begin
+	if(!rst_n)
+		begin 
+			sw_signal <= 1'b1;	//default baudrate is 115200
+		end
+	else
+		begin
+			
+		end
+end
+
+
+assign sw_out = sw_signal;
+endmodule

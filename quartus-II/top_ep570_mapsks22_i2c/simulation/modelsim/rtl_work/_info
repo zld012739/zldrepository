@@ -1,0 +1,138 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/simulation/modelsim
+vI2C_MASTER
+Z1 !s110 1499758529
+!i10b 1
+!s100 Ib?76@Z6`>BWUg:Tf>1Ck3
+I0dzn^eH_eaKSOkjhFQWMm1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1499758216
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/I2C_MASTER.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/I2C_MASTER.v
+L0 8
+Z4 OV;L;10.4b;61
+r1
+!s85 0
+31
+Z5 !s108 1499758529.000000
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/I2C_MASTER.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/I2C_MASTER.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c
+n@i2@c_@m@a@s@t@e@r
+vi2c_slave
+R1
+!i10b 1
+!s100 L:SPN3lCY15GhC=_Y3E3J2
+IS8AoXOH[gQ:^aT3]3ToNR2
+R2
+R0
+R3
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/i2c_slave.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/i2c_slave.v
+L0 7
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/i2c_slave.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/i2c_slave.v|
+!i113 1
+R6
+R7
+vi2c_slave_op
+R1
+!i10b 1
+!s100 8_7g]6jzgPc8COJ[_KR;e0
+IS1`S=<m[0Nh=dXc:MDL7J2
+R2
+R0
+R3
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/i2c_slave_op.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/i2c_slave_op.v
+L0 7
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/i2c_slave_op.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/i2c_slave_op.v|
+!i113 1
+R6
+R7
+vI2C_wr
+R1
+!i10b 1
+!s100 ^?_QJJ>SGz_`^71l1YbUS1
+IHY0g=:aUD3lF:cMA>^6FY0
+R2
+R0
+R3
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/I2C_wr.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/I2C_wr.v
+L0 8
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/I2C_wr.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/I2C_wr.v|
+!i113 1
+R6
+R7
+n@i2@c_wr
+vspeed_select
+R1
+!i10b 1
+!s100 F2NkiEPTFMz;ZQ4DX:?K03
+I1_Amk:iMH_WN`R2UXVJ`e0
+R2
+R0
+R3
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/speed_select.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/speed_select.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/speed_select.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/speed_select.v|
+!i113 1
+R6
+R7
+vtop
+!s110 1499758528
+!i10b 1
+!s100 2MaN7=6Hd4<3JL^R:fR2:2
+IcZePeF2b8iICdI=HjY:Y^0
+R2
+R0
+R3
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/top.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/top.v
+L0 4
+R4
+r1
+!s85 0
+31
+!s108 1499758528.000000
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_ep570_mapsks22_i2c/top.v|
+!i113 1
+R6
+R7

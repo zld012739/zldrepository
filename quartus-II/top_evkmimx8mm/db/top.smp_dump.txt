@@ -1,0 +1,26 @@
+
+State Machine - |top|Current
+Name Current.IDLE Current.SAVE Current.WAIT Current.S1 
+Current.IDLE 0 0 0 0 
+Current.S1 1 0 0 1 
+Current.WAIT 1 0 1 0 
+Current.SAVE 1 1 0 0 
+
+State Machine - |top|i2c_slave_reduced:i2c_slave_reduced_instance|i2c_slave_op_reduced:i2c_slave_op_reduced_inst|i2c_state
+Name i2c_state.data_0 i2c_state.data_1 i2c_state.data_2 i2c_state.data_3 i2c_state.data_4 i2c_state.data_5 i2c_state.data_6 i2c_state.data_7 i2c_state.data_act 
+i2c_state.data_7 0 0 0 0 0 0 0 0 0 
+i2c_state.data_6 0 0 0 0 0 0 1 1 0 
+i2c_state.data_5 0 0 0 0 0 1 0 1 0 
+i2c_state.data_4 0 0 0 0 1 0 0 1 0 
+i2c_state.data_3 0 0 0 1 0 0 0 1 0 
+i2c_state.data_2 0 0 1 0 0 0 0 1 0 
+i2c_state.data_1 0 1 0 0 0 0 0 1 0 
+i2c_state.data_0 1 0 0 0 0 0 0 1 0 
+i2c_state.data_act 0 0 0 0 0 0 0 1 1 
+
+State Machine - |top|i2c_slave_reduced:i2c_slave_reduced_instance|i2c_slave_op_reduced:i2c_slave_op_reduced_inst|main_state
+Name main_state.write_status main_state.read_status main_state.address_status main_state.idle_status 
+main_state.idle_status 0 0 0 0 
+main_state.address_status 0 0 1 1 
+main_state.read_status 0 1 0 1 
+main_state.write_status 1 0 0 1 

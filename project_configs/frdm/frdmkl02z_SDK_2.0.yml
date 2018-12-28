@@ -1,0 +1,194 @@
+#FRDM: A-B-C-D
+
+#J7:A
+#J8:B
+#J10:C
+#J9:D
+
+SINGLE: 0
+
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: B12
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: J8.6 --- PTA12
+    LED_OUT:
+        T_PIN: B16
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: J8.8 --- PTB7 --- LED GREEN
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: B14
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: B14
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: J8.7 --- PTB6 --- LED RED
+
+MCG:
+    CMD: MCG
+    PWM0:
+        T_PIN: B14
+        A_PIN: A39
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: B14
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: J8.7 --- PTB6 --- LED RED
+
+SHELL:
+    CMD: SHL
+    FUNC0:
+        T_PIN: B16
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: J8.8 --- PTB7 --- LED GREEN
+
+SPI_MASTER:
+    CMD: SPI
+    CLK:
+        T_PIN: A12
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+    CS:
+        T_PIN: A6
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+    MISO:
+        T_PIN: A10
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: A8
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+
+SPI_MASTER_KL:
+    IP: __SPI_MASTER_KL
+    CMD: SIO
+    ALT: a 
+    sm_sck:
+        PIN: A12
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: A8
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: A6
+        DIRECTION: OUT   
+    sm_miso:
+        PIN: A10
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A35_K70
+        DIRECTION: OUT
+
+# SPI_SLAVE:
+#     IP: __SPI_MASTER
+#     CMD: SSI
+#     ALT: a 
+#     sm_sck:
+#         PIN: A12
+#         DIRECTION: OUT
+#     sm_mosi:
+#         PIN: A8
+#         DIRECTION: OUT
+#     sm_cs_n:
+#         PIN: A6
+#         DIRECTION: OUT   
+#     sm_miso:
+#         PIN: A10
+#         DIRECTION: IN
+#     spi_receive_status:
+#         PIN: A35_K70
+#         DIRECTION: OUT
+
+# SPI_SLAVE:
+#     CMD: SSI
+#     CLK:
+#         T_PIN: A12
+#         A_PIN: SPI1_CLK_K70
+#         DIRECTION: A2T
+#     CS:
+#         T_PIN: A6
+#         A_PIN: SPI1_CS0_K70
+#         DIRECTION: A2T
+#     MISO:
+#         T_PIN: A10
+#         A_PIN: SPI1_MISO_K70
+#         DIRECTION: A2T
+#     MOSI:
+#         T_PIN: A8
+#         A_PIN: SPI1_MOSI_K70
+#         DIRECTION: T2A
+
+# POWER_MANAGER:
+#     CMD: PMH
+#     FUNC0:
+#         T_PIN: CPLD_IO3
+#         A_PIN: B58
+#         DIRECTION: A2T
+#         NOTE: J9.3 --- SW1.1
+
+# POWER_SWITCH:
+#     CMD: PMS
+#     FUNC0:
+#         T_PIN: CPLD_IO3
+#         A_PIN: B58
+#         DIRECTION: A2T
+#         NOTE: J9.3 --- SW1.1
+
+tpm_input_capture:
+    CMD: TIC
+    button:
+        T_PIN: A4
+        A_PIN: B58
+        DIRECTION: A2T
+    LED:
+        T_PIN: B14
+        A_PIN: A35
+        DIRECTION: T2A
+
+tpm_output_compare:
+    CMD: TOC
+    FUNC0:
+        T_PIN: B14
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: B14
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: J8.7 --- PTB6 --- LED RED
+
+tpm_pwm_twochannel:
+    CMD: TPT
+    FUNC0:
+        T_PIN: B14
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: B14
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: J8.7 --- PTB6 --- LED RED
+
+tpm_simple_pwm:
+    CMD: TSP
+    FUNC0:
+        T_PIN: B14
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: B14
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: J8.7 --- PTB6 --- LED RED

@@ -1,0 +1,210 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+
+ADC:
+    CMD: ADC
+    FUNC:
+        T_PIN: JJ2_10
+        A_PIN: B58
+        DIRECTION: A2T
+CMP:
+    CMD: CMP
+    LED1:
+        T_PIN: CPLD_IO2
+        A_PIN: A35
+        DIRECTION: T2A
+    FUNC:
+        T_PIN: JJ3_2
+        A_PIN: B58
+        DIRECTION: A2T
+
+CTIME_Match:
+    CMD: CTM
+    FUNC:
+        T_PIN: JJ1_14
+        A_PIN: A35
+        DIRECTION: T2A
+
+CTIME_PWM:
+    CMD: CTB
+    FUNC:
+        T_PIN: JJ1_14
+        A_PIN: A39
+        DIRECTION: T2A
+
+CTIME_PWM_LED:
+    CMD: CTC
+    FUNC:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+
+GPIO_LED:
+    CMD: GLO
+    LED1:
+        T_PIN: CPLD_IO4
+        A_PIN: A35
+        DIRECTION: T2A
+    FUNC:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+
+SCTIME:
+    CMD: SCT
+    FUNC:
+        T_PIN: JJ1_12
+        A_PIN: A39
+        DIRECTION: T2A
+
+SCTIME_PWM:
+    CMD: SDC
+    FUNC:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+
+PINT_MATCH_A:
+    CMD: PMA
+    FUNC:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+
+PINT_MATCH_B:
+    CMD: PMB
+    FUNC:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+
+UART_SYNC:
+    CMD: URT
+    FUNC:
+        T_PIN_1: JJ1_4
+        T_PIN_2: JJ1_2
+        DIRECTION: T2T
+
+
+I2C_MASTER_POLLING:
+    IP: __I2C_SLAVE_FOR_LPC8_POLLING
+    CMD: ISS
+    ALT: a
+    scl_slv_polling:
+        PIN: CPLD_IO100
+        DIRECTION: IN
+    sda:
+        PIN: CPLD_IO98
+        DIRECTION: INOUT
+        
+I2C_MASTER_INTERRUPT:
+    IP: __I2C_SLAVE_FOR_LPC8_POLLING
+    CMD: ISI
+    ALT: b
+    scl_slv_polling:
+        PIN: CPLD_IO100
+        DIRECTION: IN
+    sda:
+        PIN: CPLD_IO98
+        DIRECTION: INOUT     
+        
+        
+DSPI_B2B_MASTER:
+    IP: __SPI_SLAVE_CPHA0
+    CMD: SBM
+    ALT: a
+    ss_sck_cpha0:
+        PIN: JJ1_6
+        DIRECTION: IN
+    ss_mosi_cpha0:
+        PIN: JJ1_4
+        DIRECTION: IN
+    ss_ssel_cpha0:
+        PIN: JJ1_8
+        DIRECTION: IN
+    ss_miso_cpha0:
+        PIN: JJ1_2
+        DIRECTION: OUT
+
+DSPI_B2B_SLAVE:
+    IP: __SPI_MASTER
+    CMD: SBS
+    ALT: a
+    sm_sck:
+        PIN: JJ1_6
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: JJ1_4
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: JJ1_8
+        DIRECTION: OUT
+    sm_miso:
+        PIN: JJ1_2
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A35_K70
+        DIRECTION: OUTs
+
+DSPI_B2B_SLAVE_POLLING:
+    IP: __SPI_MASTER
+    CMD: SBP
+    ALT: b
+    sm_sck:
+        PIN: JJ1_6
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: JJ1_4
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: JJ1_8
+        DIRECTION: OUT
+    sm_miso:
+        PIN: JJ1_2
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A35_K70
+        DIRECTION: OUTs        
+   
+SWA:
+    CMD: SWA
+    BUTTON:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+
+SWB:
+    CMD: SWB
+    BUTTON:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+SWC:
+    CMD: SWC
+    BUTTON:
+        T_PIN: CPLD_IO5
+        A_PIN: B58
+        DIRECTION: A2T
+
+RSB:
+    CMD: RSB
+    BUTTON:
+        T_PIN: CPLD_IO5
+        A_PIN: B58
+        DIRECTION: A2T

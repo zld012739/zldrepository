@@ -1,0 +1,160 @@
+#FRDM: A-B-C-D
+SINGLE: 0
+
+CMP:
+    CMD: CMP
+    BUTTON:
+        T_PIN: B9
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: J1.9(B9)
+    GREEN_LED:
+        T_PIN: CPLD_IO4
+        A_PIN: A35
+        DIRECTION: T2A
+
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    BUTTON:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+
+GPIO_led_output:
+    CMD: GLO
+    RED_LED0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    RED_LED1:
+        T_PIN: CPLD_IO3
+        A_PIN:  A40
+        DIRECTION: T2A
+        #d7.1 --- red led
+
+POWER_MANAGER:
+    CMD: PMH
+    BUTTON:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW1.2
+
+LPTMER_EXAMPLE:
+    CMD: LPT
+    RED_LED:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    RED_LED1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+        #red led d7.1
+
+MCG:
+    CMD: MCG
+    RED_LED:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    RED_LED1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+
+SPI:
+    CMD: SPI
+    CS:
+        T_PIN_1: B7
+        T_PIN_2: A6
+        DIRECTION: T2T
+    CLK:
+        T_PIN_1: C9
+        T_PIN_2: A12
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: B9
+        T_PIN_2: A8
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: A10
+        T_PIN_2: B11
+        DIRECTION: T2T
+
+SHELL:
+    CMD: SHL
+    GREEN_LED:
+        T_PIN: CPLD_IO4
+        A_PIN: A35
+        DIRECTION: T2A
+
+tpm_input_capture:
+    CMD: TIC
+    INPUT_PIN:
+        T_PIN: C1
+        A_PIN: B58
+        DIRECTION: A2T
+
+tpm_output_compare:
+    CMD: TOC
+    GREEN_LED0:
+        T_PIN: CPLD_IO4
+        A_PIN: A39
+        DIRECTION: T2A
+    GREEN_LED1:
+        T_PIN: CPLD_IO4
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: D7.4 PTE31
+
+tpm_pwm_twp_channel:
+    CMD: TPT
+    GREEN_LED0:
+        T_PIN: CPLD_IO4
+        A_PIN: A39
+        DIRECTION: T2A
+    GREEN_LED1:
+        T_PIN: CPLD_IO4
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: D7.4 PTE31
+
+
+tpm_simple_pwm:
+    CMD: TSP
+    GREEN_LED0:
+        T_PIN: CPLD_IO4
+        A_PIN: A39
+        DIRECTION: T2A
+    GREEN_LED1:
+        T_PIN: CPLD_IO4
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: D7.4 PTE31
+
+#IO5 --Touch Pad
+#Green led -- IO4
+TSI:
+    CMD: TSI
+    # TOUCH_PAD:
+    #     T_PIN: CPLD_IO5
+    #     A_PIN: A35
+    #     DIRECTION: A2T
+    #connect directly
+    RED_LED0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    RED_LED1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: D7.1 PTE29
+
+RTOS_SPI:
+    CMD: FRS
+    DATA:
+        T_PIN_1: B9
+        T_PIN_2: B11
+        DIRECTION: T2T

@@ -1,0 +1,275 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: B58
+        DIRECTION: A2T
+
+SPI_B2B_MASTER:
+    CMD: SBM
+    SCK:
+        T_PIN: JJ2_8
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+    CS:
+        T_PIN: JJ2_16
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+    MISO:
+        T_PIN: JJ2_4
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: JJ2_6
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+SPI_B2B_SLAVE:
+    CMD: SBS
+    SCK:
+        T_PIN: JJ2_8
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: A2T
+    CS:
+        T_PIN: JJ2_16
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: A2T
+    MISO:
+        T_PIN: JJ2_6
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: JJ2_4
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+
+# SPI:
+#     CMD: SPI
+#     SCK:
+#         T_PIN_1: JJ1_6
+#         T_PIN_2: JJ2_8
+#         DIRECTION: T2T
+#     CS:
+#         T_PIN_1: JJ1_14
+#         T_PIN_2: JJ2_16
+#         DIRECTION: T2T
+#     MISO:
+#         T_PIN_1: JJ2_4
+#         T_PIN_2: CPLD_IO50
+#         DIRECTION: T2T
+#     MOSI:
+#         T_PIN_1: JJ3_8
+#         T_PIN_2: JJ2_6
+#         DIRECTION: T2T
+SPI:
+    CMD: SPI
+    SCK:
+        T_PIN_1: JJ1_6
+        T_PIN_2: JJ2_8
+        DIRECTION: T2T
+    CS:
+        T_PIN_1: JJ3_6
+        T_PIN_2: JJ2_16
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: JJ2_4
+        T_PIN_2: CPLD_IO50
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: JJ3_8
+        T_PIN_2: JJ2_6
+        DIRECTION: T2T
+# freertos_tickless:
+    # CMD: FRT
+    # FUNC0:
+        # T_PIN: JJ2_17
+        # A_PIN: IRQ_E_K70
+        # DIRECTION: A2T
+
+# utick_wakeup:
+    # CMD: UTW
+    # FUNC0:
+        # T_PIN: JJ2_8
+        # A_PIN: PWM0_K70
+        # DIRECTION: T2A
+    # FUNC1:
+        # T_PIN: JJ2_8
+        # A_PIN: PWM1_K70
+        # DIRECTION: T2A
+
+# SHELL:
+    # CMD: SHL
+    # CLK:
+        # T_PIN: JJ2_8
+        # A_PIN: A35
+        # DIRECTION: T2A
+
+POWERDOWN_DEMO:
+    CMD: PDD
+    FUNC0:
+        T_PIN: JJ2_10
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+
+# sctimer_16bit_counter:
+    # CMD: SCT
+    # FUNC0:
+        # T_PIN: JJ2_10
+        # A_PIN: PWM0_K70
+        # DIRECTION: T2A
+    # FUNC1:
+        # T_PIN: JJ2_10
+        # A_PIN: PWM1_K70
+        # DIRECTION: T2A
+
+# sctimer_pwm_with_dutycyle_change:
+    # CMD: SDC
+    # FUNC0:
+        # T_PIN: CPLD_IO2
+        # A_PIN: PWM0_K70
+        # DIRECTION: T2A
+    # FUNC1:
+        # T_PIN: CPLD_IO2
+        # A_PIN: PWM1_K70
+        # DIRECTION: T2A
+
+# sctimer_simple_pwm:
+    # CMD: SSP
+    # FUNC0:
+        # T_PIN: JJ2_10
+        # A_PIN: PWM0_K70
+        # DIRECTION: T2A
+    # FUNC1:
+        # T_PIN: JJ2_10
+        # A_PIN: PWM1_K70
+        # DIRECTION: T2A
+
+# sctimer_multi_state_pwm:
+    # CMD: SMS
+    # FUNC0:
+        # T_PIN: JJ2_10
+        # A_PIN: PWM0_K70
+        # DIRECTION: T2A
+    # FUNC1:
+        # T_PIN: JJ2_10
+        # A_PIN: PWM1_K70
+        # DIRECTION: T2A
+    # FUNC2:
+        # T_PIN: JJ2_17
+        # A_PIN: IRQ_E_K70
+        # DIRECTION: A2T
+CTIMER_MATCH:
+    CMD: CTM
+    FUNC0:
+        T_PIN: JJ2_12
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_12
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+# CTIMER_MATCH_INTERRUPT:
+    # CMD: CMI
+    # FUNC0:
+        # T_PIN: JJ2_10
+        # A_PIN: PWM0_K70
+        # DIRECTION: T2A
+    # FUNC1:
+        # T_PIN: JJ2_10
+        # A_PIN: PWM1_K70
+        # DIRECTION: T2A
+PWM_OUTPUT:
+    CMD: PWO
+    FUNC0:
+        T_PIN: JJ2_4
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_4
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+# # CTIMER_MATCH_CAPTURE:
+# #     IP: __PWM_CAPTURE
+# #     CMD: CMC
+# #     pwm_input:
+# #         PIN: JJ1_12
+# #         DIRECTION: in
+# #     rs232_tx:
+# #         PIN: RXD_K70
+# #         DIRECTION: out
+
+# CTIMER_PWM:
+    # CMD: CTP
+    # FUNC0:
+        # T_PIN: JJ2_10
+        # A_PIN: PWM0_K70
+        # DIRECTION: T2A
+    # FUNC1:
+        # T_PIN: JJ2_10
+        # A_PIN: PWM1_K70
+        # DIRECTION: T2A
+# CTIMER_PWM_CAPTURE:
+#     IP: __PWM_CAPTURE
+#     CMD: CPC
+#     pwm_input:
+#         PIN: JJ2_15
+#         DIRECTION: in
+pint:
+    CMD: PPI
+    FUNC0:
+        T_PIN: JJ2_6
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: JJ2_16
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+gint:
+    CMD: GIN
+    FUNC0:
+        T_PIN: JJ2_6
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: JJ2_4
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_4
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+    FUNC2:
+        T_PIN: JJ2_10
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+
+IR_RECIEVE:
+    IP: __IR_RECIEVE
+    CMD: IRR
+    ir_sda:
+        PIN: CPLD_IO2
+        DIRECTION: in
+    ir_recieve_status:
+        PIN: A35_K70
+        DIRECTION: out

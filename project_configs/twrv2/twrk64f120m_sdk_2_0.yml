@@ -1,0 +1,107 @@
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: B58
+        DIRECTION: A2T
+FTM_SIMPLE_PWM:
+    CMD: FTS
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+        # NOTE:ftm_simple_pwm_example,CPLD_IO2 CONNECT TO PTE6
+FTM_PWM_TWOCHANNEL:
+    CMD: FTP
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+        # NOTE:ftm_pwm_twochannel_example,CPLD_IO2 CONNECT TO PTE6
+FTM_COMBINE_PWM:
+    CMD: FTC
+    FUNC0:
+        T_PIN: A44
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A44
+        A_PIN: A40
+        DIRECTION: T2A
+        # NOTE:ftm_combine_pwm_example,A44 CONNECT TO PTE6
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: A44
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A44
+        A_PIN: A40
+        DIRECTION: T2A
+MCG:
+    CMD: MCG
+    FUNC0:
+        T_PIN: A44
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A44
+        A_PIN: A40
+        DIRECTION: T2A
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A35
+        DIRECTION: T2A
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: B58
+        DIRECTION: A2T
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: A58
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: A58-SW1
+POWER_SWITCH:
+    CMD: PMS
+    FUNC0:
+        T_PIN: A58
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: A58-SW1
+DSPI_MASTER:
+    CMD: SPI
+    CLK:
+        T_PIN_1: B64
+        T_PIN_2: B7
+        DIRECTION: T2T
+    CS:
+        T_PIN_1: B63
+        T_PIN_2: B9
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: B45
+        T_PIN_2: B11
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: B10
+        T_PIN_2: B44
+        DIRECTION: T2T

@@ -1,0 +1,207 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | J2
+#|  B   | (8*2)  |   JJ_1   | J1
+#|  C   | (5*2)  |   JJ_3   | J4
+#|  D   | (8*2)  |   JJ_4   | J3
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+
+erpc_spi_server:
+    CMD: ESS
+    DSPI_OUT:
+        T_PIN: CPLD_IO52
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+        NOTE: dspi salve out
+    DSPI_IN:
+        T_PIN: CPLD_IO51
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+        NOTE: dspi salve in
+    DSPI_CLK:
+        T_PIN: CPLD_IO53
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: A2T
+        NOTE: SCK
+    DSPI_PCS:
+        T_PIN: CPLD_IO54
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: A2T
+        NOTE: dspi pcs
+    SLAVE_ACK:
+        T_PIN: JJ1_8
+        A_PIN: IRQ_E_K70
+        DIRECTION: T2A
+        NOTE: CPLD_IO5 to B58, FRDMCPLD J14 4 fly to J15-6
+
+erpc_spi_client:
+    CMD: ESC
+    DSPI_OUT:
+        T_PIN: CPLD_IO52
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+        NOTE: dspi salve out
+    DSPI_IN:
+        T_PIN: CPLD_IO51
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+        NOTE: dspi salve in
+    DSPI_CLK:
+        T_PIN: CPLD_IO53
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+        NOTE: SCK
+    DSPI_PCS:
+        T_PIN: CPLD_IO54
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+        NOTE: dspi pcs
+    SLAVE_ACK:
+        T_PIN: JJ1_8
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+        NOTE: CPLD_IO5 to B58, populate the proto R11, R12. FRDMCPLD J14 4 fly to J15-6
+
+FLEXIO_PWM:
+    CMD: FWM
+    FUNC0:
+        T_PIN: CPLD_IO100
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO100
+        A_PIN: A40
+        DIRECTION: T2A
+
+FLEXIO_SPI_MASTER:
+    CMD: FSM
+    CLK:
+        T_PIN_1: CPLD_IO98
+        T_PIN_2: CPLD_IO53
+        DIRECTION: T2T
+    CS:
+        T_PIN_1: CPLD_IO100
+        T_PIN_2: CPLD_IO54
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: CPLD_IO3
+        T_PIN_2: CPLD_IO51
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: CPLD_IO52
+        T_PIN_2: CPLD_IO4
+        DIRECTION: T2T
+
+FLEXIO_SPI_SLAVE:
+    CMD: FSS
+    CLK:
+        T_PIN_1: CPLD_IO53
+        T_PIN_2: CPLD_IO98
+        DIRECTION: T2T
+    CS:
+        T_PIN_1: CPLD_IO54
+        T_PIN_2: CPLD_IO100
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: CPLD_IO3
+        T_PIN_2: CPLD_IO51
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: CPLD_IO52
+        T_PIN_2: CPLD_IO4
+        DIRECTION: T2T
+
+FLEXIO_UART:
+    IP: __UART8BIT
+    CMD: UST
+    ALT: a
+    rs232_tx8to8:
+        PIN: CPLD_IO3
+        DIRECTION: out
+    rs232_rx8to8:
+        PIN: CPLD_IO4
+        DIRECTION: in
+    compara_error:
+        PIN: A35_K70    
+        DIRECTION: out
+
+FTM_QUAD_DECODER:
+    IP: __ENC
+    CMD: FQD
+    pha_out:
+        PIN: CPLD_IO5
+        DIRECTION: out
+    phb_out:
+        PIN: CPLD_IO14
+        DIRECTION: out
+
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+
+SPI_MASTER:
+    IP: __SPI_SLAVE_B2B
+    CMD: SPS
+    ALT: a 
+    ss_sck_b2b:
+        PIN: CPLD_IO53
+        DIRECTION: IN
+    ss_mosi_b2b:
+        PIN: CPLD_IO52
+        DIRECTION: IN
+    ss_ssel_b2b:
+        PIN: CPLD_IO54
+        DIRECTION: IN   
+    ss_miso_b2b:
+        PIN: CPLD_IO51
+        DIRECTION: OUT
+    spi_slave_result_b2b:
+        PIN: A3
+        DIRECTION: OUT
+
+SPI_SLAVE:
+    IP: __SPI_MASTER
+    CMD: SIO
+    ALT: a 
+    sm_sck:
+        PIN: CPLD_IO53
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: CPLD_IO51
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: CPLD_IO54
+        DIRECTION: OUT   
+    sm_miso:
+        PIN: CPLD_IO52
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A3
+        DIRECTION: OUT
+
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: CPLD_IO50
+        A_PIN: B58
+        DIRECTION: A2T

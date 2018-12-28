@@ -1,0 +1,115 @@
+#FRDM: A-B-C-D
+SINGLE: 0
+
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: B7
+        A_PIN: B58
+        DIRECTION: A2T
+
+FTM:
+    CMD: FTM
+    PWM0:
+        T_PIN: B4
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: B4
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+GPIO:
+    CMD: GPI
+    FUNC0:
+        T_PIN: B7
+        A_PIN: B58
+        DIRECTION: A2T
+
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: B14
+        A_PIN: B58
+        DIRECTION: A2T
+
+DSPI_MASTER:
+    # CMD: SPI
+    # CLK:
+    #     T_PIN: A12
+    #     A_PIN: SPI1_CLK_K70
+    #     DIRECTION: T2A
+    # CS:
+    #     T_PIN: A6
+    #     A_PIN: SPI1_CS0_K70
+    #     DIRECTION: T2A
+    # MISO:
+    #     T_PIN: A10
+    #     A_PIN: SPI1_MISO_K70
+    #     DIRECTION: A2T
+    # MOSI:
+    #     T_PIN: A8
+    #     A_PIN: SPI1_MOSI_K70
+    #     DIRECTION: T2A
+    IP: __SPI_SLAVE
+    CMD: SPI
+    ALT: a 
+    ss_sck:
+        PIN: A12
+        DIRECTION: IN
+    ss_mosi:
+        PIN: A8
+        DIRECTION: IN
+    ss_ssel:
+        PIN: A6
+        DIRECTION: IN   
+    ss_miso:
+        PIN: A10
+        DIRECTION: OUT
+    spi_slave_result:
+        PIN: A35_K70
+        DIRECTION: OUT 
+
+DSPI_SLAVE:
+    # CMD: SSI
+    # CLK:
+    #     T_PIN: A12
+    #     A_PIN: SPI1_CLK_K70
+    #     DIRECTION: A2T
+    # CS:
+    #     T_PIN: A6
+    #     A_PIN: SPI1_CS0_K70
+    #     DIRECTION: A2T
+    # MISO:
+    #     T_PIN: A10
+    #     A_PIN: SPI1_MISO_K70
+    #     DIRECTION: A2T
+    # MOSI:
+    #     T_PIN: A8
+    #     A_PIN: SPI1_MOSI_K70
+    #     DIRECTION: T2A
+    IP: __SPI_MASTER
+    CMD: SSI
+    ALT: a
+    sm_sck:
+        PIN: A12
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: A10
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: A6
+        DIRECTION: OUT   
+    sm_miso:
+        PIN: A8
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A35_K70
+        DIRECTION: OUT
+
+WDOG:
+    CMD: WDG
+    FUNC0:
+        T_PIN: B7
+        A_PIN: B58
+        DIRECTION: A2T

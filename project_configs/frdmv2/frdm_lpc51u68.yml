@@ -1,0 +1,302 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+POWER_MANAGER:
+    CMD: PMS
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+# I2C_MASTER:
+    # IP: __I2C_MASTER
+    # CMD: ICW
+    # ALT: a 
+    # scl:
+        # PIN: CPLD_IO100
+        # DIRECTION: OUT
+    # receive_status:
+        # PIN: A35_K70
+        # DIRECTION: OUT
+    # sda:
+        # PIN: CPLD_IO98
+        # DIRECTION: INOUT
+
+# I2C_MASTER1:
+    # IP: __I2C_MASTER
+    # CMD: ICR
+    # ALT: b 
+    # scl:
+        # PIN: CPLD_IO100
+        # DIRECTION: OUT
+    # receive_status:
+        # PIN: A35_K70
+        # DIRECTION: OUT
+    # sda:
+        # PIN: CPLD_IO98
+        # DIRECTION: INOUT
+
+shell:
+    CMD: LDT
+    FUNC0:
+        T_PIN: JJ3_5
+        A_PIN: A35
+        DIRECTION: T2A
+
+shell1:
+    CMD: LDW
+    FUNC0:
+        T_PIN: JJ3_8
+        A_PIN: A35
+        DIRECTION: T2A
+        
+shell2:
+    CMD: LDO
+    FUNC0:
+        T_PIN: JJ1_12
+        A_PIN: A35
+        DIRECTION: T2A
+
+# power_manager_lpc:
+    # CMD: PMR
+    # FUNC0:
+        # T_PIN: JJ4_5
+        # A_PIN: IRQ_E_K70
+        # DIRECTION: A2T
+
+# power_manager_lpc1:
+    # CMD: PMS
+    # FUNC0:
+        # T_PIN: CPLD_IO2
+        # A_PIN: IRQ_E_K70
+        # DIRECTION: A2T
+
+sctimer_16bit_counter:
+    CMD: SCT
+    FUNC0:
+        T_PIN: JJ1_12
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_12
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+sctimer_pwm_with_dutycyle_change:
+    CMD: SDC
+    FUNC0:
+        T_PIN: JJ3_8
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ3_8
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+utick_wakeup:
+    CMD: UTW
+    FUNC0:
+        T_PIN: JJ3_8
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ3_8
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+sctimer_simple_pwm:
+    CMD: SSP
+    FUNC0:
+        T_PIN: JJ1_12
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_12
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+sctimer_multi_state_pwm:
+    CMD: SMS
+    FUNC0:
+        T_PIN: JJ1_12
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_12
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+    FUNC2:
+        T_PIN: CPLD_IO2
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+
+ct32b:
+    CMD: CTB
+    FUNC0:
+        T_PIN: JJ1_12
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_12
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+  
+gint:
+    CMD: GIN
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    FUNC2:
+        T_PIN: CPLD_IO4
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+        
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+
+pint_pin_interrupt:
+    CMD: PPI
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    FUNC2:
+        T_PIN: CPLD_IO4
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+        
+SPI_B2B_MASTER:
+    CMD: SBM
+    CLK:
+        T_PIN: CPLD_IO5
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+    CS:
+        T_PIN: CPLD_IO4
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+    MISO:
+        T_PIN: CPLD_IO54
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: CPLD_IO14
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+        
+SPI_B2B_SLAVE:
+    CMD: SBS
+    CLK:
+        T_PIN: CPLD_IO5
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: A2T
+    CS:
+        T_PIN: CPLD_IO4
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: A2T
+    MISO:
+        T_PIN: CPLD_IO54
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: T2A
+    MOSI:
+        T_PIN: CPLD_IO14
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: A2T
+        
+SPI:
+    CMD: SPI
+    CLK:
+        T_PIN_1: JJ1_9
+        T_PIN_2: CPLD_IO5
+        DIRECTION: T2T
+    CS:
+        T_PIN_1: JJ2_6
+        T_PIN_2: CPLD_IO4
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: CPLD_IO54
+        T_PIN_2: JJ2_10
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: JJ2_8
+        T_PIN_2: CPLD_IO14
+        DIRECTION: T2T
+
+PM1:
+    CMD: PMA
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+PM2:
+    CMD: PMB
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    # FUNC1:
+        # T_PIN: CPLD_IO3
+        # A_PIN: IRQ_E_K70
+        # DIRECTION: A2T
+    # FUNC2:
+        # T_PIN: CPLD_IO4
+        # A_PIN: IRQ_E_K70
+        # DIRECTION: A2T
+PM3:
+    CMD: PMC
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    # FUNC1:
+        # T_PIN_1: CPLD_IO53
+        # T_PIN_2: CPLD_IO3
+        # DIRECTION: T2T
+    # FUNC2:
+        # T_PIN_1: CPLD_IO53
+        # T_PIN_2: CPLD_IO4
+        # DIRECTION: T2T
+
+PM4:
+    CMD: PMD
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    # FUNC2:
+        # T_PIN_1: CPLD_IO53
+        # T_PIN_2: CPLD_IO4
+        # DIRECTION: T2T

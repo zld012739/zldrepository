@@ -1,0 +1,56 @@
+SPI_MASTER:
+    IP: __SPI_SLAVE_B2B
+    CMD: SPS
+    ALT: a
+    ss_sck_b2b:
+        PIN: B48
+        DIRECTION: IN
+    ss_mosi_b2b:
+        PIN: B45
+        DIRECTION: IN
+    ss_ssel_b2b:
+        PIN: B46
+        DIRECTION: IN
+    ss_miso_b2b:
+        PIN: B44
+        DIRECTION: OUT
+    spi_slave_result_b2b:
+        PIN: A39
+        DIRECTION: OUT
+
+SPI_INTERRUPT_B2B_MASTER:
+    IP: __SPI_SLAVE_CPHA0
+    CMD: SIM
+    ALT: a
+    ss_sck_cpha0:
+        PIN: B48
+        DIRECTION: IN
+    ss_mosi_cpha0:
+        PIN: B45
+        DIRECTION: IN
+    ss_ssel_cpha0:
+        PIN: B46
+        DIRECTION: IN
+    ss_miso_cpha0:
+        PIN: B44
+        DIRECTION: OUT
+
+SPI_SLAVE:
+    IP: __SPI_MASTER
+    CMD: SIO
+    ALT: a
+    sm_sck:
+        PIN: B48
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: B44
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: B46
+        DIRECTION: OUT
+    sm_miso:
+        PIN: B45
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A39
+        DIRECTION: OUT

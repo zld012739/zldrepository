@@ -1,0 +1,354 @@
+EWM:
+    CMD: EWM
+    SW1:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW1 pin 1
+        
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    SW1:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+
+CMP:
+    CMD: CMP
+    FUNC:
+        T_PIN: B45
+        A_PIN: B58
+        DIRECTION: A2T
+    LED:
+        T_PIN: CPLD_IO3
+        A_PIN: A35
+        DIRECTION: T2A
+        
+POWER_MANAGER:
+    CMD: PMH
+    SW1:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW1 pin 1
+    
+DSPI_MASTER:
+    CMD: SPI
+    CLK:
+        T_PIN: B48
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+        NOTE: PTD1
+    CS:
+        T_PIN: B46
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+        NOTE: PTD0
+    MISO:
+        T_PIN: B44
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+        NOTE: PTC7
+    MOSI:
+        T_PIN: B45
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+        NOTE: PTC6
+
+DSPI_SLAVE:
+    CMD: SSI
+    CLK:
+        T_PIN: B48
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: A2T
+    CS:
+        T_PIN: B46
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: A2T
+    MISO:
+        T_PIN: B44
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: B45
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+
+WDOG:
+    CMD: WDG
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW1 pin 1
+
+TSI:
+    CMD: TSI
+    # DO NOT ENPULL OR DISPULL THROUGH CPLD it will not stable
+    # FUNC0:
+        # T_PIN: CPLD_IO3
+        # A_PIN: A35
+        # DIRECTION: A2T
+        # NOTE: Weld from TSI touch pad
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+
+MCG:
+    CMD: MCG
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+        
+SHELL:
+    CMD: SHL
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: CPLD_IO2 to R49
+        
+FTM_QUAD_DECODER:
+    IP: __ENC
+    CMD: FQD
+    pha_out:
+        PIN: A34
+        DIRECTION: out
+    phb_out:
+        PIN: A33
+        DIRECTION: out
+
+FTM_OUTPUT_COMPARE:
+    CMD: FOC
+    FUNC0:
+        T_PIN: A34
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A34
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_DUAL_EDGE_CAPTURE:
+    CMD: FDC
+    FUNC:
+        T_PIN: A38
+        A_PIN: A40
+        DIRECTION: A2T
+        
+TPM_DUAL_EDGE_CAPTURE:
+    CMD: TDC
+    FUNC:
+        T_PIN: A34
+        A_PIN: A40
+        DIRECTION: A2T
+
+FTM_INPUT_CAPTURE:
+    CMD: FIC
+    FUNC:
+        T_PIN: A34
+        A_PIN: B58
+        DIRECTION: A2T
+            
+FLEXIO_PWM:
+    CMD: FWM
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO4
+        A_PIN: A40
+        DIRECTION: T2A
+
+FLEXIO_SPI_Master:
+    CMD: FSM
+    CLK:
+        T_PIN_1: CPLD_IO5
+        T_PIN_2: B48
+        DIRECTION: T2T
+        NOTE: PTB10 -- B70 J3.8
+    CS:
+        T_PIN_1: CPLD_IO14
+        T_PIN_2: B46
+        DIRECTION: T2T
+        NOTE: PTB11 -- B69 J3.10
+    MOSI:
+        T_PIN_1: A38
+        T_PIN_2: B44
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: B45
+        T_PIN_2: A37
+        DIRECTION: T2T
+
+FLEXIO_SPI_Slave:
+    CMD: FSS
+    CLK:
+        T_PIN_1: B48
+        T_PIN_2: CPLD_IO5
+        DIRECTION: T2T
+        NOTE: PTB10 -- B70 J3.8
+    CS:
+        T_PIN_1: B46
+        T_PIN_2: CPLD_IO14
+        DIRECTION: T2T
+        NOTE: PTB11 -- B69 J3.10
+    MOSI:
+        T_PIN_1: B45
+        T_PIN_2: A37
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: A38
+        T_PIN_2: B44
+        DIRECTION: T2T
+
+# FLEXIO_UART:
+    # CMD: FUT
+    # TX:
+        # T_PIN_1: CPLD_IO14
+        # T_PIN_2: A41
+        # DIRECTION: T2T
+    # RX:
+        # T_PIN_1: A42
+        # T_PIN_2: CPLD_IO5
+        # DIRECTION: T2T
+        # NOTE: PTB10-J3.8(IO5), PTB11-J3.10(IO14),  PTA15(A41), PTA14(A42)
+
+# FLEXIO_I2S_Master:
+     # CMD: FIM
+     # TX:
+        # T_PIN_1: A38
+        # T_PIN_2: CPLD_IO50
+        # DIRECTION: T2T
+        # NOTE: CPLD_IO50(T)(A25)
+     # RX:
+        # T_PIN_1: CPLD_IO51
+        # T_PIN_2: A37
+        # DIRECTION: T2T
+        # NOTE: CPLD_IO51(R5)(A24)
+     # CLK:
+        # T_PIN_1: CPLD_IO5
+        # T_PIN_2: CPLD_IO52
+        # DIRECTION: T2T
+        # NOTE: CPLD_IO52(R4)(A22)
+     # LRCLK:
+        # T_PIN_1: CPLD_IO14
+        # T_PIN_2: CPLD_IO49
+        # DIRECTION: T2T
+        # NOTE: CPLD_IO49(T)(A23)
+
+# FLEXIO_I2S:
+    # CMD: FIS
+    # TX:
+        # T_PIN_1: A37
+        # T_PIN_2: CPLD_IO50
+        # DIRECTION: T2T
+        # NOTE: CPLD_IO50(T)(A25)
+    # RX:
+        # T_PIN_1: CPLD_IO51
+        # T_PIN_2: A38
+        # DIRECTION: T2T
+        # NOTE: CPLD_IO51(R5)(A24)  
+    # CLK:
+        # T_PIN_1: CPLD_IO5
+        # T_PIN_2: CPLD_IO52
+        # DIRECTION: T2T
+        # NOTE: CPLD_IO52(R4)(A22)
+    # LRCLK:
+        # T_PIN_1: CPLD_IO14
+        # T_PIN_2: CPLD_IO49
+        # DIRECTION: T2T
+        # NOTE: CPLD_IO49(T)(A23)
+        
+# TEST_UART_ECHO:
+     # CMD: TUE
+     # TX:
+        # T_PIN_1: A42
+        # T_PIN_2: A41
+        # DIRECTION: T2T
+        # NOTE: Fly wire from J21 pin3(B67/RX) to J8-pin1(CPLD_IO4)
+     # RX:
+     #    T_PIN: A41
+     #    A_PIN: CPLD_IO5
+     #    DIRECTION: A2T
+     #    NOTE: fly wire from J21 pin4(B68/TX) to j8-pin3 (CPLD_IO5)
+
+#FlexIO_I2C:
+#    CMD:
+#    FlexIO_I2C:
+#        T_PIN: B70, B69
+#        T_PIN: B50, B51
+#        DIRECTION:
+#        NOTE:  PTB10-J3.8, PTB11-J3.10, PTC10-J, PTC11
+#I2C:
+#    CMD: I2C
+#    I2C_COMM:
+#        T_PIN: A7, A8,
+#        A_PIN: K70_I2C_CLK, K70_I2C_SDA
+#        DIRECTION:
+#        NOTE: PTD8, PTD9
+#    I2C_RTOS:
+#        T_PIN: A7, A8, B50, B51
+#        A_PIN: K70_I2C_CLK, K70_I2C_SDA
+#        DIRECTION:
+#        NOTE: PTD8, PTD9, PTC10, PTC11
+#DAC:
+#    CMD:
+#    DAC_Example:
+#        T_PIN: A32
+#        T_PIN: ADC0_K70
+#        DIRECTION: T2T
+#        NOTE: A32(DAC0_OUT)
+#    DAC_ADC_Demo:
+#        NOTE: No need
+
+UST:
+    IP: __UART8BIT
+    CMD: UST
+    ALT: a
+    rs232_tx8to8:
+        PIN: B8
+        DIRECTION: out
+    rs232_rx8to8:
+        PIN: B7
+        DIRECTION: in
+    compara_error:
+        PIN: A35_K70
+        DIRECTION: out
+        
+CMSIS_DSPI_*_VALIDATION:
+    CMD: DSV
+    FUNC0:
+        T_PIN_1: B45    
+        T_PIN_2: B44
+        DIRECTION: T2T
+        
+CMSIS_LPUART_*_VALIDATION:
+    CMD: LUV
+    FUNC0:
+        T_PIN_1: A42
+        T_PIN_2: A41
+        DIRECTION: T2T
+        

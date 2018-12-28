@@ -1,0 +1,11 @@
+Fitter Status : Successful - Thu Jun 29 12:46:31 2017
+Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Lite Edition
+Revision Name : top
+Top-level Entity Name : top
+Family : MAX II
+Device : EPM570T100C5
+Timing Models : Final
+Total logic elements : 347 / 570 ( 61 % )
+Total pins : 41 / 76 ( 54 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

@@ -1,0 +1,174 @@
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: JJ1_10
+        A_PIN: B58
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: JJ1_7
+        A_PIN: A35
+        DIRECTION: T2A
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+
+FTM_PWM_TWOCHANNEL:
+    CMD: FPT
+    FUNC0:
+        T_PIN: JJ1_15
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_15
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_COMBINE_PWM:
+    CMD: FCP
+    FUNC0:
+        T_PIN: JJ1_15
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_15
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_INPUT_CAPTURE:
+    CMD: FIC
+    FUNC0:
+        T_PIN: JJ1_9
+        A_PIN: B58
+        DIRECTION: A2T
+
+FTM_DUALEDGE_CAPTURE:
+    CMD: FDC
+    FUNC0:
+        T_PIN: JJ1_12
+        A_PIN: A40
+        DIRECTION: A2T
+
+FTM_SIMPLE_PWM:
+    CMD: FSP
+    FUNC0:
+        T_PIN: JJ1_7
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_7
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_OUTPUT_COMPARE:
+    CMD: FOC
+    FUNC0:
+        T_PIN: JJ1_9
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_9
+        A_PIN: A40
+        DIRECTION: T2A
+
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: JJ1_7
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_7
+        A_PIN: A40
+        DIRECTION: T2A
+MCG:
+    CMD: MCG
+    FUNC0:
+        T_PIN: JJ1_7
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_7
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+SHELL:
+    CMD: SHL
+    CLK:
+        T_PIN: JJ1_15
+        A_PIN: A35
+        DIRECTION: T2A
+
+TPM_COMBINE_PWM:
+    CMD: TCP
+    FUNC0:
+        T_PIN: CPLD_IO98
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO98
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+TPM_DUALEDGE_CAPTURE:
+    CMD: TDC
+    FUNC0:
+        T_PIN: CPLD_IO98
+        A_PIN: PWM0_K70
+        DIRECTION: A2T
+
+TPM_INPUT_CAPTURE:
+    CMD: TIC
+    FUNC0:
+        T_PIN: CPLD_IO98
+        A_PIN: B58
+        DIRECTION: A2T
+
+TPM_OUTPUT_COMPARE:
+    CMD: TOC
+    FUNC0:
+        T_PIN: CPLD_IO98
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO98
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+
+TPM_TWOCHANNEL:
+    CMD: TPT
+    FUNC0:
+        T_PIN: CPLD_IO98
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO98
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+TPM_SIMPLE_PWM:
+    CMD: TSP
+    FUNC0:
+        T_PIN: CPLD_IO98
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO98
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: CPLD_IO50
+        A_PIN: B58
+        DIRECTION: A2T

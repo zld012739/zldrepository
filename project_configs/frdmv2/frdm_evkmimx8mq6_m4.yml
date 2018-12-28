@@ -1,0 +1,60 @@
+
+GPT:
+  IP: __PWM_OUT
+  CMD: GPC
+  pha:
+      PIN: JJ2_1
+      DIRECTION: out
+  phb:
+      PIN: JJ2_2
+      DIRECTION: out
+
+IPWM:
+    CMD: PWM
+    FUNC0:
+        T_PIN_1: JJ2_9
+        T_PIN_2: JJ2_5
+        DIRECTION: T2T
+
+GLO:
+    CMD: GLO
+    FUNC0:
+        T_PIN_1: JJ2_7
+        T_PIN_2: JJ2_5
+        DIRECTION: T2T
+
+
+
+I2C_MASTER:
+    IP: __I2C_MASTER
+    CMD: ICW
+    ALT: a 
+    scl:
+        PIN: JJ2_19
+        DIRECTION: out
+    sda:
+        PIN: JJ2_17
+        DIRECTION: INOUT
+
+I2C_MASTER1:
+    IP: __I2C_MASTER
+    CMD: ICR
+    ALT: b
+    scl:
+        PIN: JJ2_19
+        DIRECTION: out
+    sda:
+        PIN: JJ2_17
+        DIRECTION: INOUT
+
+
+I2C_SLAVE_FOR_CASE:
+    IP: __I2C_SLAVE_FOR_CASE
+    CMD: ICS
+    scl_slv:
+        PIN: JJ2_19
+        DIRECTION: in
+    sda:
+        PIN: JJ2_17
+        DIRECTION: INOUT
+

@@ -1,0 +1,182 @@
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: A39
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: A39---PTC2
+    LED_OUT:
+        T_PIN: CPLD_IO14
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: J17.3_Target---PTE0---LED_D4
+
+# DSPI_MASTER:
+    # CMD: SPI
+    # CLK:
+        # T_PIN_1: B48
+        # T_PIN_2: B7
+        # DIRECTION: T2T
+    # CS:
+        # T_PIN_1: B46
+        # T_PIN_2: B9
+        # DIRECTION: T2T
+    # MISO:
+        # T_PIN_1: B45
+        # T_PIN_2: B11
+        # DIRECTION: T2T
+    # MOSI:
+        # T_PIN_1: B44
+        # T_PIN_2: B10
+        # DIRECTION: T2T
+
+# DSPI_SLAVE:
+    # CMD: SSI
+    # CLK:
+        # T_PIN_1: B48
+        # T_PIN_2: B7
+        # DIRECTION: T2T
+    # CS:
+        # T_PIN_1: B46
+        # T_PIN_2: B9
+        # DIRECTION: T2T
+    # MISO:
+        # T_PIN_1: B10
+        # T_PIN_2: B44
+        # DIRECTION: T2T
+    # MOSI:
+        # T_PIN_1: B11
+        # T_PIN_2: B45
+        # DIRECTION: T2T
+
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW1
+
+FTM_COMBINE_PWM:
+    CMD: FCP
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: J17.7_Target---PTD7---LED_D7
+
+FTM_DUAL_EDGE_CAPTURE:
+    CMD: FDC
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: A40
+        DIRECTION: A2T
+        NOTE: J10.2_Target---PTE24
+
+FTM_INPUT_CAPTURE:
+    CMD: FIC
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: J10.2_Target---PTE24
+
+FTM_OUTPUT_COMPARE:
+    CMD: FOC
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: J17.7_Target---PTD7---LED_D7
+
+FTM_PWM_TWOCHANNEL:
+    CMD: FPT
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: J17.7_Target---PTD7---LED_D7
+
+FTM_SIMPLE_PWM:
+    CMD: FSP
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: J17.7_Target---PTD7---LED_D7
+       
+FQD:
+    IP: __ENC
+    CMD: FQD
+    pha_out: 
+        PIN: A33
+        DIRECTION: out
+    phb_out:
+        PIN: A34
+        DIRECTION: out
+        
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW1.2---PTC6
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO14
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO14
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: J17.3_Target---PTE0---LED_D4
+
+MCG:
+    CMD: MCG
+    PWM0:
+        T_PIN: CPLD_IO14
+        A_PIN: A39
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: CPLD_IO14
+        A_PIN: A40
+        DIRECTION: T2A
+        NOTE: J17.3_Target---PTE0---LED_D4
+
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW1.2---PTC6
+
+SHELL:
+    CMD: SHL
+    FUNC0:
+        T_PIN: B10
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: B10---PTE1---LED_D3---LED4
+       
+        

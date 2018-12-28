@@ -1,0 +1,40 @@
+`timescale	1ns/1ps
+
+/* 
+ * Do not change Module name 
+*/
+module test_spi;
+
+ i2c_slave_op_reduced	i2c_slave_op_reduced_inst(
+			.reset_n(rst_n),
+			.clock(clock),
+			.sda_out(sda_in),
+			.sda_in(sda_out),
+			.sda_en(sda_s_en),
+			.scl(scl)
+       );
+
+
+  initial 
+    begin
+	   clock = 0;
+		#5 WR_EN = 0;
+		#5 RD_EN = 0;
+		//reset
+		#5 rst_n = 1;
+		#5 rst_n = 0;
+		#5 rst_n = 1;
+
+		#10 WR_EN = 1;	
+		#10000000 WR_EN = 0;
+		#10 RD_EN = 1;
+		#10000000 RD_EN = 0; 
+
+      
+    end
+always begin
+    #2 clock = ! clock;
+end
+
+
+endmodule

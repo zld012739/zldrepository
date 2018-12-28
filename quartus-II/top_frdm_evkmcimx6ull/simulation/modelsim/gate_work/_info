@@ -1,0 +1,31 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/simulation/modelsim
+vtop
+!s110 1495098294
+!i10b 1
+!s100 QY<ELOjUlM^2gD3GeI3Of1
+I?@DAV]n:4j=0Wnh8E4E6C2
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1495097368
+8top.vo
+Ftop.vo
+L0 32
+OV;L;10.4b;61
+r1
+!s85 0
+31
+!s108 1495098294.000000
+!s107 top.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|top.vo|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+.

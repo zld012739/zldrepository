@@ -1,0 +1,1337 @@
+TimeQuest Timing Analyzer report for top
+Fri Sep 09 15:38:05 2016
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'clk'
+ 12. Setup: 'speed_select:speed_select|buad_clk_rx_reg'
+ 13. Setup: 'enc:enc|out_200hz'
+ 14. Setup: 'my_uart_rx:my_uart_rx|rx_enable_reg'
+ 15. Hold: 'clk'
+ 16. Hold: 'speed_select:speed_select|buad_clk_rx_reg'
+ 17. Hold: 'enc:enc|out_200hz'
+ 18. Hold: 'my_uart_rx:my_uart_rx|rx_enable_reg'
+ 19. Recovery: 'rs232_rx'
+ 20. Recovery: 'speed_select:speed_select|buad_clk_rx_reg'
+ 21. Removal: 'speed_select:speed_select|buad_clk_rx_reg'
+ 22. Removal: 'rs232_rx'
+ 23. Minimum Pulse Width: 'clk'
+ 24. Minimum Pulse Width: 'rs232_rx'
+ 25. Minimum Pulse Width: 'enc:enc|out_200hz'
+ 26. Minimum Pulse Width: 'my_uart_rx:my_uart_rx|rx_enable_reg'
+ 27. Minimum Pulse Width: 'speed_select:speed_select|buad_clk_rx_reg'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Output Enable Times
+ 35. Minimum Output Enable Times
+ 36. Output Disable Times
+ 37. Minimum Output Disable Times
+ 38. Setup Transfers
+ 39. Hold Transfers
+ 40. Recovery Transfers
+ 41. Removal Transfers
+ 42. Report TCCS
+ 43. Report RSKM
+ 44. Unconstrained Paths
+ 45. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                       ;
++--------------------+----------------------------------------------------+
+; Quartus II Version ; Version 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name      ; top                                                ;
+; Device Family      ; MAX II                                             ;
+; Device Name        ; EPM570T100C5                                       ;
+; Timing Models      ; Final                                              ;
+; Delay Model        ; Slow Model                                         ;
+; Rise/Fall Delays   ; Unavailable                                        ;
++--------------------+----------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                               ;
++-------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------+
+; Clock Name                                ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                       ;
++-------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------+
+; clk                                       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }                                       ;
+; enc:enc|out_200hz                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { enc:enc|out_200hz }                         ;
+; my_uart_rx:my_uart_rx|rx_enable_reg       ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { my_uart_rx:my_uart_rx|rx_enable_reg }       ;
+; rs232_rx                                  ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { rs232_rx }                                  ;
+; speed_select:speed_select|buad_clk_rx_reg ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { speed_select:speed_select|buad_clk_rx_reg } ;
++-------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Fmax Summary                                                                    ;
++------------+-----------------+-------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                ; Note ;
++------------+-----------------+-------------------------------------------+------+
+; 64.01 MHz  ; 64.01 MHz       ; clk                                       ;      ;
+; 84.55 MHz  ; 84.55 MHz       ; speed_select:speed_select|buad_clk_rx_reg ;      ;
+; 366.17 MHz ; 366.17 MHz      ; enc:enc|out_200hz                         ;      ;
+; 442.28 MHz ; 442.28 MHz      ; my_uart_rx:my_uart_rx|rx_enable_reg       ;      ;
++------------+-----------------+-------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------------------------------------+
+; Setup Summary                                                       ;
++-------------------------------------------+---------+---------------+
+; Clock                                     ; Slack   ; End Point TNS ;
++-------------------------------------------+---------+---------------+
+; clk                                       ; -14.623 ; -909.392      ;
+; speed_select:speed_select|buad_clk_rx_reg ; -5.414  ; -94.772       ;
+; enc:enc|out_200hz                         ; -1.731  ; -6.412        ;
+; my_uart_rx:my_uart_rx|rx_enable_reg       ; -1.261  ; -1.261        ;
++-------------------------------------------+---------+---------------+
+
+
++--------------------------------------------------------------------+
+; Hold Summary                                                       ;
++-------------------------------------------+--------+---------------+
+; Clock                                     ; Slack  ; End Point TNS ;
++-------------------------------------------+--------+---------------+
+; clk                                       ; -2.158 ; -2.158        ;
+; speed_select:speed_select|buad_clk_rx_reg ; 0.171  ; 0.000         ;
+; enc:enc|out_200hz                         ; 1.679  ; 0.000         ;
+; my_uart_rx:my_uart_rx|rx_enable_reg       ; 1.707  ; 0.000         ;
++-------------------------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------+
+; Recovery Summary                                                   ;
++-------------------------------------------+--------+---------------+
+; Clock                                     ; Slack  ; End Point TNS ;
++-------------------------------------------+--------+---------------+
+; rs232_rx                                  ; -2.766 ; -2.766        ;
+; speed_select:speed_select|buad_clk_rx_reg ; 0.776  ; 0.000         ;
++-------------------------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------+
+; Removal Summary                                                    ;
++-------------------------------------------+--------+---------------+
+; Clock                                     ; Slack  ; End Point TNS ;
++-------------------------------------------+--------+---------------+
+; speed_select:speed_select|buad_clk_rx_reg ; -0.830 ; -0.830        ;
+; rs232_rx                                  ; 3.212  ; 0.000         ;
++-------------------------------------------+--------+---------------+
+
+
++--------------------------------------------------------------------+
+; Minimum Pulse Width Summary                                        ;
++-------------------------------------------+--------+---------------+
+; Clock                                     ; Slack  ; End Point TNS ;
++-------------------------------------------+--------+---------------+
+; clk                                       ; -2.289 ; -2.289        ;
+; rs232_rx                                  ; -2.289 ; -2.289        ;
+; enc:enc|out_200hz                         ; 0.234  ; 0.000         ;
+; my_uart_rx:my_uart_rx|rx_enable_reg       ; 0.234  ; 0.000         ;
+; speed_select:speed_select|buad_clk_rx_reg ; 0.234  ; 0.000         ;
++-------------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Setup: 'clk'                                                                                            ;
++---------+------------+------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node  ; To Node    ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+------------+------------+--------------+-------------+--------------+------------+------------+
+; -14.623 ; Rx_cmd[21] ; linkFOC    ; clk          ; clk         ; 1.000        ; 0.000      ; 15.290     ;
+; -14.524 ; Rx_cmd[21] ; linkGLO    ; clk          ; clk         ; 1.000        ; 0.000      ; 15.191     ;
+; -14.523 ; Rx_cmd[21] ; linkPMH    ; clk          ; clk         ; 1.000        ; 0.000      ; 15.190     ;
+; -14.455 ; Rx_cmd[23] ; linkFOC    ; clk          ; clk         ; 1.000        ; 0.000      ; 15.122     ;
+; -14.409 ; Rx_cmd[21] ; linkGII    ; clk          ; clk         ; 1.000        ; 0.000      ; 15.076     ;
+; -14.409 ; Rx_cmd[21] ; linkDSV    ; clk          ; clk         ; 1.000        ; 0.000      ; 15.076     ;
+; -14.356 ; Rx_cmd[23] ; linkGLO    ; clk          ; clk         ; 1.000        ; 0.000      ; 15.023     ;
+; -14.355 ; Rx_cmd[23] ; linkPMH    ; clk          ; clk         ; 1.000        ; 0.000      ; 15.022     ;
+; -14.323 ; Rx_cmd[21] ; linkFCP    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.990     ;
+; -14.282 ; Rx_cmd[21] ; linkMCG    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.949     ;
+; -14.241 ; Rx_cmd[23] ; linkGII    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.908     ;
+; -14.241 ; Rx_cmd[23] ; linkDSV    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.908     ;
+; -14.184 ; Rx_cmd[21] ; linkFPT    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.851     ;
+; -14.179 ; Rx_cmd[21] ; linkFIC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.846     ;
+; -14.173 ; Rx_cmd[21] ; led~reg0   ; clk          ; clk         ; 1.000        ; 0.000      ; 14.840     ;
+; -14.155 ; Rx_cmd[23] ; linkFCP    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.822     ;
+; -14.114 ; Rx_cmd[23] ; linkMCG    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.781     ;
+; -14.016 ; Rx_cmd[23] ; linkFPT    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.683     ;
+; -14.011 ; Rx_cmd[23] ; linkFIC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.678     ;
+; -14.005 ; Rx_cmd[23] ; led~reg0   ; clk          ; clk         ; 1.000        ; 0.000      ; 14.672     ;
+; -13.990 ; Rx_cmd[21] ; linkEWM    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.657     ;
+; -13.915 ; Rx_cmd[21] ; linkPMS    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.582     ;
+; -13.909 ; Rx_cmd[15] ; linkFOC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.576     ;
+; -13.886 ; Rx_cmd[7]  ; linkFOC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.553     ;
+; -13.822 ; Rx_cmd[23] ; linkEWM    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.489     ;
+; -13.810 ; Rx_cmd[15] ; linkGLO    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.477     ;
+; -13.809 ; Rx_cmd[15] ; linkPMH    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.476     ;
+; -13.787 ; Rx_cmd[7]  ; linkGLO    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.454     ;
+; -13.786 ; Rx_cmd[7]  ; linkPMH    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.453     ;
+; -13.747 ; Rx_cmd[23] ; linkPMS    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.414     ;
+; -13.734 ; Rx_cmd[21] ; linkSHL    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.401     ;
+; -13.726 ; Rx_cmd[21] ; linkCMP    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.393     ;
+; -13.716 ; Rx_cmd[20] ; linkFOC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.383     ;
+; -13.708 ; Rx_cmd[21] ; linkSPI    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.375     ;
+; -13.695 ; Rx_cmd[15] ; linkGII    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.362     ;
+; -13.695 ; Rx_cmd[15] ; linkDSV    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.362     ;
+; -13.672 ; Rx_cmd[7]  ; linkGII    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.339     ;
+; -13.672 ; Rx_cmd[7]  ; linkDSV    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.339     ;
+; -13.669 ; Rx_cmd[21] ; linkFSP    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.336     ;
+; -13.651 ; Rx_cmd[6]  ; linkFOC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.318     ;
+; -13.638 ; Rx_cmd[2]  ; linkFOC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.305     ;
+; -13.609 ; Rx_cmd[15] ; linkFCP    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.276     ;
+; -13.586 ; Rx_cmd[7]  ; linkFCP    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.253     ;
+; -13.568 ; Rx_cmd[15] ; linkMCG    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.235     ;
+; -13.566 ; Rx_cmd[23] ; linkSHL    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.233     ;
+; -13.558 ; Rx_cmd[23] ; linkCMP    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.225     ;
+; -13.552 ; Rx_cmd[6]  ; linkGLO    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.219     ;
+; -13.551 ; Rx_cmd[6]  ; linkPMH    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.218     ;
+; -13.545 ; Rx_cmd[7]  ; linkMCG    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.212     ;
+; -13.540 ; Rx_cmd[23] ; linkSPI    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.207     ;
+; -13.502 ; Rx_cmd[20] ; linkGII    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.169     ;
+; -13.501 ; Rx_cmd[23] ; linkFSP    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.168     ;
+; -13.483 ; Rx_cmd[21] ; linkFDC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.150     ;
+; -13.470 ; Rx_cmd[15] ; linkFPT    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.137     ;
+; -13.465 ; Rx_cmd[15] ; linkFIC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.132     ;
+; -13.459 ; Rx_cmd[15] ; led~reg0   ; clk          ; clk         ; 1.000        ; 0.000      ; 14.126     ;
+; -13.447 ; Rx_cmd[7]  ; linkFPT    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.114     ;
+; -13.445 ; Rx_cmd[21] ; enable_enc ; clk          ; clk         ; 1.000        ; 0.000      ; 14.112     ;
+; -13.442 ; Rx_cmd[7]  ; linkFIC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.109     ;
+; -13.437 ; Rx_cmd[6]  ; linkGII    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.104     ;
+; -13.437 ; Rx_cmd[6]  ; linkDSV    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.104     ;
+; -13.436 ; Rx_cmd[7]  ; led~reg0   ; clk          ; clk         ; 1.000        ; 0.000      ; 14.103     ;
+; -13.424 ; Rx_cmd[2]  ; linkGII    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.091     ;
+; -13.392 ; Rx_cmd[22] ; linkFOC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.059     ;
+; -13.351 ; Rx_cmd[6]  ; linkFCP    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.018     ;
+; -13.350 ; Rx_cmd[13] ; linkFOC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.017     ;
+; -13.339 ; Rx_cmd[1]  ; linkFOC    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.006     ;
+; -13.334 ; Rx_cmd[2]  ; linkDSV    ; clk          ; clk         ; 1.000        ; 0.000      ; 14.001     ;
+; -13.315 ; Rx_cmd[23] ; linkFDC    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.982     ;
+; -13.310 ; Rx_cmd[6]  ; linkMCG    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.977     ;
+; -13.293 ; Rx_cmd[22] ; linkGLO    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.960     ;
+; -13.292 ; Rx_cmd[22] ; linkPMH    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.959     ;
+; -13.277 ; Rx_cmd[20] ; linkFPT    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.944     ;
+; -13.277 ; Rx_cmd[23] ; enable_enc ; clk          ; clk         ; 1.000        ; 0.000      ; 13.944     ;
+; -13.276 ; Rx_cmd[15] ; linkEWM    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.943     ;
+; -13.266 ; Rx_cmd[20] ; led~reg0   ; clk          ; clk         ; 1.000        ; 0.000      ; 13.933     ;
+; -13.258 ; Rx_cmd[1]  ; linkGLO    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.925     ;
+; -13.257 ; Rx_cmd[1]  ; linkPMH    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.924     ;
+; -13.253 ; Rx_cmd[7]  ; linkEWM    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.920     ;
+; -13.251 ; Rx_cmd[13] ; linkGLO    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.918     ;
+; -13.250 ; Rx_cmd[13] ; linkPMH    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.917     ;
+; -13.239 ; Rx_cmd[3]  ; linkDSV    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.906     ;
+; -13.212 ; Rx_cmd[6]  ; linkFPT    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.879     ;
+; -13.207 ; Rx_cmd[6]  ; linkFIC    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.874     ;
+; -13.201 ; Rx_cmd[15] ; linkPMS    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.868     ;
+; -13.201 ; Rx_cmd[6]  ; led~reg0   ; clk          ; clk         ; 1.000        ; 0.000      ; 13.868     ;
+; -13.199 ; Rx_cmd[2]  ; linkFPT    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.866     ;
+; -13.188 ; Rx_cmd[2]  ; led~reg0   ; clk          ; clk         ; 1.000        ; 0.000      ; 13.855     ;
+; -13.188 ; Rx_cmd[20] ; linkGLO    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.855     ;
+; -13.187 ; Rx_cmd[20] ; linkPMH    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.854     ;
+; -13.178 ; Rx_cmd[22] ; linkGII    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.845     ;
+; -13.178 ; Rx_cmd[22] ; linkDSV    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.845     ;
+; -13.178 ; Rx_cmd[7]  ; linkPMS    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.845     ;
+; -13.171 ; Rx_cmd[18] ; linkFOC    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.838     ;
+; -13.136 ; Rx_cmd[13] ; linkGII    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.803     ;
+; -13.136 ; Rx_cmd[13] ; linkDSV    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.803     ;
+; -13.125 ; Rx_cmd[1]  ; linkGII    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.792     ;
+; -13.110 ; Rx_cmd[2]  ; linkGLO    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.777     ;
+; -13.109 ; Rx_cmd[2]  ; linkPMH    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.776     ;
+; -13.104 ; Rx_cmd[2]  ; linkFIC    ; clk          ; clk         ; 1.000        ; 0.000      ; 13.771     ;
++---------+------------+------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'speed_select:speed_select|buad_clk_rx_reg'                                                                                                                                                                      ;
++--------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                               ; Launch Clock                              ; Latch Clock                               ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+; -5.414 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_reg[2]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 5.581      ;
+; -5.414 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_reg[7]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 5.581      ;
+; -5.414 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_reg[6]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 5.581      ;
+; -5.414 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_reg[4]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 5.581      ;
+; -5.414 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_reg[3]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 5.581      ;
+; -5.414 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_reg[5]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 5.581      ;
+; -5.414 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_reg[1]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 5.581      ;
+; -5.414 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_reg[0]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 5.581      ;
+; -4.999 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 5.166      ;
+; -4.832 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.999      ;
+; -4.832 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.999      ;
+; -4.674 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.841      ;
+; -4.651 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.818      ;
+; -4.607 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.774      ;
+; -4.605 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.772      ;
+; -4.589 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_reg[2]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.756      ;
+; -4.589 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_reg[7]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.756      ;
+; -4.589 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_reg[6]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.756      ;
+; -4.589 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_reg[4]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.756      ;
+; -4.589 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_reg[3]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.756      ;
+; -4.589 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_reg[5]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.756      ;
+; -4.589 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_reg[1]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.756      ;
+; -4.589 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_reg[0]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.756      ;
+; -4.584 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.751      ;
+; -4.580 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.747      ;
+; -4.510 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_complete_reg ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.677      ;
+; -4.465 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_reg[2]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.632      ;
+; -4.465 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_reg[7]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.632      ;
+; -4.465 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_reg[6]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.632      ;
+; -4.465 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_reg[4]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.632      ;
+; -4.465 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_reg[3]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.632      ;
+; -4.465 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_reg[5]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.632      ;
+; -4.465 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_reg[1]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.632      ;
+; -4.465 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_reg[0]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.632      ;
+; -4.453 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.620      ;
+; -4.453 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.620      ;
+; -4.442 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.609      ;
+; -4.442 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.609      ;
+; -4.380 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.547      ;
+; -4.378 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.545      ;
+; -4.376 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.543      ;
+; -4.342 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.509      ;
+; -4.241 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[2]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.408      ;
+; -4.241 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[7]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.408      ;
+; -4.241 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[6]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.408      ;
+; -4.241 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[4]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.408      ;
+; -4.241 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[3]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.408      ;
+; -4.241 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[5]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.408      ;
+; -4.241 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[1]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.408      ;
+; -4.241 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[0]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.408      ;
+; -4.238 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.405      ;
+; -4.223 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.390      ;
+; -4.211 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.378      ;
+; -4.174 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.341      ;
+; -4.071 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_complete_reg ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.238      ;
+; -3.994 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.161      ;
+; -3.900 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.067      ;
+; -3.900 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.067      ;
+; -3.841 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 4.008      ;
+; -3.733 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 3.900      ;
+; -3.733 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 3.900      ;
+; -3.723 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_complete_reg ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 3.890      ;
+; -3.693 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 3.860      ;
+; -3.621 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 3.788      ;
+; -3.385 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 3.552      ;
+; -3.331 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 3.498      ;
+; -3.276 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 3.443      ;
+; -2.888 ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.555      ;
+; -2.825 ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.492      ;
+; -2.682 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_complete_reg ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 0.000      ; 2.849      ;
+; -2.656 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_count[0]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.323      ;
+; -2.574 ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; my_uart_rx:my_uart_rx|rx_data_reg[3]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.241      ;
+; -2.559 ; my_uart_rx:my_uart_rx|rx_complete_reg ; my_uart_rx:my_uart_rx|rx_complete_reg ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.226      ;
+; -2.543 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_count[0]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.210      ;
+; -2.534 ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; my_uart_rx:my_uart_rx|rx_data_reg[0]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.201      ;
+; -2.392 ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; my_uart_rx:my_uart_rx|rx_data_reg[7]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.059      ;
+; -2.377 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_count[1]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.044      ;
+; -2.376 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_count[3]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.043      ;
+; -2.371 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_count[2]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.038      ;
+; -2.355 ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.022      ;
+; -2.354 ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; my_uart_rx:my_uart_rx|rx_data_reg[5]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.021      ;
+; -2.343 ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; my_uart_rx:my_uart_rx|rx_data_reg[6]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 3.010      ;
+; -2.255 ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.922      ;
+; -2.234 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_count[0]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.901      ;
+; -2.225 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_count[0]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.892      ;
+; -2.191 ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; my_uart_rx:my_uart_rx|rx_data_reg[1]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.858      ;
+; -2.101 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 3.790      ; 6.058      ;
+; -1.987 ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; my_uart_rx:my_uart_rx|rx_data_reg[2]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.654      ;
+; -1.923 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_count[2]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.590      ;
+; -1.903 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_count[3]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.570      ;
+; -1.838 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 3.790      ; 5.795      ;
+; -1.794 ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.461      ;
+; -1.792 ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.459      ;
+; -1.771 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_count[3]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.438      ;
+; -1.766 ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.433      ;
+; -1.766 ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.433      ;
+; -1.760 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_count[1]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.427      ;
+; -1.755 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_count[2]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.422      ;
+; -1.631 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 3.790      ; 5.588      ;
+; -1.615 ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; my_uart_rx:my_uart_rx|rx_data_reg[4]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 0.000      ; 2.282      ;
++--------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'enc:enc|out_200hz'                                                                                                                    ;
++--------+--------------------------+--------------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node                ; To Node                  ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------+--------------------------+-------------------+-------------------+--------------+------------+------------+
+; -1.731 ; enc:enc|Phase90_Count[0] ; enc:enc|phb_reg          ; enc:enc|out_200hz ; enc:enc|out_200hz ; 1.000        ; 0.000      ; 2.398      ;
+; -1.661 ; enc:enc|pha_reg          ; enc:enc|pha_reg          ; enc:enc|out_200hz ; enc:enc|out_200hz ; 1.000        ; 0.000      ; 2.328      ;
+; -1.514 ; enc:enc|Phase90_Count[0] ; enc:enc|Phase90_Count[1] ; enc:enc|out_200hz ; enc:enc|out_200hz ; 1.000        ; 0.000      ; 2.181      ;
+; -1.510 ; enc:enc|Phase90_Count[0] ; enc:enc|pha_reg          ; enc:enc|out_200hz ; enc:enc|out_200hz ; 1.000        ; 0.000      ; 2.177      ;
+; -1.506 ; enc:enc|Phase90_Count[0] ; enc:enc|Phase90_Count[0] ; enc:enc|out_200hz ; enc:enc|out_200hz ; 1.000        ; 0.000      ; 2.173      ;
+; -1.452 ; enc:enc|phb_reg          ; enc:enc|phb_reg          ; enc:enc|out_200hz ; enc:enc|out_200hz ; 1.000        ; 0.000      ; 2.119      ;
+; -1.240 ; enc:enc|Phase90_Count[1] ; enc:enc|phb_reg          ; enc:enc|out_200hz ; enc:enc|out_200hz ; 1.000        ; 0.000      ; 1.907      ;
+; -1.234 ; enc:enc|Phase90_Count[1] ; enc:enc|pha_reg          ; enc:enc|out_200hz ; enc:enc|out_200hz ; 1.000        ; 0.000      ; 1.901      ;
+; -1.233 ; enc:enc|Phase90_Count[1] ; enc:enc|Phase90_Count[1] ; enc:enc|out_200hz ; enc:enc|out_200hz ; 1.000        ; 0.000      ; 1.900      ;
++--------+--------------------------+--------------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'my_uart_rx:my_uart_rx|rx_enable_reg'                                                                                                       ;
++--------+-----------+----------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node  ; Launch Clock                        ; Latch Clock                         ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+----------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; -1.261 ; flag_reg  ; flag_reg ; my_uart_rx:my_uart_rx|rx_enable_reg ; my_uart_rx:my_uart_rx|rx_enable_reg ; 1.000        ; 0.000      ; 1.928      ;
++--------+-----------+----------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clk'                                                                                                                                                                            ;
++--------+--------------------------------------+-------------------------------------------+-------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                            ; To Node                                   ; Launch Clock                        ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------+-------------------------------------------+-------------------------------------+-------------+--------------+------------+------------+
+; -2.158 ; enc:enc|out_200hz                    ; enc:enc|out_200hz                         ; enc:enc|out_200hz                   ; clk         ; 0.000        ; 3.681      ; 2.120      ;
+; -1.658 ; enc:enc|out_200hz                    ; enc:enc|out_200hz                         ; enc:enc|out_200hz                   ; clk         ; -0.500       ; 3.681      ; 2.120      ;
+; 1.442  ; Buff_temp[13]                        ; Rx_cmd[13]                                ; clk                                 ; clk         ; 0.000        ; 0.000      ; 1.663      ;
+; 1.444  ; Buff_temp[7]                         ; Rx_cmd[7]                                 ; clk                                 ; clk         ; 0.000        ; 0.000      ; 1.665      ;
+; 1.474  ; flag_reg                             ; Flag_temp                                 ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; -0.500       ; 0.835      ; 2.030      ;
+; 1.666  ; Buff_temp[21]                        ; Buff_temp[21]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 1.887      ;
+; 1.667  ; Buff_temp[22]                        ; Buff_temp[22]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 1.888      ;
+; 1.679  ; Flag_temp                            ; Current.WAIT                              ; clk                                 ; clk         ; 0.000        ; 0.000      ; 1.900      ;
+; 1.679  ; Buff_temp[5]                         ; Buff_temp[13]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 1.900      ;
+; 1.722  ; Current.WAIT                         ; Buff_temp[3]                              ; clk                                 ; clk         ; 0.000        ; 0.000      ; 1.943      ;
+; 1.734  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|buad_clk_rx_reg ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.012      ;
+; 1.780  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[5]       ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.058      ;
+; 1.780  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[3]       ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.058      ;
+; 1.780  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[4]       ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.058      ;
+; 1.780  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[0]       ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.058      ;
+; 1.780  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[1]       ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.058      ;
+; 1.780  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[2]       ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.058      ;
+; 1.783  ; Buff_temp[14]                        ; Rx_cmd[14]                                ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.004      ;
+; 1.784  ; Buff_temp[23]                        ; Rx_cmd[23]                                ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.005      ;
+; 1.793  ; Buff_temp[15]                        ; Rx_cmd[15]                                ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.014      ;
+; 1.799  ; Buff_temp[5]                         ; Rx_cmd[5]                                 ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.020      ;
+; 1.801  ; Buff_temp[22]                        ; Rx_cmd[22]                                ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.022      ;
+; 1.907  ; Buff_temp[19]                        ; Buff_temp[19]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.128      ;
+; 1.917  ; Buff_temp[15]                        ; Buff_temp[15]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.138      ;
+; 1.925  ; linkMCG                              ; linkMCG                                   ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.146      ;
+; 1.926  ; linkSPI                              ; linkSPI                                   ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.147      ;
+; 1.926  ; Buff_temp[11]                        ; Buff_temp[11]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.147      ;
+; 1.927  ; Buff_temp[6]                         ; Buff_temp[6]                              ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.148      ;
+; 1.928  ; Buff_temp[15]                        ; Buff_temp[23]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.149      ;
+; 1.935  ; Buff_temp[0]                         ; Buff_temp[0]                              ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.156      ;
+; 1.943  ; Current.SAVE                         ; Current.WAIT                              ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.164      ;
+; 1.945  ; Buff_temp[0]                         ; Buff_temp[8]                              ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.166      ;
+; 1.963  ; Buff_temp[7]                         ; Buff_temp[7]                              ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.184      ;
+; 2.048  ; Buff_temp[23]                        ; Buff_temp[23]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.269      ;
+; 2.053  ; Buff_temp[21]                        ; Rx_cmd[21]                                ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.274      ;
+; 2.108  ; linkFDC                              ; linkFDC                                   ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.329      ;
+; 2.116  ; enc:enc|count_reg[16]                ; enc:enc|count_reg[16]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116  ; enc:enc|count_reg[6]                 ; enc:enc|count_reg[6]                      ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117  ; Buff_temp[17]                        ; Buff_temp[17]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; Buff_temp[2]                         ; Buff_temp[2]                              ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; enc:enc|count_reg[13]                ; enc:enc|count_reg[13]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117  ; enc:enc|count_reg[23]                ; enc:enc|count_reg[23]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.338      ;
+; 2.118  ; linkPMS                              ; linkPMS                                   ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.339      ;
+; 2.125  ; linkFIC                              ; linkFIC                                   ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.346      ;
+; 2.126  ; linkFSP                              ; linkFSP                                   ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; enc:enc|count_reg[15]                ; enc:enc|count_reg[15]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; enc:enc|count_reg[3]                 ; enc:enc|count_reg[3]                      ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; enc:enc|count_reg[7]                 ; enc:enc|count_reg[7]                      ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; enc:enc|count_reg[8]                 ; enc:enc|count_reg[8]                      ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; enc:enc|count_reg[17]                ; enc:enc|count_reg[17]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; enc:enc|count_reg[18]                ; enc:enc|count_reg[18]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; enc:enc|count_reg[25]                ; enc:enc|count_reg[25]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126  ; speed_select:speed_select|cnt_rx[3]  ; speed_select:speed_select|cnt_rx[3]       ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.347      ;
+; 2.127  ; enc:enc|count_reg[5]                 ; enc:enc|count_reg[5]                      ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.348      ;
+; 2.134  ; enc:enc|count_reg[26]                ; enc:enc|count_reg[26]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.355      ;
+; 2.134  ; speed_select:speed_select|cnt_rx[6]  ; speed_select:speed_select|cnt_rx[6]       ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.355      ;
+; 2.135  ; linkFPT                              ; linkFPT                                   ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.356      ;
+; 2.135  ; speed_select:speed_select|cnt_rx[8]  ; speed_select:speed_select|cnt_rx[8]       ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.356      ;
+; 2.136  ; speed_select:speed_select|cnt_rx[5]  ; speed_select:speed_select|cnt_rx[5]       ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.357      ;
+; 2.146  ; Buff_temp[5]                         ; Buff_temp[5]                              ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.367      ;
+; 2.151  ; speed_select:speed_select|cnt_rx[7]  ; speed_select:speed_select|cnt_rx[7]       ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.372      ;
+; 2.152  ; enc:enc|count_reg[27]                ; enc:enc|count_reg[27]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.373      ;
+; 2.152  ; enc:enc|count_reg[28]                ; enc:enc|count_reg[28]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.373      ;
+; 2.153  ; Buff_temp[1]                         ; Buff_temp[1]                              ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.374      ;
+; 2.155  ; Buff_temp[4]                         ; Buff_temp[12]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.376      ;
+; 2.156  ; Buff_temp[1]                         ; Buff_temp[9]                              ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.377      ;
+; 2.183  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[9]       ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.461      ;
+; 2.183  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[8]       ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.461      ;
+; 2.183  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[12]      ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.461      ;
+; 2.183  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[10]      ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.461      ;
+; 2.183  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[11]      ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.461      ;
+; 2.183  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[6]       ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.461      ;
+; 2.183  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|cnt_rx[7]       ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; 0.000        ; 3.681      ; 6.461      ;
+; 2.189  ; Current.WAIT                         ; Buff_temp[11]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.410      ;
+; 2.191  ; Current.WAIT                         ; Buff_temp[6]                              ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.412      ;
+; 2.212  ; Buff_temp[16]                        ; Buff_temp[16]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.433      ;
+; 2.221  ; linkFCP                              ; linkFCP                                   ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; enc:enc|count_reg[14]                ; enc:enc|count_reg[14]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; enc:enc|count_reg[9]                 ; enc:enc|count_reg[9]                      ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; enc:enc|count_reg[19]                ; enc:enc|count_reg[19]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; enc:enc|count_reg[24]                ; enc:enc|count_reg[24]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221  ; speed_select:speed_select|cnt_rx[9]  ; speed_select:speed_select|cnt_rx[9]       ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.442      ;
+; 2.222  ; Buff_temp[18]                        ; Buff_temp[18]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.443      ;
+; 2.230  ; enc:enc|count_reg[11]                ; enc:enc|count_reg[11]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230  ; enc:enc|count_reg[21]                ; enc:enc|count_reg[21]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230  ; speed_select:speed_select|cnt_rx[11] ; speed_select:speed_select|cnt_rx[11]      ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230  ; speed_select:speed_select|cnt_rx[1]  ; speed_select:speed_select|cnt_rx[1]       ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231  ; linkPMH                              ; linkPMH                                   ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; enc:enc|count_reg[12]                ; enc:enc|count_reg[12]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; enc:enc|count_reg[10]                ; enc:enc|count_reg[10]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; enc:enc|count_reg[20]                ; enc:enc|count_reg[20]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; enc:enc|count_reg[22]                ; enc:enc|count_reg[22]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; speed_select:speed_select|cnt_rx[12] ; speed_select:speed_select|cnt_rx[12]      ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231  ; speed_select:speed_select|cnt_rx[10] ; speed_select:speed_select|cnt_rx[10]      ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.452      ;
+; 2.234  ; Buff_temp[14]                        ; Buff_temp[14]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.455      ;
+; 2.234  ; Buff_temp[14]                        ; Buff_temp[22]                             ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.455      ;
+; 2.234  ; my_uart_rx:my_uart_rx|rx_enable_reg  ; speed_select:speed_select|buad_clk_rx_reg ; my_uart_rx:my_uart_rx|rx_enable_reg ; clk         ; -0.500       ; 3.681      ; 6.012      ;
+; 2.240  ; enc:enc|count_reg[29]                ; enc:enc|count_reg[29]                     ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.461      ;
+; 2.241  ; enc:enc|count_reg[4]                 ; enc:enc|count_reg[4]                      ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.462      ;
+; 2.241  ; speed_select:speed_select|cnt_rx[4]  ; speed_select:speed_select|cnt_rx[4]       ; clk                                 ; clk         ; 0.000        ; 0.000      ; 2.462      ;
++--------+--------------------------------------+-------------------------------------------+-------------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'speed_select:speed_select|buad_clk_rx_reg'                                                                                                                                                                      ;
++-------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                               ; Launch Clock                              ; Latch Clock                               ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+; 0.171 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[2]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 4.558      ;
+; 0.171 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[7]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 4.558      ;
+; 0.171 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[6]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 4.558      ;
+; 0.171 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[4]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 4.558      ;
+; 0.171 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[3]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 4.558      ;
+; 0.171 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[5]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 4.558      ;
+; 0.171 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[1]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 4.558      ;
+; 0.171 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[0]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 4.558      ;
+; 0.671 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[2]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 4.558      ;
+; 0.671 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[7]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 4.558      ;
+; 0.671 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[6]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 4.558      ;
+; 0.671 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[4]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 4.558      ;
+; 0.671 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[3]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 4.558      ;
+; 0.671 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[5]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 4.558      ;
+; 0.671 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[1]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 4.558      ;
+; 0.671 ; my_uart_rx:my_uart_rx|rx_enable_reg   ; my_uart_rx:my_uart_rx|rx_data_reg[0]  ; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 4.558      ;
+; 0.761 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 4.772      ;
+; 1.020 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 5.031      ;
+; 1.167 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 5.178      ;
+; 1.198 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 5.209      ;
+; 1.200 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 5.211      ;
+; 1.261 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 4.772      ;
+; 1.520 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 5.031      ;
+; 1.577 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 5.588      ;
+; 1.667 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 5.178      ;
+; 1.698 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 5.209      ;
+; 1.700 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 5.211      ;
+; 1.784 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 5.795      ;
+; 1.996 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_count[3]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.217      ;
+; 2.009 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_count[1]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.230      ;
+; 2.010 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_count[2]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.231      ;
+; 2.047 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 6.058      ;
+; 2.061 ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; my_uart_rx:my_uart_rx|rx_data_reg[4]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.282      ;
+; 2.077 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 5.588      ;
+; 2.201 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_count[2]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.422      ;
+; 2.206 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_count[1]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.427      ;
+; 2.212 ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.433      ;
+; 2.212 ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.433      ;
+; 2.217 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_count[3]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.438      ;
+; 2.238 ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.459      ;
+; 2.240 ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.461      ;
+; 2.284 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 5.795      ;
+; 2.349 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_count[3]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.570      ;
+; 2.369 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_count[2]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.590      ;
+; 2.433 ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; my_uart_rx:my_uart_rx|rx_data_reg[2]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.654      ;
+; 2.497 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 2.218      ;
+; 2.533 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 2.254      ;
+; 2.547 ; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 6.058      ;
+; 2.637 ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; my_uart_rx:my_uart_rx|rx_data_reg[1]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.858      ;
+; 2.671 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_count[0]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.892      ;
+; 2.680 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_count[0]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.901      ;
+; 2.701 ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 2.922      ;
+; 2.789 ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; my_uart_rx:my_uart_rx|rx_data_reg[6]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.010      ;
+; 2.800 ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; my_uart_rx:my_uart_rx|rx_data_reg[5]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.021      ;
+; 2.801 ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.022      ;
+; 2.817 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_count[2]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.038      ;
+; 2.822 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_count[3]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.043      ;
+; 2.823 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_count[1]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.044      ;
+; 2.838 ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; my_uart_rx:my_uart_rx|rx_data_reg[7]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.059      ;
+; 2.978 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 2.699      ;
+; 2.980 ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; my_uart_rx:my_uart_rx|rx_data_reg[0]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.201      ;
+; 2.989 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_count[0]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.210      ;
+; 3.005 ; my_uart_rx:my_uart_rx|rx_complete_reg ; my_uart_rx:my_uart_rx|rx_complete_reg ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.226      ;
+; 3.020 ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; my_uart_rx:my_uart_rx|rx_data_reg[3]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.241      ;
+; 3.102 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_count[0]     ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.323      ;
+; 3.113 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 2.834      ;
+; 3.128 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_complete_reg ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 2.849      ;
+; 3.271 ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.492      ;
+; 3.280 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 3.001      ;
+; 3.334 ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 0.000      ; 3.555      ;
+; 3.617 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 3.338      ;
+; 3.722 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 3.443      ;
+; 3.777 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 3.498      ;
+; 3.795 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 3.516      ;
+; 3.822 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 3.543      ;
+; 3.822 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 3.543      ;
+; 3.831 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 3.552      ;
+; 3.904 ; my_uart_rx:my_uart_rx|rx_count[0]     ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 3.625      ;
+; 3.944 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 3.665      ;
+; 4.139 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 3.860      ;
+; 4.169 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_complete_reg ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 3.890      ;
+; 4.287 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.008      ;
+; 4.440 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[1] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.161      ;
+; 4.441 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.162      ;
+; 4.517 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_complete_reg ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.238      ;
+; 4.547 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[3] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.268      ;
+; 4.609 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[0] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.330      ;
+; 4.657 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.378      ;
+; 4.674 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.395      ;
+; 4.678 ; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.399      ;
+; 4.687 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[2]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.408      ;
+; 4.687 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[7]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.408      ;
+; 4.687 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[6]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.408      ;
+; 4.687 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[4]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.408      ;
+; 4.687 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[3]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.408      ;
+; 4.687 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[5]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.408      ;
+; 4.687 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[1]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.408      ;
+; 4.687 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_reg[0]  ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.408      ;
+; 4.755 ; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.476      ;
+; 4.764 ; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[6] ; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 0.000      ; 4.485      ;
++-------+---------------------------------------+---------------------------------------+-------------------------------------------+-------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'enc:enc|out_200hz'                                                                                                                    ;
++-------+--------------------------+--------------------------+-------------------+-------------------+--------------+------------+------------+
+; Slack ; From Node                ; To Node                  ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------------+--------------------------+-------------------+-------------------+--------------+------------+------------+
+; 1.679 ; enc:enc|Phase90_Count[1] ; enc:enc|Phase90_Count[1] ; enc:enc|out_200hz ; enc:enc|out_200hz ; 0.000        ; 0.000      ; 1.900      ;
+; 1.680 ; enc:enc|Phase90_Count[1] ; enc:enc|pha_reg          ; enc:enc|out_200hz ; enc:enc|out_200hz ; 0.000        ; 0.000      ; 1.901      ;
+; 1.686 ; enc:enc|Phase90_Count[1] ; enc:enc|phb_reg          ; enc:enc|out_200hz ; enc:enc|out_200hz ; 0.000        ; 0.000      ; 1.907      ;
+; 1.898 ; enc:enc|phb_reg          ; enc:enc|phb_reg          ; enc:enc|out_200hz ; enc:enc|out_200hz ; 0.000        ; 0.000      ; 2.119      ;
+; 1.952 ; enc:enc|Phase90_Count[0] ; enc:enc|Phase90_Count[0] ; enc:enc|out_200hz ; enc:enc|out_200hz ; 0.000        ; 0.000      ; 2.173      ;
+; 1.956 ; enc:enc|Phase90_Count[0] ; enc:enc|pha_reg          ; enc:enc|out_200hz ; enc:enc|out_200hz ; 0.000        ; 0.000      ; 2.177      ;
+; 1.960 ; enc:enc|Phase90_Count[0] ; enc:enc|Phase90_Count[1] ; enc:enc|out_200hz ; enc:enc|out_200hz ; 0.000        ; 0.000      ; 2.181      ;
+; 2.107 ; enc:enc|pha_reg          ; enc:enc|pha_reg          ; enc:enc|out_200hz ; enc:enc|out_200hz ; 0.000        ; 0.000      ; 2.328      ;
+; 2.177 ; enc:enc|Phase90_Count[0] ; enc:enc|phb_reg          ; enc:enc|out_200hz ; enc:enc|out_200hz ; 0.000        ; 0.000      ; 2.398      ;
++-------+--------------------------+--------------------------+-------------------+-------------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'my_uart_rx:my_uart_rx|rx_enable_reg'                                                                                                       ;
++-------+-----------+----------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; Slack ; From Node ; To Node  ; Launch Clock                        ; Latch Clock                         ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+----------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+; 1.707 ; flag_reg  ; flag_reg ; my_uart_rx:my_uart_rx|rx_enable_reg ; my_uart_rx:my_uart_rx|rx_enable_reg ; 0.000        ; 0.000      ; 1.928      ;
++-------+-----------+----------+-------------------------------------+-------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'rs232_rx'                                                                                                                                                                    ;
++--------+---------------------------------------+-------------------------------------+-------------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                             ; To Node                             ; Launch Clock                              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------------------+-------------------------------------+-------------------------------------------+-------------+--------------+------------+------------+
+; -2.766 ; my_uart_rx:my_uart_rx|rx_complete_reg ; my_uart_rx:my_uart_rx|rx_enable_reg ; speed_select:speed_select|buad_clk_rx_reg ; rs232_rx    ; 1.000        ; 0.072      ; 3.505      ;
++--------+---------------------------------------+-------------------------------------+-------------------------------------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'speed_select:speed_select|buad_clk_rx_reg'                                                                                                                                                          ;
++-------+-------------------------------------+---------------------------------------+-------------------------------------+-------------------------------------------+--------------+------------+------------+
+; Slack ; From Node                           ; To Node                               ; Launch Clock                        ; Latch Clock                               ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------+---------------------------------------+-------------------------------------+-------------------------------------------+--------------+------------+------------+
+; 0.776 ; my_uart_rx:my_uart_rx|rx_enable_reg ; my_uart_rx:my_uart_rx|rx_complete_reg ; my_uart_rx:my_uart_rx|rx_enable_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.500        ; 3.790      ; 3.557      ;
+; 1.276 ; my_uart_rx:my_uart_rx|rx_enable_reg ; my_uart_rx:my_uart_rx|rx_complete_reg ; my_uart_rx:my_uart_rx|rx_enable_reg ; speed_select:speed_select|buad_clk_rx_reg ; 1.000        ; 3.790      ; 3.557      ;
++-------+-------------------------------------+---------------------------------------+-------------------------------------+-------------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'speed_select:speed_select|buad_clk_rx_reg'                                                                                                                                                            ;
++--------+-------------------------------------+---------------------------------------+-------------------------------------+-------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                           ; To Node                               ; Launch Clock                        ; Latch Clock                               ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------------------------+---------------------------------------+-------------------------------------+-------------------------------------------+--------------+------------+------------+
+; -0.830 ; my_uart_rx:my_uart_rx|rx_enable_reg ; my_uart_rx:my_uart_rx|rx_complete_reg ; my_uart_rx:my_uart_rx|rx_enable_reg ; speed_select:speed_select|buad_clk_rx_reg ; 0.000        ; 3.790      ; 3.557      ;
+; -0.330 ; my_uart_rx:my_uart_rx|rx_enable_reg ; my_uart_rx:my_uart_rx|rx_complete_reg ; my_uart_rx:my_uart_rx|rx_enable_reg ; speed_select:speed_select|buad_clk_rx_reg ; -0.500       ; 3.790      ; 3.557      ;
++--------+-------------------------------------+---------------------------------------+-------------------------------------+-------------------------------------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal: 'rs232_rx'                                                                                                                                                                    ;
++-------+---------------------------------------+-------------------------------------+-------------------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                             ; To Node                             ; Launch Clock                              ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------+-------------------------------------+-------------------------------------------+-------------+--------------+------------+------------+
+; 3.212 ; my_uart_rx:my_uart_rx|rx_complete_reg ; my_uart_rx:my_uart_rx|rx_enable_reg ; speed_select:speed_select|buad_clk_rx_reg ; rs232_rx    ; 0.000        ; 0.072      ; 3.505      ;
++-------+---------------------------------------+-------------------------------------+-------------------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'clk'                                                                     ;
++--------+--------------+----------------+------------------+-------+------------+---------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target        ;
++--------+--------------+----------------+------------------+-------+------------+---------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; clk   ; Rise       ; clk           ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[10] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[10] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[11] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[11] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[12] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[12] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[13] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[13] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[14] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[14] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[15] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[15] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[16] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[16] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[17] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[17] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[18] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[18] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[19] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[19] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[20] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[20] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[21] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[21] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[22] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[22] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[23] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[23] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[4]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[4]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[5]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[5]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[6]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[6]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[7]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[7]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[8]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[8]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Buff_temp[9]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Buff_temp[9]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Current.IDLE  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Current.IDLE  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Current.S1    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Current.S1    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Current.SAVE  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Current.SAVE  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Current.WAIT  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Current.WAIT  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Flag_temp     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Flag_temp     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[0]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[0]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[10]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[10]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[11]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[11]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[12]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[12]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[13]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[13]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[14]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[14]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[15]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[15]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[16]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[16]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[17]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[17]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[18]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[18]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[19]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[19]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[1]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[1]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[20]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[20]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[21]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[21]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[22]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[22]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[23]    ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[23]    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[2]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[2]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[3]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[3]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[4]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[4]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[5]     ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk   ; Rise       ; Rx_cmd[5]     ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk   ; Rise       ; Rx_cmd[6]     ;
++--------+--------------+----------------+------------------+-------+------------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'rs232_rx'                                                                                         ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target                              ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; rs232_rx ; Rise       ; rs232_rx                            ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; rs232_rx ; Fall       ; my_uart_rx:my_uart_rx|rx_enable_reg ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; rs232_rx ; Fall       ; my_uart_rx:my_uart_rx|rx_enable_reg ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; rs232_rx ; Rise       ; my_uart_rx|rx_enable_reg|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; rs232_rx ; Rise       ; my_uart_rx|rx_enable_reg|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; rs232_rx ; Rise       ; rs232_rx|combout                    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; rs232_rx ; Rise       ; rs232_rx|combout                    ;
++--------+--------------+----------------+------------------+----------+------------+-------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'enc:enc|out_200hz'                                                                             ;
++-------+--------------+----------------+------------------+-------------------+------------+--------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock             ; Clock Edge ; Target                   ;
++-------+--------------+----------------+------------------+-------------------+------------+--------------------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; enc:enc|out_200hz ; Rise       ; enc:enc|Phase90_Count[0] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; enc:enc|out_200hz ; Rise       ; enc:enc|Phase90_Count[0] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; enc:enc|out_200hz ; Rise       ; enc:enc|Phase90_Count[1] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; enc:enc|out_200hz ; Rise       ; enc:enc|Phase90_Count[1] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; enc:enc|out_200hz ; Rise       ; enc:enc|pha_reg          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; enc:enc|out_200hz ; Rise       ; enc:enc|pha_reg          ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; enc:enc|out_200hz ; Rise       ; enc:enc|phb_reg          ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; enc:enc|out_200hz ; Rise       ; enc:enc|phb_reg          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; enc:enc|out_200hz ; Rise       ; enc|Phase90_Count[0]|clk ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; enc:enc|out_200hz ; Rise       ; enc|Phase90_Count[0]|clk ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; enc:enc|out_200hz ; Rise       ; enc|Phase90_Count[1]|clk ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; enc:enc|out_200hz ; Rise       ; enc|Phase90_Count[1]|clk ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; enc:enc|out_200hz ; Rise       ; enc|out_200hz|regout     ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; enc:enc|out_200hz ; Rise       ; enc|out_200hz|regout     ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; enc:enc|out_200hz ; Rise       ; enc|pha_reg|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; enc:enc|out_200hz ; Rise       ; enc|pha_reg|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; enc:enc|out_200hz ; Rise       ; enc|phb_reg|clk          ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; enc:enc|out_200hz ; Rise       ; enc|phb_reg|clk          ;
++-------+--------------+----------------+------------------+-------------------+------------+--------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'my_uart_rx:my_uart_rx|rx_enable_reg'                                                                                    ;
++-------+--------------+----------------+------------------+-------------------------------------+------------+---------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                               ; Clock Edge ; Target                          ;
++-------+--------------+----------------+------------------+-------------------------------------+------------+---------------------------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; my_uart_rx:my_uart_rx|rx_enable_reg ; Fall       ; flag_reg                        ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; my_uart_rx:my_uart_rx|rx_enable_reg ; Fall       ; flag_reg                        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; my_uart_rx:my_uart_rx|rx_enable_reg ; Rise       ; flag_reg|clk                    ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; my_uart_rx:my_uart_rx|rx_enable_reg ; Rise       ; flag_reg|clk                    ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; my_uart_rx:my_uart_rx|rx_enable_reg ; Rise       ; my_uart_rx|rx_enable_reg|regout ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; my_uart_rx:my_uart_rx|rx_enable_reg ; Rise       ; my_uart_rx|rx_enable_reg|regout ;
++-------+--------------+----------------+------------------+-------------------------------------+------------+---------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'speed_select:speed_select|buad_clk_rx_reg'                                                                                          ;
++-------+--------------+----------------+------------------+-------------------------------------------+------------+---------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock                                     ; Clock Edge ; Target                                ;
++-------+--------------+----------------+------------------+-------------------------------------------+------------+---------------------------------------+
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_complete_reg ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_complete_reg ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx:my_uart_rx|rx_count[0]     ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx:my_uart_rx|rx_count[0]     ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx:my_uart_rx|rx_count[1]     ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx:my_uart_rx|rx_count[1]     ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx:my_uart_rx|rx_count[2]     ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx:my_uart_rx|rx_count[2]     ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx:my_uart_rx|rx_count[3]     ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx:my_uart_rx|rx_count[3]     ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[0]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[0]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[1]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[1]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[2]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[2]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[3]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[3]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[4]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[4]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[5]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[5]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[6]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[6]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[7]  ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_reg[7]  ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[0] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[0] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[1] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[1] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[2] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[2] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[3] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[3] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[4] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[4] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[5] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[5] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[6] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[6] ;
+; 0.234 ; 0.500        ; 0.266          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[7] ;
+; 0.234 ; 0.500        ; 0.266          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Fall       ; my_uart_rx:my_uart_rx|rx_data_temp[7] ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_complete_reg|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_complete_reg|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_count[0]|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_count[0]|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_count[1]|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_count[1]|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_count[2]|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_count[2]|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_count[3]|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_count[3]|clk            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[0]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[0]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[1]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[1]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[2]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[2]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[3]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[3]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[4]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[4]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[5]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[5]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[6]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[6]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[7]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_reg[7]|clk         ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[0]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[0]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[1]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[1]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[2]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[2]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[3]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[3]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[4]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[4]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[5]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[5]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[6]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[6]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[7]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; my_uart_rx|rx_data_temp[7]|clk        ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; speed_select|buad_clk_rx_reg|regout   ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; speed_select:speed_select|buad_clk_rx_reg ; Rise       ; speed_select|buad_clk_rx_reg|regout   ;
++-------+--------------+----------------+------------------+-------------------------------------------+------------+---------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Setup Times                                                                                                                    ;
++-----------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; Data Port ; Clock Port                                ; Rise  ; Fall  ; Clock Edge ; Clock Reference                           ;
++-----------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+; rst_n     ; clk                                       ; 5.179 ; 5.179 ; Rise       ; clk                                       ;
+; rst_n     ; enc:enc|out_200hz                         ; 4.269 ; 4.269 ; Rise       ; enc:enc|out_200hz                         ;
+; rs232_rx  ; speed_select:speed_select|buad_clk_rx_reg ; 2.601 ; 2.601 ; Fall       ; speed_select:speed_select|buad_clk_rx_reg ;
++-----------+-------------------------------------------+-------+-------+------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------+
+; Hold Times                                                                                                                       ;
++-----------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; Data Port ; Clock Port                                ; Rise   ; Fall   ; Clock Edge ; Clock Reference                           ;
++-----------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+; rst_n     ; clk                                       ; -4.625 ; -4.625 ; Rise       ; clk                                       ;
+; rst_n     ; enc:enc|out_200hz                         ; -3.708 ; -3.708 ; Rise       ; enc:enc|out_200hz                         ;
+; rs232_rx  ; speed_select:speed_select|buad_clk_rx_reg ; -0.761 ; -0.761 ; Fall       ; speed_select:speed_select|buad_clk_rx_reg ;
++-----------+-------------------------------------------+--------+--------+------------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Clock to Output Times                                                            ;
++-----------+-------------------+--------+--------+------------+-------------------+
+; Data Port ; Clock Port        ; Rise   ; Fall   ; Clock Edge ; Clock Reference   ;
++-----------+-------------------+--------+--------+------------+-------------------+
+; BusA[*]   ; clk               ; 15.676 ; 15.676 ; Rise       ; clk               ;
+;  BusA[4]  ; clk               ; 11.145 ; 11.145 ; Rise       ; clk               ;
+;  BusA[8]  ; clk               ; 15.676 ; 15.676 ; Rise       ; clk               ;
+;  BusA[15] ; clk               ; 15.633 ; 15.633 ; Rise       ; clk               ;
+;  BusA[17] ; clk               ; 11.488 ; 11.488 ; Rise       ; clk               ;
+; BusD[*]   ; clk               ; 13.508 ; 13.508 ; Rise       ; clk               ;
+;  BusD[76] ; clk               ; 13.508 ; 13.508 ; Rise       ; clk               ;
+; BusE[*]   ; clk               ; 12.196 ; 12.196 ; Rise       ; clk               ;
+;  BusE[95] ; clk               ; 12.196 ; 12.196 ; Rise       ; clk               ;
+; led       ; clk               ; 9.123  ; 9.123  ; Rise       ; clk               ;
+; BusA[*]   ; enc:enc|out_200hz ; 10.691 ; 10.691 ; Rise       ; enc:enc|out_200hz ;
+;  BusA[14] ; enc:enc|out_200hz ; 10.691 ; 10.691 ; Rise       ; enc:enc|out_200hz ;
+; BusC[*]   ; enc:enc|out_200hz ; 9.319  ; 9.319  ; Rise       ; enc:enc|out_200hz ;
+;  BusC[49] ; enc:enc|out_200hz ; 9.319  ; 9.319  ; Rise       ; enc:enc|out_200hz ;
++-----------+-------------------+--------+--------+------------+-------------------+
+
+
++----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                    ;
++-----------+-------------------+--------+--------+------------+-------------------+
+; Data Port ; Clock Port        ; Rise   ; Fall   ; Clock Edge ; Clock Reference   ;
++-----------+-------------------+--------+--------+------------+-------------------+
+; BusA[*]   ; clk               ; 10.266 ; 10.266 ; Rise       ; clk               ;
+;  BusA[4]  ; clk               ; 10.834 ; 10.834 ; Rise       ; clk               ;
+;  BusA[8]  ; clk               ; 12.259 ; 12.259 ; Rise       ; clk               ;
+;  BusA[15] ; clk               ; 12.216 ; 12.216 ; Rise       ; clk               ;
+;  BusA[17] ; clk               ; 10.266 ; 10.266 ; Rise       ; clk               ;
+; BusD[*]   ; clk               ; 12.933 ; 12.933 ; Rise       ; clk               ;
+;  BusD[76] ; clk               ; 12.933 ; 12.933 ; Rise       ; clk               ;
+; BusE[*]   ; clk               ; 11.020 ; 11.020 ; Rise       ; clk               ;
+;  BusE[95] ; clk               ; 11.020 ; 11.020 ; Rise       ; clk               ;
+; led       ; clk               ; 9.123  ; 9.123  ; Rise       ; clk               ;
+; BusA[*]   ; enc:enc|out_200hz ; 10.691 ; 10.691 ; Rise       ; enc:enc|out_200hz ;
+;  BusA[14] ; enc:enc|out_200hz ; 10.691 ; 10.691 ; Rise       ; enc:enc|out_200hz ;
+; BusC[*]   ; enc:enc|out_200hz ; 9.319  ; 9.319  ; Rise       ; enc:enc|out_200hz ;
+;  BusC[49] ; enc:enc|out_200hz ; 9.319  ; 9.319  ; Rise       ; enc:enc|out_200hz ;
++-----------+-------------------+--------+--------+------------+-------------------+
+
+
++------------------------------------------------------+
+; Propagation Delay                                    ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; BusA[2]    ; BusA[8]     ; 13.582 ;    ;    ; 13.582 ;
+; BusA[2]    ; BusA[15]    ; 13.539 ;    ;    ; 13.539 ;
+; BusA[2]    ; BusA[17]    ; 9.280  ;    ;    ; 9.280  ;
+; BusA[5]    ; BusA[8]     ; 11.938 ;    ;    ; 11.938 ;
+; BusA[5]    ; BusA[15]    ; 11.895 ;    ;    ; 11.895 ;
+; BusA[15]   ; BusA[5]     ; 7.112  ;    ;    ; 7.112  ;
+; BusA[16]   ; BusA[2]     ; 7.178  ;    ;    ; 7.178  ;
+; BusA[16]   ; BusA[3]     ; 7.178  ;    ;    ; 7.178  ;
+; BusA[16]   ; BusA[4]     ; 9.096  ;    ;    ; 9.096  ;
+; BusA[16]   ; BusE[95]    ; 10.255 ;    ;    ; 10.255 ;
+; BusB[29]   ; BusD[76]    ; 10.894 ;    ;    ; 10.894 ;
+; BusD[73]   ; BusA[8]     ; 13.430 ;    ;    ; 13.430 ;
+; BusD[73]   ; BusA[15]    ; 13.387 ;    ;    ; 13.387 ;
+; BusD[77]   ; BusB[30]    ; 9.033  ;    ;    ; 9.033  ;
+; BusD[77]   ; BusD[76]    ; 12.786 ;    ;    ; 12.786 ;
+; BusE[99]   ; BusB[28]    ; 7.810  ;    ;    ; 7.810  ;
+; BusE[100]  ; BusB[26]    ; 7.808  ;    ;    ; 7.808  ;
++------------+-------------+--------+----+----+--------+
+
+
++------------------------------------------------------+
+; Minimum Propagation Delay                            ;
++------------+-------------+--------+----+----+--------+
+; Input Port ; Output Port ; RR     ; RF ; FR ; FF     ;
++------------+-------------+--------+----+----+--------+
+; BusA[2]    ; BusA[8]     ; 13.582 ;    ;    ; 13.582 ;
+; BusA[2]    ; BusA[15]    ; 13.539 ;    ;    ; 13.539 ;
+; BusA[2]    ; BusA[17]    ; 9.280  ;    ;    ; 9.280  ;
+; BusA[5]    ; BusA[8]     ; 11.938 ;    ;    ; 11.938 ;
+; BusA[5]    ; BusA[15]    ; 11.895 ;    ;    ; 11.895 ;
+; BusA[15]   ; BusA[5]     ; 7.112  ;    ;    ; 7.112  ;
+; BusA[16]   ; BusA[2]     ; 7.178  ;    ;    ; 7.178  ;
+; BusA[16]   ; BusA[3]     ; 7.178  ;    ;    ; 7.178  ;
+; BusA[16]   ; BusA[4]     ; 9.096  ;    ;    ; 9.096  ;
+; BusA[16]   ; BusE[95]    ; 10.255 ;    ;    ; 10.255 ;
+; BusB[29]   ; BusD[76]    ; 10.894 ;    ;    ; 10.894 ;
+; BusD[73]   ; BusA[8]     ; 13.430 ;    ;    ; 13.430 ;
+; BusD[73]   ; BusA[15]    ; 13.387 ;    ;    ; 13.387 ;
+; BusD[77]   ; BusB[30]    ; 9.033  ;    ;    ; 9.033  ;
+; BusD[77]   ; BusD[76]    ; 12.786 ;    ;    ; 12.786 ;
+; BusE[99]   ; BusB[28]    ; 7.810  ;    ;    ; 7.810  ;
+; BusE[100]  ; BusB[26]    ; 7.808  ;    ;    ; 7.808  ;
++------------+-------------+--------+----+----+--------+
+
+
++-----------------------------------------------------------------------+
+; Output Enable Times                                                   ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; BusA[*]   ; clk        ; 7.864  ;      ; Rise       ; clk             ;
+;  BusA[2]  ; clk        ; 7.882  ;      ; Rise       ; clk             ;
+;  BusA[3]  ; clk        ; 10.447 ;      ; Rise       ; clk             ;
+;  BusA[4]  ; clk        ; 9.649  ;      ; Rise       ; clk             ;
+;  BusA[5]  ; clk        ; 7.864  ;      ; Rise       ; clk             ;
+;  BusA[8]  ; clk        ; 12.854 ;      ; Rise       ; clk             ;
+;  BusA[14] ; clk        ; 7.930  ;      ; Rise       ; clk             ;
+;  BusA[15] ; clk        ; 12.810 ;      ; Rise       ; clk             ;
+;  BusA[17] ; clk        ; 10.330 ;      ; Rise       ; clk             ;
+; BusB[*]   ; clk        ; 7.808  ;      ; Rise       ; clk             ;
+;  BusB[26] ; clk        ; 7.808  ;      ; Rise       ; clk             ;
+;  BusB[28] ; clk        ; 8.373  ;      ; Rise       ; clk             ;
+;  BusB[30] ; clk        ; 8.373  ;      ; Rise       ; clk             ;
+; BusC[*]   ; clk        ; 9.240  ;      ; Rise       ; clk             ;
+;  BusC[49] ; clk        ; 9.240  ;      ; Rise       ; clk             ;
+; BusD[*]   ; clk        ; 12.387 ;      ; Rise       ; clk             ;
+;  BusD[76] ; clk        ; 12.387 ;      ; Rise       ; clk             ;
+; BusE[*]   ; clk        ; 9.791  ;      ; Rise       ; clk             ;
+;  BusE[95] ; clk        ; 9.791  ;      ; Rise       ; clk             ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Output Enable Times                                           ;
++-----------+------------+--------+------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+------+------------+-----------------+
+; BusA[*]   ; clk        ; 7.864  ;      ; Rise       ; clk             ;
+;  BusA[2]  ; clk        ; 7.882  ;      ; Rise       ; clk             ;
+;  BusA[3]  ; clk        ; 10.447 ;      ; Rise       ; clk             ;
+;  BusA[4]  ; clk        ; 9.433  ;      ; Rise       ; clk             ;
+;  BusA[5]  ; clk        ; 7.864  ;      ; Rise       ; clk             ;
+;  BusA[8]  ; clk        ; 11.163 ;      ; Rise       ; clk             ;
+;  BusA[14] ; clk        ; 7.930  ;      ; Rise       ; clk             ;
+;  BusA[15] ; clk        ; 11.119 ;      ; Rise       ; clk             ;
+;  BusA[17] ; clk        ; 9.119  ;      ; Rise       ; clk             ;
+; BusB[*]   ; clk        ; 7.808  ;      ; Rise       ; clk             ;
+;  BusB[26] ; clk        ; 7.808  ;      ; Rise       ; clk             ;
+;  BusB[28] ; clk        ; 8.373  ;      ; Rise       ; clk             ;
+;  BusB[30] ; clk        ; 8.373  ;      ; Rise       ; clk             ;
+; BusC[*]   ; clk        ; 9.240  ;      ; Rise       ; clk             ;
+;  BusC[49] ; clk        ; 9.240  ;      ; Rise       ; clk             ;
+; BusD[*]   ; clk        ; 11.476 ;      ; Rise       ; clk             ;
+;  BusD[76] ; clk        ; 11.476 ;      ; Rise       ; clk             ;
+; BusE[*]   ; clk        ; 9.693  ;      ; Rise       ; clk             ;
+;  BusE[95] ; clk        ; 9.693  ;      ; Rise       ; clk             ;
++-----------+------------+--------+------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Output Disable Times                                                          ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; BusA[*]   ; clk        ; 7.864     ;           ; Rise       ; clk             ;
+;  BusA[2]  ; clk        ; 7.882     ;           ; Rise       ; clk             ;
+;  BusA[3]  ; clk        ; 10.447    ;           ; Rise       ; clk             ;
+;  BusA[4]  ; clk        ; 9.649     ;           ; Rise       ; clk             ;
+;  BusA[5]  ; clk        ; 7.864     ;           ; Rise       ; clk             ;
+;  BusA[8]  ; clk        ; 12.854    ;           ; Rise       ; clk             ;
+;  BusA[14] ; clk        ; 7.930     ;           ; Rise       ; clk             ;
+;  BusA[15] ; clk        ; 12.810    ;           ; Rise       ; clk             ;
+;  BusA[17] ; clk        ; 10.330    ;           ; Rise       ; clk             ;
+; BusB[*]   ; clk        ; 7.808     ;           ; Rise       ; clk             ;
+;  BusB[26] ; clk        ; 7.808     ;           ; Rise       ; clk             ;
+;  BusB[28] ; clk        ; 8.373     ;           ; Rise       ; clk             ;
+;  BusB[30] ; clk        ; 8.373     ;           ; Rise       ; clk             ;
+; BusC[*]   ; clk        ; 9.240     ;           ; Rise       ; clk             ;
+;  BusC[49] ; clk        ; 9.240     ;           ; Rise       ; clk             ;
+; BusD[*]   ; clk        ; 12.387    ;           ; Rise       ; clk             ;
+;  BusD[76] ; clk        ; 12.387    ;           ; Rise       ; clk             ;
+; BusE[*]   ; clk        ; 9.791     ;           ; Rise       ; clk             ;
+;  BusE[95] ; clk        ; 9.791     ;           ; Rise       ; clk             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Minimum Output Disable Times                                                  ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; Data Port ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
++-----------+------------+-----------+-----------+------------+-----------------+
+; BusA[*]   ; clk        ; 7.864     ;           ; Rise       ; clk             ;
+;  BusA[2]  ; clk        ; 7.882     ;           ; Rise       ; clk             ;
+;  BusA[3]  ; clk        ; 10.447    ;           ; Rise       ; clk             ;
+;  BusA[4]  ; clk        ; 9.433     ;           ; Rise       ; clk             ;
+;  BusA[5]  ; clk        ; 7.864     ;           ; Rise       ; clk             ;
+;  BusA[8]  ; clk        ; 11.163    ;           ; Rise       ; clk             ;
+;  BusA[14] ; clk        ; 7.930     ;           ; Rise       ; clk             ;
+;  BusA[15] ; clk        ; 11.119    ;           ; Rise       ; clk             ;
+;  BusA[17] ; clk        ; 9.119     ;           ; Rise       ; clk             ;
+; BusB[*]   ; clk        ; 7.808     ;           ; Rise       ; clk             ;
+;  BusB[26] ; clk        ; 7.808     ;           ; Rise       ; clk             ;
+;  BusB[28] ; clk        ; 8.373     ;           ; Rise       ; clk             ;
+;  BusB[30] ; clk        ; 8.373     ;           ; Rise       ; clk             ;
+; BusC[*]   ; clk        ; 9.240     ;           ; Rise       ; clk             ;
+;  BusC[49] ; clk        ; 9.240     ;           ; Rise       ; clk             ;
+; BusD[*]   ; clk        ; 11.476    ;           ; Rise       ; clk             ;
+;  BusD[76] ; clk        ; 11.476    ;           ; Rise       ; clk             ;
+; BusE[*]   ; clk        ; 9.693     ;           ; Rise       ; clk             ;
+;  BusE[95] ; clk        ; 9.693     ;           ; Rise       ; clk             ;
++-----------+------------+-----------+-----------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                   ;
++-------------------------------------------+-------------------------------------------+----------+----------+----------+----------+
+; From Clock                                ; To Clock                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------------------+-------------------------------------------+----------+----------+----------+----------+
+; clk                                       ; clk                                       ; 10295    ; 0        ; 0        ; 0        ;
+; enc:enc|out_200hz                         ; clk                                       ; 1        ; 1        ; 0        ; 0        ;
+; my_uart_rx:my_uart_rx|rx_enable_reg       ; clk                                       ; 14       ; 18       ; 0        ; 0        ;
+; speed_select:speed_select|buad_clk_rx_reg ; clk                                       ; 0        ; 40       ; 0        ; 0        ;
+; enc:enc|out_200hz                         ; enc:enc|out_200hz                         ; 9        ; 0        ; 0        ; 0        ;
+; my_uart_rx:my_uart_rx|rx_enable_reg       ; my_uart_rx:my_uart_rx|rx_enable_reg       ; 0        ; 0        ; 0        ; 1        ;
+; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; 0        ; 0        ; 8        ; 8        ;
+; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0        ; 0        ; 8        ; 8        ;
+; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 15       ; 0        ; 91       ; 17       ;
++-------------------------------------------+-------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                    ;
++-------------------------------------------+-------------------------------------------+----------+----------+----------+----------+
+; From Clock                                ; To Clock                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------------------+-------------------------------------------+----------+----------+----------+----------+
+; clk                                       ; clk                                       ; 10295    ; 0        ; 0        ; 0        ;
+; enc:enc|out_200hz                         ; clk                                       ; 1        ; 1        ; 0        ; 0        ;
+; my_uart_rx:my_uart_rx|rx_enable_reg       ; clk                                       ; 14       ; 18       ; 0        ; 0        ;
+; speed_select:speed_select|buad_clk_rx_reg ; clk                                       ; 0        ; 40       ; 0        ; 0        ;
+; enc:enc|out_200hz                         ; enc:enc|out_200hz                         ; 9        ; 0        ; 0        ; 0        ;
+; my_uart_rx:my_uart_rx|rx_enable_reg       ; my_uart_rx:my_uart_rx|rx_enable_reg       ; 0        ; 0        ; 0        ; 1        ;
+; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; 0        ; 0        ; 8        ; 8        ;
+; rs232_rx                                  ; speed_select:speed_select|buad_clk_rx_reg ; 0        ; 0        ; 8        ; 8        ;
+; speed_select:speed_select|buad_clk_rx_reg ; speed_select:speed_select|buad_clk_rx_reg ; 15       ; 0        ; 91       ; 17       ;
++-------------------------------------------+-------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                                                ;
++-------------------------------------------+-------------------------------------------+----------+----------+----------+----------+
+; From Clock                                ; To Clock                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------------------+-------------------------------------------+----------+----------+----------+----------+
+; speed_select:speed_select|buad_clk_rx_reg ; rs232_rx                                  ; 0        ; 0        ; 0        ; 1        ;
+; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; 0        ; 0        ; 1        ; 1        ;
++-------------------------------------------+-------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                                                 ;
++-------------------------------------------+-------------------------------------------+----------+----------+----------+----------+
+; From Clock                                ; To Clock                                  ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------------------------------+-------------------------------------------+----------+----------+----------+----------+
+; speed_select:speed_select|buad_clk_rx_reg ; rs232_rx                                  ; 0        ; 0        ; 0        ; 1        ;
+; my_uart_rx:my_uart_rx|rx_enable_reg       ; speed_select:speed_select|buad_clk_rx_reg ; 0        ; 0        ; 1        ; 1        ;
++-------------------------------------------+-------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 10    ; 10   ;
+; Unconstrained Input Port Paths  ; 163   ; 163  ;
+; Unconstrained Output Ports      ; 15    ; 15   ;
+; Unconstrained Output Port Paths ; 48    ; 48   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+    Info: Processing started: Fri Sep 09 15:38:04 2016
+Info: Command: quartus_sta top -c top
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'top.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+    Info (332105): create_clock -period 1.000 -name enc:enc|out_200hz enc:enc|out_200hz
+    Info (332105): create_clock -period 1.000 -name speed_select:speed_select|buad_clk_rx_reg speed_select:speed_select|buad_clk_rx_reg
+    Info (332105): create_clock -period 1.000 -name rs232_rx rs232_rx
+    Info (332105): create_clock -period 1.000 -name my_uart_rx:my_uart_rx|rx_enable_reg my_uart_rx:my_uart_rx|rx_enable_reg
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -14.623
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -14.623            -909.392 clk 
+    Info (332119):    -5.414             -94.772 speed_select:speed_select|buad_clk_rx_reg 
+    Info (332119):    -1.731              -6.412 enc:enc|out_200hz 
+    Info (332119):    -1.261              -1.261 my_uart_rx:my_uart_rx|rx_enable_reg 
+Info (332146): Worst-case hold slack is -2.158
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.158              -2.158 clk 
+    Info (332119):     0.171               0.000 speed_select:speed_select|buad_clk_rx_reg 
+    Info (332119):     1.679               0.000 enc:enc|out_200hz 
+    Info (332119):     1.707               0.000 my_uart_rx:my_uart_rx|rx_enable_reg 
+Info (332146): Worst-case recovery slack is -2.766
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.766              -2.766 rs232_rx 
+    Info (332119):     0.776               0.000 speed_select:speed_select|buad_clk_rx_reg 
+Info (332146): Worst-case removal slack is -0.830
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.830              -0.830 speed_select:speed_select|buad_clk_rx_reg 
+    Info (332119):     3.212               0.000 rs232_rx 
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 clk 
+    Info (332119):    -2.289              -2.289 rs232_rx 
+    Info (332119):     0.234               0.000 enc:enc|out_200hz 
+    Info (332119):     0.234               0.000 my_uart_rx:my_uart_rx|rx_enable_reg 
+    Info (332119):     0.234               0.000 speed_select:speed_select|buad_clk_rx_reg 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 428 megabytes
+    Info: Processing ended: Fri Sep 09 15:38:05 2016
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
+
+

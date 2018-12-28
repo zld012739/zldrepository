@@ -1,0 +1,501 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+#board 1 start
+# SPI_MASTER:
+    # CMD: SPI
+    # CLK:
+        # T_PIN: ?
+        # A_PIN: SPI1_CLK_K70
+        # DIRECTION: T2A
+    # CS:
+        # T_PIN: ?
+        # A_PIN: SPI1_CS0_K70
+        # DIRECTION: T2A
+    # MISO:
+        # T_PIN: ?
+        # A_PIN: SPI1_MISO_K70
+        # DIRECTION: A2T
+    # MOSI:
+        # T_PIN: ?
+        # A_PIN: SPI1_MOSI_K70
+        # DIRECTION: T2A
+LPSPI_MASTER_M4:
+    CMD: SMF
+    CLK:
+        T_PIN: JJ2_12
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+    CS:
+        T_PIN: JJ2_6
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+    MISO:
+        T_PIN: JJ2_10
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: JJ2_8
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+LPSPI_SLAVE_M4:
+    CMD: SSF
+    CLK:
+        T_PIN: JJ2_12
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: A2T
+    CS:
+        T_PIN: JJ2_6
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: A2T
+    MISO:
+        T_PIN: JJ2_10
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: JJ2_8
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: T2A  
+LPSPI_MASTER_M0:
+    CMD: SMZ
+    CLK:
+        T_PIN: JJ4_5
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+    CS:
+        T_PIN: JJ4_9
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+    MISO:
+        T_PIN: JJ1_6
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: JJ1_2
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A  
+LPSPI_SLAVE_M0:
+    CMD: SSZ
+    CLK:
+        T_PIN: JJ4_5
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: A2T
+    CS:
+        T_PIN: JJ4_9
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: A2T
+    MISO:
+        T_PIN: JJ1_6
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: JJ1_2
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: T2A  
+        
+FREERTOS_LPSPI:
+    CMD: SPI
+    CLK:
+        T_PIN_1: JJ2_12
+        T_PIN_2: JJ4_5
+        DIRECTION: T2T
+    CS:
+        T_PIN_1: JJ2_6
+        T_PIN_2: JJ4_9
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: JJ1_2
+        T_PIN_2: JJ2_10
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: JJ2_8
+        T_PIN_2: JJ1_6
+        DIRECTION: T2T
+        
+FLEXIO_PWM:
+    CMD: FWM
+    FUNC0:
+        T_PIN: JJ4_15
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ4_15
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+LPSPI_LOOPBACK:
+    CMD: LSL
+    FUNC0_M0:
+        T_PIN_1: JJ3_8
+        T_PIN_2: JJ1_6
+        DIRECTION: T2T
+    FUNC1_M4:
+        T_PIN_1: CPLD_IO4
+        T_PIN_2: JJ3_2
+        DIRECTION: T2T
+
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+        
+UST:
+    IP: __UART8BIT
+    CMD: UST
+    ALT: a
+    rs232_tx8to8:
+        PIN: JJ2_3
+        DIRECTION: out
+    rs232_rx8to8:
+        PIN: JJ2_1
+        DIRECTION: in
+    compara_error:
+        PIN: A35_K70
+        DIRECTION: out
+
+USF:
+    CMD: USF
+    FUNC0:
+        T_PIN_1: CPLD_IO54
+        T_PIN_2: A35_K70
+        DIRECTION: T2T
+
+GPIO_INPUT_INT:
+    CMD: GII
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+
+TPM_OUT_M0:
+    CMD: TPZ
+    PWM0:
+        T_PIN: JJ1_8
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: JJ1_8
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+TPM_OUT_M4:
+    CMD: TPF
+    PWM0:
+        T_PIN: JJ2_2
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: JJ2_2
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+TPM_IN_M0:
+    CMD: TIZ
+    PWM0:
+        T_PIN: JJ1_8
+        A_PIN: A40
+        DIRECTION: A2T
+        
+TPM_IN_M4:
+    CMD: TIF
+    PWM0:
+        T_PIN: JJ2_2
+        A_PIN: A40
+        DIRECTION: A2T
+
+USH:
+    IP: __UART7BIT
+    CMD: USH
+    ALT: a
+    rs232_tx7to7:
+        PIN: CPLD_IO50
+        DIRECTION: out
+    rs232_rx7to7:
+        PIN: CPLD_IO52
+        DIRECTION: in
+    compara_error:
+        PIN: A35_K70
+        DIRECTION: out
+
+FLEXIO_SPI_Master:
+    CMD: FSM
+    CLK:
+        T_PIN_1: JJ4_15
+        T_PIN_2: JJ2_13
+        DIRECTION: T2T
+    CS:
+        T_PIN_1: JJ1_11
+        T_PIN_2: JJ3_4
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: CPLD_IO4
+        T_PIN_2: JJ1_1
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: JJ1_7
+        T_PIN_2: JJ3_2
+        DIRECTION: T2T
+
+FLEXIO_SPI_Slave:
+    CMD: FSS
+    CLK:
+        T_PIN_1: JJ2_13
+        T_PIN_2: JJ4_15
+        DIRECTION: T2T
+    CS:
+        T_PIN_1: JJ3_4
+        T_PIN_2: JJ1_11
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: CPLD_IO4
+        T_PIN_2: JJ1_1
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: JJ1_7
+        T_PIN_2: JJ3_2
+        DIRECTION: T2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+        
+LPTMR_AND_LPIT:
+    CMD: LPT
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+
+LPCMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: B58
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A35
+        DIRECTION: T2A
+    FUNC2:
+        T_PIN: JJ3_9
+        A_PIN: B58
+        DIRECTION: A2T
+#board 1 end
+#board 2 start
+
+        
+#board 2 end
+
+# CMP:
+    # CMD: CMP
+    # FUNC0:
+        # T_PIN: ?
+        # A_PIN: B58
+        # DIRECTION: A2T
+
+# COP:
+    # CMD: COP
+    # FUNC0:
+        # T_PIN: ?
+        # A_PIN: B58
+        # DIRECTION: A2T
+
+
+# FTM:
+    # CMD: FTM
+    # PWM0:
+        # T_PIN: ?
+        # A_PIN: PWM0_K70
+        # DIRECTION: T2A
+    # PWM1:
+        # T_PIN: ?
+        # A_PIN: PWM1_K70
+        # DIRECTION: T2A
+
+# GPIO:
+    # CMD: GPI
+    # FUNC0:
+        # T_PIN: ?
+        # A_PIN: B58
+        # DIRECTION: A2T
+
+# # I2C:
+# #     CMD: I2C
+# #     FUNC0:
+# #         T_PIN: ?
+# #         A_PIN: ?
+# #         DIRECTION: A2T
+
+# POWER_MANAGER:
+    # CMD: PMH
+    # FUNC0:
+        # T_PIN: ?
+        # A_PIN: B58
+        # DIRECTION: A2T
+
+# DSPI_MASTER:
+    # CMD: SPI
+    # CLK:
+        # T_PIN: ?
+        # A_PIN: SPI1_CLK_K70
+        # DIRECTION: T2A
+    # CS:
+        # T_PIN: ?
+        # A_PIN: SPI1_CS0_K70
+        # DIRECTION: T2A
+    # MISO:
+        # T_PIN: ?
+        # A_PIN: SPI1_MISO_K70
+        # DIRECTION: A2T
+    # MOSI:
+        # T_PIN: ?
+        # A_PIN: SPI1_MOSI_K70
+        # DIRECTION: T2A
+
+# DSPI_SLAVE:
+    # CMD: SSI
+    # CLK:
+        # T_PIN: ?
+        # A_PIN: SPI1_CLK_K70
+        # DIRECTION: A2T
+    # CS:
+        # T_PIN: ?
+        # A_PIN: SPI1_CS0_K70
+        # DIRECTION: A2T
+    # MISO:
+        # T_PIN: ?
+        # A_PIN: SPI1_MISO_K70
+        # DIRECTION: A2T
+    # MOSI:
+        # T_PIN: ?
+        # A_PIN: SPI1_MOSI_K70
+        # DIRECTION: T2A
+
+# SPI_MASTER:
+    # CMD: SPI
+    # CLK:
+        # T_PIN: ?
+        # A_PIN: SPI1_CLK_K70
+        # DIRECTION: T2A
+    # CS:
+        # T_PIN: ?
+        # A_PIN: SPI1_CS0_K70
+        # DIRECTION: T2A
+    # MISO:
+        # T_PIN: ?
+        # A_PIN: SPI1_MISO_K70
+        # DIRECTION: A2T
+    # MOSI:
+        # T_PIN: ?
+        # A_PIN: SPI1_MOSI_K70
+        # DIRECTION: T2A
+
+# SPI_SLAVE:
+    # CMD: SSI
+    # CLK:
+        # T_PIN: ?
+        # A_PIN: SPI1_CLK_K70
+        # DIRECTION: A2T
+    # CS:
+        # T_PIN: ?
+        # A_PIN: SPI1_CS0_K70
+        # DIRECTION: A2T
+    # MISO:
+        # T_PIN: ?
+        # A_PIN: SPI1_MISO_K70
+        # DIRECTION: T2A
+    # MOSI:
+        # T_PIN: ?
+        # A_PIN: SPI1_MOSI_K70
+        # DIRECTION: A2T
+
+# TPM:
+    # CMD: TPM
+    # FUNC0:
+        # T_PIN: ?
+        # A_PIN: PWM0_K70
+        # DIRECTION: T2A
+    # FUNC1:
+        # T_PIN: ?
+        # A_PIN: PWM1_K70
+        # DIRECTION: T2A
+
+# WDOG:
+    # CMD: WDG
+    # FUNC0:
+        # T_PIN: ?
+        # A_PIN: B58
+        # DIRECTION: A2T
+
+# # FLEXIO_I2C:
+# #     CMD: F2C
+# #     FUNC0:
+# #         T_PIN: ?
+# #         A_PIN: ?
+# #         DIRECTION: A2T
+
+# FLEXIO_I2S:
+    # CMD: FIS
+    # TX:
+        # T_PIN_1: ?
+        # T_PIN_2: ?
+        # DIRECTION: ?
+        # NOTE: ?
+    # RX:
+        # T_PIN_1: ?
+        # T_PIN_2: ?
+        # DIRECTION: ?
+        # NOTE: ?
+    # CLK:
+        # T_PIN_1: ?
+        # T_PIN_2: ?
+        # DIRECTION: ?
+        # NOTE: ?
+    # LRCLK:
+        # T_PIN_1: ?
+        # T_PIN_2: ?
+        # DIRECTION: ?
+        # NOTE: ?
+
+
+
+# FLEXIO_UART:
+    # CMD: FUT
+    # RX:
+        # T_PIN_1: ?
+        # T_PIN_2: ?
+        # DIRECTION: T2T
+        # NOTE: ?
+    # TX:
+        # T_PIN_1: ?
+        # T_PIN_2: ?
+        # DIRECTION: T2T
+        # NOTE: ?

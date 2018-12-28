@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/simulation/modelsim
+vi2c_slave_testbench
+!s110 1499670732
+!i10b 1
+!s100 aQS137AWNW<demQfnHYKz2
+I:<jzFSH1IXBbKE8@G1kj22
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1499670591
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/test_bench_i2c.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/test_bench_i2c.v
+L0 5
+Z2 OV;L;10.4b;61
+r1
+!s85 0
+31
+!s108 1499670732.000000
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/test_bench_i2c.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/test_bench_i2c.v|
+!i113 1
+Z3 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c
+vtop
+!s110 1499670731
+!i10b 1
+!s100 K^MAA:1bzMR0Oag;X1n4j1
+I=C`jz7Wja_;oLBnBGk0f31
+R1
+R0
+w1499667413
+8top.vo
+Ftop.vo
+L0 32
+R2
+r1
+!s85 0
+31
+!s108 1499670731.000000
+!s107 top.vo|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|top.vo|
+!i113 1
+R3
+!s92 -vlog01compat -work work +incdir+.

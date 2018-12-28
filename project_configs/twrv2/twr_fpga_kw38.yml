@@ -1,0 +1,7 @@
+
+GII:
+    CMD: GII
+    SW1:
+        T_PIN: CPLD_IO2
+        A_PIN: B58_K70
+        DIRECTION: A2T  

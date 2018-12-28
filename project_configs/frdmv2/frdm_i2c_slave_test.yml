@@ -1,0 +1,19 @@
+SPI_SLAVE_B2B:
+    IP: __SPI_SLAVE_B2B
+    CMD: SPS
+    ALT: a 
+    ss_sck_b2b:
+        PIN: CPLD_IO2
+        DIRECTION: IN
+    ss_mosi_b2b:
+        PIN: CPLD_IO3
+        DIRECTION: IN
+    ss_ssel_b2b:
+        PIN: CPLD_IO4
+        DIRECTION: IN   
+    ss_miso_b2b:
+        PIN: CPLD_IO5
+        DIRECTION: OUT
+    spi_slave_result_b2b:
+        PIN: CPLD_IO14
+        DIRECTION: OUT

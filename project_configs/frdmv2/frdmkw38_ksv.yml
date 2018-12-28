@@ -1,0 +1,49 @@
+
+CMP:
+    IP: __PWM_OUT
+    CMD: CMP
+    pha:
+        PIN: JJ3_4
+        DIRECTION: out
+
+GPIO:
+    CMD: GII
+    FUNC0:
+        T_PIN_1: JJ2_4
+        T_PIN_2: JJ3_4
+        DIRECTION: T2T
+
+TPM:
+    CMD: TPM
+    FUNC0:
+        T_PIN_1: JJ1_14
+        T_PIN_2: JJ1_16
+        DIRECTION: T2T
+
+DSPI_MASTER:
+    CMD: DSM
+    FUNC0:
+        T_PIN_1: JJ2_2
+        T_PIN_2: JJ1_10
+        DIRECTION: T2T
+
+DSPI_SLAVER:
+    IP: __SPI_MASTER_reduced
+    CMD: DSS
+    ALT: a 
+    sm_rd_sck:
+        PIN: JJ1_14
+        DIRECTION: OUT
+    sm_rd_mosi:
+        PIN: JJ1_10
+        DIRECTION: OUT
+    sm_rd_cs_n:
+        PIN: JJ2_6
+        DIRECTION: OUT   
+    sm_rd_miso:
+        PIN: JJ2_2
+        DIRECTION: IN
+
+
+
+

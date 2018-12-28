@@ -1,0 +1,274 @@
+PMH:
+    CMD: PMH
+    SW2:
+        T_PIN: CPLD_IO4
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW2-1 fly wire to J8-1
+
+SHL:
+    CMD: SHL
+    SW2:
+        T_PIN: CPLD_IO50
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: J30-1 fly wire to J5-2
+
+CMP:
+    CMD: CMP
+    CMP_IN:
+        T_PIN: CPLD_IO5
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: j4-8 fly wire to J8-3
+    LED:
+        T_PIN: CPLD_IO50
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: j30-1 fly wire to J5-2
+
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW2 PTA4 fly wire to J8-1 from Target SW2-pin1
+
+ENC:
+    IP: __ENC
+    CMD: ENC
+    pha_out:
+        PIN: A34
+        DIRECTION: out
+    phb_out:
+        PIN: A33
+        DIRECTION: out
+    index_out:
+        PIN: CPLD_IO50
+        DIRECTION: out
+
+FCP:
+    CMD: FCP
+    PWM0:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+        NOTE: J30-1 fly wire to J5-2
+    PWM1:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+FDC:
+    CMD: FDC
+    PWM0:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM0_K70
+        DIRECTION: A2T
+        NOTE: J30-1 fly wire to J5-2
+
+FIC:
+    CMD: FIC
+    PWM0:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM0_K70
+        DIRECTION: A2T
+        NOTE: J30-1 fly wire to J5-2
+
+FOC:
+    CMD: FOC
+    PWM0:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+        NOTE: J30-1 fly wire to J5-2
+    PWM1:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+FPT:
+    CMD: FPT
+    PWM0:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+        NOTE: J30-1 fly wire to J5-2
+    PWM1:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+FSP:
+    CMD: FSP
+    PWM0:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+        
+FQD:
+    IP: __ENC
+    CMD: FQD
+    pha_out: 
+        PIN: A33
+        DIRECTION: out
+    phb_out:
+        PIN: A34
+        DIRECTION: out
+
+GII:
+    CMD: GII
+    SW3:
+        T_PIN: CPLD_IO14
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: sw3-pin 1 fly wire to J8-5
+    LED:
+        T_PIN: CPLD_IO50
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: j30-1 fly to J5-2
+
+GLO:
+    CMD: GLO
+    PWM0:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+        NOTE: J30-1 fly wire to J5-2
+    PWM1:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+LPTMR:
+    CMD: LPT
+    LED:
+        T_PIN: CPLD_IO50
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: j30-1 fly to J5-2
+
+MCG:
+    CMD: MCG
+    PWM0:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: CPLD_IO50
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+PWM:
+    CMD: PWM
+    PWM0:
+        T_PIN: B63
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: B63
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+
+RES:
+    CMD: RES
+    RES:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: J11-1(Connected to Reset pin of Twrkv58) fly wire to J8-6(CPLD_IO3) 
+
+USH:
+    IP: __UART7BIT
+    CMD: USH
+    ALT: a
+    rs232_tx7to7:
+        PIN: A34
+        DIRECTION: out
+    rs232_rx7to7:
+        PIN: A33
+        DIRECTION: in
+    compara_error_uart7bit:
+        PIN: CPLD_IO50
+        DIRECTION: out
+
+USL:
+    IP: __UART7BIT
+    CMD: USL
+    ALT: b
+    rs232_tx7to7:
+        PIN: A34
+        DIRECTION: out
+    rs232_rx7to7:
+        PIN: A33
+        DIRECTION: in
+    compara_error_uart7bit:
+        PIN: CPLD_IO50
+        DIRECTION: out
+
+FTM:
+    CMD: FTM
+    PWM0:
+        T_PIN: CPLD_IO14
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+        NOTE: fly wire from cpld j18-3 to j8-5
+    PWM1:
+        T_PIN: CPLD_IO14
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+GPIO:
+    CMD: GPI
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW2 PTA4 fly wire to J8-1 from Target SW2-pin1
+WDOG:
+    CMD: WDG
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW2 PTA4 fly wire to J8-1 from Target SW2-pin1
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW2 PTA4 fly wire to J8-1 from Target SW2-pin1
+PWM_DEMO:
+    CMD: PWM
+    PWM0:
+        T_PIN: B63
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: B63
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+PWM_FLT_DEMO:
+    CMD: PFT
+    PWM0:
+        T_PIN: B63
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: B63
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+XBAR:
+    CMD: XBR
+    PWM0:
+        T_PIN: CPLD_IO4
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: PTA4 fly wire to J8-1 from Target SW2-pin1

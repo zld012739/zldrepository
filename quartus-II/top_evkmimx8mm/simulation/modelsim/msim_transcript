@@ -1,0 +1,162 @@
+# Reading C:/intelFPGA_lite/17.1/modelsim_ase/tcl/vsim/pref.tcl
+# do top_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm {C:/github/pycpld.git/quartus-II/top_evkmimx8mm/top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:37:12 on Aug 02,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm" C:/github/pycpld.git/quartus-II/top_evkmimx8mm/top.v 
+# -- Compiling module top
+# 
+# Top level modules:
+# 	top
+# End time: 11:37:12 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm {C:/github/pycpld.git/quartus-II/top_evkmimx8mm/pwm_out.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:37:12 on Aug 02,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm" C:/github/pycpld.git/quartus-II/top_evkmimx8mm/pwm_out.v 
+# -- Compiling module pwm_out
+# 
+# Top level modules:
+# 	pwm_out
+# End time: 11:37:12 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm {C:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_MASTER_reduced.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:37:12 on Aug 02,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm" C:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_MASTER_reduced.v 
+# -- Compiling module I2C_MASTER_reduced
+# 
+# Top level modules:
+# 	I2C_MASTER_reduced
+# End time: 11:37:12 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm {C:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_wr_reduced.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:37:13 on Aug 02,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm" C:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_wr_reduced.v 
+# -- Compiling module I2C_wr_reduced
+# 
+# Top level modules:
+# 	I2C_wr_reduced
+# End time: 11:37:13 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm {C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_slave_b2b_reduced.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:37:13 on Aug 02,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm" C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_slave_b2b_reduced.v 
+# -- Compiling module spi_slave_b2b_reduced
+# 
+# Top level modules:
+# 	spi_slave_b2b_reduced
+# End time: 11:37:13 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm {C:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_reduced.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:37:13 on Aug 02,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm" C:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_reduced.v 
+# -- Compiling module i2c_slave_reduced
+# 
+# Top level modules:
+# 	i2c_slave_reduced
+# End time: 11:37:13 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm {C:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_op_reduced.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:37:13 on Aug 02,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm" C:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_op_reduced.v 
+# -- Compiling module i2c_slave_op_reduced
+# ** Warning: C:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_op_reduced.v(63): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	i2c_slave_op_reduced
+# End time: 11:37:13 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# vlog -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm {C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_ctrl_reduced.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:37:14 on Aug 02,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm" C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_ctrl_reduced.v 
+# -- Compiling module spi_ctrl_reduced
+# 
+# Top level modules:
+# 	spi_ctrl_reduced
+# End time: 11:37:14 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm {C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_master_reduced.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:37:14 on Aug 02,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm" C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_master_reduced.v 
+# -- Compiling module spi_master_reduced
+# 
+# Top level modules:
+# 	spi_master_reduced
+# End time: 11:37:14 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm {C:/github/pycpld.git/quartus-II/top_evkmimx8mm/speed_select.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:37:14 on Aug 02,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm" C:/github/pycpld.git/quartus-II/top_evkmimx8mm/speed_select.v 
+# -- Compiling module speed_select
+# 
+# Top level modules:
+# 	speed_select
+# End time: 11:37:14 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm {C:/github/pycpld.git/quartus-II/top_evkmimx8mm/uart_rx.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:37:14 on Aug 02,2018
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm" C:/github/pycpld.git/quartus-II/top_evkmimx8mm/uart_rx.v 
+# -- Compiling module my_uart_rx
+# ** Error: C:/github/pycpld.git/quartus-II/top_evkmimx8mm/uart_rx.v(15): (vlog-2730) Undefined variable: 'rx_complete_reg'.
+# ** Error (suppressible): C:/github/pycpld.git/quartus-II/top_evkmimx8mm/uart_rx.v(32): (vlog-2388) 'rx_complete_reg' already declared in this scope (my_uart_rx).
+# ** Error: C:/github/pycpld.git/quartus-II/top_evkmimx8mm/uart_rx.v(44): (vlog-2730) Undefined variable: 'rx_count'.
+# ** Error: C:/github/pycpld.git/quartus-II/top_evkmimx8mm/uart_rx.v(46): (vlog-2730) Undefined variable: 'rx_data_temp'.
+# ** Error (suppressible): C:/github/pycpld.git/quartus-II/top_evkmimx8mm/uart_rx.v(58): (vlog-2388) 'rx_count' already declared in this scope (my_uart_rx).
+# ** Error (suppressible): C:/github/pycpld.git/quartus-II/top_evkmimx8mm/uart_rx.v(85): (vlog-2388) 'rx_data_temp' already declared in this scope (my_uart_rx).
+# End time: 11:37:14 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 0
+# ** Error: C:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./top_run_msim_rtl_verilog.do line 18
+# C:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm {C:/github/pycpld.git/quartus-II/top_evkmimx8mm/uart_rx.v}"
+vlog -reportprogress 300 -work work C:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 11:37:24 on Aug 02,2018
+# vlog -reportprogress 300 -work work C:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v 
+# -- Compiling module test_i2c_master
+# 
+# Top level modules:
+# 	test_i2c_master
+# End time: 11:37:24 on Aug 02,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim work.test_i2c_master
+# vsim work.test_i2c_master 
+# Start time: 11:37:30 on Aug 02,2018
+# Loading work.test_i2c_master
+# Loading work.I2C_wr_reduced
+# Loading work.i2c_slave_op_reduced
+# ** Warning: (vsim-3017) C:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v(158): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /test_i2c_master/I2C_wr_reduced_instance File: C:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_wr_reduced.v
+# ** Warning: (vsim-3722) C:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v(158): [TFMPC] - Missing connection for port 'debug'.
+# ** Warning: (vsim-3017) C:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v(175): [TFMPC] - Too few port connections. Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /test_i2c_master/i2c_slave_op_reduced_inst File: C:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_op_reduced.v
+# ** Warning: (vsim-3722) C:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v(175): [TFMPC] - Missing connection for port 'led'.
+add wave -position end  sim:/test_i2c_master/I2C_wr_reduced_instance/scl
+add wave -position end  sim:/test_i2c_master/I2C_wr_reduced_instance/sda_out
+add wave -position end  sim:/test_i2c_master/I2C_wr_reduced_instance/stop_reg
+run -all
+# ** Note: $stop    : C:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v(199)
+#    Time: 7200300 ns  Iteration: 0  Instance: /test_i2c_master
+# Break in Module test_i2c_master at C:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v line 199
+# End time: 11:38:36 on Aug 02,2018, Elapsed time: 0:01:06
+# Errors: 0, Warnings: 4

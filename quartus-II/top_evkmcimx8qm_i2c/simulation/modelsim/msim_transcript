@@ -1,0 +1,75 @@
+# A bookmarks file was found in the current directory with 1 bookmark
+# Bookmark(s) were restored for window "Wave"
+# do top_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4b Lib Mapping Utility 2015.05 May 27 2015
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera_lite/15.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:36:52 on Jul 26,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave.v 
+# -- Compiling module i2c_slave
+# 
+# Top level modules:
+# 	i2c_slave
+# End time: 17:36:52 on Jul 26,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave_op.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:36:52 on Jul 26,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave_op.v 
+# -- Compiling module i2c_slave_op
+# 
+# Top level modules:
+# 	i2c_slave_op
+# End time: 17:36:52 on Jul 26,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c {D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/test_i2c_slave.v}
+# Model Technology ModelSim ALTERA vlog 10.4b Compiler 2015.05 May 27 2015
+# Start time: 17:36:52 on Jul 26,2017
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c" D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/test_i2c_slave.v 
+# -- Compiling module test_i2c_slave
+# 
+# Top level modules:
+# 	test_i2c_slave
+# End time: 17:36:52 on Jul 26,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L maxii_ver -L rtl_work -L work -voptargs="+acc"  test_i2c_slave
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L maxii_ver -L rtl_work -L work -voptargs=""+acc"" test_i2c_slave 
+# Start time: 17:36:52 on Jul 26,2017
+# Loading work.test_i2c_slave
+# Loading work.i2c_slave
+# Loading work.i2c_slave_op
+# ** Warning: (vsim-3017) D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave.v(27): [TFMPC] - Too few port connections. Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /test_i2c_slave/i2c_slave_instance/i2c_slave_op_inst File: D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave_op.v
+# Bookmark "bookmark0" already exists with that definition in window "Wave", ignoring
+# A bookmarks file was found in the current directory with 1 bookmark
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: B20222  Hostname: B20222-12  ProcessID: 1292
+# 
+#           Attempting to use alternate WLF file "./wlftg262d9".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftg262d9
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# End time: 18:07:02 on Jul 26,2017, Elapsed time: 0:30:10
+# Errors: 0, Warnings: 3

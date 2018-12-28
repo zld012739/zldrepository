@@ -1,0 +1,98 @@
+#FRDM: A-B-C-D
+SINGLE: 0
+
+
+# LPSPI:
+#     CMD: SPI
+#     CLK:
+#         T_PIN_1: A12
+#         T_PIN_2: CPLD_IO5
+#         DIRECTION: T2T
+#     CS:
+#         T_PIN_1: A6
+#         T_PIN_2: CPLD_IO4
+#         DIRECTION: T2T
+#     MISO:
+#         T_PIN_1: CPLD_IO53
+#         T_PIN_2: A10
+#         DIRECTION: T2T
+#     MOSI:
+#         T_PIN_1: A8
+#         T_PIN_2: CPLD_IO54
+#         DIRECTION: T2T
+
+LPSPI_MASTER_Interupt:
+    IP: __SPI_SLAVE_CPHA0
+    CMD: SPI
+    ALT: a 
+    ss_sck_cpha0:
+        PIN: JJ2_12
+        DIRECTION: IN
+    ss_mosi_cpha0:
+        PIN: JJ2_8
+        DIRECTION: IN
+    ss_ssel_cpha0:
+        PIN: JJ2_6
+        DIRECTION: IN   
+    ss_miso_cpha0:
+        PIN: JJ2_10
+        DIRECTION: OUT
+        NOTE: only for interrupt case
+
+LPSPI_MASTER:
+    IP: __SPI_SLAVE_B2B
+    CMD: SPS
+    ALT: a 
+    ss_sck_b2b:
+        PIN: JJ2_12
+        DIRECTION: IN
+    ss_mosi_b2b:
+        PIN: JJ2_8
+        DIRECTION: IN
+    ss_ssel_b2b:
+        PIN: JJ2_6
+        DIRECTION: IN   
+    ss_miso_b2b:
+        PIN: JJ2_10
+        DIRECTION: OUT
+
+LPSPI_SLAVE:
+    IP: __SPI_MASTER_KL
+    CMD: SIO
+    ALT: a 
+    sm_sck_kl:
+        PIN: JJ2_12
+        DIRECTION: OUT
+    sm_mosi_kl:
+        PIN: JJ2_10
+        DIRECTION: OUT
+    sm_cs_n_kl:
+        PIN: JJ2_6
+        DIRECTION: OUT   
+    sm_miso_kl:
+        PIN: JJ2_8
+        DIRECTION: IN
+    spi_receive_status_kl:
+        PIN: A3
+        DIRECTION: OUT
+        NOTE: only for interrupt case
+
+LPSPI_SLAVE1:
+    IP: __SPI_MASTER
+    CMD: SIR
+    ALT: a 
+    sm_sck:
+        PIN: JJ2_12
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: JJ2_10
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: JJ2_6
+        DIRECTION: OUT   
+    sm_miso:
+        PIN: JJ2_8
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A3
+        DIRECTION: OUT

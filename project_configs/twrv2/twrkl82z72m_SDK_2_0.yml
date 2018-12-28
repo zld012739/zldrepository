@@ -1,0 +1,180 @@
+FPM:
+    CMD: FPM 
+    FTM0:
+        T_PIN: CPLD_IO49
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FTM1:
+        T_PIN: CPLD_IO49
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+POWER_MANAGER:
+    CMD: PMH
+    SW1:
+        T_PIN: B35
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+        NOTE: SW3 pin 2
+
+DSPI_MASTER:
+    CMD: SPI
+    CLK:
+        T_PIN: B48
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+        NOTE: PTD1
+    CS:
+        T_PIN: B46
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+        NOTE: PTD0
+    MISO:
+        T_PIN: B44
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+        NOTE: PTC7
+    MOSI:
+        T_PIN: B45
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+        NOTE: PTC6
+
+DSPI_SLAVE:
+    CMD: SSI
+    CLK:
+        T_PIN: B48
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: A2T
+    CS:
+        T_PIN: B46
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: A2T
+    MISO:
+        T_PIN: B44
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: B45
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+
+CMP:
+    CMD: CMP
+    CMP_IN:
+        T_PIN: B45
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    LED:
+        T_PIN: CPLD_IO5
+        A_PIN: A35_K70
+        DIRECTION: T2A
+
+EWM:
+    CMD: EWM
+    SW2:
+        T_PIN: CPLD_IO4
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+
+GII:
+    CMD: GII
+    SW2:
+        T_PIN: CPLD_IO4
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+    LED:
+        T_PIN: CPLD_IO5
+        A_PIN: A35_K70
+        DIRECTION: T2A
+
+GLO:
+    CMD: GLO
+    FTM0:
+        T_PIN: CPLD_IO5
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+    FTM1:
+        T_PIN: CPLD_IO5
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+
+MCG:
+    CMD: MCG
+    FTM0:
+        T_PIN: CPLD_IO5
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+    FTM1:
+        T_PIN: CPLD_IO5
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+
+TCP:
+    CMD: TCP
+    FTM0:
+        T_PIN: A34
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FTM1:
+        T_PIN: A34
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+TDC:
+    CMD: TDC
+    FTM0:
+        T_PIN: A34
+        A_PIN: PWM0_K70
+        DIRECTION: A2T
+
+TIC:
+    CMD: TIC
+    FTM0:
+        T_PIN: A34
+        A_PIN: PWM0_K70
+        DIRECTION: A2T
+
+TOC:
+    CMD: TOC
+    FTM0:
+        T_PIN: A34
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FTM1:
+        T_PIN: A34
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+TPT:
+    CMD: TPT
+    FTM0:
+        T_PIN: A34
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FTM1:
+        T_PIN: A34
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+TSP:
+    CMD: TSP
+    FTM0:
+        T_PIN: A34
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FTM1:
+        T_PIN: A34
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+SHL:
+    CMD: SHL
+    LED:
+        T_PIN: CPLD_IO5
+        A_PIN: A35_K70
+        DIRECTION: T2A
+
+
+
+

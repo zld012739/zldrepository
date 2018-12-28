@@ -1,0 +1,1575 @@
+Fitter report for top
+Tue Jul 18 13:34:09 2017
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Pin-Out File
+  6. Fitter Resource Usage Summary
+  7. Input Pins
+  8. Output Pins
+  9. Bidir Pins
+ 10. I/O Bank Usage
+ 11. All Package Pins
+ 12. Output Pin Default Load For Reported TCO
+ 13. Fitter Resource Utilization by Entity
+ 14. Delay Chain Summary
+ 15. Control Signals
+ 16. Global & Other Fast Signals
+ 17. Non-Global High Fan-Out Signals
+ 18. Routing Usage Summary
+ 19. LAB Logic Elements
+ 20. LAB-wide Signals
+ 21. LAB Signals Sourced
+ 22. LAB Signals Sourced Out
+ 23. LAB Distinct Inputs
+ 24. Fitter Device Options
+ 25. Estimated Delay Added for Hold Timing Summary
+ 26. Estimated Delay Added for Hold Timing Details
+ 27. Fitter Messages
+ 28. Fitter Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Fitter Summary                                                         ;
++---------------------------+--------------------------------------------+
+; Fitter Status             ; Successful - Tue Jul 18 13:34:09 2017      ;
+; Quartus II 64-Bit Version ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name             ; top                                        ;
+; Top-level Entity Name     ; top                                        ;
+; Family                    ; MAX II                                     ;
+; Device                    ; EPM570T100C5                               ;
+; Timing Models             ; Final                                      ;
+; Total logic elements      ; 472 / 570 ( 83 % )                         ;
+; Total pins                ; 66 / 76 ( 87 % )                           ;
+; Total virtual pins        ; 0                                          ;
+; UFM blocks                ; 0 / 1 ( 0 % )                              ;
++---------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                                                              ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Option                                                                     ; Setting                        ; Default Value                  ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Device                                                                     ; EPM570T100C5                   ;                                ;
+; Minimum Core Junction Temperature                                          ; 0                              ;                                ;
+; Maximum Core Junction Temperature                                          ; 85                             ;                                ;
+; Fit Attempts to Skip                                                       ; 0                              ; 0.0                            ;
+; Device I/O Standard                                                        ; 3.3-V LVTTL                    ;                                ;
+; Use smart compilation                                                      ; Off                            ; Off                            ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                             ; On                             ;
+; Enable compact report table                                                ; Off                            ; Off                            ;
+; Router Timing Optimization Level                                           ; Normal                         ; Normal                         ;
+; Placement Effort Multiplier                                                ; 1.0                            ; 1.0                            ;
+; Router Effort Multiplier                                                   ; 1.0                            ; 1.0                            ;
+; Always Enable Input Buffers                                                ; Off                            ; Off                            ;
+; Optimize Hold Timing                                                       ; IO Paths and Minimum TPD Paths ; IO Paths and Minimum TPD Paths ;
+; Optimize Multi-Corner Timing                                               ; Off                            ; Off                            ;
+; Guarantee I/O Paths Have Zero Hold Time at Fast Corner                     ; On                             ; On                             ;
+; PowerPlay Power Optimization                                               ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing                                                            ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing for ECOs                                                   ; Off                            ; Off                            ;
+; Regenerate full fit report during ECO compiles                             ; Off                            ; Off                            ;
+; Optimize IOC Register Placement for Timing                                 ; Normal                         ; Normal                         ;
+; Limit to One Fitting Attempt                                               ; Off                            ; Off                            ;
+; Final Placement Optimizations                                              ; Automatically                  ; Automatically                  ;
+; Fitter Aggressive Routability Optimizations                                ; Automatically                  ; Automatically                  ;
+; Fitter Initial Placement Seed                                              ; 1                              ; 1                              ;
+; Slow Slew Rate                                                             ; Off                            ; Off                            ;
+; PCI I/O                                                                    ; Off                            ; Off                            ;
+; Weak Pull-Up Resistor                                                      ; Off                            ; Off                            ;
+; Enable Bus-Hold Circuitry                                                  ; Off                            ; Off                            ;
+; Auto Delay Chains                                                          ; On                             ; On                             ;
+; Auto Delay Chains for High Fanout Input Pins                               ; Off                            ; Off                            ;
+; Perform Physical Synthesis for Combinational Logic for Performance         ; Off                            ; Off                            ;
+; Perform Register Duplication for Performance                               ; Off                            ; Off                            ;
+; Perform Register Retiming for Performance                                  ; Off                            ; Off                            ;
+; Perform Asynchronous Signal Pipelining                                     ; Off                            ; Off                            ;
+; Fitter Effort                                                              ; Auto Fit                       ; Auto Fit                       ;
+; Physical Synthesis Effort Level                                            ; Normal                         ; Normal                         ;
+; Logic Cell Insertion - Logic Duplication                                   ; Auto                           ; Auto                           ;
+; Auto Register Duplication                                                  ; Auto                           ; Auto                           ;
+; Auto Global Clock                                                          ; On                             ; On                             ;
+; Auto Global Register Control Signals                                       ; On                             ; On                             ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off                            ; Off                            ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.17        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;  16.7%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in D:/code/CPLD/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdmk32w042/top.pin.
+
+
++---------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                       ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Total logic elements                        ; 472 / 570 ( 83 % )    ;
+;     -- Combinational with no register       ; 227                   ;
+;     -- Register only                        ; 44                    ;
+;     -- Combinational with a register        ; 201                   ;
+;                                             ;                       ;
+; Logic element usage by number of LUT inputs ;                       ;
+;     -- 4 input functions                    ; 224                   ;
+;     -- 3 input functions                    ; 55                    ;
+;     -- 2 input functions                    ; 140                   ;
+;     -- 1 input functions                    ; 8                     ;
+;     -- 0 input functions                    ; 1                     ;
+;                                             ;                       ;
+; Logic elements by mode                      ;                       ;
+;     -- normal mode                          ; 376                   ;
+;     -- arithmetic mode                      ; 96                    ;
+;     -- qfbk mode                            ; 31                    ;
+;     -- register cascade mode                ; 0                     ;
+;     -- synchronous clear/load mode          ; 87                    ;
+;     -- asynchronous clear/load mode         ; 243                   ;
+;                                             ;                       ;
+; Total registers                             ; 245 / 570 ( 43 % )    ;
+; Total LABs                                  ; 54 / 57 ( 95 % )      ;
+; Logic elements in carry chains              ; 106                   ;
+; Virtual pins                                ; 0                     ;
+; I/O pins                                    ; 66 / 76 ( 87 % )      ;
+;     -- Clock pins                           ; 3 / 4 ( 75 % )        ;
+;                                             ;                       ;
+; Global signals                              ; 4                     ;
+; UFM blocks                                  ; 0 / 1 ( 0 % )         ;
+; Global clocks                               ; 4 / 4 ( 100 % )       ;
+; JTAGs                                       ; 0 / 1 ( 0 % )         ;
+; Average interconnect usage (total/H/V)      ; 28.4% / 36.0% / 20.3% ;
+; Peak interconnect usage (total/H/V)         ; 28.4% / 36.0% / 20.3% ;
+; Maximum fan-out                             ; 222                   ;
+; Highest non-global fan-out                  ; 45                    ;
+; Total fan-out                               ; 2113                  ;
+; Average fan-out                             ; 3.93                  ;
++---------------------------------------------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                      ;
++----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
++----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+; clk      ; 12    ; 1        ; 0            ; 5            ; 0           ; 222                   ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; rs232_rx ; 6     ; 1        ; 0            ; 7            ; 3           ; 6                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; rst_n    ; 44    ; 1        ; 8            ; 3            ; 2           ; 114                   ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
++----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                            ;
++------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; led  ; 1     ; 2        ; 3            ; 8            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
++------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Bidir Pins                                                                                                                                                                                                                                                                                                                                                       ;
++----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------------+-----------------+------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------------+-----------------+------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; BusA[2]  ; 2     ; 1        ; 1            ; 8            ; 0           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusA[2]~15           ; -                   ;
+; BusA[3]  ; 3     ; 1        ; 1            ; 8            ; 2           ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusA[4]  ; 4     ; 1        ; 0            ; 7            ; 0           ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; linkCMP              ; -                   ;
+; BusA[5]  ; 41    ; 1        ; 7            ; 3            ; 1           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusA[6]  ; 74    ; 2        ; 13           ; 7            ; 3           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusA[7]  ; 95    ; 2        ; 5            ; 8            ; 0           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusA[8]  ; 8     ; 1        ; 0            ; 7            ; 5           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusA[8]~16           ; -                   ;
+; BusB[15] ; 15    ; 1        ; 0            ; 5            ; 2           ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusA[8]~16           ; -                   ;
+; BusB[16] ; 16    ; 1        ; 0            ; 5            ; 3           ; 3                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusB[17] ; 17    ; 1        ; 0            ; 5            ; 4           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; yes                    ; User                 ; 10 pF ; BusB[17]~20          ; -                   ;
+; BusB[18] ; 18    ; 1        ; 0            ; 5            ; 5           ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusB[18]~22          ; -                   ;
+; BusB[19] ; 19    ; 1        ; 0            ; 4            ; 5           ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusB[19]~24          ; -                   ;
+; BusB[20] ; 20    ; 1        ; 1            ; 3            ; 3           ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusB[19]~24          ; -                   ;
+; BusB[21] ; 21    ; 1        ; 1            ; 3            ; 1           ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusB[19]~24          ; -                   ;
+; BusC[29] ; 29    ; 1        ; 4            ; 3            ; 2           ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusC[29]~29          ; -                   ;
+; BusC[30] ; 89    ; 2        ; 7            ; 8            ; 1           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusC[31] ; 62    ; 2        ; 13           ; 4            ; 4           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusC[32] ; 28    ; 1        ; 4            ; 3            ; 3           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusC[33] ; 33    ; 1        ; 6            ; 3            ; 3           ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusC[29]~29          ; -                   ;
+; BusC[34] ; 27    ; 1        ; 3            ; 3            ; 1           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusC[35] ; 51    ; 1        ; 12           ; 0            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusC[36] ; 36    ; 1        ; 6            ; 3            ; 0           ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; linkFSS              ; -                   ;
+; BusC[37] ; 97    ; 2        ; 5            ; 8            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusC[38] ; 68    ; 2        ; 13           ; 4            ; 0           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusC[39] ; 75    ; 2        ; 13           ; 7            ; 1           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusC[40] ; 40    ; 1        ; 7            ; 3            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusC[40]~33          ; -                   ;
+; BusC[41] ; 100   ; 2        ; 3            ; 8            ; 0           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusC[42] ; 42    ; 1        ; 7            ; 3            ; 0           ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; linkFSM              ; -                   ;
+; BusD[48] ; 48    ; 1        ; 10           ; 0            ; 1           ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusD[49] ; 49    ; 1        ; 10           ; 0            ; 0           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; linkCMP              ; -                   ;
+; BusD[50] ; 50    ; 1        ; 11           ; 0            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; linkUSH              ; -                   ;
+; BusD[51] ; 47    ; 1        ; 10           ; 0            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusD[52] ; 52    ; 2        ; 13           ; 1            ; 4           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusD[53] ; 35    ; 1        ; 6            ; 3            ; 1           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusD[54] ; 54    ; 2        ; 13           ; 1            ; 1           ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusD[55] ; 30    ; 1        ; 4            ; 3            ; 1           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusD[56] ; 56    ; 2        ; 13           ; 2            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusC[40]~31          ; -                   ;
+; BusD[57] ; 57    ; 2        ; 13           ; 2            ; 1           ; 3                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusE[64] ; 64    ; 2        ; 13           ; 4            ; 3           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusE[64]~17          ; -                   ;
+; BusE[65] ; 7     ; 1        ; 0            ; 7            ; 4           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusE[66] ; 66    ; 2        ; 13           ; 4            ; 2           ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusE[67] ; 67    ; 2        ; 13           ; 4            ; 1           ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; linkTIZ              ; -                   ;
+; BusE[68] ; 82    ; 2        ; 9            ; 8            ; 0           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusE[69] ; 43    ; 1        ; 8            ; 3            ; 3           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusE[70] ; 70    ; 2        ; 13           ; 6            ; 5           ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; linkFSS              ; -                   ;
+; BusF[76] ; 76    ; 2        ; 12           ; 8            ; 1           ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusF[77] ; 77    ; 2        ; 12           ; 8            ; 2           ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; linkTIF              ; -                   ;
+; BusF[78] ; 78    ; 2        ; 12           ; 8            ; 3           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; linkUST              ; -                   ;
+; BusF[79] ; 38    ; 1        ; 7            ; 3            ; 3           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusF[80] ; 34    ; 1        ; 6            ; 3            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusF[81] ; 96    ; 2        ; 5            ; 8            ; 1           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusF[82] ; 72    ; 2        ; 13           ; 6            ; 1           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusF[83] ; 83    ; 2        ; 8            ; 8            ; 0           ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; linkSSF              ; -                   ;
+; BusF[84] ; 99    ; 2        ; 4            ; 8            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusF[85] ; 85    ; 2        ; 8            ; 8            ; 2           ; 3                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusF[86] ; 73    ; 2        ; 13           ; 7            ; 5           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusF[87] ; 87    ; 2        ; 7            ; 8            ; 0           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusF[87]~36          ; -                   ;
+; BusF[88] ; 5     ; 1        ; 0            ; 7            ; 2           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusF[89] ; 86    ; 2        ; 8            ; 8            ; 3           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusF[90] ; 53    ; 2        ; 13           ; 1            ; 3           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusF[91] ; 91    ; 2        ; 6            ; 8            ; 2           ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; linkSSF              ; -                   ;
+; BusF[92] ; 92    ; 2        ; 6            ; 8            ; 3           ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; linkFSM              ; -                   ;
++----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------------+-----------------+------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+
+
++------------------------------------------------------------+
+; I/O Bank Usage                                             ;
++----------+------------------+---------------+--------------+
+; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
++----------+------------------+---------------+--------------+
+; 1        ; 34 / 36 ( 94 % ) ; 3.3V          ; --           ;
+; 2        ; 32 / 40 ( 80 % ) ; 3.3V          ; --           ;
++----------+------------------+---------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                                                               ;
++----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage   ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
++----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
+; 1        ; 161        ; 2        ; led            ; output ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 2        ; 2          ; 1        ; BusA[2]        ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 3        ; 4          ; 1        ; BusA[3]        ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 4        ; 6          ; 1        ; BusA[4]        ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 5        ; 8          ; 1        ; BusF[88]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 6        ; 9          ; 1        ; rs232_rx       ; input  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 7        ; 10         ; 1        ; BusE[65]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 8        ; 11         ; 1        ; BusA[8]        ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 9        ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 10       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 11       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 12       ; 20         ; 1        ; clk            ; input  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 13       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
+; 14       ; 21         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 15       ; 22         ; 1        ; BusB[15]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 16       ; 23         ; 1        ; BusB[16]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 17       ; 24         ; 1        ; BusB[17]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 18       ; 25         ; 1        ; BusB[18]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 19       ; 32         ; 1        ; BusB[19]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 20       ; 34         ; 1        ; BusB[20]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 21       ; 36         ; 1        ; BusB[21]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 22       ; 38         ; 1        ; #TMS           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
+; 23       ; 39         ; 1        ; #TDI           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
+; 24       ; 40         ; 1        ; #TCK           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
+; 25       ; 41         ; 1        ; #TDO           ; output ;              ;           ; --         ;                 ; --       ; --           ;
+; 26       ; 47         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 27       ; 48         ; 1        ; BusC[34]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 28       ; 50         ; 1        ; BusC[32]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 29       ; 51         ; 1        ; BusC[29]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 30       ; 52         ; 1        ; BusD[55]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 31       ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 32       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 33       ; 58         ; 1        ; BusC[33]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 34       ; 59         ; 1        ; BusF[80]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 35       ; 60         ; 1        ; BusD[53]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 36       ; 61         ; 1        ; BusC[36]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 37       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 38       ; 62         ; 1        ; BusF[79]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 39       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
+; 40       ; 63         ; 1        ; BusC[40]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 41       ; 64         ; 1        ; BusA[5]        ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 42       ; 65         ; 1        ; BusC[42]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 43       ; 66         ; 1        ; BusE[69]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 44       ; 67         ; 1        ; rst_n          ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 45       ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 46       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 47       ; 71         ; 1        ; BusD[51]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 48       ; 72         ; 1        ; BusD[48]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 49       ; 73         ; 1        ; BusD[49]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 50       ; 75         ; 1        ; BusD[50]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 51       ; 79         ; 1        ; BusC[35]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 52       ; 83         ; 2        ; BusD[52]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 53       ; 84         ; 2        ; BusF[90]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 54       ; 86         ; 2        ; BusD[54]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 55       ; 89         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 56       ; 91         ; 2        ; BusD[56]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 57       ; 92         ; 2        ; BusD[57]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 58       ; 93         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 59       ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 60       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 61       ; 98         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 62       ; 101        ; 2        ; BusC[31]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 63       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
+; 64       ; 102        ; 2        ; BusE[64]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 65       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 66       ; 103        ; 2        ; BusE[66]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 67       ; 104        ; 2        ; BusE[67]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 68       ; 105        ; 2        ; BusC[38]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 69       ; 111        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 70       ; 112        ; 2        ; BusE[70]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 71       ; 115        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 72       ; 116        ; 2        ; BusF[82]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 73       ; 118        ; 2        ; BusF[86]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 74       ; 120        ; 2        ; BusA[6]        ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 75       ; 122        ; 2        ; BusC[39]       ; bidir  ; 3.3-V LVTTL  ;           ; Row I/O    ; N               ; no       ; Off          ;
+; 76       ; 125        ; 2        ; BusF[76]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 77       ; 126        ; 2        ; BusF[77]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 78       ; 127        ; 2        ; BusF[78]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 79       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 80       ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 81       ; 135        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 82       ; 136        ; 2        ; BusE[68]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 83       ; 139        ; 2        ; BusF[83]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 84       ; 140        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 85       ; 141        ; 2        ; BusF[85]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 86       ; 142        ; 2        ; BusF[89]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 87       ; 143        ; 2        ; BusF[87]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 88       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
+; 89       ; 144        ; 2        ; BusC[30]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 90       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 91       ; 149        ; 2        ; BusF[91]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 92       ; 150        ; 2        ; BusF[92]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 93       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 94       ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 95       ; 151        ; 2        ; BusA[7]        ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 96       ; 152        ; 2        ; BusF[81]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 97       ; 153        ; 2        ; BusC[37]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 98       ; 155        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 99       ; 156        ; 2        ; BusF[84]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 100      ; 158        ; 2        ; BusC[41]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
++----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++-------------------------------------------------------------+
+; Output Pin Default Load For Reported TCO                    ;
++----------------------------+-------+------------------------+
+; I/O Standard               ; Load  ; Termination Resistance ;
++----------------------------+-------+------------------------+
+; 3.3-V LVTTL                ; 10 pF ; Not Available          ;
+; 3.3-V LVCMOS               ; 10 pF ; Not Available          ;
+; 2.5 V                      ; 10 pF ; Not Available          ;
+; 1.8 V                      ; 10 pF ; Not Available          ;
+; 1.5 V                      ; 10 pF ; Not Available          ;
+; 3.3V Schmitt Trigger Input ; 10 pF ; Not Available          ;
+; 2.5V Schmitt Trigger Input ; 10 pF ; Not Available          ;
++----------------------------+-------+------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                            ;
++-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------+--------------+
+; Compilation Hierarchy Node        ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                      ; Library Name ;
++-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------+--------------+
+; |top                              ; 472 (185)   ; 245          ; 0          ; 66   ; 0            ; 227 (107)    ; 44 (6)            ; 201 (72)         ; 106 (0)         ; 29 (23)    ; |top                                                     ; work         ;
+;    |my_uart_rx:my_uart_rx|        ; 36 (36)     ; 22           ; 0          ; 0    ; 0            ; 14 (14)      ; 4 (4)             ; 18 (18)          ; 0 (0)           ; 0 (0)      ; |top|my_uart_rx:my_uart_rx                               ; work         ;
+;    |speed_select:speed_select|    ; 22 (22)     ; 14           ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 14 (14)          ; 13 (13)         ; 0 (0)      ; |top|speed_select:speed_select                           ; work         ;
+;    |uart_instance:uart_instance1| ; 147 (29)    ; 87           ; 0          ; 0    ; 0            ; 60 (14)      ; 17 (13)           ; 70 (2)           ; 60 (14)         ; 3 (0)      ; |top|uart_instance:uart_instance1                        ; work         ;
+;       |data_deal:data_deal|       ; 27 (27)     ; 22           ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 22 (22)          ; 15 (15)         ; 0 (0)      ; |top|uart_instance:uart_instance1|data_deal:data_deal    ; work         ;
+;       |my_uart_rx8to8:rx_inst|    ; 40 (40)     ; 29           ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 29 (29)          ; 18 (18)         ; 0 (0)      ; |top|uart_instance:uart_instance1|my_uart_rx8to8:rx_inst ; work         ;
+;       |my_uart_tx8to8:tx_inst|    ; 51 (51)     ; 21           ; 0          ; 0    ; 0            ; 30 (30)      ; 4 (4)             ; 17 (17)          ; 13 (13)         ; 3 (3)      ; |top|uart_instance:uart_instance1|my_uart_tx8to8:tx_inst ; work         ;
+;    |uart_top7to7:uart_top7to7|    ; 82 (29)     ; 44           ; 0          ; 0    ; 0            ; 38 (14)      ; 17 (13)           ; 27 (2)           ; 33 (14)         ; 3 (0)      ; |top|uart_top7to7:uart_top7to7                           ; work         ;
+;       |data_deal:data_deal|       ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 6 (6)           ; 0 (0)      ; |top|uart_top7to7:uart_top7to7|data_deal:data_deal       ; work         ;
+;       |my_uart_tx7to7:tx_inst|    ; 45 (45)     ; 21           ; 0          ; 0    ; 0            ; 24 (24)      ; 4 (4)             ; 17 (17)          ; 13 (13)         ; 3 (3)      ; |top|uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst    ; work         ;
++-----------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------+
+; Delay Chain Summary                 ;
++----------+----------+---------------+
+; Name     ; Pin Type ; Pad to Core 0 ;
++----------+----------+---------------+
+; led      ; Output   ; --            ;
+; BusA[5]  ; Bidir    ; (0)           ;
+; BusA[6]  ; Bidir    ; (0)           ;
+; BusA[7]  ; Bidir    ; (0)           ;
+; BusC[30] ; Bidir    ; (0)           ;
+; BusC[31] ; Bidir    ; (0)           ;
+; BusC[32] ; Bidir    ; (0)           ;
+; BusC[34] ; Bidir    ; (0)           ;
+; BusC[35] ; Bidir    ; (0)           ;
+; BusC[37] ; Bidir    ; (0)           ;
+; BusC[38] ; Bidir    ; (0)           ;
+; BusC[39] ; Bidir    ; (0)           ;
+; BusC[41] ; Bidir    ; (0)           ;
+; BusD[51] ; Bidir    ; (0)           ;
+; BusD[53] ; Bidir    ; (0)           ;
+; BusD[55] ; Bidir    ; (0)           ;
+; BusE[65] ; Bidir    ; (0)           ;
+; BusE[68] ; Bidir    ; (0)           ;
+; BusE[69] ; Bidir    ; (0)           ;
+; BusF[79] ; Bidir    ; (0)           ;
+; BusF[80] ; Bidir    ; (0)           ;
+; BusF[81] ; Bidir    ; (0)           ;
+; BusF[82] ; Bidir    ; (0)           ;
+; BusF[84] ; Bidir    ; (0)           ;
+; BusF[86] ; Bidir    ; (0)           ;
+; BusF[88] ; Bidir    ; (0)           ;
+; BusF[89] ; Bidir    ; (0)           ;
+; BusF[90] ; Bidir    ; (0)           ;
+; BusA[2]  ; Bidir    ; (0)           ;
+; BusA[3]  ; Bidir    ; (1)           ;
+; BusA[4]  ; Bidir    ; (1)           ;
+; BusA[8]  ; Bidir    ; (0)           ;
+; BusB[15] ; Bidir    ; (1)           ;
+; BusB[16] ; Bidir    ; (1)           ;
+; BusB[17] ; Bidir    ; (0)           ;
+; BusB[18] ; Bidir    ; (1)           ;
+; BusB[19] ; Bidir    ; (1)           ;
+; BusB[20] ; Bidir    ; (1)           ;
+; BusB[21] ; Bidir    ; (1)           ;
+; BusC[29] ; Bidir    ; (1)           ;
+; BusC[33] ; Bidir    ; (1)           ;
+; BusC[36] ; Bidir    ; (1)           ;
+; BusC[40] ; Bidir    ; (0)           ;
+; BusC[42] ; Bidir    ; (1)           ;
+; BusD[48] ; Bidir    ; (1)           ;
+; BusD[49] ; Bidir    ; (0)           ;
+; BusD[50] ; Bidir    ; (0)           ;
+; BusD[52] ; Bidir    ; (0)           ;
+; BusD[54] ; Bidir    ; (1)           ;
+; BusD[56] ; Bidir    ; (0)           ;
+; BusD[57] ; Bidir    ; (1)           ;
+; BusE[64] ; Bidir    ; (0)           ;
+; BusE[66] ; Bidir    ; (1)           ;
+; BusE[67] ; Bidir    ; (1)           ;
+; BusE[70] ; Bidir    ; (1)           ;
+; BusF[76] ; Bidir    ; (1)           ;
+; BusF[77] ; Bidir    ; (1)           ;
+; BusF[78] ; Bidir    ; (0)           ;
+; BusF[83] ; Bidir    ; (1)           ;
+; BusF[85] ; Bidir    ; (1)           ;
+; BusF[87] ; Bidir    ; (0)           ;
+; BusF[91] ; Bidir    ; (1)           ;
+; BusF[92] ; Bidir    ; (1)           ;
+; clk      ; Input    ; (0)           ;
+; rst_n    ; Input    ; (1)           ;
+; rs232_rx ; Input    ; (0)           ;
++----------+----------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                             ;
++--------------------------------------------------------------------+--------------+---------+----------------------------+--------+----------------------+------------------+
+; Name                                                               ; Location     ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ;
++--------------------------------------------------------------------+--------------+---------+----------------------------+--------+----------------------+------------------+
+; BusA[2]~15                                                         ; LC_X4_Y5_N6  ; 1       ; Output enable              ; no     ; --                   ; --               ;
+; BusA[8]~16                                                         ; LC_X1_Y4_N4  ; 2       ; Output enable              ; no     ; --                   ; --               ;
+; BusB[17]~20                                                        ; LC_X1_Y5_N1  ; 1       ; Output enable              ; no     ; --                   ; --               ;
+; BusB[18]~22                                                        ; LC_X2_Y4_N6  ; 1       ; Output enable              ; no     ; --                   ; --               ;
+; BusB[19]~24                                                        ; LC_X2_Y4_N5  ; 3       ; Output enable              ; no     ; --                   ; --               ;
+; BusC[29]~29                                                        ; LC_X3_Y4_N5  ; 2       ; Output enable              ; no     ; --                   ; --               ;
+; BusC[40]~31                                                        ; LC_X9_Y4_N8  ; 2       ; Output enable              ; no     ; --                   ; --               ;
+; BusC[40]~33                                                        ; LC_X9_Y4_N6  ; 1       ; Output enable              ; no     ; --                   ; --               ;
+; BusE[64]~17                                                        ; LC_X6_Y4_N3  ; 1       ; Output enable              ; no     ; --                   ; --               ;
+; BusF[87]~36                                                        ; LC_X2_Y4_N0  ; 1       ; Output enable              ; no     ; --                   ; --               ;
+; Current.SAVE                                                       ; LC_X12_Y7_N2 ; 27      ; Clock enable               ; no     ; --                   ; --               ;
+; clk                                                                ; PIN_12       ; 222     ; Clock                      ; yes    ; Global Clock         ; GCLK0            ;
+; linkCMP                                                            ; LC_X7_Y4_N1  ; 5       ; Output enable              ; no     ; --                   ; --               ;
+; linkFSM                                                            ; LC_X6_Y4_N4  ; 6       ; Output enable              ; no     ; --                   ; --               ;
+; linkFSS                                                            ; LC_X6_Y4_N2  ; 6       ; Output enable              ; no     ; --                   ; --               ;
+; linkSSF                                                            ; LC_X5_Y5_N5  ; 7       ; Output enable              ; no     ; --                   ; --               ;
+; linkTIF                                                            ; LC_X8_Y4_N3  ; 2       ; Output enable              ; no     ; --                   ; --               ;
+; linkTIZ                                                            ; LC_X6_Y5_N9  ; 2       ; Output enable              ; no     ; --                   ; --               ;
+; linkUSH                                                            ; LC_X5_Y5_N4  ; 4       ; Output enable              ; no     ; --                   ; --               ;
+; linkUST                                                            ; LC_X6_Y5_N6  ; 6       ; Output enable              ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|Mux2~0                                       ; LC_X1_Y7_N1  ; 2       ; Clock enable               ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|Mux7~2                                       ; LC_X1_Y7_N4  ; 2       ; Clock enable               ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|rx_complete_reg~1                            ; LC_X10_Y7_N7 ; 1       ; Async. clear               ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|rx_data_reg[7]~1                             ; LC_X11_Y7_N6 ; 8       ; Clock enable               ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|rx_enable_reg                                ; LC_X11_Y7_N0 ; 4       ; Clock                      ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|rx_enable_reg~0                              ; LC_X10_Y7_N5 ; 1       ; Async. clear               ; no     ; --                   ; --               ;
+; rs232_rx                                                           ; PIN_6        ; 6       ; Clock                      ; no     ; --                   ; --               ;
+; rst_n                                                              ; PIN_44       ; 114     ; Async. clear, Clock enable ; yes    ; Global Clock         ; GCLK3            ;
+; speed_select:speed_select|always1~0                                ; LC_X11_Y4_N2 ; 13      ; Sync. clear                ; no     ; --                   ; --               ;
+; speed_select:speed_select|buad_clk_rx_reg                          ; LC_X10_Y4_N3 ; 21      ; Clock                      ; yes    ; Global Clock         ; GCLK1            ;
+; tx_start_f                                                         ; LC_X11_Y5_N0 ; 16      ; Async. clear               ; no     ; --                   ; --               ;
+; tx_start_f_7bit                                                    ; LC_X4_Y5_N4  ; 16      ; Async. clear               ; no     ; --                   ; --               ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out~14       ; LC_X12_Y6_N3 ; 7       ; Clock enable               ; no     ; --                   ; --               ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[7]~16    ; LC_X9_Y7_N5  ; 8       ; Clock enable               ; no     ; --                   ; --               ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|state.TRAN     ; LC_X10_Y2_N2 ; 8       ; Sync. clear                ; no     ; --                   ; --               ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[3]~10 ; LC_X11_Y1_N3 ; 18      ; Clock enable, Sync. clear  ; no     ; --                   ; --               ;
+; uart_instance:uart_instance1|rst_cnt[14]                           ; LC_X10_Y3_N5 ; 88      ; Async. clear, Clock enable ; yes    ; Global Clock         ; GCLK2            ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out~12          ; LC_X2_Y6_N0  ; 6       ; Clock enable               ; no     ; --                   ; --               ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|bps_sel           ; LC_X3_Y6_N8  ; 6       ; Clock enable               ; no     ; --                   ; --               ;
+; uart_top7to7:uart_top7to7|rst_cnt[14]                              ; LC_X3_Y6_N6  ; 45      ; Async. clear, Clock enable ; no     ; --                   ; --               ;
++--------------------------------------------------------------------+--------------+---------+----------------------------+--------+----------------------+------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                  ;
++-------------------------------------------+--------------+---------+----------------------+------------------+
+; Name                                      ; Location     ; Fan-Out ; Global Resource Used ; Global Line Name ;
++-------------------------------------------+--------------+---------+----------------------+------------------+
+; clk                                       ; PIN_12       ; 222     ; Global Clock         ; GCLK0            ;
+; rst_n                                     ; PIN_44       ; 114     ; Global Clock         ; GCLK3            ;
+; speed_select:speed_select|buad_clk_rx_reg ; LC_X10_Y4_N3 ; 21      ; Global Clock         ; GCLK1            ;
+; uart_instance:uart_instance1|rst_cnt[14]  ; LC_X10_Y3_N5 ; 88      ; Global Clock         ; GCLK2            ;
++-------------------------------------------+--------------+---------+----------------------+------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                                     ;
++---------------------------------------------------------------------------+---------+
+; Name                                                                      ; Fan-Out ;
++---------------------------------------------------------------------------+---------+
+; uart_top7to7:uart_top7to7|rst_cnt[14]                                     ; 45      ;
+; Current.SAVE                                                              ; 27      ;
+; Current.WAIT                                                              ; 25      ;
+; Current.S1                                                                ; 25      ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[3]~10        ; 18      ;
+; tx_start_f_7bit                                                           ; 16      ;
+; tx_start_f                                                                ; 16      ;
+; my_uart_rx:my_uart_rx|rx_count[0]                                         ; 15      ;
+; my_uart_rx:my_uart_rx|rx_count[1]                                         ; 15      ;
+; speed_select:speed_select|always1~0                                       ; 13      ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|tran_cnt[0]           ; 13      ;
+; Rx_cmd[2]                                                                 ; 12      ;
+; my_uart_rx:my_uart_rx|rx_count[2]                                         ; 11      ;
+; my_uart_rx:my_uart_rx|rx_count[3]                                         ; 11      ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[3]           ; 9       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|tran_cnt[1]           ; 9       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|tran_cnt[1]              ; 9       ;
+; Rx_cmd[18]                                                                ; 9       ;
+; Equal2~7                                                                  ; 9       ;
+; Equal3~0                                                                  ; 9       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|state.TRAN            ; 8       ;
+; rs232_rx8to8~0                                                            ; 8       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[1]                ; 8       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[1]                   ; 8       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[7]~16           ; 8       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[7]~1                                    ; 8       ;
+; linkSPI                                                                   ; 8       ;
+; linkSSZ                                                                   ; 8       ;
+; Equal2~4                                                                  ; 8       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[1]           ; 7       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Equal3~2              ; 7       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out~14              ; 7       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Equal3~2                 ; 7       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|bps_sel               ; 7       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Equal6~0              ; 7       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|tran_cnt[2]           ; 7       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|tran_cnt[0]              ; 7       ;
+; linkSMZ                                                                   ; 7       ;
+; linkSMF                                                                   ; 7       ;
+; linkSSF                                                                   ; 7       ;
+; Equal22~0                                                                 ; 7       ;
+; Rx_cmd[16]                                                                ; 7       ;
+; Rx_cmd[10]                                                                ; 7       ;
+; Equal3~2                                                                  ; 7       ;
+; Rx_cmd[17]                                                                ; 7       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Equal3~3              ; 6       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Equal3~3                 ; 6       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[2]           ; 6       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[4]           ; 6       ;
+; rs232_rx                                                                  ; 6       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out~12                 ; 6       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|bps_sel                  ; 6       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|tran_cnt[2]              ; 6       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_regnum[3]           ; 6       ;
+; linkFSM                                                                   ; 6       ;
+; linkFSS                                                                   ; 6       ;
+; linkUST                                                                   ; 6       ;
+; Equal15~1                                                                 ; 6       ;
+; Rx_cmd[19]                                                                ; 6       ;
+; WideOr23~0                                                                ; 6       ;
+; Equal21~1                                                                 ; 6       ;
+; Equal14~0                                                                 ; 6       ;
+; Rx_cmd[8]                                                                 ; 6       ;
+; Equal17~3                                                                 ; 5       ;
+; uart_top7to7:uart_top7to7|Add0~62                                         ; 5       ;
+; uart_instance:uart_instance1|Add0~62                                      ; 5       ;
+; uart_top7to7:uart_top7to7|Add0~37                                         ; 5       ;
+; uart_instance:uart_instance1|Add0~37                                      ; 5       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[5]~10             ; 5       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[0]~6              ; 5       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~52               ; 5       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~17               ; 5       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~52                  ; 5       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~17                  ; 5       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|bps_sel               ; 5       ;
+; speed_select:speed_select|cnt_rx[0]~21                                    ; 5       ;
+; speed_select:speed_select|cnt_rx[7]                                       ; 5       ;
+; speed_select:speed_select|cnt_rx[5]~13                                    ; 5       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out_sign               ; 5       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[7]~0                                    ; 5       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Equal6~0                 ; 5       ;
+; Equal14~2                                                                 ; 5       ;
+; WideOr22~0                                                                ; 5       ;
+; flag_reg                                                                  ; 5       ;
+; linkLSL                                                                   ; 5       ;
+; linkCMP                                                                   ; 5       ;
+; Equal7~0                                                                  ; 5       ;
+; Equal11~1                                                                 ; 5       ;
+; Rx_cmd[0]                                                                 ; 5       ;
+; Equal13~3                                                                 ; 5       ;
+; Equal6~3                                                                  ; 5       ;
+; Rx_cmd[3]                                                                 ; 5       ;
+; Equal6~2                                                                  ; 5       ;
+; Equal6~1                                                                  ; 5       ;
+; Equal8~2                                                                  ; 5       ;
+; Rx_cmd[4]                                                                 ; 5       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_sign             ; 4       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[0]           ; 4       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|sign_delay               ; 4       ;
+; my_uart_rx:my_uart_rx|rx_enable_reg                                       ; 4       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_regnum[0]           ; 4       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_regnum[1]           ; 4       ;
+; Current.IDLE                                                              ; 4       ;
+; linkUSH                                                                   ; 4       ;
+; Equal16~0                                                                 ; 4       ;
+; WideOr15~0                                                                ; 4       ;
+; Equal4~1                                                                  ; 4       ;
+; WideNor1~2                                                                ; 4       ;
+; Equal12~3                                                                 ; 4       ;
+; Equal4~0                                                                  ; 4       ;
+; Equal2~8                                                                  ; 4       ;
+; Equal13~6                                                                 ; 4       ;
+; WideOr2~0                                                                 ; 4       ;
+; Equal5~2                                                                  ; 4       ;
+; Rx_cmd[1]                                                                 ; 4       ;
+; Equal13~1                                                                 ; 4       ;
+; Rx_cmd[9]                                                                 ; 4       ;
+; Rx_cmd[20]                                                                ; 4       ;
+; my_uart_rx:my_uart_rx|Mux2~0                                              ; 3       ;
+; my_uart_rx:my_uart_rx|Mux7~2                                              ; 3       ;
+; speed_select:speed_select|cnt_rx[2]                                       ; 3       ;
+; speed_select:speed_select|cnt_rx[1]                                       ; 3       ;
+; speed_select:speed_select|cnt_rx[4]                                       ; 3       ;
+; speed_select:speed_select|cnt_rx[3]                                       ; 3       ;
+; speed_select:speed_select|cnt_rx[5]                                       ; 3       ;
+; speed_select:speed_select|cnt_rx[6]                                       ; 3       ;
+; speed_select:speed_select|cnt_rx[8]                                       ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[4]                ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[5]                ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[7]                ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[8]                ; 3       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out_sign            ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|data_valid            ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|data_valid~0          ; 3       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[4]                   ; 3       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[5]                   ; 3       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[7]                   ; 3       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[8]                   ; 3       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|data_valid               ; 3       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[0]              ; 3       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[4]~7            ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|tran_cnt[3]           ; 3       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[0]                 ; 3       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|tran_cnt[3]              ; 3       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[4]~11           ; 3       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_regnum[2]           ; 3       ;
+; WideOr3~0                                                                 ; 3       ;
+; WideOr14~0                                                                ; 3       ;
+; WideOr0~0                                                                 ; 3       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[0]                                      ; 3       ;
+; BusB[19]~24                                                               ; 3       ;
+; linkUSF                                                                   ; 3       ;
+; linkTPF                                                                   ; 3       ;
+; linkFWM                                                                   ; 3       ;
+; linkTPZ                                                                   ; 3       ;
+; linkGII                                                                   ; 3       ;
+; linkEWM                                                                   ; 3       ;
+; Buff_temp[3]                                                              ; 3       ;
+; Buff_temp[4]                                                              ; 3       ;
+; Buff_temp[2]                                                              ; 3       ;
+; Buff_temp[1]                                                              ; 3       ;
+; Buff_temp[10]                                                             ; 3       ;
+; Buff_temp[11]                                                             ; 3       ;
+; Buff_temp[12]                                                             ; 3       ;
+; Buff_temp[9]                                                              ; 3       ;
+; Buff_temp[8]                                                              ; 3       ;
+; Buff_temp[5]                                                              ; 3       ;
+; Buff_temp[0]                                                              ; 3       ;
+; Buff_temp[7]                                                              ; 3       ;
+; Buff_temp[13]                                                             ; 3       ;
+; Buff_temp[6]                                                              ; 3       ;
+; Buff_temp[14]                                                             ; 3       ;
+; Buff_temp[15]                                                             ; 3       ;
+; WideNor1~3                                                                ; 3       ;
+; Equal19~2                                                                 ; 3       ;
+; Equal19~1                                                                 ; 3       ;
+; Equal14~1                                                                 ; 3       ;
+; WideOr5~0                                                                 ; 3       ;
+; Equal11~0                                                                 ; 3       ;
+; WideOr9~0                                                                 ; 3       ;
+; Equal12~0                                                                 ; 3       ;
+; Equal8~1                                                                  ; 3       ;
+; Rx_cmd[11]                                                                ; 3       ;
+; Equal3~1                                                                  ; 3       ;
+; Equal23~0                                                                 ; 3       ;
+; Rx_cmd[12]                                                                ; 3       ;
+; Equal13~0                                                                 ; 3       ;
+; Equal2~3                                                                  ; 3       ;
+; Equal2~1                                                                  ; 3       ;
+; Equal2~0                                                                  ; 3       ;
+; BusF[85]~13                                                               ; 3       ;
+; BusD[57]~9                                                                ; 3       ;
+; BusB[16]~1                                                                ; 3       ;
+; WideOr4~2                                                                 ; 2       ;
+; WideNor1~4                                                                ; 2       ;
+; uart_top7to7:uart_top7to7|rst_cnt[0]                                      ; 2       ;
+; uart_instance:uart_instance1|rst_cnt[0]                                   ; 2       ;
+; uart_top7to7:uart_top7to7|Add0~12                                         ; 2       ;
+; uart_instance:uart_instance1|Add0~12                                      ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Equal4~3              ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[11]               ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[10]~24            ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[10]               ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[9]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[8]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[12]               ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[7]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[6]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[4]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[5]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[3]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[0]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[2]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[1]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~57               ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~57                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Decoder0~3            ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Decoder0~1            ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Decoder0~0            ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_sign~0           ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[1]~4                                   ; 2       ;
+; my_uart_rx:my_uart_rx|Mux8~0                                              ; 2       ;
+; my_uart_rx:my_uart_rx|rx_complete_reg                                     ; 2       ;
+; speed_select:speed_select|cnt_rx[0]                                       ; 2       ;
+; speed_select:speed_select|always2~1                                       ; 2       ;
+; speed_select:speed_select|cnt_rx[11]                                      ; 2       ;
+; speed_select:speed_select|cnt_rx[10]~5                                    ; 2       ;
+; speed_select:speed_select|cnt_rx[10]                                      ; 2       ;
+; speed_select:speed_select|cnt_rx[12]                                      ; 2       ;
+; speed_select:speed_select|cnt_rx[9]                                       ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[7]~1                                   ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[7]~0                                   ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[9]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[0]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[2]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[3]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[11]               ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|sign_delay            ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[9]                   ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[0]                   ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[2]                   ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[3]                   ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[11]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[7]            ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[5]            ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[4]            ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[3]            ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[6]            ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[1]            ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[0]            ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[2]            ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_regnum[1]~0         ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[5]                                     ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[0]                                     ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[3]                                     ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[4]                                     ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[1]                                     ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[2]                                     ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[6]                                     ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[7]                                     ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[5]                                      ; 2       ;
+; Equal0~2                                                                  ; 2       ;
+; Flag_temp                                                                 ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[2]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[5]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[6]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[4]              ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~1               ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[7]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[3]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[1]              ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|rs_tx~1                  ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[6]                 ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[5]                 ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|rs_tx~0                  ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[4]~7               ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[4]                 ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[3]                 ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[1]                 ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[2]                 ; 2       ;
+; WideOr9~2                                                                 ; 2       ;
+; Equal9~0                                                                  ; 2       ;
+; WideOr5~1                                                                 ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[7]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[5]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[4]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[3]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[6]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[1]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[0]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[2]              ; 2       ;
+; WideOr0~1                                                                 ; 2       ;
+; Equal10~0                                                                 ; 2       ;
+; Equal2~9                                                                  ; 2       ;
+; WideOr17~0                                                                ; 2       ;
+; WideOr18~1                                                                ; 2       ;
+; Equal20~1                                                                 ; 2       ;
+; Equal18~0                                                                 ; 2       ;
+; WideOr9~1                                                                 ; 2       ;
+; WideOr11~0                                                                ; 2       ;
+; WideOr15~2                                                                ; 2       ;
+; WideOr15~1                                                                ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[3]                                      ; 2       ;
+; Equal1~0                                                                  ; 2       ;
+; Equal0~1                                                                  ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[4]                                      ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[1]                                      ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[6]                                      ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|rs_tx                 ; 2       ;
+; linkTIF                                                                   ; 2       ;
+; linkTIZ                                                                   ; 2       ;
+; BusC[40]~31                                                               ; 2       ;
+; BusC[29]~29                                                               ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_ok                  ; 2       ;
+; BusA[8]~16                                                                ; 2       ;
+; BusB[15]~17                                                               ; 2       ;
+; BusB[15]~16                                                               ; 2       ;
+; linkLPT                                                                   ; 2       ;
+; linkGLO                                                                   ; 2       ;
+; Buff_temp[18]                                                             ; 2       ;
+; Buff_temp[16]                                                             ; 2       ;
+; Buff_temp[17]                                                             ; 2       ;
+; Buff_temp[19]                                                             ; 2       ;
+; Buff_temp[20]                                                             ; 2       ;
+; Buff_temp[21]                                                             ; 2       ;
+; Buff_temp[23]                                                             ; 2       ;
+; Buff_temp[22]                                                             ; 2       ;
+; Equal12~4                                                                 ; 2       ;
+; Equal15~0                                                                 ; 2       ;
+; Equal20~0                                                                 ; 2       ;
+; WideOr12~0                                                                ; 2       ;
+; Equal6~0                                                                  ; 2       ;
+; Equal13~2                                                                 ; 2       ;
+; Equal2~5                                                                  ; 2       ;
+; Equal3~3                                                                  ; 2       ;
+; Equal8~0                                                                  ; 2       ;
+; Equal23~1                                                                 ; 2       ;
+; Equal17~2                                                                 ; 2       ;
+; Rx_cmd[5]                                                                 ; 2       ;
+; BusF[91]~15                                                               ; 2       ;
+; BusF[83]~12                                                               ; 2       ;
+; BusF[76]~9                                                                ; 2       ;
+; BusC[36]~11                                                               ; 2       ;
+; BusB[21]~6                                                                ; 2       ;
+; BusB[20]~5                                                                ; 2       ;
+; BusB[19]~4                                                                ; 2       ;
+; BusB[18]~3                                                                ; 2       ;
+; BusB[15]~0                                                                ; 2       ;
+; BusA[4]~5                                                                 ; 2       ;
+; BusA[3]~4                                                                 ; 2       ;
+; Selector31~3                                                              ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[1]                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[1]                                   ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~67COUT1_82                                 ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~67                                         ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~65                                         ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[2]                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~67COUT1_82                              ; 1       ;
+; uart_instance:uart_instance1|Add0~67                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~65                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[2]                                   ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~60                                         ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[3]                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~60                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[3]                                   ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~57COUT1_84                                 ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~57                                         ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~55                                         ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[4]                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~57COUT1_84                              ; 1       ;
+; uart_instance:uart_instance1|Add0~57                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~55                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[4]                                   ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~52COUT1_86                                 ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~52                                         ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~50                                         ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[5]                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~52COUT1_86                              ; 1       ;
+; uart_instance:uart_instance1|Add0~52                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~50                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[5]                                   ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~47COUT1_88                                 ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~47                                         ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~45                                         ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[6]                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~47COUT1_88                              ; 1       ;
+; uart_instance:uart_instance1|Add0~47                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~45                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[6]                                   ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~42COUT1_90                                 ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~42                                         ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~40                                         ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[7]                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~42COUT1_90                              ; 1       ;
+; uart_instance:uart_instance1|Add0~42                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~40                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[7]                                   ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~35                                         ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[8]                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~35                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[8]                                   ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~32COUT1_92                                 ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~32                                         ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~30                                         ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[9]                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~32COUT1_92                              ; 1       ;
+; uart_instance:uart_instance1|Add0~32                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~30                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[9]                                   ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~27COUT1_94                                 ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~27                                         ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~25                                         ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[10]                                     ; 1       ;
+; uart_instance:uart_instance1|Add0~27COUT1_94                              ; 1       ;
+; uart_instance:uart_instance1|Add0~27                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~25                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[10]                                  ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~22COUT1_96                                 ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~22                                         ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~20                                         ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[11]                                     ; 1       ;
+; uart_instance:uart_instance1|Add0~22COUT1_96                              ; 1       ;
+; uart_instance:uart_instance1|Add0~22                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~20                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[11]                                  ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~17COUT1_98                                 ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~17                                         ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~15                                         ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[12]                                     ; 1       ;
+; uart_instance:uart_instance1|Add0~17COUT1_98                              ; 1       ;
+; uart_instance:uart_instance1|Add0~17                                      ; 1       ;
+; uart_instance:uart_instance1|Add0~15                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[12]                                  ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~10                                         ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[13]                                     ; 1       ;
+; uart_instance:uart_instance1|Add0~10                                      ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[13]                                  ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Equal4~2              ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[11]~26COUT1_54    ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[11]~26            ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[9]~22COUT1_52     ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[9]~22             ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[8]~20COUT1_50     ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[8]~20             ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Equal4~1              ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[7]~16COUT1_48     ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[7]~16             ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[6]~14COUT1_46     ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[6]~14             ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[4]~12COUT1_44     ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[4]~12             ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Equal4~0              ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[3]~8COUT1_42      ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[3]~8              ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[2]~4COUT1_40      ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[2]~4              ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[1]~2COUT1_38      ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[1]~2              ; 1       ;
+; my_uart_rx:my_uart_rx|rx_complete_reg~1                                   ; 1       ;
+; speed_select:speed_select|LessThan0~1                                     ; 1       ;
+; speed_select:speed_select|LessThan0~0                                     ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~62COUT1_90       ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~62               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~60               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~55               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~50               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~47COUT1_78       ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~47               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~45               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~42COUT1_80       ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~42               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~40               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~37COUT1_84       ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~37               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~35               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~32COUT1_92       ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~32               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~30               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~25               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~22COUT1_82       ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~22               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~20               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~15               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~12COUT1_86       ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~12               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~10               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~7COUT1_88        ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~7                ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~5                ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~2COUT1_76        ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~2                ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~0                ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~62COUT1_90          ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~62                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~60                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~55                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~50                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~47COUT1_78          ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~47                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~45                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~42COUT1_80          ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~42                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~40                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~37COUT1_84          ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~37                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~35                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~32COUT1_92          ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~32                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~30                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~25                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~22COUT1_82          ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~22                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~20                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~15                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~12COUT1_86          ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~12                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~10                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~7COUT1_88           ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~7                   ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~5                   ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~2COUT1_76           ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~2                   ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~0                   ; 1       ;
+; WideNor1                                                                  ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~7COUT1_100                                 ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~7                                          ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~5                                          ; 1       ;
+; uart_instance:uart_instance1|Add0~7COUT1_100                              ; 1       ;
+; uart_instance:uart_instance1|Add0~7                                       ; 1       ;
+; uart_instance:uart_instance1|Add0~5                                       ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Decoder0~4            ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Decoder0~2            ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_sign~1           ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[1]~9COUT1_19 ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[1]~9         ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[0]~7COUT1_17 ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[0]~7         ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[3]~5COUT1_23 ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[3]~5         ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[2]~3COUT1_21 ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[2]~3         ; 1       ;
+; my_uart_rx:my_uart_rx|Mux6~2                                              ; 1       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[0]~6                                   ; 1       ;
+; my_uart_rx:my_uart_rx|Mux7~3                                              ; 1       ;
+; my_uart_rx:my_uart_rx|Mux5~0                                              ; 1       ;
+; my_uart_rx:my_uart_rx|rx_enable_reg~0                                     ; 1       ;
+; speed_select:speed_select|always2~4                                       ; 1       ;
+; speed_select:speed_select|always2~3                                       ; 1       ;
+; speed_select:speed_select|always2~2                                       ; 1       ;
+; speed_select:speed_select|cnt_rx[2]~25COUT1_39                            ; 1       ;
+; speed_select:speed_select|cnt_rx[2]~25                                    ; 1       ;
+; speed_select:speed_select|cnt_rx[1]~23COUT1_37                            ; 1       ;
+; speed_select:speed_select|cnt_rx[1]~23                                    ; 1       ;
+; speed_select:speed_select|cnt_rx[4]~19COUT1_43                            ; 1       ;
+; speed_select:speed_select|cnt_rx[4]~19                                    ; 1       ;
+; speed_select:speed_select|cnt_rx[3]~17COUT1_41                            ; 1       ;
+; speed_select:speed_select|cnt_rx[3]~17                                    ; 1       ;
+; speed_select:speed_select|cnt_rx[7]~15COUT1_47                            ; 1       ;
+; speed_select:speed_select|cnt_rx[7]~15                                    ; 1       ;
+; speed_select:speed_select|cnt_rx[6]~11COUT1_45                            ; 1       ;
+; speed_select:speed_select|cnt_rx[6]~11                                    ; 1       ;
+; speed_select:speed_select|cnt_rx[8]~9COUT1_49                             ; 1       ;
+; speed_select:speed_select|cnt_rx[8]~9                                     ; 1       ;
+; speed_select:speed_select|cnt_rx[11]~7COUT1_53                            ; 1       ;
+; speed_select:speed_select|cnt_rx[11]~7                                    ; 1       ;
+; speed_select:speed_select|always2~0                                       ; 1       ;
+; speed_select:speed_select|cnt_rx[9]~1COUT1_51                             ; 1       ;
+; speed_select:speed_select|cnt_rx[9]~1                                     ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[10]               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[6]                ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Equal3~1              ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[12]               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Equal3~0              ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|WideNor0~0            ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|tran_cnt[0]~5         ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add1~1                ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|tran_cnt[3]~2         ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[10]                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[6]                   ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Equal3~1                 ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[12]                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Equal3~0                 ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|WideNor0~0               ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~0                                          ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|always1~0                ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|tran_cnt~2               ; 1       ;
+; uart_instance:uart_instance1|Add0~0                                       ; 1       ;
+; Selector1~0                                                               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~6               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~5               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add1~0                ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[2]~13COUT1_25   ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[2]~13           ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~4               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~3               ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~2               ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[5]~11COUT1_29   ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[5]~11           ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[6]~9COUT1_31    ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[6]~9            ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add2~0                ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~0               ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[3]~3COUT1_27    ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[3]~3            ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[1]~1COUT1_23    ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[1]~1            ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|rs_tx~0               ; 1       ;
+; WideOr1~1                                                                 ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|rs_tx~3                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|rs_tx~2                  ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[5]~9COUT1_26       ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[5]~9               ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Mux13~1                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Mux13~0                  ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[3]~5COUT1_24       ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[3]~5               ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[1]~3COUT1_20       ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[1]~3               ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[2]~1COUT1_22       ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[2]~1               ; 1       ;
+; WideOr9~3                                                                 ; 1       ;
+; WideOr1~0                                                                 ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_ok~1                ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[5]~13COUT1_33   ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[5]~13           ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[3]~9COUT1_31    ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[3]~9            ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_ok~0                ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[6]~7COUT1_35    ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[6]~7            ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[1]~5COUT1_27    ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[1]~5            ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[0]~3COUT1_25    ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[0]~3            ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[2]~1COUT1_29    ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[2]~1            ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|Equal0~0                 ; 1       ;
+; WideOr18~0                                                                ; 1       ;
+; WideOr19~0                                                                ; 1       ;
+; always2~0                                                                 ; 1       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[2]                                      ; 1       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[7]                                      ; 1       ;
+; Equal0~0                                                                  ; 1       ;
+; BusF[87]~36                                                               ; 1       ;
+; BusF[87]~35                                                               ; 1       ;
+; BusF[87]~34                                                               ; 1       ;
+; BusE[64]~17                                                               ; 1       ;
+; BusE[64]~16                                                               ; 1       ;
+; BusE[64]~15                                                               ; 1       ;
+; BusE[64]~14                                                               ; 1       ;
+; BusD[56]~20                                                               ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|rs_tx                    ; 1       ;
+; BusC[40]~33                                                               ; 1       ;
+; BusC[40]~32                                                               ; 1       ;
+; BusC[33]~30                                                               ; 1       ;
+; BusC[29]~28                                                               ; 1       ;
+; BusB[21]~26                                                               ; 1       ;
+; BusB[20]~25                                                               ; 1       ;
+; BusB[19]~23                                                               ; 1       ;
+; BusB[18]~22                                                               ; 1       ;
+; BusB[18]~21                                                               ; 1       ;
+; BusB[17]~20                                                               ; 1       ;
+; BusB[17]~19                                                               ; 1       ;
+; BusB[17]~18                                                               ; 1       ;
+; BusB[15]~15                                                               ; 1       ;
+; BusB[15]~14                                                               ; 1       ;
+; BusA[2]~15                                                                ; 1       ;
+; BusA[2]~14                                                                ; 1       ;
+; Equal19~0                                                                 ; 1       ;
+; Equal12~2                                                                 ; 1       ;
+; Equal12~1                                                                 ; 1       ;
+; Equal3~4                                                                  ; 1       ;
+; Equal13~5                                                                 ; 1       ;
+; Equal13~4                                                                 ; 1       ;
+; Equal2~6                                                                  ; 1       ;
+; Equal5~1                                                                  ; 1       ;
+; Equal5~0                                                                  ; 1       ;
+; Equal21~0                                                                 ; 1       ;
+; Equal2~2                                                                  ; 1       ;
+; Rx_cmd[7]                                                                 ; 1       ;
+; Rx_cmd[13]                                                                ; 1       ;
+; Rx_cmd[6]                                                                 ; 1       ;
+; Rx_cmd[15]                                                                ; 1       ;
+; Rx_cmd[21]                                                                ; 1       ;
+; Rx_cmd[23]                                                                ; 1       ;
+; led~reg0                                                                  ; 1       ;
+; BusF[92]~16                                                               ; 1       ;
+; BusF[77]~10                                                               ; 1       ;
+; BusE[70]~6                                                                ; 1       ;
+; BusE[67]~5                                                                ; 1       ;
+; BusE[66]~4                                                                ; 1       ;
+; BusD[54]~7                                                                ; 1       ;
+; BusD[48]~3                                                                ; 1       ;
+; BusC[42]~13                                                               ; 1       ;
+; BusC[33]~10                                                               ; 1       ;
+; BusC[29]~9                                                                ; 1       ;
++---------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------+
+; Routing Usage Summary                        ;
++-----------------------+----------------------+
+; Routing Resource Type ; Usage                ;
++-----------------------+----------------------+
+; C4s                   ; 268 / 1,624 ( 17 % ) ;
+; Direct links          ; 208 / 1,930 ( 11 % ) ;
+; Global clocks         ; 4 / 4 ( 100 % )      ;
+; LAB clocks            ; 35 / 56 ( 63 % )     ;
+; LUT chains            ; 38 / 513 ( 7 % )     ;
+; Local interconnects   ; 666 / 1,930 ( 35 % ) ;
+; R4s                   ; 428 / 1,472 ( 29 % ) ;
++-----------------------+----------------------+
+
+
++---------------------------------------------------------------------------+
+; LAB Logic Elements                                                        ;
++--------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 8.74) ; Number of LABs  (Total = 54) ;
++--------------------------------------------+------------------------------+
+; 1                                          ; 0                            ;
+; 2                                          ; 1                            ;
+; 3                                          ; 3                            ;
+; 4                                          ; 1                            ;
+; 5                                          ; 2                            ;
+; 6                                          ; 1                            ;
+; 7                                          ; 3                            ;
+; 8                                          ; 2                            ;
+; 9                                          ; 6                            ;
+; 10                                         ; 35                           ;
++--------------------------------------------+------------------------------+
+
+
++-------------------------------------------------------------------+
+; LAB-wide Signals                                                  ;
++------------------------------------+------------------------------+
+; LAB-wide Signals  (Average = 2.11) ; Number of LABs  (Total = 54) ;
++------------------------------------+------------------------------+
+; 1 Async. clear                     ; 43                           ;
+; 1 Clock                            ; 45                           ;
+; 1 Clock enable                     ; 15                           ;
+; 1 Sync. clear                      ; 3                            ;
+; 2 Async. clears                    ; 4                            ;
+; 2 Clock enables                    ; 1                            ;
+; 2 Clocks                           ; 3                            ;
++------------------------------------+------------------------------+
+
+
++----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                        ;
++---------------------------------------------+------------------------------+
+; Number of Signals Sourced  (Average = 9.30) ; Number of LABs  (Total = 54) ;
++---------------------------------------------+------------------------------+
+; 0                                           ; 0                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 3                            ;
+; 4                                           ; 1                            ;
+; 5                                           ; 2                            ;
+; 6                                           ; 0                            ;
+; 7                                           ; 2                            ;
+; 8                                           ; 4                            ;
+; 9                                           ; 6                            ;
+; 10                                          ; 24                           ;
+; 11                                          ; 4                            ;
+; 12                                          ; 4                            ;
+; 13                                          ; 0                            ;
+; 14                                          ; 2                            ;
+; 15                                          ; 0                            ;
+; 16                                          ; 0                            ;
+; 17                                          ; 1                            ;
++---------------------------------------------+------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                        ;
++-------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 6.44) ; Number of LABs  (Total = 54) ;
++-------------------------------------------------+------------------------------+
+; 0                                               ; 0                            ;
+; 1                                               ; 1                            ;
+; 2                                               ; 6                            ;
+; 3                                               ; 4                            ;
+; 4                                               ; 6                            ;
+; 5                                               ; 5                            ;
+; 6                                               ; 6                            ;
+; 7                                               ; 5                            ;
+; 8                                               ; 4                            ;
+; 9                                               ; 9                            ;
+; 10                                              ; 4                            ;
+; 11                                              ; 3                            ;
+; 12                                              ; 0                            ;
+; 13                                              ; 0                            ;
+; 14                                              ; 0                            ;
+; 15                                              ; 0                            ;
+; 16                                              ; 0                            ;
+; 17                                              ; 1                            ;
++-------------------------------------------------+------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                         ;
++----------------------------------------------+------------------------------+
+; Number of Distinct Inputs  (Average = 11.31) ; Number of LABs  (Total = 54) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 2                            ;
+; 5                                            ; 5                            ;
+; 6                                            ; 4                            ;
+; 7                                            ; 7                            ;
+; 8                                            ; 3                            ;
+; 9                                            ; 3                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 5                            ;
+; 12                                           ; 5                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 2                            ;
+; 15                                           ; 4                            ;
+; 16                                           ; 0                            ;
+; 17                                           ; 2                            ;
+; 18                                           ; 2                            ;
+; 19                                           ; 2                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 2                            ;
+; 22                                           ; 2                            ;
+; 23                                           ; 0                            ;
+; 24                                           ; 1                            ;
++----------------------------------------------+------------------------------+
+
+
++--------------------------------------------------------------------+
+; Fitter Device Options                                              ;
++----------------------------------------------+---------------------+
+; Option                                       ; Setting             ;
++----------------------------------------------+---------------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off                 ;
+; Enable device-wide reset (DEV_CLRn)          ; Off                 ;
+; Enable device-wide output enable (DEV_OE)    ; Off                 ;
+; Enable INIT_DONE output                      ; Off                 ;
+; Configuration scheme                         ; Passive Serial      ;
+; Reserve all unused pins                      ; As input tri-stated ;
++----------------------------------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                                                 ;
++-----------------------------------------------+-------------------------------------------+-------------------+
+; Source Clock(s)                               ; Destination Clock(s)                      ; Delay Added in ns ;
++-----------------------------------------------+-------------------------------------------+-------------------+
+; speed_select:speed_select|buad_clk_rx_reg,I/O ; speed_select:speed_select|buad_clk_rx_reg ; 3.9               ;
+; I/O                                           ; speed_select:speed_select|buad_clk_rx_reg ; 3.6               ;
++-----------------------------------------------+-------------------------------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
+
+
++---------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                     ;
++---------------------------------------+---------------------------------------+-------------------+
+; Source Register                       ; Destination Register                  ; Delay Added in ns ;
++---------------------------------------+---------------------------------------+-------------------+
+; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; 1.904             ;
+; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; 0.823             ;
+; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[2] ; 0.823             ;
+; my_uart_rx:my_uart_rx|rx_data_temp[5] ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; 0.779             ;
+; my_uart_rx:my_uart_rx|rx_data_temp[4] ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; 0.730             ;
++---------------------------------------+---------------------------------------+-------------------+
+Note: This table only shows the top 5 path(s) that have the largest delay added for hold.
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (119006): Selected device EPM570T100C5 for design "top"
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
+Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info (176445): Device EPM240T100C5 is compatible
+    Info (176445): Device EPM240T100I5 is compatible
+    Info (176445): Device EPM240T100A5 is compatible
+    Info (176445): Device EPM570T100I5 is compatible
+    Info (176445): Device EPM570T100A5 is compatible
+Critical Warning (169085): No exact pin location assignment(s) for 27 pins of 66 total pins. For the list of the pins please refer to the Input Pins, Output Pins, and Bidir Pins tables in the Fitter report and look for the user pins whose location is assigned by Fitter.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'top.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332144): No user constrained base clocks found in the design
+Info (332128): Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
+    Info (332127): Assuming a default timing requirement
+Info (332111): Found 4 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):    1.000          clk
+    Info (332111):    1.000 my_uart_rx:my_uart_rx|rx_enable_reg
+    Info (332111):    1.000     rs232_rx
+    Info (332111):    1.000 speed_select:speed_select|buad_clk_rx_reg
+Info (186079): Completed User Assigned Global Signals Promotion Operation
+Info (186215): Automatically promoted signal "clk" to use Global clock in PIN 12
+Info (186215): Automatically promoted signal "speed_select:speed_select|buad_clk_rx_reg" to use Global clock
+Info (186216): Automatically promoted some destinations of signal "rst_n" to use Global clock
+    Info (186217): Destination "tx_start_f" may be non-global or may not use global clock
+    Info (186217): Destination "tx_start_f_7bit" may be non-global or may not use global clock
+    Info (186217): Destination "my_uart_rx:my_uart_rx|rx_enable_reg~0" may be non-global or may not use global clock
+    Info (186217): Destination "my_uart_rx:my_uart_rx|rx_complete_reg~1" may be non-global or may not use global clock
+Info (186228): Pin "rst_n" drives global clock, but is not placed in a dedicated clock pin position
+Info (186216): Automatically promoted some destinations of signal "uart_instance:uart_instance1|rst_cnt[14]" to use Global clock
+    Info (186217): Destination "uart_instance:uart_instance1|rst_cnt[14]" may be non-global or may not use global clock
+    Info (186217): Destination "uart_instance:uart_instance1|Add0~0" may be non-global or may not use global clock
+    Info (186217): Destination "uart_instance:uart_instance1|rst_cnt[13]" may be non-global or may not use global clock
+    Info (186217): Destination "uart_instance:uart_instance1|rst_cnt[12]" may be non-global or may not use global clock
+    Info (186217): Destination "uart_instance:uart_instance1|rst_cnt[11]" may be non-global or may not use global clock
+    Info (186217): Destination "uart_instance:uart_instance1|rst_cnt[10]" may be non-global or may not use global clock
+    Info (186217): Destination "uart_instance:uart_instance1|rst_cnt[9]" may be non-global or may not use global clock
+    Info (186217): Destination "uart_instance:uart_instance1|rst_cnt[8]" may be non-global or may not use global clock
+    Info (186217): Destination "uart_instance:uart_instance1|rst_cnt[7]" may be non-global or may not use global clock
+    Info (186217): Destination "uart_instance:uart_instance1|rst_cnt[6]" may be non-global or may not use global clock
+    Info (186218): Limited to 10 non-global destinations
+Info (186079): Completed Auto Global Promotion Operation
+Info (176234): Starting register packing
+Info (186468): Started processing fast register assignments
+Info (186469): Finished processing fast register assignments
+Info (176235): Finished register packing
+Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
+    Info (176211): Number of I/O pins in group: 27 (unused VREF, 3.3V VCCIO, 0 input, 0 output, 27 bidirectional)
+        Info (176212): I/O standards used: 3.3-V LVTTL.
+Info (176215): I/O bank details before I/O pin placement
+    Info (176214): Statistics of I/O banks
+        Info (176213): I/O bank number 1 does not use VREF pins and has 3.3V VCCIO pins. 22 total pin(s) used --  14 pins available
+        Info (176213): I/O bank number 2 does not use VREF pins and has 3.3V VCCIO pins. 17 total pin(s) used --  23 pins available
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
+Info (170189): Fitter placement preparation operations beginning
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
+Info (170191): Fitter placement operations beginning
+Info (170137): Fitter placement was successful
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
+Info (170193): Fitter routing operations beginning
+Info (170195): Router estimated average interconnect usage is 18% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 18% of the available device resources in the region that extends from location X0_Y0 to location X13_Y8
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
+    Info (170201): Optimizations that may affect the design's routability were skipped
+Info (11888): Total time spent on timing analysis during the Fitter is 0.46 seconds.
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Warning (169064): Following 36 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
+    Info (169065): Pin BusA[5] has a permanently disabled output enable
+    Info (169065): Pin BusA[6] has a permanently disabled output enable
+    Info (169065): Pin BusA[7] has a permanently disabled output enable
+    Info (169065): Pin BusC[30] has a permanently disabled output enable
+    Info (169065): Pin BusC[31] has a permanently disabled output enable
+    Info (169065): Pin BusC[32] has a permanently disabled output enable
+    Info (169065): Pin BusC[34] has a permanently disabled output enable
+    Info (169065): Pin BusC[35] has a permanently disabled output enable
+    Info (169065): Pin BusC[37] has a permanently disabled output enable
+    Info (169065): Pin BusC[38] has a permanently disabled output enable
+    Info (169065): Pin BusC[39] has a permanently disabled output enable
+    Info (169065): Pin BusC[41] has a permanently disabled output enable
+    Info (169065): Pin BusD[51] has a permanently disabled output enable
+    Info (169065): Pin BusD[53] has a permanently disabled output enable
+    Info (169065): Pin BusD[55] has a permanently disabled output enable
+    Info (169065): Pin BusE[65] has a permanently disabled output enable
+    Info (169065): Pin BusE[68] has a permanently disabled output enable
+    Info (169065): Pin BusE[69] has a permanently disabled output enable
+    Info (169065): Pin BusF[79] has a permanently disabled output enable
+    Info (169065): Pin BusF[80] has a permanently disabled output enable
+    Info (169065): Pin BusF[81] has a permanently disabled output enable
+    Info (169065): Pin BusF[82] has a permanently disabled output enable
+    Info (169065): Pin BusF[84] has a permanently disabled output enable
+    Info (169065): Pin BusF[86] has a permanently disabled output enable
+    Info (169065): Pin BusF[88] has a permanently disabled output enable
+    Info (169065): Pin BusF[89] has a permanently disabled output enable
+    Info (169065): Pin BusF[90] has a permanently disabled output enable
+    Info (169065): Pin BusA[3] has a permanently disabled output enable
+    Info (169065): Pin BusB[16] has a permanently disabled output enable
+    Info (169065): Pin BusD[48] has a permanently disabled output enable
+    Info (169065): Pin BusD[52] has a permanently disabled output enable
+    Info (169065): Pin BusD[54] has a permanently disabled output enable
+    Info (169065): Pin BusD[57] has a permanently disabled output enable
+    Info (169065): Pin BusE[66] has a permanently disabled output enable
+    Info (169065): Pin BusF[76] has a permanently disabled output enable
+    Info (169065): Pin BusF[85] has a permanently disabled output enable
+Info (144001): Generated suppressed messages file D:/code/CPLD/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdmk32w042/top.fit.smsg
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 787 megabytes
+    Info: Processing ended: Tue Jul 18 13:34:09 2017
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:07
+
+
++----------------------------+
+; Fitter Suppressed Messages ;
++----------------------------+
+The suppressed messages can be found in D:/code/CPLD/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdmk32w042/top.fit.smsg.
+
+

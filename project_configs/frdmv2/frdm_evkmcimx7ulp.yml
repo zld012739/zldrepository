@@ -1,0 +1,263 @@
+tpm_combined_pwm1:
+  CMD: TCP
+  FUNC0:
+      T_PIN: CPLD_IO14
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: CPLD_IO14
+      A_PIN: A40
+      DIRECTION: T2A
+      
+tpm_combined_pwm2:
+  CMD: TCW
+  FUNC0:
+      T_PIN: JJ3_8
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: JJ3_8
+      A_PIN: A40
+      DIRECTION: T2A
+
+tpm_pwm_twochannel1:
+  CMD: TPT
+  FUNC0:
+      T_PIN: CPLD_IO14
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: CPLD_IO14
+      A_PIN: A40
+      DIRECTION: T2A
+      
+tpm_pwm_twochannel2:
+  CMD: TPW
+  FUNC0:
+      T_PIN: JJ3_8
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: JJ3_8
+      A_PIN: A40
+      DIRECTION: T2A
+
+tpm_input_capture:
+  CMD: TIC
+  PWM:
+      T_PIN: CPLD_IO14
+      A_PIN: A40
+      DIRECTION: A2T
+      
+tpm_dual_edge_capture:
+  CMD: TDC
+  PWM:
+      T_PIN: JJ3_8
+      A_PIN: A40
+      DIRECTION: A2T
+      
+tpm_output_compare:
+  CMD: TOC
+  FUNC0:
+      T_PIN: CPLD_IO14
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: CPLD_IO14
+      A_PIN: A40
+      DIRECTION: T2A
+      
+tpm_simple_pwm:
+  CMD: TSP
+  FUNC0:
+      T_PIN: CPLD_IO14
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: CPLD_IO14
+      A_PIN: A40
+      DIRECTION: T2A
+
+flexio_pwm:
+  CMD: FPM
+  FUNC0:
+      T_PIN: CPLD_IO5
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: CPLD_IO5
+      A_PIN: A40
+      DIRECTION: T2A
+      
+gpio_led_output:
+  CMD: GLO
+  FUNC0:
+      T_PIN: JJ3_1
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: JJ3_1
+      A_PIN: A40
+      DIRECTION: T2A
+
+ACMP_LOW_VCC:
+    IP: __BUTTON_RST
+    CMD: BTD
+    ALT: b
+    button_out_status:
+        PIN: CPLD_IO5
+        DIRECTION: OUT
+        
+ACMP_HIGH_INVCC:
+    IP: __BUTTON_RST
+    CMD: BTU
+    ALT: a
+    button_out_status:
+        PIN: CPLD_IO5
+        DIRECTION: OUT
+
+FLEXIO_UART:
+  CMD: FIU
+  RX:
+      T_PIN: JJ4_1
+      A_PIN: CPLD_IO3
+      DIRECTION: T2A
+  TX:
+      T_PIN: JJ4_2
+      A_PIN: CPLD_IO5
+      DIRECTION: A2T
+
+LPSPI_MASTER:
+    CMD: SPM
+    CLK:
+        T_PIN: JJ2_12
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+    CS:
+        T_PIN: JJ2_6
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+    MISO:
+        T_PIN: JJ2_10
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: JJ2_8
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+
+LPSPI_SLAVE:
+    CMD: SPS
+    CLK:
+        T_PIN: JJ2_12
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: A2T
+    CS:
+        T_PIN: JJ2_6
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: A2T
+    MISO:
+        T_PIN: JJ2_10
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: JJ2_8
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: T2A
+
+      
+      
+ECSPI_MASTER_B2B:
+  IP: __SPI_SLAVE_B2B
+  CMD: EMB
+  ALT: a 
+  ss_sck_b2b:
+      PIN: JJ2_12
+      DIRECTION: IN
+  ss_mosi_b2b:
+      PIN: JJ2_8
+      DIRECTION: IN
+  ss_ssel_b2b:
+      PIN: JJ2_6
+      DIRECTION: IN
+  ss_miso_b2b:
+      PIN: JJ2_10
+      DIRECTION: OUT
+      
+DSPI_SLAVER:
+  IP: __SPI_MASTER
+  CMD: DSS
+  ALT: a 
+  sm_sck:
+      PIN: JJ2_12
+      DIRECTION: OUT
+  sm_mosi:
+      PIN: JJ2_10
+      DIRECTION: OUT
+  sm_cs_n:
+      PIN: JJ2_6
+      DIRECTION: OUT   
+  sm_miso:
+      PIN: JJ2_8
+      DIRECTION: IN
+
+LPSPI_SINGLE_BOARD_SLAVE:
+  CMD: SSS
+  sck:
+      A_PIN: CPLD_IO5
+      T_PIN: JJ2_12
+      DIRECTION: T2A
+  cs_n:
+      T_PIN_1: JJ2_6
+      T_PIN_2: CPLD_IO53
+      DIRECTION: T2T
+  mosi:
+      T_PIN: JJ2_10
+      A_PIN: CPLD_IO3
+      DIRECTION: A2T
+  miso:
+      T_PIN_1: JJ2_8
+      T_PIN_2: CPLD_IO54
+      DIRECTION: T2T
+
+LPSPR_SINGLE_BOARD_MASTER:
+  CMD: SSM
+  sck:
+      A_PIN: CPLD_IO5
+      T_PIN: JJ2_12
+      DIRECTION: A2T
+  cs_n:
+      T_PIN_1: CPLD_IO53
+      T_PIN_2: JJ2_6
+      DIRECTION: T2T
+  mosi:
+      T_PIN: JJ2_10
+      A_PIN: CPLD_IO3
+      DIRECTION: A2T
+  miso:
+      T_PIN_1: JJ2_8
+      T_PIN_2: CPLD_IO54
+      DIRECTION: T2T
+      
+# I2C_SLAVE_FOR_CASE:
+    # IP: __I2C_SLAVE_SUBAD
+    # CMD: ICS
+    # subad_scl_slv:
+        # PIN: CPLD_IO2
+        # DIRECTION: in
+    # sda:
+        # PIN: CPLD_IO4
+        # DIRECTION: INOUT
+
+# I2C_MASTER:
+    # IP: __I2C_MASTER_SUBAD
+    # CMD: ICW
+    # ALT: a 
+    # subad_scl:
+        # PIN: CPLD_IO2
+        # DIRECTION: out
+    # sda:
+        # PIN: CPLD_IO4
+        # DIRECTION: INOUT
+
+      

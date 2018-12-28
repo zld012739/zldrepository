@@ -1,0 +1,121 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -16.883
+TNS   : -2612.511
+
+Type  : Setup 'speed_select:speed_select|buad_clk_tx_reg'
+Slack : -6.107
+TNS   : -61.369
+
+Type  : Setup 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -5.130
+TNS   : -86.708
+
+Type  : Setup 'my_uart_tx:my_uart_tx|tx_complete_reg'
+Slack : -3.087
+TNS   : -10.510
+
+Type  : Setup 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : -1.233
+TNS   : -1.233
+
+Type  : Hold 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -2.594
+TNS   : -25.881
+
+Type  : Hold 'speed_select:speed_select|buad_clk_tx_reg'
+Slack : -2.385
+TNS   : -2.385
+
+Type  : Hold 'clk'
+Slack : -2.159
+TNS   : -2.159
+
+Type  : Hold 'my_uart_tx:my_uart_tx|tx_complete_reg'
+Slack : 0.925
+TNS   : 0.000
+
+Type  : Hold 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 1.679
+TNS   : 0.000
+
+Type  : Recovery 'pwm_capture:pwm_capture_instance|captuer_tx:captuer_tx_instance|tx_start'
+Slack : -5.454
+TNS   : -5.454
+
+Type  : Recovery 'rs232_rx'
+Slack : -5.034
+TNS   : -5.034
+
+Type  : Recovery 'clk'
+Slack : -4.379
+TNS   : -864.346
+
+Type  : Recovery 'speed_select:speed_select|buad_clk_tx_reg'
+Slack : -4.112
+TNS   : -13.735
+
+Type  : Recovery 'my_uart_tx:my_uart_tx|tx_complete_reg'
+Slack : -1.965
+TNS   : -7.544
+
+Type  : Recovery 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 2.607
+TNS   : 0.000
+
+Type  : Removal 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -2.661
+TNS   : -2.661
+
+Type  : Removal 'pwm_capture:pwm_capture_instance|captuer_tx:captuer_tx_instance|tx_start'
+Slack : 0.411
+TNS   : 0.000
+
+Type  : Removal 'my_uart_tx:my_uart_tx|tx_complete_reg'
+Slack : 2.253
+TNS   : 0.000
+
+Type  : Removal 'speed_select:speed_select|buad_clk_tx_reg'
+Slack : 2.309
+TNS   : 0.000
+
+Type  : Removal 'clk'
+Slack : 2.952
+TNS   : 0.000
+
+Type  : Removal 'rs232_rx'
+Slack : 5.480
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'rs232_rx'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'my_uart_tx:my_uart_tx|tx_complete_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'pwm_capture:pwm_capture_instance|captuer_tx:captuer_tx_instance|tx_start'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'speed_select:speed_select|buad_clk_tx_reg'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

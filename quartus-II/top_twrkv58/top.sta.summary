@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -16.283
+TNS   : -1876.807
+
+Type  : Setup 'spi_ctrl:spi_ctrl_instance|spi_clk'
+Slack : -6.409
+TNS   : -132.974
+
+Type  : Setup 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -6.017
+TNS   : -100.887
+
+Type  : Setup 'enc:enc|out_200hz'
+Slack : -5.521
+TNS   : -54.276
+
+Type  : Setup 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : -1.248
+TNS   : -1.248
+
+Type  : Hold 'clk'
+Slack : -1.923
+TNS   : -3.846
+
+Type  : Hold 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -1.713
+TNS   : -13.704
+
+Type  : Hold 'enc:enc|out_200hz'
+Slack : 1.676
+TNS   : 0.000
+
+Type  : Hold 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 1.694
+TNS   : 0.000
+
+Type  : Hold 'spi_ctrl:spi_ctrl_instance|spi_clk'
+Slack : 1.955
+TNS   : 0.000
+
+Type  : Recovery 'clk'
+Slack : -4.234
+TNS   : -354.060
+
+Type  : Recovery 'rs232_rx'
+Slack : -3.346
+TNS   : -3.346
+
+Type  : Recovery 'spi_ctrl:spi_ctrl_instance|spi_clk'
+Slack : -2.399
+TNS   : -43.760
+
+Type  : Recovery 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 1.896
+TNS   : 0.000
+
+Type  : Removal 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -1.950
+TNS   : -1.950
+
+Type  : Removal 'spi_ctrl:spi_ctrl_instance|spi_clk'
+Slack : 1.868
+TNS   : 0.000
+
+Type  : Removal 'clk'
+Slack : 2.991
+TNS   : 0.000
+
+Type  : Removal 'rs232_rx'
+Slack : 3.792
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'rs232_rx'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'enc:enc|out_200hz'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'spi_ctrl:spi_ctrl_instance|spi_clk'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

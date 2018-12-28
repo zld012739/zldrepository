@@ -1,0 +1,81 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -16.820
+TNS   : -1654.687
+
+Type  : Setup 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -6.862
+TNS   : -106.985
+
+Type  : Setup 'enc:enc|out_200hz'
+Slack : -1.723
+TNS   : -6.407
+
+Type  : Setup 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : -1.250
+TNS   : -1.250
+
+Type  : Hold 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -2.020
+TNS   : -15.078
+
+Type  : Hold 'clk'
+Slack : -1.950
+TNS   : -1.950
+
+Type  : Hold 'enc:enc|out_200hz'
+Slack : 1.679
+TNS   : 0.000
+
+Type  : Hold 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 1.696
+TNS   : 0.000
+
+Type  : Recovery 'rs232_rx'
+Slack : -4.337
+TNS   : -4.337
+
+Type  : Recovery 'clk'
+Slack : -3.864
+TNS   : -313.228
+
+Type  : Recovery 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 1.040
+TNS   : 0.000
+
+Type  : Removal 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -1.094
+TNS   : -1.094
+
+Type  : Removal 'clk'
+Slack : 2.962
+TNS   : 0.000
+
+Type  : Removal 'rs232_rx'
+Slack : 4.783
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'rs232_rx'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'enc:enc|out_200hz'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

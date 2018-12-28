@@ -1,0 +1,33 @@
+`timescale	1ns/1ps
+
+module spi_simple(reset_n,
+		clock,
+		sda_in,
+		scl);
+
+input		clock;   
+input		reset_n;
+
+spi_slave_b2b_reduced		spi_slave_b2b_instance_reduced(
+							.clk(clk),
+							.sck(ss_rd_sck_b2b),
+							.mosi(ss_rd_mosi_b2b),
+							.miso(ss_rd_miso_b2b),
+							.ssel(ss_rd_ssel_b2b),
+							.rst_n(spi_rd_slave_rst_b2b),
+							.recived_status(spi_rd_slave_result_b2b)
+                            );
+									 
+  initial 
+    begin
+	 end
+
+always begin
+	 //50M HZ about 20ns one cycle
+    #10 clock = ! clock;
+end
+endmodule
+									 
+									 
+
+

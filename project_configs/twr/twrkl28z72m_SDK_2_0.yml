@@ -1,0 +1,248 @@
+CMP:
+    CMD: CMP
+    CMP0_IN:
+        T_PIN: B57
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: set GPIO_0(B58) High or low to CMP0_IN0
+
+    LED_CAP:
+        T_PIN: CPLD_IO2
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: capture the status of red led
+
+LPSPI_MASTER:
+    CMD: SPI
+    SOUT:
+        T_PIN_1: CPLD_IO4
+        T_PIN_2: B11
+        DIRECTION: T2T
+        NOTE: CPLD_IO4(A78)
+    SIN:
+        T_PIN_1: B10
+        T_PIN_2: CPLD_IO5
+        DIRECTION: T2T
+        NOTE: CPLD_IO5(A77)
+    CLK:
+        T_PIN_1: CPLD_IO49
+        T_PIN_2: B7
+        DIRECTION: T2T
+        NOTE: CPLD_IO49(A79)
+    PCS:
+        T_PIN_1: CPLD_IO50
+        T_PIN_2: B9
+        DIRECTION: T2T
+        NOTE: CPLD_IO50(A80)
+
+LPSPI_SLAVE:
+    CMD: SSI
+    SOUT:
+        T_PIN_1: CPLD_IO4
+        T_PIN_2: B11
+        DIRECTION: T2T
+        NOTE: CPLD_IO4(A78)
+    SIN:
+        T_PIN_1: B10
+        T_PIN_2: CPLD_IO5
+        DIRECTION: T2T
+        NOTE: CPLD_IO5(A77)
+    CLK:
+        T_PIN_1: B7
+        T_PIN_2: CPLD_IO49
+        DIRECTION: T2T
+        NOTE: CPLD_IO49(A79)
+    PCS:
+        T_PIN_1: B9
+        T_PIN_2: CPLD_IO50
+        DIRECTION: T2T
+        NOTE: CPLD_IO50(A80)
+
+LPTMER:
+    CMD: LPT
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+
+# EWM:
+    # CMD: EWM
+    # FUNC0:
+        # T_PIN: CPLD_IO3
+        # A_PIN: B58
+        # DIRECTION: A2T
+
+# FLEXIO_I2S:
+     # CMD: FIS
+     # TX:
+        # T_PIN_1: A37
+        # T_PIN_2: CPLD_IO50
+        # DIRECTION: T2T
+        # NOTE: CPLD_IO50(T)(A25)
+     # RX:
+        # T_PIN_1: CPLD_IO51
+        # T_PIN_2: A38
+        # DIRECTION: T2T
+        # NOTE: CPLD_IO51(R5)(A24)
+     # CLK:
+        # T_PIN_1: CPLD_IO5
+        # T_PIN_2: CPLD_IO52
+        # DIRECTION: T2T
+        # NOTE: CPLD_IO52(R4)(A22)
+     # LRCLK:
+        # T_PIN_1: CPLD_IO54
+        # T_PIN_2: CPLD_IO49
+        # DIRECTION: T2T
+        # NOTE: CPLD_IO49(T)(A23)
+
+flexio_pwm:
+    CMD: FWM
+    FUNC0:
+        T_PIN: A9
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A9
+        A_PIN: A40
+        DIRECTION: T2A
+
+FLEXIO_SPI_MASTER:
+    CMD: FSM
+    SOUT:
+        T_PIN_1: CPLD_IO4
+        T_PIN_2: B11
+        DIRECTION: T2T
+        NOTE: CPLD_IO4(A78)
+    SIN:
+        T_PIN_1: B10
+        T_PIN_2: CPLD_IO5
+        DIRECTION: T2T
+        NOTE: CPLD_IO5(A77)
+    CLK:
+        T_PIN_1: CPLD_IO49
+        T_PIN_2: B7
+        DIRECTION: T2T
+        NOTE: CPLD_IO49(A79)
+    PCS:
+        T_PIN_1: CPLD_IO50
+        T_PIN_2: B9
+        DIRECTION: T2T
+        NOTE: CPLD_IO50(A80)
+
+FLEXIO_SPI_SLAVE:
+    CMD: FSS
+    SOUT:
+        T_PIN_1: CPLD_IO4
+        T_PIN_2: B11
+        DIRECTION: T2T
+        NOTE: CPLD_IO4(A78)
+    SIN:
+        T_PIN_1: B10
+        T_PIN_2: CPLD_IO5
+        DIRECTION: T2T
+        NOTE: CPLD_IO5(A77)
+    CLK:
+        T_PIN_1: B7
+        T_PIN_2: CPLD_IO49
+        DIRECTION: T2T
+        NOTE: CPLD_IO49(A79)
+    PCS:
+        T_PIN_1: B9
+        T_PIN_2: CPLD_IO50
+        DIRECTION: T2T
+        NOTE: CPLD_IO50(A80)
+
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40
+        DIRECTION: T2A
+
+
+PMH:
+    CMD: PMH
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+
+PMS:
+    CMD: PMS
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+TPM:
+    CMD: TPM
+    FUNC0:
+        T_PIN: CPLD_IO49
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO49
+        A_PIN: A40
+        DIRECTION: T2A
+
+TPM_TDC:
+    CMD: TDC
+    FUNC1:
+        T_PIN: CPLD_IO50
+        A_PIN: A40
+        DIRECTION: A2T
+
+TPM_TIC:
+    CMD: TIC
+    FUNC1:
+        T_PIN: A40
+        A_PIN: B58
+        DIRECTION: A2T
+
+TPM_TOC:
+    CMD: TOC
+    FUNC0:
+        T_PIN: A34
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A34
+        A_PIN: A40
+        DIRECTION: T2A
+
+TPM_TSP:
+    CMD: TSP
+    FUNC0:
+        T_PIN: A40
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A40
+        A_PIN: A40
+        DIRECTION: T2A
+
+
+TSI:
+    CMD: TSI
+    FUNC0:
+        T_PIN: CPLD_IO54
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO54
+        A_PIN: A40
+        DIRECTION: T2A

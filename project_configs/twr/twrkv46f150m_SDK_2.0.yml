@@ -1,0 +1,263 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: A9
+        A_PIN: B58
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A35
+        DIRECTION: T2A
+
+DSPI_MASTER:
+    CMD: SPI
+    CLK:
+        T_PIN: B48
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+    CS:
+        T_PIN: B46
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+    MISO:
+        T_PIN: B44
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: B45
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+
+# DSPI_SLAVE:
+    # CMD: SSI
+    # CLK:
+        # T_PIN: B48
+        # A_PIN: SPI1_CLK_K70
+        # DIRECTION: A2T
+    # CS:
+        # T_PIN: B46
+        # A_PIN: SPI1_CS0_K70
+        
+        # DIRECTION: A2T
+    # MISO:
+        # T_PIN: B44
+        # A_PIN: SPI1_MISO_K70
+        # DIRECTION: A2T
+    # MOSI:
+        # T_PIN: B45
+        # A_PIN: SPI1_MOSI_K70
+        # DIRECTION: T2A
+SPI_MASTER:
+    IP: __SPI_SLAVE_B2B
+    CMD: SPS
+    ALT: a 
+    ss_sck_b2b:
+        PIN: B48
+        DIRECTION: IN
+    ss_mosi_b2b:
+        PIN: B45
+        DIRECTION: IN
+    ss_ssel_b2b:
+        PIN: B46
+        DIRECTION: IN   
+    ss_miso_b2b:
+        PIN: B44
+        DIRECTION: OUT
+    spi_slave_result_b2b:
+        PIN: A39
+        DIRECTION: OUT
+SPI_SLAVE:
+    IP: __SPI_MASTER
+    CMD: SIO
+    ALT: a 
+    sm_sck:
+        PIN: B48
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: B44
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: B46
+        DIRECTION: OUT   
+    sm_miso:
+        PIN: B45
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A39
+        DIRECTION: OUT
+ENC:
+    IP: __ENC
+    CMD: ENC
+    pha_out:
+        PIN: B38
+        DIRECTION: out
+    phb_out:
+        PIN: B37
+        DIRECTION: out
+    index_out:
+        PIN: B61
+        DIRECTION: out
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+
+FTM_COMBINE_PWM:
+    CMD: FCP
+    FUNC0:
+        T_PIN: A40
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A40
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_DUAL_EDGE_CAPTURE:
+    CMD: FDC
+    FUNC0:
+        T_PIN: A34
+        A_PIN: A40
+        DIRECTION: A2T
+
+FTM_INPUT_CAPTURE:
+    CMD: FIC
+    FUNC0:
+        T_PIN: A34
+        A_PIN: B58
+        DIRECTION: A2T
+
+FTM_PWM_TWOCHANNEL:
+    CMD: FPT
+    FUNC0:
+        T_PIN: A40
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A40
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_OUTPUT_CAMPARE:
+    CMD: FOC
+    FUNC0:
+        T_PIN: A40
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A40
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_PWM_SIMPLE:
+    CMD: FSP
+    FUNC0:
+        T_PIN: A40
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A40
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_QUAD_DECODER:
+    IP: __ENC
+    CMD: FQD
+    pha_out:
+        PIN: CPLD_IO4
+        DIRECTION: out
+    phb_out:
+        PIN: CPLD_IO5
+        DIRECTION: out
+
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: A40
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A40
+        A_PIN: A40
+        DIRECTION: T2A
+
+MCG:
+    CMD: MCG
+    FUNC0:
+        T_PIN: A40
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A40
+        A_PIN: A40
+        DIRECTION: T2A
+
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+
+PWM:
+    CMD: PWM
+    PWM0:
+        T_PIN: A38
+        A_PIN: A39
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: A38
+        A_PIN: A40
+        DIRECTION: T2A
+PWMF:
+    CMD: PWF
+    PWM0:
+        T_PIN: A40
+        A_PIN: A39
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: A40
+        A_PIN: A40
+        DIRECTION: T2A
+
+SHELL:
+    CMD: SHL
+    FUNC0:
+        T_PIN: A40
+        A_PIN: A35
+        DIRECTION: T2A
+
+XBA:
+    CMD: XBA
+    FUNC0:
+        T_PIN: CPLD_IO14
+        A_PIN: B58
+        DIRECTION: A2T

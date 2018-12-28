@@ -1,0 +1,7 @@
+
+State Machine - |top|Current
+Name Current.IDLE Current.SAVE Current.WAIT Current.S1 
+Current.IDLE 0 0 0 0 
+Current.S1 1 0 0 1 
+Current.WAIT 1 0 1 0 
+Current.SAVE 1 1 0 0 

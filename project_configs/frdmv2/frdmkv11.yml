@@ -1,0 +1,185 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: JJ2_4
+        A_PIN: B58
+        DIRECTION: A2T
+        
+POWER_MODE_SWITCH:
+    CMD: PMS
+    FUNC0:
+        T_PIN: JJ2_4
+        A_PIN: B58
+        DIRECTION: A2T
+
+FREERTOS_TICKLESS:
+    CMD: FRT
+    FUNC0:
+        T_PIN: JJ2_4
+        A_PIN: B58
+        DIRECTION: A2T
+SHELL:
+    CMD: SHL
+    CLK:
+        T_PIN: JJ1_14
+        A_PIN: A35
+        DIRECTION: T2A
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: CPLD_IO51
+        A_PIN: B58
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: JJ2_6
+        A_PIN: A35
+        DIRECTION: T2A
+
+DSPI_MASTER:
+    CMD: SBM
+    CLK:
+        T_PIN: JJ2_17
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+    CS:
+        T_PIN: JJ4_9
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+    MISO:
+        T_PIN: JJ3_7
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: JJ3_5
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+
+DSPI_SLAVE:
+    CMD: SBS
+    CLK:
+        T_PIN: JJ2_17
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: A2T
+    CS:
+        T_PIN: JJ4_9
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: A2T
+    MISO:
+        T_PIN: JJ3_7
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: JJ3_5
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: JJ2_4
+        A_PIN: B58
+        DIRECTION: A2T
+
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: JJ2_4
+        A_PIN: B58
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: JJ2_6
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_6
+        A_PIN: A40
+        DIRECTION: T2A
+
+MCG:
+    CMD: MCG
+    FUNC0:
+        T_PIN: JJ2_6
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_6
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_PWM_TWOCHANNEL:
+    CMD: FPT
+    FUNC0:
+        T_PIN: JJ2_6
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_6
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_COMBINE_PWM:
+    CMD: FCP
+    FUNC0:
+        T_PIN: JJ2_6
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_6
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_INPUT_CAPTURE:
+    CMD: FIC
+    FUNC0:
+        T_PIN: JJ1_1
+        A_PIN: B58
+        DIRECTION: A2T
+
+FTM_DUALEDGE_CAPTURE:
+    CMD: FDC
+    FUNC0:
+        T_PIN: JJ1_14
+        A_PIN: A40
+        DIRECTION: A2T
+
+FTM_OUTPUT_COMPARE:
+    CMD: FOC
+    FUNC0:
+        T_PIN: JJ2_6
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_6
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_SIMPLE_PWM:
+    CMD: FSP
+    FUNC0:
+        T_PIN: JJ2_6
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ2_6
+        A_PIN: A40
+        DIRECTION: T2A

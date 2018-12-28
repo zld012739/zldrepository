@@ -1,0 +1,121 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -12.326
+TNS   : -1623.012
+
+Type  : Setup 'i2c_slave_reduced:i2c_slave_reduced_instance|i2c_slave_op_reduced:i2c_slave_op_reduced_inst|sda_en_r'
+Slack : -6.611
+TNS   : -12.842
+
+Type  : Setup 'i2c_slave_reduced:i2c_slave_reduced_instance|clk'
+Slack : -6.397
+TNS   : -133.663
+
+Type  : Setup 'spi_ctrl_reduced:spi_ctrl_reduced_instance|spi_clk'
+Slack : -6.092
+TNS   : -128.039
+
+Type  : Setup 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -5.437
+TNS   : -91.794
+
+Type  : Setup 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : -1.239
+TNS   : -1.239
+
+Type  : Hold 'i2c_slave_reduced:i2c_slave_reduced_instance|clk'
+Slack : -3.066
+TNS   : -9.103
+
+Type  : Hold 'clk'
+Slack : -1.905
+TNS   : -3.421
+
+Type  : Hold 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -1.627
+TNS   : -13.016
+
+Type  : Hold 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 1.685
+TNS   : 0.000
+
+Type  : Hold 'spi_ctrl_reduced:spi_ctrl_reduced_instance|spi_clk'
+Slack : 1.804
+TNS   : 0.000
+
+Type  : Hold 'i2c_slave_reduced:i2c_slave_reduced_instance|i2c_slave_op_reduced:i2c_slave_op_reduced_inst|sda_en_r'
+Slack : 3.338
+TNS   : 0.000
+
+Type  : Recovery 'clk'
+Slack : -4.996
+TNS   : -324.033
+
+Type  : Recovery 'rs232_rx'
+Slack : -3.955
+TNS   : -3.955
+
+Type  : Recovery 'spi_ctrl_reduced:spi_ctrl_reduced_instance|spi_clk'
+Slack : -1.913
+TNS   : -28.896
+
+Type  : Recovery 'i2c_slave_reduced:i2c_slave_reduced_instance|clk'
+Slack : -1.488
+TNS   : -25.833
+
+Type  : Recovery 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 2.152
+TNS   : 0.000
+
+Type  : Removal 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -2.206
+TNS   : -2.206
+
+Type  : Removal 'i2c_slave_reduced:i2c_slave_reduced_instance|clk'
+Slack : 0.850
+TNS   : 0.000
+
+Type  : Removal 'spi_ctrl_reduced:spi_ctrl_reduced_instance|spi_clk'
+Slack : 1.417
+TNS   : 0.000
+
+Type  : Removal 'clk'
+Slack : 2.978
+TNS   : 0.000
+
+Type  : Removal 'rs232_rx'
+Slack : 4.401
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'rs232_rx'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'i2c_slave_reduced:i2c_slave_reduced_instance|clk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'spi_ctrl_reduced:spi_ctrl_reduced_instance|spi_clk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'i2c_slave_reduced:i2c_slave_reduced_instance|i2c_slave_op_reduced:i2c_slave_op_reduced_inst|sda_en_r'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------

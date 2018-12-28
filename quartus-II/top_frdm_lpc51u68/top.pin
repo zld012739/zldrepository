@@ -1,0 +1,165 @@
+ -- Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, the Altera Quartus II License Agreement,
+ -- the Altera MegaCore Function License Agreement, or other 
+ -- applicable license agreement, including, without limitation, 
+ -- that your use is for the sole purpose of programming logic 
+ -- devices manufactured by Altera and sold by Altera or its 
+ -- authorized distributors.  Please refer to the applicable 
+ -- agreement for further details.
+ -- 
+ -- This is a Quartus II output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus II input file. This file cannot be used
+ -- to make Quartus II pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus II help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (2.5V/3.3V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --					Bank 1:		3.3V
+ --					Bank 2:		3.3V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --					It can also be used to report unused dedicated pins. The connection
+ --					on the board for unused dedicated pins depends on whether this will
+ --					be used in a future design. One example is device migration. When
+ --					using device migration, refer to the device pin-tables. If it is a
+ --					GND pin in the pin table or if it will not be used in a future design
+ --					for another purpose the it MUST be connected to GND. If it is an unused
+ --					dedicated pin, then it can be connected to a valid signal on the board
+ --					(low, high, or toggling) if that signal is required for a different
+ --					revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --					This pin should be connected to GND. It may also be connected  to a
+ --					valid signal  on the board  (low, high, or toggling)  if that signal
+ --					is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --           	    or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+CHIP  "top"  ASSIGNED TO AN: EPM570T100C5
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+led                          : 1         : output : 3.3-V LVTTL       :         : 2         : Y              
+BusA[2]                      : 2         : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+BusA[3]                      : 3         : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+BusA[4]                      : 4         : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+BusA[5]                      : 5         : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+rs232_rx                     : 6         : input  : 3.3-V LVTTL       :         : 1         : Y              
+RESERVED_INPUT               : 7         :        :                   :         : 1         :                
+BusA[8]                      : 8         : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+VCCIO1                       : 9         : power  :                   : 3.3V    : 1         :                
+GNDIO                        : 10        : gnd    :                   :         :           :                
+GNDINT                       : 11        : gnd    :                   :         :           :                
+clk                          : 12        : input  : 3.3-V LVTTL       :         : 1         : Y              
+VCCINT                       : 13        : power  :                   : 2.5V/3.3V :           :                
+BusA[14]                     : 14        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+BusA[15]                     : 15        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+BusA[16]                     : 16        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+BusA[17]                     : 17        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+BusA[18]                     : 18        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+BusA[19]                     : 19        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+BusA[20]                     : 20        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+BusA[21]                     : 21        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+TMS                          : 22        : input  :                   :         : 1         :                
+TDI                          : 23        : input  :                   :         : 1         :                
+TCK                          : 24        : input  :                   :         : 1         :                
+TDO                          : 25        : output :                   :         : 1         :                
+RESERVED_INPUT               : 26        :        :                   :         : 1         :                
+RESERVED_INPUT               : 27        :        :                   :         : 1         :                
+BusB[46]                     : 28        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+BusA[13]                     : 29        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+RESERVED_INPUT               : 30        :        :                   :         : 1         :                
+VCCIO1                       : 31        : power  :                   : 3.3V    : 1         :                
+GNDIO                        : 32        : gnd    :                   :         :           :                
+BusA[6]                      : 33        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+BusB[47]                     : 34        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+BusB[53]                     : 35        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+BusB[52]                     : 36        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+GNDINT                       : 37        : gnd    :                   :         :           :                
+BusC[69]                     : 38        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+VCCINT                       : 39        : power  :                   : 2.5V/3.3V :           :                
+BusA[11]                     : 40        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+BusA[7]                      : 41        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+BusB[49]                     : 42        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+BusB[43]                     : 43        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+rst_n                        : 44        : input  : 3.3-V LVTTL       :         : 1         : Y              
+VCCIO1                       : 45        : power  :                   : 3.3V    : 1         :                
+GNDIO                        : 46        : gnd    :                   :         :           :                
+RESERVED_INPUT               : 47        :        :                   :         : 1         :                
+BusB[48]                     : 48        : bidir  : 3.3-V LVTTL       :         : 1         : Y              
+BusB[45]                     : 49        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+RESERVED_INPUT               : 50        :        :                   :         : 1         :                
+BusB[50]                     : 51        : bidir  : 3.3-V LVTTL       :         : 1         : N              
+RESERVED_INPUT               : 52        :        :                   :         : 2         :                
+RESERVED_INPUT               : 53        :        :                   :         : 2         :                
+BusB[54]                     : 54        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+RESERVED_INPUT               : 55        :        :                   :         : 2         :                
+RESERVED_INPUT               : 56        :        :                   :         : 2         :                
+RESERVED_INPUT               : 57        :        :                   :         : 2         :                
+RESERVED_INPUT               : 58        :        :                   :         : 2         :                
+VCCIO2                       : 59        : power  :                   : 3.3V    : 2         :                
+GNDIO                        : 60        : gnd    :                   :         :           :                
+BusB[44]                     : 61        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT               : 62        :        :                   :         : 2         :                
+VCCINT                       : 63        : power  :                   : 2.5V/3.3V :           :                
+RESERVED_INPUT               : 64        :        :                   :         : 2         :                
+GNDINT                       : 65        : gnd    :                   :         :           :                
+RESERVED_INPUT               : 66        :        :                   :         : 2         :                
+BusC[70]                     : 67        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+BusC[68]                     : 68        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+RESERVED_INPUT               : 69        :        :                   :         : 2         :                
+RESERVED_INPUT               : 70        :        :                   :         : 2         :                
+BusC[71]                     : 71        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+RESERVED_INPUT               : 72        :        :                   :         : 2         :                
+RESERVED_INPUT               : 73        :        :                   :         : 2         :                
+RESERVED_INPUT               : 74        :        :                   :         : 2         :                
+RESERVED_INPUT               : 75        :        :                   :         : 2         :                
+RESERVED_INPUT               : 76        :        :                   :         : 2         :                
+BusA[10]                     : 77        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT               : 78        :        :                   :         : 2         :                
+GNDIO                        : 79        : gnd    :                   :         :           :                
+VCCIO2                       : 80        : power  :                   : 3.3V    : 2         :                
+RESERVED_INPUT               : 81        :        :                   :         : 2         :                
+RESERVED_INPUT               : 82        :        :                   :         : 2         :                
+BusD[83]                     : 83        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+RESERVED_INPUT               : 84        :        :                   :         : 2         :                
+BusD[85]                     : 85        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+RESERVED_INPUT               : 86        :        :                   :         : 2         :                
+BusD[87]                     : 87        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+VCCINT                       : 88        : power  :                   : 2.5V/3.3V :           :                
+BusD[86]                     : 89        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+GNDINT                       : 90        : gnd    :                   :         :           :                
+RESERVED_INPUT               : 91        :        :                   :         : 2         :                
+BusD[84]                     : 92        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+GNDIO                        : 93        : gnd    :                   :         :           :                
+VCCIO2                       : 94        : power  :                   : 3.3V    : 2         :                
+RESERVED_INPUT               : 95        :        :                   :         : 2         :                
+BusA[12]                     : 96        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT               : 97        :        :                   :         : 2         :                
+BusB[51]                     : 98        : bidir  : 3.3-V LVTTL       :         : 2         : N              
+RESERVED_INPUT               : 99        :        :                   :         : 2         :                
+BusA[9]                      : 100       : bidir  : 3.3-V LVTTL       :         : 2         : N              

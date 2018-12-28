@@ -1,0 +1,54 @@
+SINGLE: 0
+I2C_B2B_SALVE:
+    IP: __I2C_MASTER
+    CMD: ICW
+    ALT: a
+    scl:
+        PIN: CPLD_IO2
+        DIRECTION: OUT
+    sda:
+        PIN: CPLD_IO3
+        DIRECTION: INOUT
+    receive_status:
+        PIN: A35_K70
+        DIRECTION: OUT
+I2C_B2B_SALVE1:
+    IP: __I2C_MASTER
+    CMD: ICR
+    ALT: b
+    scl:
+        PIN: CPLD_IO2
+        DIRECTION: OUT
+    sda:
+        PIN: CPLD_IO3
+        DIRECTION: INOUT
+    receive_status:
+        PIN: A35_K70
+        DIRECTION: OUT
+I2C_B2B_MASTER:
+    IP: __I2C_SLAVE_FOR_CASE
+    CMD: ICM
+    scl_slv:
+        PIN: CPLD_IO2
+        DIRECTION: IN
+    sda:
+        PIN: CPLD_IO3
+        DIRECTION: INOUT
+DSPI_LOOP:
+    CMD: SPI
+    CS:
+        T_PIN_1: JJ2_6
+        T_PIN_2: JJ2_2
+        DIRECTION: T2T
+    CLK:
+        T_PIN_1: JJ2_12
+        T_PIN_2: JJ2_4
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: JJ2_8
+        T_PIN_2: JJ1_6
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: JJ3_8
+        T_PIN_2: JJ2_10
+        DIRECTION: T2T

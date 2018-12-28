@@ -1,0 +1,1345 @@
+Fitter report for top
+Fri Mar 16 18:16:21 2018
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Pin-Out File
+  6. Fitter Resource Usage Summary
+  7. Input Pins
+  8. Output Pins
+  9. Bidir Pins
+ 10. I/O Bank Usage
+ 11. All Package Pins
+ 12. Output Pin Default Load For Reported TCO
+ 13. Fitter Resource Utilization by Entity
+ 14. Delay Chain Summary
+ 15. Control Signals
+ 16. Global & Other Fast Signals
+ 17. Non-Global High Fan-Out Signals
+ 18. Routing Usage Summary
+ 19. LAB Logic Elements
+ 20. LAB-wide Signals
+ 21. LAB Signals Sourced
+ 22. LAB Signals Sourced Out
+ 23. LAB Distinct Inputs
+ 24. Fitter Device Options
+ 25. Estimated Delay Added for Hold Timing Summary
+ 26. Estimated Delay Added for Hold Timing Details
+ 27. Fitter Messages
+ 28. Fitter Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Fitter Summary                                                         ;
++---------------------------+--------------------------------------------+
+; Fitter Status             ; Successful - Fri Mar 16 18:16:21 2018      ;
+; Quartus II 64-Bit Version ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name             ; top                                        ;
+; Top-level Entity Name     ; top                                        ;
+; Family                    ; MAX II                                     ;
+; Device                    ; EPM570T100C5                               ;
+; Timing Models             ; Final                                      ;
+; Total logic elements      ; 530 / 570 ( 93 % )                         ;
+; Total pins                ; 7 / 76 ( 9 % )                             ;
+; Total virtual pins        ; 0                                          ;
+; UFM blocks                ; 0 / 1 ( 0 % )                              ;
++---------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                                                              ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Option                                                                     ; Setting                        ; Default Value                  ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Device                                                                     ; EPM570T100C5                   ;                                ;
+; Minimum Core Junction Temperature                                          ; 0                              ;                                ;
+; Maximum Core Junction Temperature                                          ; 85                             ;                                ;
+; Fit Attempts to Skip                                                       ; 0                              ; 0.0                            ;
+; Device I/O Standard                                                        ; 3.3-V LVTTL                    ;                                ;
+; Use smart compilation                                                      ; Off                            ; Off                            ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                             ; On                             ;
+; Enable compact report table                                                ; Off                            ; Off                            ;
+; Router Timing Optimization Level                                           ; Normal                         ; Normal                         ;
+; Placement Effort Multiplier                                                ; 1.0                            ; 1.0                            ;
+; Router Effort Multiplier                                                   ; 1.0                            ; 1.0                            ;
+; Always Enable Input Buffers                                                ; Off                            ; Off                            ;
+; Optimize Hold Timing                                                       ; IO Paths and Minimum TPD Paths ; IO Paths and Minimum TPD Paths ;
+; Optimize Multi-Corner Timing                                               ; Off                            ; Off                            ;
+; Guarantee I/O Paths Have Zero Hold Time at Fast Corner                     ; On                             ; On                             ;
+; PowerPlay Power Optimization                                               ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing                                                            ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing for ECOs                                                   ; Off                            ; Off                            ;
+; Regenerate full fit report during ECO compiles                             ; Off                            ; Off                            ;
+; Optimize IOC Register Placement for Timing                                 ; Normal                         ; Normal                         ;
+; Limit to One Fitting Attempt                                               ; Off                            ; Off                            ;
+; Final Placement Optimizations                                              ; Automatically                  ; Automatically                  ;
+; Fitter Aggressive Routability Optimizations                                ; Automatically                  ; Automatically                  ;
+; Fitter Initial Placement Seed                                              ; 1                              ; 1                              ;
+; Slow Slew Rate                                                             ; Off                            ; Off                            ;
+; PCI I/O                                                                    ; Off                            ; Off                            ;
+; Weak Pull-Up Resistor                                                      ; Off                            ; Off                            ;
+; Enable Bus-Hold Circuitry                                                  ; Off                            ; Off                            ;
+; Auto Delay Chains                                                          ; On                             ; On                             ;
+; Auto Delay Chains for High Fanout Input Pins                               ; Off                            ; Off                            ;
+; Perform Physical Synthesis for Combinational Logic for Performance         ; Off                            ; Off                            ;
+; Perform Register Duplication for Performance                               ; Off                            ; Off                            ;
+; Perform Register Retiming for Performance                                  ; Off                            ; Off                            ;
+; Perform Asynchronous Signal Pipelining                                     ; Off                            ; Off                            ;
+; Fitter Effort                                                              ; Auto Fit                       ; Auto Fit                       ;
+; Physical Synthesis Effort Level                                            ; Normal                         ; Normal                         ;
+; Logic Cell Insertion - Logic Duplication                                   ; Auto                           ; Auto                           ;
+; Auto Register Duplication                                                  ; Auto                           ; Auto                           ;
+; Auto Global Clock                                                          ; On                             ; On                             ;
+; Auto Global Register Control Signals                                       ; On                             ; On                             ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off                            ; Off                            ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in C:/_Bill/01_GitRepo/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_lpc845_i2c_2/top.pin.
+
+
++---------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                       ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Total logic elements                        ; 530 / 570 ( 93 % )    ;
+;     -- Combinational with no register       ; 240                   ;
+;     -- Register only                        ; 34                    ;
+;     -- Combinational with a register        ; 256                   ;
+;                                             ;                       ;
+; Logic element usage by number of LUT inputs ;                       ;
+;     -- 4 input functions                    ; 297                   ;
+;     -- 3 input functions                    ; 71                    ;
+;     -- 2 input functions                    ; 120                   ;
+;     -- 1 input functions                    ; 7                     ;
+;     -- 0 input functions                    ; 1                     ;
+;                                             ;                       ;
+; Logic elements by mode                      ;                       ;
+;     -- normal mode                          ; 473                   ;
+;     -- arithmetic mode                      ; 57                    ;
+;     -- qfbk mode                            ; 26                    ;
+;     -- register cascade mode                ; 0                     ;
+;     -- synchronous clear/load mode          ; 71                    ;
+;     -- asynchronous clear/load mode         ; 266                   ;
+;                                             ;                       ;
+; Total registers                             ; 290 / 570 ( 51 % )    ;
+; Total LABs                                  ; 55 / 57 ( 96 % )      ;
+; Logic elements in carry chains              ; 65                    ;
+; Virtual pins                                ; 0                     ;
+; I/O pins                                    ; 7 / 76 ( 9 % )        ;
+;     -- Clock pins                           ; 1 / 4 ( 25 % )        ;
+;                                             ;                       ;
+; Global signals                              ; 4                     ;
+; UFM blocks                                  ; 0 / 1 ( 0 % )         ;
+; Global clocks                               ; 4 / 4 ( 100 % )       ;
+; JTAGs                                       ; 0 / 1 ( 0 % )         ;
+; Average interconnect usage (total/H/V)      ; 31.0% / 33.7% / 28.0% ;
+; Peak interconnect usage (total/H/V)         ; 31.0% / 33.7% / 28.0% ;
+; Maximum fan-out                             ; 191                   ;
+; Highest non-global fan-out                  ; 98                    ;
+; Total fan-out                               ; 2411                  ;
+; Average fan-out                             ; 4.49                  ;
++---------------------------------------------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                      ;
++----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
++----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+; clk      ; 12    ; 1        ; 0            ; 5            ; 0           ; 191                   ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; rs232_rx ; 6     ; 1        ; 0            ; 7            ; 3           ; 6                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; rst_n    ; 44    ; 1        ; 8            ; 3            ; 2           ; 98                    ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
++----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                                                            ;
++------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; led  ; 1     ; 2        ; 3            ; 8            ; 3           ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
++------+-------+----------+--------------+--------------+-------------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Bidir Pins                                                                                                                                                                                                                                                                                                                                                                      ;
++-----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------------+-----------------+------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+------------------------------------+---------------------+
+; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source               ; Output Enable Group ;
++-----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------------+-----------------+------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+------------------------------------+---------------------+
+; BusA[100] ; 100   ; 2        ; 3            ; 8            ; 0           ; 4                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; BusA[100]~6                        ; -                   ;
+; BusA[98]  ; 98    ; 2        ; 4            ; 8            ; 1           ; 10                    ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; User                 ; 10 pF ; i2c_slave:i2c_slave_instance|sda~3 ; -                   ;
+; BusA[99]  ; 20    ; 1        ; 1            ; 3            ; 3           ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; 16mA             ; no                     ; Fitter               ; 10 pF ; -                                  ; -                   ;
++-----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+-----------------+----------------+-----------------+------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+------------------------------------+---------------------+
+
+
++-----------------------------------------------------------+
+; I/O Bank Usage                                            ;
++----------+-----------------+---------------+--------------+
+; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
++----------+-----------------+---------------+--------------+
+; 1        ; 4 / 36 ( 11 % ) ; 3.3V          ; --           ;
+; 2        ; 3 / 40 ( 8 % )  ; 3.3V          ; --           ;
++----------+-----------------+---------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                                                               ;
++----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage   ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
++----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
+; 1        ; 161        ; 2        ; led            ; output ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 2        ; 2          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 3        ; 4          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 4        ; 6          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 5        ; 8          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 6        ; 9          ; 1        ; rs232_rx       ; input  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 7        ; 10         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 8        ; 11         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 9        ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 10       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 11       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 12       ; 20         ; 1        ; clk            ; input  ; 3.3-V LVTTL  ;           ; Row I/O    ; Y               ; no       ; Off          ;
+; 13       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
+; 14       ; 21         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 15       ; 22         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 16       ; 23         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 17       ; 24         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 18       ; 25         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 19       ; 32         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 20       ; 34         ; 1        ; BusA[99]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; N               ; no       ; Off          ;
+; 21       ; 36         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 22       ; 38         ; 1        ; #TMS           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
+; 23       ; 39         ; 1        ; #TDI           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
+; 24       ; 40         ; 1        ; #TCK           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
+; 25       ; 41         ; 1        ; #TDO           ; output ;              ;           ; --         ;                 ; --       ; --           ;
+; 26       ; 47         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 27       ; 48         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 28       ; 50         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 29       ; 51         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 30       ; 52         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 31       ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 32       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 33       ; 58         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 34       ; 59         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 35       ; 60         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 36       ; 61         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 37       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 38       ; 62         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 39       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
+; 40       ; 63         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 41       ; 64         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 42       ; 65         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 43       ; 66         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 44       ; 67         ; 1        ; rst_n          ; input  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 45       ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 46       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 47       ; 71         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 48       ; 72         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 49       ; 73         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 50       ; 75         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 51       ; 79         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 52       ; 83         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 53       ; 84         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 54       ; 86         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 55       ; 89         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 56       ; 91         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 57       ; 92         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 58       ; 93         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 59       ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 60       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 61       ; 98         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 62       ; 101        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 63       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
+; 64       ; 102        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 65       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 66       ; 103        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 67       ; 104        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 68       ; 105        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 69       ; 111        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 70       ; 112        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 71       ; 115        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 72       ; 116        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 73       ; 118        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 74       ; 120        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 75       ; 122        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 76       ; 125        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 77       ; 126        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 78       ; 127        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 79       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 80       ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 81       ; 135        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 82       ; 136        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 83       ; 139        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 84       ; 140        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 85       ; 141        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 86       ; 142        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 87       ; 143        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 88       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
+; 89       ; 144        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 90       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 91       ; 149        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 92       ; 150        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 93       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 94       ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 95       ; 151        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 96       ; 152        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 97       ; 153        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 98       ; 155        ; 2        ; BusA[98]       ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
+; 99       ; 156        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 100      ; 158        ; 2        ; BusA[100]      ; bidir  ; 3.3-V LVTTL  ;           ; Column I/O ; Y               ; no       ; Off          ;
++----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++-------------------------------------------------------------+
+; Output Pin Default Load For Reported TCO                    ;
++----------------------------+-------+------------------------+
+; I/O Standard               ; Load  ; Termination Resistance ;
++----------------------------+-------+------------------------+
+; 3.3-V LVTTL                ; 10 pF ; Not Available          ;
+; 3.3-V LVCMOS               ; 10 pF ; Not Available          ;
+; 2.5 V                      ; 10 pF ; Not Available          ;
+; 1.8 V                      ; 10 pF ; Not Available          ;
+; 1.5 V                      ; 10 pF ; Not Available          ;
+; 3.3V Schmitt Trigger Input ; 10 pF ; Not Available          ;
+; 2.5V Schmitt Trigger Input ; 10 pF ; Not Available          ;
++----------------------------+-------+------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                    ;
++-------------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                      ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                ; Library Name ;
++-------------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------+--------------+
+; |top                                            ; 530 (69)    ; 290          ; 0          ; 7    ; 0            ; 240 (7)      ; 34 (13)           ; 256 (49)         ; 65 (0)          ; 26 (16)    ; |top                                                                               ; work         ;
+;    |I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance| ; 258 (44)    ; 93           ; 0          ; 0    ; 0            ; 165 (19)     ; 7 (0)             ; 86 (25)          ; 31 (15)         ; 1 (0)      ; |top|I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance                                    ; work         ;
+;       |I2C_wr_subad:I2C_wr_subad_instance|      ; 214 (214)   ; 68           ; 0          ; 0    ; 0            ; 146 (146)    ; 7 (7)             ; 61 (61)          ; 16 (16)         ; 1 (1)      ; |top|I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance ; work         ;
+;    |i2c_slave:i2c_slave_instance|               ; 145 (3)     ; 99           ; 0          ; 0    ; 0            ; 46 (3)       ; 10 (0)            ; 89 (0)           ; 21 (0)          ; 9 (0)      ; |top|i2c_slave:i2c_slave_instance                                                  ; work         ;
+;       |i2c_slave_op:i2c_slave_op_inst|          ; 142 (142)   ; 99           ; 0          ; 0    ; 0            ; 43 (43)      ; 10 (10)           ; 89 (89)          ; 21 (21)         ; 9 (9)      ; |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst                   ; work         ;
+;    |my_uart_rx:my_uart_rx|                      ; 36 (36)     ; 22           ; 0          ; 0    ; 0            ; 14 (14)      ; 4 (4)             ; 18 (18)          ; 0 (0)           ; 0 (0)      ; |top|my_uart_rx:my_uart_rx                                                         ; work         ;
+;    |speed_select:speed_select|                  ; 22 (22)     ; 14           ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 14 (14)          ; 13 (13)         ; 0 (0)      ; |top|speed_select:speed_select                                                     ; work         ;
++-------------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------+
+; Delay Chain Summary                  ;
++-----------+----------+---------------+
+; Name      ; Pin Type ; Pad to Core 0 ;
++-----------+----------+---------------+
+; led       ; Output   ; --            ;
+; BusA[99]  ; Bidir    ; (0)           ;
+; BusA[98]  ; Bidir    ; (1)           ;
+; BusA[100] ; Bidir    ; (1)           ;
+; clk       ; Input    ; (0)           ;
+; rst_n     ; Input    ; (1)           ;
+; rs232_rx  ; Input    ; (0)           ;
++-----------+----------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                             ;
++----------------------------------------------------------------------------------------------------+--------------+---------+----------------------------+--------+----------------------+------------------+
+; Name                                                                                               ; Location     ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ;
++----------------------------------------------------------------------------------------------------+--------------+---------+----------------------------+--------+----------------------+------------------+
+; BusA[100]~6                                                                                        ; LC_X8_Y6_N9  ; 1       ; Output enable              ; no     ; --                   ; --               ;
+; Current.SAVE                                                                                       ; LC_X3_Y6_N5  ; 27      ; Clock enable               ; no     ; --                   ; --               ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector78~0         ; LC_X10_Y2_N9 ; 2       ; Clock enable               ; no     ; --                   ; --               ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|ack                  ; LC_X10_Y3_N1 ; 11      ; Clock                      ; yes    ; Global Clock         ; GCLK1            ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read[2]~1        ; LC_X10_Y2_N7 ; 6       ; Clock enable               ; no     ; --                   ; --               ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write[5]~4       ; LC_X12_Y5_N9 ; 6       ; Clock enable               ; no     ; --                   ; --               ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[3]~4        ; LC_X9_Y4_N9  ; 6       ; Sync. load                 ; no     ; --                   ; --               ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[6]~10       ; LC_X12_Y4_N9 ; 6       ; Clock enable               ; no     ; --                   ; --               ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|main_state.data_read ; LC_X9_Y4_N3  ; 33      ; Sync. clear, Sync. load    ; no     ; --                   ; --               ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state~14       ; LC_X12_Y7_N9 ; 9       ; Clock enable               ; no     ; --                   ; --               ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state~16       ; LC_X11_Y3_N4 ; 7       ; Clock enable               ; no     ; --                   ; --               ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|LessThan0~2                                             ; LC_X10_Y4_N8 ; 9       ; Sync. clear                ; no     ; --                   ; --               ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|LessThan1~0                                             ; LC_X6_Y5_N9  ; 8       ; Clock enable               ; no     ; --                   ; --               ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data_reg[5]~0                                           ; LC_X7_Y5_N1  ; 6       ; Clock enable               ; no     ; --                   ; --               ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|scl_clk                                                 ; LC_X10_Y3_N8 ; 69      ; Clock                      ; yes    ; Global Clock         ; GCLK3            ;
+; clk                                                                                                ; PIN_12       ; 191     ; Clock                      ; yes    ; Global Clock         ; GCLK0            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Equal6~0                               ; LC_X8_Y7_N9  ; 21      ; Clock enable               ; no     ; --                   ; --               ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector4~1                            ; LC_X4_Y6_N7  ; 9       ; Clock enable               ; no     ; --                   ; --               ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector6~5                            ; LC_X3_Y5_N8  ; 8       ; Clock enable               ; no     ; --                   ; --               ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state.data_read                   ; LC_X4_Y5_N0  ; 17      ; Clock enable               ; no     ; --                   ; --               ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[0]~18                   ; LC_X6_Y7_N9  ; 8       ; Clock enable               ; no     ; --                   ; --               ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|reset_n2                               ; LC_X5_Y7_N0  ; 97      ; Async. clear               ; no     ; --                   ; --               ;
+; i2c_slave:i2c_slave_instance|sda~3                                                                 ; LC_X7_Y6_N9  ; 1       ; Output enable              ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|Mux2~0                                                                       ; LC_X2_Y7_N0  ; 2       ; Clock enable               ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|Mux7~2                                                                       ; LC_X2_Y7_N1  ; 2       ; Clock enable               ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|rx_complete_reg~1                                                            ; LC_X1_Y6_N8  ; 1       ; Async. clear               ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|rx_data_reg[7]~1                                                             ; LC_X2_Y6_N1  ; 8       ; Clock enable               ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|rx_enable_reg                                                                ; LC_X2_Y6_N6  ; 4       ; Clock                      ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|rx_enable_reg~0                                                              ; LC_X1_Y6_N2  ; 1       ; Async. clear               ; no     ; --                   ; --               ;
+; rs232_rx                                                                                           ; PIN_6        ; 6       ; Clock                      ; no     ; --                   ; --               ;
+; rst_n                                                                                              ; PIN_44       ; 98      ; Async. clear, Clock enable ; no     ; --                   ; --               ;
+; speed_select:speed_select|always1~0                                                                ; LC_X1_Y4_N3  ; 13      ; Sync. clear                ; no     ; --                   ; --               ;
+; speed_select:speed_select|buad_clk_rx_reg                                                          ; LC_X2_Y4_N9  ; 21      ; Clock                      ; yes    ; Global Clock         ; GCLK2            ;
+; subad_i2c_rst                                                                                      ; LC_X10_Y5_N6 ; 82      ; Async. clear, Clock enable ; no     ; --                   ; --               ;
++----------------------------------------------------------------------------------------------------+--------------+---------+----------------------------+--------+----------------------+------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                          ;
++-----------------------------------------------------------------------------------+--------------+---------+----------------------+------------------+
+; Name                                                                              ; Location     ; Fan-Out ; Global Resource Used ; Global Line Name ;
++-----------------------------------------------------------------------------------+--------------+---------+----------------------+------------------+
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|ack ; LC_X10_Y3_N1 ; 11      ; Global Clock         ; GCLK1            ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|scl_clk                                ; LC_X10_Y3_N8 ; 69      ; Global Clock         ; GCLK3            ;
+; clk                                                                               ; PIN_12       ; 191     ; Global Clock         ; GCLK0            ;
+; speed_select:speed_select|buad_clk_rx_reg                                         ; LC_X2_Y4_N9  ; 21      ; Global Clock         ; GCLK2            ;
++-----------------------------------------------------------------------------------+--------------+---------+----------------------+------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                                                                ;
++------------------------------------------------------------------------------------------------------+---------+
+; Name                                                                                                 ; Fan-Out ;
++------------------------------------------------------------------------------------------------------+---------+
+; rst_n                                                                                                ; 98      ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|reset_n2                                 ; 97      ;
+; subad_i2c_rst                                                                                        ; 82      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|scl                    ; 39      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|FF                     ; 37      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|main_state.data_read   ; 33      ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Equal3~0                                 ; 28      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|main_state.addr_write  ; 28      ;
+; Current.SAVE                                                                                         ; 27      ;
+; Current.WAIT                                                                                         ; 25      ;
+; Current.S1                                                                                           ; 25      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|RF                     ; 22      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|wr_state               ; 22      ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Equal6~0                                 ; 22      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|main_state.write_start ; 18      ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state.data_read                     ; 18      ;
+; my_uart_rx:my_uart_rx|rx_count[0]                                                                    ; 15      ;
+; my_uart_rx:my_uart_rx|rx_count[1]                                                                    ; 15      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write[7]           ; 14      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state.bitend    ; 14      ;
+; speed_select:speed_select|always1~0                                                                  ; 13      ;
+; i2c_slave:i2c_slave_instance|sda_in~0                                                                ; 12      ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state.addr_read                     ; 12      ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state.data_write                    ; 12      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|WF                     ; 12      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector66~0           ; 11      ;
+; my_uart_rx:my_uart_rx|rx_count[2]                                                                    ; 11      ;
+; my_uart_rx:my_uart_rx|rx_count[3]                                                                    ; 11      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~8           ; 11      ;
+; subad_WR_EN                                                                                          ; 11      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|LessThan1~1            ; 11      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|main_state.stop        ; 10      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state.bit7      ; 10      ;
+; BusA[98]~1                                                                                           ; 10      ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[5]                                             ; 9       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector4~1                              ; 9       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|LessThan0~2                                               ; 9       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector59~0           ; 9       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state~14         ; 9       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|main_state.idle        ; 9       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|link_data              ; 9       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state.addr_ack                      ; 9       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector6~5                              ; 8       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|LessThan1~0                                               ; 8       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state~19                         ; 8       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[0]~18                     ; 8       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_from_rm[0]~0      ; 8       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector66~1           ; 8       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector67~1           ; 8       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[7]~1                                                               ; 8       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state.read_end   ; 8       ;
+; Equal4~0                                                                                             ; 8       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[2]                                             ; 7       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[1]                                             ; 7       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[4]                                             ; 7       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[3]                                             ; 7       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state~16         ; 7       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_reg[0]~1                         ; 7       ;
+; Equal2~8                                                                                             ; 7       ;
+; Equal3~1                                                                                             ; 7       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data_reg[5]~0                                             ; 6       ;
+; rs232_rx                                                                                             ; 6       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[6]~10         ; 6       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[3]~4          ; 6       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[3]~3          ; 6       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write[5]~4         ; 6       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|WR                                                        ; 6       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read[2]~1          ; 6       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_reg[6]~0                         ; 6       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read[7]            ; 6       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|ack_state.11                             ; 6       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|ack_state.00                             ; 6       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state.data_in_ack                   ; 6       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[0]                                             ; 5       ;
+; speed_select:speed_select|cnt_rx[0]~21                                                               ; 5       ;
+; speed_select:speed_select|cnt_rx[7]                                                                  ; 5       ;
+; speed_select:speed_select|cnt_rx[5]~13                                                               ; 5       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[3]~2          ; 5       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|RD                                                        ; 5       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|write_read                               ; 5       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[7]~0                                                               ; 5       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state.read_bit7  ; 5       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|main_state.ackn        ; 5       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|stop_state             ; 5       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|head_state             ; 5       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|LessThan0~1            ; 5       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|LessThan0~0            ; 5       ;
+; linkISE                                                                                              ; 5       ;
+; flag_reg                                                                                             ; 5       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[7]            ; 5       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|sda_en                                   ; 5       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state.bit6      ; 4       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state.bit5      ; 4       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state.bit4      ; 4       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state.bit3      ; 4       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state.bit2      ; 4       ;
+; subad_RD_EN                                                                                          ; 4       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state.bit1      ; 4       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[4]                         ; 4       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[0]                         ; 4       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state.data_end                   ; 4       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[0]                            ; 4       ;
+; my_uart_rx:my_uart_rx|rx_enable_reg                                                                  ; 4       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|main_state.ready       ; 4       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[3]~0          ; 4       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write[0]           ; 4       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector10~0           ; 4       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read[0]            ; 4       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read[5]            ; 4       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|ack_state.01                             ; 4       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|always5~0                                ; 4       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state.data_out7                 ; 4       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|scl_regi                                 ; 4       ;
+; Current.IDLE                                                                                         ; 4       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|sda_out1                                 ; 4       ;
+; BusA[100]~2                                                                                          ; 4       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[0]            ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|Mux2~0                                                    ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state.data_in6                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state.data_in7                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state.data_in4                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state.data_in5                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state.data_in1                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state.data_in2                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state.data_in3                   ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|Equal1~2                                                  ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[7]                                             ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[6]                                             ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[4]~3                                           ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state.data_in0                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state.addr_end                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[4]~13                      ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[3]                         ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[2]                         ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[1]                         ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[7]                         ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[6]                         ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[5]                         ; 3       ;
+; my_uart_rx:my_uart_rx|Mux2~0                                                                         ; 3       ;
+; speed_select:speed_select|cnt_rx[2]                                                                  ; 3       ;
+; speed_select:speed_select|cnt_rx[1]                                                                  ; 3       ;
+; speed_select:speed_select|cnt_rx[4]                                                                  ; 3       ;
+; speed_select:speed_select|cnt_rx[3]                                                                  ; 3       ;
+; speed_select:speed_select|cnt_rx[5]                                                                  ; 3       ;
+; speed_select:speed_select|cnt_rx[6]                                                                  ; 3       ;
+; speed_select:speed_select|cnt_rx[8]                                                                  ; 3       ;
+; my_uart_rx:my_uart_rx|Mux7~2                                                                         ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[4]~13                                             ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector45~4           ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~22                ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector59~4           ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state.bit0      ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~27                ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector45~3           ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state.addr_in1                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state.addr_in2                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state.addr_in0                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|sda_regi                                 ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state.addr_in3                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state.addr_in4                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state.addr_in5                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state.addr_in6                   ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state.write_read_flag               ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|always4~4                                ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[7]                            ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[0]                        ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|always4~1                                ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[4]~3                      ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector6~3                              ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|stop_bus_reg                             ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state.if_rep_start                  ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[6]                            ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[5]                            ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[4]~7                          ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[4]                            ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[3]                            ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[2]                            ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[1]                            ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read~0             ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state~23        ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector29~0           ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector45~0           ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|LessThan0~2            ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read[1]            ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read[2]            ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|ack_state~14                             ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector13~0                             ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector14~0                             ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state.data_out_end              ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state.data_out6                 ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state.data_out4                 ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state.data_out5                 ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state.data_out2                 ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state.data_out1                 ; 3       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[0]                                                                 ; 3       ;
+; linkISW                                                                                              ; 3       ;
+; linkISR                                                                                              ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|link_sda               ; 3       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|flag                                     ; 3       ;
+; Buff_temp[1]                                                                                         ; 3       ;
+; Buff_temp[0]                                                                                         ; 3       ;
+; Buff_temp[4]                                                                                         ; 3       ;
+; Buff_temp[2]                                                                                         ; 3       ;
+; Buff_temp[3]                                                                                         ; 3       ;
+; Buff_temp[5]                                                                                         ; 3       ;
+; Buff_temp[7]                                                                                         ; 3       ;
+; Buff_temp[6]                                                                                         ; 3       ;
+; Buff_temp[10]                                                                                        ; 3       ;
+; Buff_temp[11]                                                                                        ; 3       ;
+; Buff_temp[8]                                                                                         ; 3       ;
+; Buff_temp[9]                                                                                         ; 3       ;
+; Buff_temp[13]                                                                                        ; 3       ;
+; Buff_temp[15]                                                                                        ; 3       ;
+; Buff_temp[12]                                                                                        ; 3       ;
+; Buff_temp[14]                                                                                        ; 3       ;
+; Rx_cmd[4]                                                                                            ; 3       ;
+; Rx_cmd[1]                                                                                            ; 3       ;
+; Equal2~6                                                                                             ; 3       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_from_rm[0]        ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_from_rm[1]        ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_from_rm[2]        ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state.read_bit4  ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_from_rm[3]        ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|wr_state~4             ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state.read_bit3  ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state.read_bit5  ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_from_rm[4]        ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state.read_bit2  ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state.read_bit6  ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_from_rm[5]        ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state.read_bit1  ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state.idle                          ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|start_bus_reg                            ; 2       ;
+; i2c_rst_slv                                                                                          ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_reg[6]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_reg[7]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_reg[4]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_reg[5]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_reg[0]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_reg[1]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_reg[2]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_reg[3]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|sda_regi0                                ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|always2~0                                ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state.data_out_ack                  ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|LessThan0~0                              ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|always4~5                                ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[1]~4                                                              ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[7]~1                                                              ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[7]~0                                                              ; 2       ;
+; my_uart_rx:my_uart_rx|rx_complete_reg                                                                ; 2       ;
+; speed_select:speed_select|cnt_rx[0]                                                                  ; 2       ;
+; speed_select:speed_select|always2~1                                                                  ; 2       ;
+; speed_select:speed_select|cnt_rx[11]                                                                 ; 2       ;
+; speed_select:speed_select|cnt_rx[10]~5                                                               ; 2       ;
+; speed_select:speed_select|cnt_rx[10]                                                                 ; 2       ;
+; speed_select:speed_select|cnt_rx[12]                                                                 ; 2       ;
+; speed_select:speed_select|cnt_rx[9]                                                                  ; 2       ;
+; my_uart_rx:my_uart_rx|Mux8~0                                                                         ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[5]                                                ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[4]                                                ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[2]                                                ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[1]                                                ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[0]                                                ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[3]                                                ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[7]                                                ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[6]                                                ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector39~0           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state.read_begin ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[3]~9          ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_from_rm[6]        ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state~24        ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector69~0           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~0                 ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector67~0           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8in_state.read_bit0  ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector78~0           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|LessThan1~2            ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector45~1           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector4~0                              ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[3]                        ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[2]                        ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[1]                        ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[7]                        ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[6]                        ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[4]                        ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[5]                        ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[5]                                                                ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[0]                                                                ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[3]                                                                ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[4]                                                                ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[1]                                                                ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[6]                                                                ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[7]                                                                ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[2]                                                                ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[5]                                                                 ; 2       ;
+; Equal0~2                                                                                             ; 2       ;
+; Flag_temp                                                                                            ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|stop_state~0           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector40~2           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector50~0           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data[7]~0                                                 ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_from_rm[7]        ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[6]            ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write[1]           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write[3]           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write[4]           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write[6]           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write[2]           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write[5]           ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read[3]            ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read[4]            ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read[6]            ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|ack_state.10                             ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_reg[1]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_reg[2]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_reg[0]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_reg[3]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_reg[4]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_reg[5]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_reg[6]                           ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state.data_out0                 ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state.data_out3                 ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|scl_regi0                                ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[3]                                                                 ; 2       ;
+; Equal1~0                                                                                             ; 2       ;
+; Equal0~1                                                                                             ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[4]                                                                 ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[1]                                                                 ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[6]                                                                 ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|sda_out2                                 ; 2       ;
+; Buff_temp[16]                                                                                        ; 2       ;
+; Buff_temp[19]                                                                                        ; 2       ;
+; Buff_temp[17]                                                                                        ; 2       ;
+; Buff_temp[20]                                                                                        ; 2       ;
+; Buff_temp[18]                                                                                        ; 2       ;
+; Buff_temp[21]                                                                                        ; 2       ;
+; Buff_temp[23]                                                                                        ; 2       ;
+; Buff_temp[22]                                                                                        ; 2       ;
+; Rx_cmd[2]                                                                                            ; 2       ;
+; Equal3~0                                                                                             ; 2       ;
+; Rx_cmd[0]                                                                                            ; 2       ;
+; Rx_cmd[17]                                                                                           ; 2       ;
+; Equal2~4                                                                                             ; 2       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state~31        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector60~1           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector60~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector58~8           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|WideOr22~0             ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector58~7           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector58~6           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector58~5           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector58~4           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector58~3           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector58~2           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector58~1           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector58~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data_reg[0]                                               ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|Mux6~0                                                    ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector61~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state~30        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|Mux5~0                                                    ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector57~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data_reg[1]                                               ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector62~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state~29        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|Mux4~0                                                    ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data[2]~5                                                 ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data_reg[2]                                               ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[1]            ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector63~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state~28        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|Mux3~0                                                    ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data[3]~4                                                 ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data_reg[3]                                               ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[2]            ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector77~5           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector77~4           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector77~3           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector77~2           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector77~1           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector77~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector64~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state~27        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data[4]~3                                                 ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data_reg[4]                                               ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[3]            ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector65~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state~26        ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector0~0                              ; 1       ;
+; my_uart_rx:my_uart_rx|rx_complete_reg~1                                                              ; 1       ;
+; speed_select:speed_select|LessThan0~1                                                                ; 1       ;
+; speed_select:speed_select|LessThan0~0                                                                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data[5]~2                                                 ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data_reg[5]                                               ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[4]            ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~37COUT1_48        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~37                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[2]~13COUT1_24                                  ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[2]~13                                          ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|Equal1~1                                                  ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[6]~9COUT1_30                                   ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[6]~9                                           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[5]~7COUT1_28                                   ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[5]~7                                           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[1]~5COUT1_22                                   ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[1]~5                                           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|Equal1~0                                                  ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[3]~1COUT1_26                                   ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|send_count[3]~1                                           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector66~2           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state~25        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~37COUT1_48        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~37                ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector4~2                              ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[0]~17                     ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[0]~16                     ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[0]~15                     ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Equal7~0                                 ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[0]~14                     ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector8~0                              ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|always4~6                                ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[3]~11COUT1_26              ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[3]~11                      ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[2]~9COUT1_24               ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[2]~9                       ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[1]~7COUT1_22               ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[1]~7                       ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[6]~3COUT1_30               ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[6]~3                       ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[5]~1COUT1_28               ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[5]~1                       ; 1       ;
+; my_uart_rx:my_uart_rx|Mux6~2                                                                         ; 1       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[0]~6                                                              ; 1       ;
+; my_uart_rx:my_uart_rx|Mux7~3                                                                         ; 1       ;
+; my_uart_rx:my_uart_rx|Mux5~0                                                                         ; 1       ;
+; my_uart_rx:my_uart_rx|rx_enable_reg~0                                                                ; 1       ;
+; speed_select:speed_select|always2~4                                                                  ; 1       ;
+; speed_select:speed_select|always2~3                                                                  ; 1       ;
+; speed_select:speed_select|always2~2                                                                  ; 1       ;
+; speed_select:speed_select|cnt_rx[2]~25COUT1_39                                                       ; 1       ;
+; speed_select:speed_select|cnt_rx[2]~25                                                               ; 1       ;
+; speed_select:speed_select|cnt_rx[1]~23COUT1_37                                                       ; 1       ;
+; speed_select:speed_select|cnt_rx[1]~23                                                               ; 1       ;
+; speed_select:speed_select|cnt_rx[4]~19COUT1_43                                                       ; 1       ;
+; speed_select:speed_select|cnt_rx[4]~19                                                               ; 1       ;
+; speed_select:speed_select|cnt_rx[3]~17COUT1_41                                                       ; 1       ;
+; speed_select:speed_select|cnt_rx[3]~17                                                               ; 1       ;
+; speed_select:speed_select|cnt_rx[7]~15COUT1_47                                                       ; 1       ;
+; speed_select:speed_select|cnt_rx[7]~15                                                               ; 1       ;
+; speed_select:speed_select|cnt_rx[6]~11COUT1_45                                                       ; 1       ;
+; speed_select:speed_select|cnt_rx[6]~11                                                               ; 1       ;
+; speed_select:speed_select|cnt_rx[8]~9COUT1_49                                                        ; 1       ;
+; speed_select:speed_select|cnt_rx[8]~9                                                                ; 1       ;
+; speed_select:speed_select|cnt_rx[11]~7COUT1_53                                                       ; 1       ;
+; speed_select:speed_select|cnt_rx[11]~7                                                               ; 1       ;
+; speed_select:speed_select|always2~0                                                                  ; 1       ;
+; speed_select:speed_select|cnt_rx[9]~1COUT1_51                                                        ; 1       ;
+; speed_select:speed_select|cnt_rx[9]~1                                                                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|LessThan0~1                                               ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[5]~15COUT1_32                                     ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[5]~15                                             ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|LessThan0~0                                               ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[2]~11COUT1_28                                     ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[2]~11                                             ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[1]~9COUT1_26                                      ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[1]~9                                              ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[0]~7COUT1_24                                      ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[0]~7                                              ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[3]~5COUT1_30                                      ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[3]~5                                              ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[6]~1COUT1_34                                      ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|clk_div[6]~1                                              ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector45~5           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector50~6           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector50~5           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector50~4           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector50~3           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector50~2           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector50~1           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector49~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector39~1           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[6]~8          ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[6]~7          ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[6]~6          ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[6]~5          ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|data[6]~1                                                 ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf[5]            ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector76~2           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector76~1           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector76~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~32COUT1_50        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~32                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~30                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~27COUT1_54        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~27                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~25                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~20                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~17COUT1_58        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~17                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~15                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~12COUT1_52        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~12                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~10                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write[5]~3         ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~7COUT1_56         ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~7                 ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add0~5                 ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write~2            ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write~1            ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_write~0            ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector41~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|wr_state~2             ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|wr_state~1             ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|wr_state~0             ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector59~2           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector59~1           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector67~3           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector67~2           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~32COUT1_54        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~32                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~30                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~25                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~22COUT1_58        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~22                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~20                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read~3             ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|cnt_read~2             ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~15                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~12COUT1_50        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~12                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~10                ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~7COUT1_52         ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~7                 ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~5                 ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~2COUT1_56         ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~2                 ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Add1~0                 ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector45~2           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector46~1           ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector12~0                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector11~1                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector11~0                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|reset_n1                                 ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|LessThan1~0                              ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|always4~3                                ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[3]~13COUT1_31             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[3]~13                     ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[2]~11COUT1_29             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[2]~11                     ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[1]~9COUT1_27              ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[1]~9                      ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|always4~2                                ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[6]~5COUT1_35              ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[6]~5                      ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[5]~1COUT1_33              ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_status[5]~1                      ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector6~2                              ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[6]~11COUT1_30                 ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[6]~11                         ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[5]~9COUT1_28                  ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[5]~9                          ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[3]~5COUT1_26                  ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[3]~5                          ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[2]~3COUT1_24                  ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[2]~3                          ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[1]~1COUT1_22                  ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[1]~1                          ; 1       ;
+; Selector1~0                                                                                          ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector40~10          ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|sh8out_state~22        ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector40~9           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector40~8           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector40~7           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector40~6           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector40~5           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector40~4           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector40~3           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector40~1           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector40~0           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~14          ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector10~1           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~13          ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~12          ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~11          ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~10          ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|data_buf~1             ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~9           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~7           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~6           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~5           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~4           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~3           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~2           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|LessThan1~0            ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~1           ; 1       ;
+; I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector51~0           ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector10~1                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector10~0                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector9~1                              ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector9~0                              ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|sda_out1~2                               ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|sda_out1~1                               ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|sda_out1~0                               ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector30~8                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector30~7                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector30~6                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector31~0                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector30~5                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector30~4                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector30~3                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector30~2                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_reg[5]                          ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector30~1                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_reg[3]                          ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|Selector30~0                             ; 1       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_reg[1]                          ; 1       ;
+; always2~0                                                                                            ; 1       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[2]                                                                 ; 1       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[7]                                                                 ; 1       ;
+; Equal0~0                                                                                             ; 1       ;
+; BusA[100]~6                                                                                          ; 1       ;
+; BusA[100]~5                                                                                          ; 1       ;
+; i2c_slave:i2c_slave_instance|sda~3                                                                   ; 1       ;
+; i2c_slave:i2c_slave_instance|sda~2                                                                   ; 1       ;
+; i2c_slave:i2c_slave_instance|sda~1                                                                   ; 1       ;
+; Equal2~7                                                                                             ; 1       ;
+; Rx_cmd[16]                                                                                           ; 1       ;
+; Rx_cmd[19]                                                                                           ; 1       ;
+; Equal2~5                                                                                             ; 1       ;
+; Equal5~2                                                                                             ; 1       ;
+; Equal5~1                                                                                             ; 1       ;
+; Rx_cmd[20]                                                                                           ; 1       ;
+; Equal5~0                                                                                             ; 1       ;
+; Equal2~3                                                                                             ; 1       ;
+; Rx_cmd[3]                                                                                            ; 1       ;
+; Rx_cmd[5]                                                                                            ; 1       ;
+; Rx_cmd[7]                                                                                            ; 1       ;
+; Equal2~2                                                                                             ; 1       ;
+; Rx_cmd[10]                                                                                           ; 1       ;
+; Rx_cmd[11]                                                                                           ; 1       ;
+; Rx_cmd[8]                                                                                            ; 1       ;
+; Equal2~1                                                                                             ; 1       ;
+; Rx_cmd[13]                                                                                           ; 1       ;
+; Rx_cmd[15]                                                                                           ; 1       ;
+; Rx_cmd[12]                                                                                           ; 1       ;
+; Equal2~0                                                                                             ; 1       ;
+; Rx_cmd[18]                                                                                           ; 1       ;
+; Rx_cmd[21]                                                                                           ; 1       ;
+; Rx_cmd[23]                                                                                           ; 1       ;
+; led~reg0                                                                                             ; 1       ;
++------------------------------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------+
+; Routing Usage Summary                        ;
++-----------------------+----------------------+
+; Routing Resource Type ; Usage                ;
++-----------------------+----------------------+
+; C4s                   ; 354 / 1,624 ( 22 % ) ;
+; Direct links          ; 186 / 1,930 ( 10 % ) ;
+; Global clocks         ; 4 / 4 ( 100 % )      ;
+; LAB clocks            ; 19 / 56 ( 34 % )     ;
+; LUT chains            ; 58 / 513 ( 11 % )    ;
+; Local interconnects   ; 811 / 1,930 ( 42 % ) ;
+; R4s                   ; 416 / 1,472 ( 28 % ) ;
++-----------------------+----------------------+
+
+
++---------------------------------------------------------------------------+
+; LAB Logic Elements                                                        ;
++--------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 9.64) ; Number of LABs  (Total = 55) ;
++--------------------------------------------+------------------------------+
+; 1                                          ; 0                            ;
+; 2                                          ; 1                            ;
+; 3                                          ; 0                            ;
+; 4                                          ; 0                            ;
+; 5                                          ; 0                            ;
+; 6                                          ; 0                            ;
+; 7                                          ; 1                            ;
+; 8                                          ; 3                            ;
+; 9                                          ; 3                            ;
+; 10                                         ; 47                           ;
++--------------------------------------------+------------------------------+
+
+
++-------------------------------------------------------------------+
+; LAB-wide Signals                                                  ;
++------------------------------------+------------------------------+
+; LAB-wide Signals  (Average = 2.00) ; Number of LABs  (Total = 55) ;
++------------------------------------+------------------------------+
+; 1 Async. clear                     ; 41                           ;
+; 1 Clock                            ; 44                           ;
+; 1 Clock enable                     ; 11                           ;
+; 1 Sync. clear                      ; 1                            ;
+; 1 Sync. load                       ; 2                            ;
+; 2 Async. clears                    ; 3                            ;
+; 2 Clock enables                    ; 2                            ;
+; 2 Clocks                           ; 6                            ;
++------------------------------------+------------------------------+
+
+
++----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                        ;
++---------------------------------------------+------------------------------+
+; Number of Signals Sourced  (Average = 9.93) ; Number of LABs  (Total = 55) ;
++---------------------------------------------+------------------------------+
+; 0                                           ; 0                            ;
+; 1                                           ; 0                            ;
+; 2                                           ; 1                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 0                            ;
+; 6                                           ; 0                            ;
+; 7                                           ; 1                            ;
+; 8                                           ; 3                            ;
+; 9                                           ; 5                            ;
+; 10                                          ; 36                           ;
+; 11                                          ; 3                            ;
+; 12                                          ; 4                            ;
+; 13                                          ; 1                            ;
+; 14                                          ; 1                            ;
++---------------------------------------------+------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                        ;
++-------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 6.82) ; Number of LABs  (Total = 55) ;
++-------------------------------------------------+------------------------------+
+; 0                                               ; 0                            ;
+; 1                                               ; 4                            ;
+; 2                                               ; 0                            ;
+; 3                                               ; 1                            ;
+; 4                                               ; 2                            ;
+; 5                                               ; 10                           ;
+; 6                                               ; 5                            ;
+; 7                                               ; 7                            ;
+; 8                                               ; 13                           ;
+; 9                                               ; 7                            ;
+; 10                                              ; 3                            ;
+; 11                                              ; 2                            ;
+; 12                                              ; 1                            ;
++-------------------------------------------------+------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                         ;
++----------------------------------------------+------------------------------+
+; Number of Distinct Inputs  (Average = 13.55) ; Number of LABs  (Total = 55) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 2                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 3                            ;
+; 7                                            ; 3                            ;
+; 8                                            ; 5                            ;
+; 9                                            ; 3                            ;
+; 10                                           ; 3                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 3                            ;
+; 13                                           ; 7                            ;
+; 14                                           ; 2                            ;
+; 15                                           ; 3                            ;
+; 16                                           ; 4                            ;
+; 17                                           ; 2                            ;
+; 18                                           ; 2                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 4                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 1                            ;
+; 23                                           ; 2                            ;
+; 24                                           ; 3                            ;
+; 25                                           ; 1                            ;
++----------------------------------------------+------------------------------+
+
+
++--------------------------------------------------------------------+
+; Fitter Device Options                                              ;
++----------------------------------------------+---------------------+
+; Option                                       ; Setting             ;
++----------------------------------------------+---------------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off                 ;
+; Enable device-wide reset (DEV_CLRn)          ; Off                 ;
+; Enable device-wide output enable (DEV_OE)    ; Off                 ;
+; Enable INIT_DONE output                      ; Off                 ;
+; Configuration scheme                         ; Passive Serial      ;
+; Reserve all unused pins                      ; As input tri-stated ;
++----------------------------------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                                                 ;
++-----------------------------------------------+-------------------------------------------+-------------------+
+; Source Clock(s)                               ; Destination Clock(s)                      ; Delay Added in ns ;
++-----------------------------------------------+-------------------------------------------+-------------------+
+; speed_select:speed_select|buad_clk_rx_reg,I/O ; speed_select:speed_select|buad_clk_rx_reg ; 7.3               ;
+; I/O                                           ; speed_select:speed_select|buad_clk_rx_reg ; 7.0               ;
++-----------------------------------------------+-------------------------------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
+
+
++---------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                     ;
++---------------------------------------+---------------------------------------+-------------------+
+; Source Register                       ; Destination Register                  ; Delay Added in ns ;
++---------------------------------------+---------------------------------------+-------------------+
+; rs232_rx                              ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; 3.001             ;
+; my_uart_rx:my_uart_rx|rx_count[2]     ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; 1.501             ;
+; my_uart_rx:my_uart_rx|rx_count[3]     ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; 1.501             ;
+; my_uart_rx:my_uart_rx|rx_count[1]     ; my_uart_rx:my_uart_rx|rx_data_temp[7] ; 1.501             ;
+; my_uart_rx:my_uart_rx|rx_data_temp[5] ; my_uart_rx:my_uart_rx|rx_data_temp[5] ; 0.351             ;
+; my_uart_rx:my_uart_rx|rx_data_temp[4] ; my_uart_rx:my_uart_rx|rx_data_temp[4] ; 0.277             ;
++---------------------------------------+---------------------------------------+-------------------+
+Note: This table only shows the top 6 path(s) that have the largest delay added for hold.
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (119006): Selected device EPM570T100C5 for design "top"
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
+Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info (176445): Device EPM240T100C5 is compatible
+    Info (176445): Device EPM240T100I5 is compatible
+    Info (176445): Device EPM240T100A5 is compatible
+    Info (176445): Device EPM570T100I5 is compatible
+    Info (176445): Device EPM570T100A5 is compatible
+Critical Warning (169085): No exact pin location assignment(s) for 1 pins of 7 total pins. For the list of the pins please refer to the Input Pins, Output Pins, and Bidir Pins tables in the Fitter report and look for the user pins whose location is assigned by Fitter.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'top.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332144): No user constrained base clocks found in the design
+Info (332128): Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
+    Info (332127): Assuming a default timing requirement
+Info (332111): Found 6 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):    1.000          clk
+    Info (332111):    1.000 I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|ack
+    Info (332111):    1.000 I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|scl_clk
+    Info (332111):    1.000 my_uart_rx:my_uart_rx|rx_enable_reg
+    Info (332111):    1.000     rs232_rx
+    Info (332111):    1.000 speed_select:speed_select|buad_clk_rx_reg
+Info (186079): Completed User Assigned Global Signals Promotion Operation
+Info (186215): Automatically promoted signal "clk" to use Global clock in PIN 12
+Info (186216): Automatically promoted some destinations of signal "I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|scl_clk" to use Global clock
+    Info (186217): Destination "I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|scl_clk" may be non-global or may not use global clock
+Info (186215): Automatically promoted signal "speed_select:speed_select|buad_clk_rx_reg" to use Global clock
+Info (186216): Automatically promoted some destinations of signal "I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|ack" to use Global clock
+    Info (186217): Destination "I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector77~1" may be non-global or may not use global clock
+    Info (186217): Destination "I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector77~2" may be non-global or may not use global clock
+    Info (186217): Destination "I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|Selector77~5" may be non-global or may not use global clock
+Info (186079): Completed Auto Global Promotion Operation
+Info (176234): Starting register packing
+Info (186468): Started processing fast register assignments
+Info (186469): Finished processing fast register assignments
+Info (176235): Finished register packing
+Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
+    Info (176211): Number of I/O pins in group: 1 (unused VREF, 3.3V VCCIO, 0 input, 0 output, 1 bidirectional)
+        Info (176212): I/O standards used: 3.3-V LVTTL.
+Info (176215): I/O bank details before I/O pin placement
+    Info (176214): Statistics of I/O banks
+        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 3 total pin(s) used --  33 pins available
+        Info (176213): I/O bank number 2 does not use VREF pins and has 3.3V VCCIO pins. 3 total pin(s) used --  37 pins available
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
+Info (170189): Fitter placement preparation operations beginning
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
+Info (170191): Fitter placement operations beginning
+Info (170137): Fitter placement was successful
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
+Info (170193): Fitter routing operations beginning
+Info (170195): Router estimated average interconnect usage is 21% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 21% of the available device resources in the region that extends from location X0_Y0 to location X13_Y8
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+Info (170202): The Fitter performed an Auto Fit compilation.  No optimizations were skipped because the design's timing and routability requirements required full optimization.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.38 seconds.
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Warning (169064): Following 1 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
+    Info (169065): Pin BusA[99] has a permanently disabled output enable
+Info (144001): Generated suppressed messages file C:/_Bill/01_GitRepo/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_lpc845_i2c_2/top.fit.smsg
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 675 megabytes
+    Info: Processing ended: Fri Mar 16 18:16:21 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:05
+
+
++----------------------------+
+; Fitter Suppressed Messages ;
++----------------------------+
+The suppressed messages can be found in C:/_Bill/01_GitRepo/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_lpc845_i2c_2/top.fit.smsg.
+
+

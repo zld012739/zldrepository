@@ -1,0 +1,109 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|scl_clk'
+Slack : -12.118
+TNS   : -648.466
+
+Type  : Setup 'clk'
+Slack : -10.924
+TNS   : -1163.163
+
+Type  : Setup 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -5.224
+TNS   : -88.337
+
+Type  : Setup 'I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|ack'
+Slack : -4.400
+TNS   : -34.856
+
+Type  : Setup 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : -1.258
+TNS   : -1.258
+
+Type  : Hold 'clk'
+Slack : -2.130
+TNS   : -2.130
+
+Type  : Hold 'I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|scl_clk'
+Slack : -1.659
+TNS   : -1.659
+
+Type  : Hold 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -0.954
+TNS   : -7.632
+
+Type  : Hold 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 1.704
+TNS   : 0.000
+
+Type  : Hold 'I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|ack'
+Slack : 2.086
+TNS   : 0.000
+
+Type  : Recovery 'clk'
+Slack : -4.019
+TNS   : -400.662
+
+Type  : Recovery 'I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|scl_clk'
+Slack : -3.915
+TNS   : -169.885
+
+Type  : Recovery 'rs232_rx'
+Slack : -3.519
+TNS   : -3.519
+
+Type  : Recovery 'I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|ack'
+Slack : -2.830
+TNS   : -22.640
+
+Type  : Recovery 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 1.806
+TNS   : 0.000
+
+Type  : Removal 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -1.860
+TNS   : -1.860
+
+Type  : Removal 'I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|scl_clk'
+Slack : 2.886
+TNS   : 0.000
+
+Type  : Removal 'clk'
+Slack : 2.949
+TNS   : 0.000
+
+Type  : Removal 'I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|ack'
+Slack : 3.276
+TNS   : 0.000
+
+Type  : Removal 'rs232_rx'
+Slack : 3.965
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'rs232_rx'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|I2C_wr_subad:I2C_wr_subad_instance|ack'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'I2C_MASTER_SUBAD:I2C_MASTER_SUBAD_instance|scl_clk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

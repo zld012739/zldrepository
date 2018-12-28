@@ -1,0 +1,37 @@
+ 
+# cmsis i2c
+
+I2C_MASTER_CMSIS:
+    IP: __I2C_MASTER
+    CMD: IIW
+    ALT: a 
+    scl:
+        PIN: JJ2_1
+        DIRECTION: out
+    sda:
+        PIN: JJ2_2
+        DIRECTION: INOUT
+
+I2C_MASTER1_CMSIS:
+    IP: __I2C_MASTER
+    CMD: IIR
+    ALT: b
+    scl:
+        PIN: JJ2_1
+        DIRECTION: out
+    sda:
+        PIN: JJ2_2
+        DIRECTION: INOUT
+
+
+I2C_SLAVE_FOR_CASE_CMSIS:
+    IP: __I2C_SLAVE_FOR_CASE
+    CMD: IIS
+    scl_slv:
+        PIN: JJ2_1
+        DIRECTION: in
+    sda:
+        PIN: JJ2_2
+        DIRECTION: INOUT
+
+    

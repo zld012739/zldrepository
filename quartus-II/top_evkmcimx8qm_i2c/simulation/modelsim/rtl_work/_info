@@ -1,0 +1,73 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/simulation/modelsim
+vi2c_slave
+Z1 !s110 1501061812
+!i10b 1
+!s100 L:SPN3lCY15GhC=_Y3E3J2
+I9^2YFZ@`4=1Ea<]aOfeUK1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1500954148
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave.v
+L0 7
+Z4 OV;L;10.4b;61
+r1
+!s85 0
+31
+Z5 !s108 1501061812.000000
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c
+vi2c_slave_op
+R1
+!i10b 1
+!s100 8_7g]6jzgPc8COJ[_KR;e0
+IOL2zJn3@XMPeZdfR_P9X`1
+R2
+R0
+R3
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave_op.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave_op.v
+L0 7
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave_op.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/i2c_slave_op.v|
+!i113 1
+R6
+R7
+vtest_i2c_slave
+R1
+!i10b 1
+!s100 eflmkiO:6THkifD6cK@jQ2
+IZE@aG5c?Q1B<Ii3J:M5i20
+R2
+R0
+w1501061712
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/test_i2c_slave.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/test_i2c_slave.v
+L0 5
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/test_i2c_slave.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_evkmcimx8qm_i2c/test_i2c_slave.v|
+!i113 1
+R6
+R7

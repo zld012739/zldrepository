@@ -1,0 +1,212 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+
+
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58_K70
+        DIRECTION: A2T
+        # NOTE: CPLD_IO3--A19 as cmp_channel
+    FUNC1:
+        T_PIN: B35
+        A_PIN: A35_K70
+        DIRECTION: T2A
+        # NOTE: B35--PTA28(LED_DISPLAY)
+FTM:
+    CMD: FTM
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40_K70
+        DIRECTION: T2A
+#CPLD_IO2 connect to B66(FTM2_CH0)
+FTM_DUAL_EDGE_CAPTURE:
+    CMD: FDC
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: A40_K70
+        DIRECTION: A2T
+#CPLD_IO4 connect to A76(FTM2_CH0)
+FTM_INPUT_CAPTURE:
+    CMD: FIC
+    FUNC0:
+        T_PIN: B52
+        A_PIN: B58_K70
+        DIRECTION: A2T
+FTM_QUAD_DECODER:
+    IP: __ENC
+    CMD: FQD
+    pha_out:
+        PIN: CPLD_IO2
+        DIRECTION: out
+    phb_out:
+        PIN: CPLD_IO50
+        DIRECTION: out
+TPM:
+    CMD: TPM
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A40_K70
+        DIRECTION: T2A
+#CPLD_IO2 connect to B66(FTM2_CH0)
+TPM_TDC:
+    CMD: TDC
+    FUNC1:
+        T_PIN: B52
+        A_PIN: A40_K70
+        DIRECTION: A2T
+TPM_TIC:
+    CMD: TIC
+    FUNC1:
+        T_PIN: B52
+        A_PIN: B58_K70
+        DIRECTION: A2T
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: B52
+        A_PIN: B58_K70
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO5
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO5
+        A_PIN: A40_K70
+        DIRECTION: T2A
+MCG:
+    CMD: MCG
+    FUNC0:
+        T_PIN: CPLD_IO5
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO5
+        A_PIN: A40_K70
+        DIRECTION: T2A
+
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: B52
+        A_PIN: B58_K70
+        DIRECTION: A2T
+
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: B52
+        A_PIN: B58_K70
+        DIRECTION: A2T
+
+TSI:
+  CMD: TSI
+  TOUCH_PAD:
+    T_PIN: CPLD_IO2
+    A_PIN: A35_K70
+    DIRECTION: A2T
+    NOTE: CPLD_IO2(T TSI_PAD--B66)
+  FUNC0:
+    T_PIN: A35
+    A_PIN: A39_K70
+    DIRECTION: T2A
+  FUNC1:
+    T_PIN: A35
+    A_PIN: A40_K70
+    DIRECTION: T2A
+#CPLD_IO2 connect to B66(TSI0_CH11)
+#A35(PTA29)as led
+DSPI_MASTER:
+    CMD: SPI
+    CLK:
+        T_PIN_1: B48
+        T_PIN_2: B7
+        DIRECTION: T2T
+    CS:
+        T_PIN_1: B46
+        T_PIN_2: B9
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: B11
+        T_PIN_2: B44
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: B45
+        T_PIN_2: B10
+        DIRECTION: T2T
+
+SPI_B2B_MASTER:
+    IP: __SPI_SLAVE_B2B
+    CMD: SBM
+    ALT: a
+    ss_sck_b2b:
+        PIN: B48
+        DIRECTION: IN
+    ss_mosi_b2b:
+        PIN: B45
+        DIRECTION: IN
+    ss_ssel_b2b:
+        PIN: B46
+        DIRECTION: IN
+    ss_miso_b2b:
+        PIN: B44
+        DIRECTION: OUT
+    spi_slave_result_b2b:
+        PIN: A39
+        DIRECTION: OUT
+
+SPI_B2B_SLAVE:
+    IP: __SPI_MASTER
+    CMD: SBS
+    ALT: a
+    sm_sck:
+        PIN: B48
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: B44
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: B46
+        DIRECTION: OUT
+    sm_miso:
+        PIN: B45
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A35_K70
+        DIRECTION: OUT
+
+SHELL:
+    CMD: SHL
+    FUNC0:
+        T_PIN: CPLD_IO5
+        A_PIN: A35_K70
+        DIRECTION: T2A

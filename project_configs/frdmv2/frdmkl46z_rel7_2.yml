@@ -1,0 +1,51 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+SPI_MASTER:
+    IP: __SPI_SLAVE_CPHA0
+    CMD: SPS
+    ALT: a 
+    ss_sck_cpha0:
+        PIN: JJ2_11
+        DIRECTION: IN
+    ss_mosi_cpha0:
+        PIN: JJ2_13
+        DIRECTION: IN
+    ss_ssel_cpha0:
+        PIN: JJ2_9
+        DIRECTION: IN   
+    ss_miso_cpha0:
+        PIN: JJ2_15
+        DIRECTION: OUT
+
+SPI_SLAVE:
+    IP: __SPI_MASTER_KL
+    CMD: SIO
+    ALT: a 
+    sm_sck:
+        PIN: JJ2_12
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: JJ2_8
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: JJ2_6
+        DIRECTION: OUT   
+    sm_miso:
+        PIN: JJ2_10
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A3
+        DIRECTION: OUT

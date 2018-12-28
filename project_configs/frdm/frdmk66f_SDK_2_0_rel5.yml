@@ -1,0 +1,291 @@
+#FRDM: A-B-C-D(frdmk66f)
+SINGLE: 0
+
+CMP:
+    CMD: CMP
+    LED1:
+        T_PIN: CPLD_IO4
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: D12.1  PTC9
+    FUNC:
+        T_PIN: B7
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: J1.7 --- B58(k70)
+
+CMSIS_DSPI_VAL:
+    CMD: DSV
+    FUNC:
+        T_PIN_1: A8
+        T_PIN_2: A10
+        DIRECTION: T2T
+
+CMSIS_LPUART_VAL:
+    CMD: LUV
+    FUNC:
+        T_PIN_1: B13
+        T_PIN_2: B9
+        DIRECTION: T2T
+
+CMSIS_UART_VAL:
+    CMD: URV
+    FUNC:
+        T_PIN_1: B4
+        T_PIN_2: B2
+        DIRECTION: T2T
+
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW3.1
+
+FTM_COMBINE_PWM:
+    CMD: FCP
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO4
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_DUAL_EDGE_CAPTURE:
+    CMD: FDC
+    FUNC0:
+        T_PIN: B2
+        A_PIN: A40
+        DIRECTION: A2T
+
+FTM_INPUT_CAPTURE:
+    CMD: FIC
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: B58
+        DIRECTION: A2T
+
+FTM_PWM_TWOCHANNEL:
+    CMD: FPT
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_OUTPUT_CAMPARE:
+    CMD: FOC
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_PWM_SIMPLE:
+    CMD: FSP
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_QUAD_DECODER:
+    IP: __ENC
+    CMD: FQD
+    pha_out:
+        PIN: A2
+        DIRECTION: out
+    phb_out:
+        PIN: A4
+        DIRECTION: out
+
+GPIO_INPUT:
+    CMD: GII
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW3.1
+
+GPIO_LED:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+        NOTE: D12.1
+    FUNC1:
+        T_PIN: CPLD_IO4
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+        NOTE: D12.1
+
+MCG:
+    CMD: MCG
+    FUNC0:
+        T_PIN: CPLD_IO4
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+        NOTE: D12.1   PTC9
+    FUNC1:
+        T_PIN: CPLD_IO4
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+        NOTE: D12.1   PTC9
+
+LPUART:
+    IP: __UART8BIT
+    CMD: LUT
+    ALT: a
+    rs232_tx8to8:
+        PIN: B9
+        DIRECTION: out
+    rs232_rx8to8:
+        PIN: B13
+        DIRECTION: in
+    compara_error:
+        PIN: A35_K70
+        DIRECTION: out
+
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: SW3.1
+
+SHELL:
+    CMD: SHL
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: CPLD_IO3 to D12.4
+
+TPM_COMBINE_PWM:
+    CMD: TCP
+    FUNC0:
+        T_PIN: A2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A2
+        A_PIN: A40
+        DIRECTION: T2A
+
+TPM_DUALEDGE_CAPTURE:
+    CMD: TDC
+    FUNC0:
+        T_PIN: A2
+        A_PIN: PWM0_K70
+        DIRECTION: A2T
+
+TPM_INPUT_CAPTURE:
+    CMD: TIC
+    FUNC0:
+        T_PIN: A2
+        A_PIN: B58
+        DIRECTION: A2T
+
+TPM_OUTPUT_COMPARE:
+    CMD: TOC
+    FUNC0:
+        T_PIN: A2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A2
+        A_PIN: A40
+        DIRECTION: T2A
+
+TPM_TWOCHANNEL:
+    CMD: TPT
+    FUNC0:
+        T_PIN: A2
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A2
+        A_PIN: A40
+        DIRECTION: T2A
+
+TPM_SIMPLE_PWM:
+    CMD: TSP
+    FUNC0:
+        T_PIN: A4
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A4
+        A_PIN: A40
+        DIRECTION: T2A
+
+erpc_spi_server:
+    CMD: ESS
+    DSPI_OUT:
+        T_PIN: A8
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+        NOTE: dspi salve out
+    DSPI_IN:
+        T_PIN: A10
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+        NOTE: dspi salve in
+    DSPI_CLK:
+        T_PIN: A12
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: A2T
+        NOTE: SCK
+    DSPI_PCS:
+        T_PIN: A6
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: A2T
+        NOTE: dspi pcs
+    SLAVE_ACK:
+        T_PIN: CPLD_IO50
+        A_PIN: IRQ_E_K70
+        DIRECTION: T2A
+        NOTE: CPLD_IO5 to B58, populate the proto R11, R12. FRDMCPLD J14 4 fly to J15-6
+
+
+erpc_spi_client:
+    CMD: ESC
+    DSPI_OUT:
+        T_PIN: A8
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+        NOTE: dspi salve out
+    DSPI_IN:
+        T_PIN: A10
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+        NOTE: dspi salve in
+    DSPI_CLK:
+        T_PIN: A12
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+        NOTE: SCK
+    DSPI_PCS:
+        T_PIN: A6
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+        NOTE: dspi pcs
+    SLAVE_ACK:
+        T_PIN: CPLD_IO50
+        A_PIN: IRQ_E_K70
+        DIRECTION: A2T
+        NOTE: CPLD_IO5 to B58, populate the proto R11, R12. FRDMCPLD J14 4 fly to J15-6

@@ -1,0 +1,83 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+
+BUTTON_RST8:
+    IP: __BUTTON_RST
+    CMD: BDI
+    ALT: b
+    button_out_status:
+        PIN: CPLD_IO54
+        DIRECTION: OUT
+
+BUTTON_RST7:
+    IP: __BUTTON_RST
+    CMD: BDH
+    ALT: b
+    button_out_status:
+        PIN: CPLD_IO53
+        DIRECTION: OUT
+
+BUTTON_RST6:
+    IP: __BUTTON_RST
+    CMD: BDG
+    ALT: b
+    button_out_status:
+        PIN: CPLD_IO52
+        DIRECTION: OUT
+
+BUTTON_RST5:
+    IP: __BUTTON_RST
+    CMD: BDF
+    ALT: b
+    button_out_status:
+        PIN: CPLD_IO14
+        DIRECTION: OUT
+        
+BUTTON_RST4:
+    IP: __BUTTON_RST
+    CMD: BDE
+    ALT: b
+    button_out_status:
+        PIN: CPLD_IO5
+        DIRECTION: OUT
+
+BUTTON_RST3:
+    IP: __BUTTON_RST
+    CMD: BDD
+    ALT: b
+    button_out_status:
+        PIN: CPLD_IO4
+        DIRECTION: OUT
+
+BUTTON_RST2:
+    IP: __BUTTON_RST
+    CMD: BDC
+    ALT: b
+    button_out_status:
+        PIN: CPLD_IO3
+        DIRECTION: OUT
+
+BUTTON_RST1:
+    IP: __BUTTON_RST
+    CMD: BDB
+    ALT: b
+    button_out_status:
+        PIN: CPLD_IO2
+        DIRECTION: OUT
+

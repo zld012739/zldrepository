@@ -1,0 +1,1514 @@
+Fitter report for top
+Thu Jun 29 09:51:41 2017
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Fitter Resource Usage Summary
+  6. Input Pins
+  7. Output Pins
+  8. Bidir Pins
+  9. I/O Bank Usage
+ 10. All Package Pins
+ 11. Output Pin Default Load For Reported TCO
+ 12. Fitter Resource Utilization by Entity
+ 13. Delay Chain Summary
+ 14. Control Signals
+ 15. Global & Other Fast Signals
+ 16. Non-Global High Fan-Out Signals
+ 17. Fitter Device Options
+ 18. Fitter Messages
+ 19. Fitter Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Fitter Summary                                                         ;
++---------------------------+--------------------------------------------+
+; Fitter Status             ; Failed - Thu Jun 29 09:51:41 2017          ;
+; Quartus II 64-Bit Version ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name             ; top                                        ;
+; Top-level Entity Name     ; top                                        ;
+; Family                    ; MAX II                                     ;
+; Device                    ; EPM570T100C5                               ;
+; Timing Models             ; Final                                      ;
+; Total logic elements      ; 659 / 570 ( 116 % )                        ;
+; Total pins                ; 51 / 76 ( 67 % )                           ;
+; Total virtual pins        ; 0                                          ;
+; UFM blocks                ; 0 / 1 ( 0 % )                              ;
++---------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                                                              ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Option                                                                     ; Setting                        ; Default Value                  ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+; Device                                                                     ; EPM570T100C5                   ;                                ;
+; Minimum Core Junction Temperature                                          ; 0                              ;                                ;
+; Maximum Core Junction Temperature                                          ; 85                             ;                                ;
+; Fit Attempts to Skip                                                       ; 0                              ; 0.0                            ;
+; Device I/O Standard                                                        ; 3.3-V LVTTL                    ;                                ;
+; Use smart compilation                                                      ; Off                            ; Off                            ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                             ; On                             ;
+; Enable compact report table                                                ; Off                            ; Off                            ;
+; Router Timing Optimization Level                                           ; Normal                         ; Normal                         ;
+; Placement Effort Multiplier                                                ; 1.0                            ; 1.0                            ;
+; Router Effort Multiplier                                                   ; 1.0                            ; 1.0                            ;
+; Always Enable Input Buffers                                                ; Off                            ; Off                            ;
+; Optimize Hold Timing                                                       ; IO Paths and Minimum TPD Paths ; IO Paths and Minimum TPD Paths ;
+; Optimize Multi-Corner Timing                                               ; Off                            ; Off                            ;
+; Guarantee I/O Paths Have Zero Hold Time at Fast Corner                     ; On                             ; On                             ;
+; PowerPlay Power Optimization                                               ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing                                                            ; Normal compilation             ; Normal compilation             ;
+; Optimize Timing for ECOs                                                   ; Off                            ; Off                            ;
+; Regenerate full fit report during ECO compiles                             ; Off                            ; Off                            ;
+; Optimize IOC Register Placement for Timing                                 ; Normal                         ; Normal                         ;
+; Limit to One Fitting Attempt                                               ; Off                            ; Off                            ;
+; Final Placement Optimizations                                              ; Automatically                  ; Automatically                  ;
+; Fitter Aggressive Routability Optimizations                                ; Automatically                  ; Automatically                  ;
+; Fitter Initial Placement Seed                                              ; 1                              ; 1                              ;
+; Slow Slew Rate                                                             ; Off                            ; Off                            ;
+; PCI I/O                                                                    ; Off                            ; Off                            ;
+; Weak Pull-Up Resistor                                                      ; Off                            ; Off                            ;
+; Enable Bus-Hold Circuitry                                                  ; Off                            ; Off                            ;
+; Auto Delay Chains                                                          ; On                             ; On                             ;
+; Auto Delay Chains for High Fanout Input Pins                               ; Off                            ; Off                            ;
+; Perform Physical Synthesis for Combinational Logic for Performance         ; Off                            ; Off                            ;
+; Perform Register Duplication for Performance                               ; Off                            ; Off                            ;
+; Perform Register Retiming for Performance                                  ; Off                            ; Off                            ;
+; Perform Asynchronous Signal Pipelining                                     ; Off                            ; Off                            ;
+; Fitter Effort                                                              ; Auto Fit                       ; Auto Fit                       ;
+; Physical Synthesis Effort Level                                            ; Normal                         ; Normal                         ;
+; Logic Cell Insertion - Logic Duplication                                   ; Auto                           ; Auto                           ;
+; Auto Register Duplication                                                  ; Auto                           ; Auto                           ;
+; Auto Global Clock                                                          ; On                             ; On                             ;
+; Auto Global Register Control Signals                                       ; On                             ; On                             ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off                            ; Off                            ;
++----------------------------------------------------------------------------+--------------------------------+--------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------+
+; Fitter Resource Usage Summary                     ;
++--------------------------------+------------------+
+; Resource                       ; Usage            ;
++--------------------------------+------------------+
+; Total logic elements           ; Not available    ;
+;                                ;                  ;
+; Total LABs                     ; Not available    ;
+; Logic elements in carry chains ; 181              ;
+; Virtual pins                   ; 0                ;
+; I/O pins                       ; 51 / 76 ( 67 % ) ;
+;     -- Clock pins              ; 0 / 4 ( 0 % )    ;
+;                                ;                  ;
+; Global signals                 ; 4                ;
+; UFM blocks                     ; 0 / 1 ( 0 % )    ;
+; Global clocks                  ; 4 / 4 ( 100 % )  ;
+; JTAGs                          ; 0 / 1 ( 0 % )    ;
+; Maximum fan-out                ; 297              ;
+; Highest non-global fan-out     ; 88               ;
+; Total fan-out                  ; 2838             ;
+; Average fan-out                ; 4.00             ;
++--------------------------------+------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                               ;
++----------+------------+----------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+; Name     ; Pin #      ; I/O Bank ; Combinational Fan-Out ; Registered Fan-Out ; Global ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Location assigned by ;
++----------+------------+----------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+; clk      ; Unassigned ; --       ; 297                   ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; rs232_rx ; Unassigned ; --       ; 6                     ; 0                  ; no     ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
+; rst_n    ; Unassigned ; --       ; 117                   ; 0                  ; yes    ; no              ; no       ; Off          ; 3.3-V LVTTL  ; User                 ;
++----------+------------+----------+-----------------------+--------------------+--------+-----------------+----------+--------------+--------------+----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                                                                                                     ;
++------+------------+----------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; Name ; Pin #      ; I/O Bank ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++------+------------+----------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; led  ; Unassigned ; --       ; no              ; no             ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
++------+------------+----------+-----------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Bidir Pins                                                                                                                                                                                                                                                                                                                ;
++----------+------------+----------+-----------------------+--------------------+--------+-----------------+----------------+-----------------+------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; Name     ; Pin #      ; I/O Bank ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Output Register ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Fast Output Connection ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++----------+------------+----------+-----------------------+--------------------+--------+-----------------+----------------+-----------------+------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+; BusA[10] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusA[11] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusA[12] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusA[13] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusA[14] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusA[15] ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; BusA[8]~39           ; -                   ;
+; BusA[16] ; Unassigned ; --       ; 3                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusA[17] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; BusA[17]~42          ; -                   ;
+; BusA[2]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusA[3]  ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusA[4]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; BusA[4]~32           ; -                   ;
+; BusA[5]  ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusA[6]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusA[7]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusA[8]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; BusA[8]~39           ; -                   ;
+; BusA[9]  ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusB[29] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; linkFRS              ; -                   ;
+; BusB[30] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusB[31] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusB[32] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusB[33] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; linkFRS              ; -                   ;
+; BusB[34] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; linkFRS              ; -                   ;
+; BusB[35] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusB[36] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusB[37] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusB[38] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusB[39] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusB[40] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; linkCMP              ; -                   ;
+; BusC[50] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; BusC[50]~8           ; -                   ;
+; BusC[51] ; Unassigned ; --       ; 1                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusC[52] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusD[64] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; linkFDC              ; -                   ;
+; BusE[83] ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; linkSIO              ; -                   ;
+; BusE[84] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusE[85] ; Unassigned ; --       ; 3                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
+; BusE[86] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusE[87] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; BusE[87]~32          ; -                   ;
+; BusE[88] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusE[89] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; linkFIC              ; -                   ;
+; BusE[90] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusE[91] ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; linkSIO              ; -                   ;
+; BusE[92] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusE[93] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusE[94] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusE[95] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; BusE[95]~34          ; -                   ;
+; BusE[96] ; Unassigned ; --       ; 0                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; Fitter               ; 10 pF ; -                    ; -                   ;
+; BusE[97] ; Unassigned ; --       ; 2                     ; 0                  ; no     ; no              ; no             ; no              ; yes        ; no       ; Off          ; 3.3-V LVTTL  ; Default          ; no                     ; User                 ; 10 pF ; -                    ; -                   ;
++----------+------------+----------+-----------------------+--------------------+--------+-----------------+----------------+-----------------+------------+----------+--------------+--------------+------------------+------------------------+----------------------+-------+----------------------+---------------------+
+
+
++----------------------------------------------------------+
+; I/O Bank Usage                                           ;
++----------+----------------+---------------+--------------+
+; I/O Bank ; Usage          ; VCCIO Voltage ; VREF Voltage ;
++----------+----------------+---------------+--------------+
+; 1        ; 0 / 36 ( 0 % ) ; 3.3V          ; --           ;
+; 2        ; 0 / 40 ( 0 % ) ; 3.3V          ; --           ;
+; Unknown  ; 51             ; --            ;              ;
++----------+----------------+---------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                                                               ;
++----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage   ; I/O Type   ; User Assignment ; Bus Hold ; Weak Pull Up ;
++----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
+; 1        ; 161        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 2        ; 2          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 3        ; 4          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 4        ; 6          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 5        ; 8          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 6        ; 9          ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 7        ; 10         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 8        ; 11         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 9        ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 10       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 11       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 12       ; 20         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 13       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
+; 14       ; 21         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 15       ; 22         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 16       ; 23         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 17       ; 24         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 18       ; 25         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 19       ; 32         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 20       ; 34         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 21       ; 36         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 22       ; 38         ; 1        ; #TMS           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
+; 23       ; 39         ; 1        ; #TDI           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
+; 24       ; 40         ; 1        ; #TCK           ; input  ;              ;           ; --         ;                 ; --       ; --           ;
+; 25       ; 41         ; 1        ; #TDO           ; output ;              ;           ; --         ;                 ; --       ; --           ;
+; 26       ; 47         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 27       ; 48         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 28       ; 50         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 29       ; 51         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 30       ; 52         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 31       ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 32       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 33       ; 58         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 34       ; 59         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 35       ; 60         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 36       ; 61         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 37       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 38       ; 62         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 39       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
+; 40       ; 63         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 41       ; 64         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 42       ; 65         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 43       ; 66         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 44       ; 67         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 45       ;            ; 1        ; VCCIO1         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 46       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 47       ; 71         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 48       ; 72         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 49       ; 73         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 50       ; 75         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 51       ; 79         ; 1        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 52       ; 83         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 53       ; 84         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 54       ; 86         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 55       ; 89         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 56       ; 91         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 57       ; 92         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 58       ; 93         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 59       ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 60       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 61       ; 98         ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 62       ; 101        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 63       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
+; 64       ; 102        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 65       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 66       ; 103        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 67       ; 104        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 68       ; 105        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 69       ; 111        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 70       ; 112        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 71       ; 115        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 72       ; 116        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 73       ; 118        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 74       ; 120        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 75       ; 122        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Row I/O    ;                 ; no       ; Off          ;
+; 76       ; 125        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 77       ; 126        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 78       ; 127        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 79       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 80       ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 81       ; 135        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 82       ; 136        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 83       ; 139        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 84       ; 140        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 85       ; 141        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 86       ; 142        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 87       ; 143        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 88       ;            ;          ; VCCINT         ; power  ;              ; 2.5V/3.3V ; --         ;                 ; --       ; --           ;
+; 89       ; 144        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 90       ;            ;          ; GNDINT         ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 91       ; 149        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 92       ; 150        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 93       ;            ;          ; GNDIO          ; gnd    ;              ;           ; --         ;                 ; --       ; --           ;
+; 94       ;            ; 2        ; VCCIO2         ; power  ;              ; 3.3V      ; --         ;                 ; --       ; --           ;
+; 95       ; 151        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 96       ; 152        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 97       ; 153        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 98       ; 155        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 99       ; 156        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
+; 100      ; 158        ; 2        ; RESERVED_INPUT ;        ;              ;           ; Column I/O ;                 ; no       ; Off          ;
++----------+------------+----------+----------------+--------+--------------+-----------+------------+-----------------+----------+--------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++-------------------------------------------------------------+
+; Output Pin Default Load For Reported TCO                    ;
++----------------------------+-------+------------------------+
+; I/O Standard               ; Load  ; Termination Resistance ;
++----------------------------+-------+------------------------+
+; 3.3-V LVTTL                ; 10 pF ; Not Available          ;
+; 3.3-V LVCMOS               ; 10 pF ; Not Available          ;
+; 2.5 V                      ; 10 pF ; Not Available          ;
+; 1.8 V                      ; 10 pF ; Not Available          ;
+; 1.5 V                      ; 10 pF ; Not Available          ;
+; 3.3V Schmitt Trigger Input ; 10 pF ; Not Available          ;
+; 2.5V Schmitt Trigger Input ; 10 pF ; Not Available          ;
++----------------------------+-------+------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                          ;
++-------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                            ; Library Name ;
++-------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------+--------------+
+; |top                                      ; 659 (194)   ; 360          ; 0          ; 51   ; 0            ; 299 (113)    ; 51 (6)            ; 309 (75)         ; 181 (0)         ; 42 (23)    ; |top                                                           ; work         ;
+;    |my_uart_rx:my_uart_rx|                ; 36 (36)     ; 22           ; 0          ; 0    ; 0            ; 14 (14)      ; 4 (4)             ; 18 (18)          ; 0 (0)           ; 0 (0)      ; |top|my_uart_rx:my_uart_rx                                     ; work         ;
+;    |speed_select:speed_select|            ; 22 (22)     ; 14           ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 14 (14)          ; 13 (13)         ; 0 (0)      ; |top|speed_select:speed_select                                 ; work         ;
+;    |spi_ctrl:spi_ctrl_instance|           ; 88 (23)     ; 59           ; 0          ; 0    ; 0            ; 29 (4)       ; 0 (0)             ; 59 (19)          ; 43 (15)         ; 0 (0)      ; |top|spi_ctrl:spi_ctrl_instance                                ; work         ;
+;       |spi_master:spi_master_instance|    ; 65 (65)     ; 40           ; 0          ; 0    ; 0            ; 25 (25)      ; 0 (0)             ; 40 (40)          ; 28 (28)         ; 0 (0)      ; |top|spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance ; work         ;
+;    |spi_slave_b2b:spi_slave_b2b_instance| ; 89 (89)     ; 53           ; 0          ; 0    ; 0            ; 36 (36)      ; 7 (7)             ; 46 (46)          ; 32 (32)         ; 13 (13)    ; |top|spi_slave_b2b:spi_slave_b2b_instance                      ; work         ;
+;    |uart_instance:uart_instance1|         ; 147 (29)    ; 87           ; 0          ; 0    ; 0            ; 60 (14)      ; 17 (13)           ; 70 (2)           ; 60 (14)         ; 3 (0)      ; |top|uart_instance:uart_instance1                              ; work         ;
+;       |data_deal:data_deal|               ; 27 (27)     ; 22           ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 22 (22)          ; 15 (15)         ; 0 (0)      ; |top|uart_instance:uart_instance1|data_deal:data_deal          ; work         ;
+;       |my_uart_rx8to8:rx_inst|            ; 40 (40)     ; 29           ; 0          ; 0    ; 0            ; 11 (11)      ; 0 (0)             ; 29 (29)          ; 18 (18)         ; 0 (0)      ; |top|uart_instance:uart_instance1|my_uart_rx8to8:rx_inst       ; work         ;
+;       |my_uart_tx8to8:tx_inst|            ; 51 (51)     ; 21           ; 0          ; 0    ; 0            ; 30 (30)      ; 4 (4)             ; 17 (17)          ; 13 (13)         ; 3 (3)      ; |top|uart_instance:uart_instance1|my_uart_tx8to8:tx_inst       ; work         ;
+;    |uart_top7to7:uart_top7to7|            ; 83 (29)     ; 44           ; 0          ; 0    ; 0            ; 39 (14)      ; 17 (13)           ; 27 (2)           ; 33 (14)         ; 3 (0)      ; |top|uart_top7to7:uart_top7to7                                 ; work         ;
+;       |data_deal:data_deal|               ; 8 (8)       ; 8            ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; 6 (6)           ; 0 (0)      ; |top|uart_top7to7:uart_top7to7|data_deal:data_deal             ; work         ;
+;       |my_uart_tx7to7:tx_inst|            ; 46 (46)     ; 21           ; 0          ; 0    ; 0            ; 25 (25)      ; 4 (4)             ; 17 (17)          ; 13 (13)         ; 3 (3)      ; |top|uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst          ; work         ;
++-------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------+
+; Delay Chain Summary                 ;
++----------+----------+---------------+
+; Name     ; Pin Type ; Pad to Core 0 ;
++----------+----------+---------------+
+; led      ; Output   ; --            ;
+; BusA[6]  ; Bidir    ; 0             ;
+; BusA[7]  ; Bidir    ; 0             ;
+; BusA[9]  ; Bidir    ; 0             ;
+; BusA[10] ; Bidir    ; 0             ;
+; BusA[11] ; Bidir    ; 0             ;
+; BusA[12] ; Bidir    ; 0             ;
+; BusA[13] ; Bidir    ; 0             ;
+; BusA[14] ; Bidir    ; 0             ;
+; BusB[31] ; Bidir    ; 0             ;
+; BusB[32] ; Bidir    ; 0             ;
+; BusB[35] ; Bidir    ; 0             ;
+; BusB[36] ; Bidir    ; 0             ;
+; BusB[37] ; Bidir    ; 0             ;
+; BusB[38] ; Bidir    ; 0             ;
+; BusB[39] ; Bidir    ; 0             ;
+; BusE[84] ; Bidir    ; 0             ;
+; BusE[86] ; Bidir    ; 0             ;
+; BusE[88] ; Bidir    ; 0             ;
+; BusE[90] ; Bidir    ; 0             ;
+; BusE[92] ; Bidir    ; 0             ;
+; BusE[93] ; Bidir    ; 0             ;
+; BusE[94] ; Bidir    ; 0             ;
+; BusE[96] ; Bidir    ; 0             ;
+; BusA[2]  ; Bidir    ; 0             ;
+; BusA[3]  ; Bidir    ; 0             ;
+; BusA[4]  ; Bidir    ; 0             ;
+; BusA[5]  ; Bidir    ; 0             ;
+; BusA[8]  ; Bidir    ; 0             ;
+; BusA[15] ; Bidir    ; 0             ;
+; BusA[16] ; Bidir    ; 0             ;
+; BusA[17] ; Bidir    ; 0             ;
+; BusB[29] ; Bidir    ; 0             ;
+; BusB[30] ; Bidir    ; 0             ;
+; BusB[33] ; Bidir    ; 0             ;
+; BusB[34] ; Bidir    ; 0             ;
+; BusB[40] ; Bidir    ; 0             ;
+; BusC[50] ; Bidir    ; 0             ;
+; BusC[51] ; Bidir    ; 0             ;
+; BusC[52] ; Bidir    ; 0             ;
+; BusD[64] ; Bidir    ; 0             ;
+; BusE[83] ; Bidir    ; 0             ;
+; BusE[85] ; Bidir    ; 0             ;
+; BusE[87] ; Bidir    ; 0             ;
+; BusE[89] ; Bidir    ; 0             ;
+; BusE[91] ; Bidir    ; 0             ;
+; BusE[95] ; Bidir    ; 0             ;
+; BusE[97] ; Bidir    ; 0             ;
+; clk      ; Input    ; 0             ;
+; rst_n    ; Input    ; 0             ;
+; rs232_rx ; Input    ; 0             ;
++----------+----------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                    ;
++-----------------------------------------------------------------------------+------------+---------+----------------------------+--------+----------------------+------------------+
+; Name                                                                        ; Location   ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ;
++-----------------------------------------------------------------------------+------------+---------+----------------------------+--------+----------------------+------------------+
+; BusA[17]~42                                                                 ; Unassigned ; 1       ; Output enable              ; no     ; --                   ; --               ;
+; BusA[4]~32                                                                  ; Unassigned ; 2       ; Output enable              ; no     ; --                   ; --               ;
+; BusA[8]~39                                                                  ; Unassigned ; 2       ; Output enable              ; no     ; --                   ; --               ;
+; BusC[50]~8                                                                  ; Unassigned ; 1       ; Output enable              ; no     ; --                   ; --               ;
+; BusE[87]~32                                                                 ; Unassigned ; 1       ; Output enable              ; no     ; --                   ; --               ;
+; BusE[95]~34                                                                 ; Unassigned ; 1       ; Output enable              ; no     ; --                   ; --               ;
+; Current.SAVE                                                                ; Unassigned ; 27      ; Clock enable               ; no     ; --                   ; --               ;
+; clk                                                                         ; Unassigned ; 297     ; Clock                      ; yes    ; Global Clock         ; Not Available    ;
+; linkCMP                                                                     ; Unassigned ; 4       ; Output enable              ; no     ; --                   ; --               ;
+; linkFDC                                                                     ; Unassigned ; 2       ; Output enable              ; no     ; --                   ; --               ;
+; linkFIC                                                                     ; Unassigned ; 2       ; Output enable              ; no     ; --                   ; --               ;
+; linkFRS                                                                     ; Unassigned ; 6       ; Output enable              ; no     ; --                   ; --               ;
+; linkSIO                                                                     ; Unassigned ; 8       ; Output enable              ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|Mux2~0                                                ; Unassigned ; 2       ; Clock enable               ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|Mux7~2                                                ; Unassigned ; 2       ; Clock enable               ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|rx_complete_reg~1                                     ; Unassigned ; 1       ; Async. clear               ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|rx_data_reg[7]~1                                      ; Unassigned ; 8       ; Clock enable               ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|rx_enable_reg                                         ; Unassigned ; 4       ; Clock                      ; no     ; --                   ; --               ;
+; my_uart_rx:my_uart_rx|rx_enable_reg~0                                       ; Unassigned ; 1       ; Async. clear               ; no     ; --                   ; --               ;
+; rs232_rx                                                                    ; Unassigned ; 6       ; Clock                      ; no     ; --                   ; --               ;
+; rst_n                                                                       ; Unassigned ; 117     ; Async. clear, Clock enable ; yes    ; Global Clock         ; Not Available    ;
+; speed_select:speed_select|always1~0                                         ; Unassigned ; 13      ; Sync. clear                ; no     ; --                   ; --               ;
+; speed_select:speed_select|buad_clk_rx_reg                                   ; Unassigned ; 21      ; Clock                      ; yes    ; Global Clock         ; Not Available    ;
+; spi_ctrl:spi_ctrl_instance|LessThan0~1                                      ; Unassigned ; 9       ; Sync. clear                ; no     ; --                   ; --               ;
+; spi_ctrl:spi_ctrl_instance|LessThan1~1                                      ; Unassigned ; 9       ; Clock enable               ; no     ; --                   ; --               ;
+; spi_ctrl:spi_ctrl_instance|rst_flag                                         ; Unassigned ; 41      ; Async. clear               ; no     ; --                   ; --               ;
+; spi_ctrl:spi_ctrl_instance|spi_clk                                          ; Unassigned ; 41      ; Clock                      ; yes    ; Global Clock         ; Not Available    ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|cnt8[1]~10        ; Unassigned ; 5       ; Sync. clear                ; no     ; --                   ; --               ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[7]~17 ; Unassigned ; 16      ; Clock enable               ; no     ; --                   ; --               ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[7]~22 ; Unassigned ; 8       ; Clock enable               ; no     ; --                   ; --               ;
+; spi_rst                                                                     ; Unassigned ; 25      ; Async. clear               ; no     ; --                   ; --               ;
+; spi_slave_b2b:spi_slave_b2b_instance|always8~0                              ; Unassigned ; 8       ; Clock enable               ; no     ; --                   ; --               ;
+; spi_slave_b2b:spi_slave_b2b_instance|bitcnt[0]~1                            ; Unassigned ; 3       ; Clock enable               ; no     ; --                   ; --               ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_received                          ; Unassigned ; 11      ; Clock enable               ; no     ; --                   ; --               ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_received~0                        ; Unassigned ; 9       ; Clock enable               ; no     ; --                   ; --               ;
+; spi_slave_b2b:spi_slave_b2b_instance|cnt[7]~1                               ; Unassigned ; 7       ; Clock enable               ; no     ; --                   ; --               ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]~26                  ; Unassigned ; 8       ; Clock enable               ; no     ; --                   ; --               ;
+; spi_slave_rst_b2b                                                           ; Unassigned ; 54      ; Async. clear               ; no     ; --                   ; --               ;
+; tx_start_f                                                                  ; Unassigned ; 16      ; Async. clear               ; no     ; --                   ; --               ;
+; tx_start_f_7bit                                                             ; Unassigned ; 16      ; Async. clear               ; no     ; --                   ; --               ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out~14                ; Unassigned ; 7       ; Clock enable               ; no     ; --                   ; --               ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[7]~16             ; Unassigned ; 8       ; Clock enable               ; no     ; --                   ; --               ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|sign_sel~0              ; Unassigned ; 18      ; Clock enable, Sync. clear  ; no     ; --                   ; --               ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|state.TRAN              ; Unassigned ; 8       ; Sync. clear                ; no     ; --                   ; --               ;
+; uart_instance:uart_instance1|rst_cnt[14]                                    ; Unassigned ; 88      ; Async. clear, Clock enable ; no     ; --                   ; --               ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out~12                   ; Unassigned ; 6       ; Clock enable               ; no     ; --                   ; --               ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|bps_sel                    ; Unassigned ; 6       ; Clock enable               ; no     ; --                   ; --               ;
+; uart_top7to7:uart_top7to7|rst_cnt[14]                                       ; Unassigned ; 45      ; Async. clear, Clock enable ; no     ; --                   ; --               ;
++-----------------------------------------------------------------------------+------------+---------+----------------------------+--------+----------------------+------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                ;
++-------------------------------------------+------------+---------+----------------------+------------------+
+; Name                                      ; Location   ; Fan-Out ; Global Resource Used ; Global Line Name ;
++-------------------------------------------+------------+---------+----------------------+------------------+
+; clk                                       ; Unassigned ; 297     ; Global Clock         ; Not Available    ;
+; rst_n                                     ; Unassigned ; 117     ; Global Clock         ; Not Available    ;
+; speed_select:speed_select|buad_clk_rx_reg ; Unassigned ; 21      ; Global Clock         ; Not Available    ;
+; spi_ctrl:spi_ctrl_instance|spi_clk        ; Unassigned ; 41      ; Global Clock         ; Not Available    ;
++-------------------------------------------+------------+---------+----------------------+------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                                       ;
++-----------------------------------------------------------------------------+---------+
+; Name                                                                        ; Fan-Out ;
++-----------------------------------------------------------------------------+---------+
+; uart_instance:uart_instance1|rst_cnt[14]                                    ; 88      ;
+; spi_slave_rst_b2b                                                           ; 54      ;
+; uart_top7to7:uart_top7to7|rst_cnt[14]                                       ; 45      ;
+; spi_ctrl:spi_ctrl_instance|rst_flag                                         ; 41      ;
+; Current.SAVE                                                                ; 27      ;
+; spi_rst                                                                     ; 25      ;
+; Current.WAIT                                                                ; 25      ;
+; Current.S1                                                                  ; 25      ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|sign_sel~0              ; 18      ;
+; tx_start_f_7bit                                                             ; 16      ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[7]~17 ; 16      ;
+; tx_start_f                                                                  ; 16      ;
+; my_uart_rx:my_uart_rx|rx_count[0]                                           ; 15      ;
+; my_uart_rx:my_uart_rx|rx_count[1]                                           ; 15      ;
+; Rx_cmd[10]                                                                  ; 14      ;
+; speed_select:speed_select|always1~0                                         ; 13      ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|tran_cnt[0]             ; 13      ;
+; Rx_cmd[16]                                                                  ; 13      ;
+; Rx_cmd[0]                                                                   ; 13      ;
+; Rx_cmd[4]                                                                   ; 12      ;
+; Rx_cmd[17]                                                                  ; 12      ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_received                          ; 11      ;
+; my_uart_rx:my_uart_rx|rx_count[2]                                           ; 11      ;
+; my_uart_rx:my_uart_rx|rx_count[3]                                           ; 11      ;
+; spi_slave_b2b:spi_slave_b2b_instance|recived_status                         ; 10      ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_received~0                        ; 9       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[3]             ; 9       ;
+; spi_slave_b2b:spi_slave_b2b_instance|first_byte[1]                          ; 9       ;
+; spi_ctrl:spi_ctrl_instance|LessThan1~1                                      ; 9       ;
+; spi_ctrl:spi_ctrl_instance|LessThan0~1                                      ; 9       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|tran_cnt[1]             ; 9       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|cnt8[2]           ; 9       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|tran_cnt[1]                ; 9       ;
+; Rx_cmd[8]                                                                   ; 9       ;
+; Rx_cmd[12]                                                                  ; 9       ;
+; Rx_cmd[2]                                                                   ; 9       ;
+; Rx_cmd[9]                                                                   ; 9       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|state.TRAN              ; 8       ;
+; sm_miso~0                                                                   ; 8       ;
+; rs232_rx8to8~0                                                              ; 8       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[1]                  ; 8       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[1]                     ; 8       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]~26                  ; 8       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[7]~22 ; 8       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[7]~16             ; 8       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[7]~1                                      ; 8       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|cnt8[4]           ; 8       ;
+; spi_slave_b2b:spi_slave_b2b_instance|always8~0                              ; 8       ;
+; linkSIO                                                                     ; 8       ;
+; linkSPS                                                                     ; 8       ;
+; Equal5~3                                                                    ; 8       ;
+; Rx_cmd[1]                                                                   ; 8       ;
+; Rx_cmd[20]                                                                  ; 8       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[1]             ; 7       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Equal3~2                ; 7       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out~14                ; 7       ;
+; spi_slave_b2b:spi_slave_b2b_instance|cnt[7]~1                               ; 7       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Equal3~2                   ; 7       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|bps_sel                 ; 7       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Equal6~0                ; 7       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|tran_cnt[2]             ; 7       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|cnt8[3]           ; 7       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|cnt8[1]           ; 7       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Equal8~0                               ; 7       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|tran_cnt[0]                ; 7       ;
+; linkUST                                                                     ; 7       ;
+; Equal4~4                                                                    ; 7       ;
+; Equal3~2                                                                    ; 7       ;
+; Equal2~9                                                                    ; 7       ;
+; Equal22~1                                                                   ; 7       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Equal3~3                ; 6       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Equal3~3                   ; 6       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[2]             ; 6       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[4]             ; 6       ;
+; rs232_rx                                                                    ; 6       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out~12                   ; 6       ;
+; spi_slave_b2b:spi_slave_b2b_instance|bitcnt[0]                              ; 6       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|bps_sel                    ; 6       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|tran_cnt[2]                ; 6       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_regnum[3]             ; 6       ;
+; linkFRS                                                                     ; 6       ;
+; Equal9~3                                                                    ; 6       ;
+; Equal8~5                                                                    ; 6       ;
+; Equal7~3                                                                    ; 6       ;
+; Equal19~0                                                                   ; 6       ;
+; Equal2~6                                                                    ; 6       ;
+; Rx_cmd[3]                                                                   ; 6       ;
+; Rx_cmd[11]                                                                  ; 6       ;
+; Equal23~1                                                                   ; 6       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|bps_sel                 ; 5       ;
+; speed_select:speed_select|cnt_rx[7]                                         ; 5       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|cnt8[1]~10        ; 5       ;
+; spi_slave_b2b:spi_slave_b2b_instance|sselr[1]                               ; 5       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out_sign                 ; 5       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[7]~0                                      ; 5       ;
+; spi_slave_b2b:spi_slave_b2b_instance|bitcnt[1]                              ; 5       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Equal6~0                   ; 5       ;
+; WideOr1~1                                                                   ; 5       ;
+; flag_reg                                                                    ; 5       ;
+; linkUSH                                                                     ; 5       ;
+; Equal15~2                                                                   ; 5       ;
+; Equal14~2                                                                   ; 5       ;
+; Equal13~4                                                                   ; 5       ;
+; Equal2~2                                                                    ; 5       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Decoder0~2        ; 4       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Decoder0~0        ; 4       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_sign               ; 4       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[0]             ; 4       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|sign_delay                 ; 4       ;
+; spi_slave_b2b:spi_slave_b2b_instance|bytecnt[1]                             ; 4       ;
+; my_uart_rx:my_uart_rx|rx_enable_reg                                         ; 4       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|LessThan1~0       ; 4       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|cnt8[0]           ; 4       ;
+; spi_slave_b2b:spi_slave_b2b_instance|bitcnt[2]                              ; 4       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[7]     ; 4       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[6]     ; 4       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[0]     ; 4       ;
+; WideOr7~0                                                                   ; 4       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_regnum[0]             ; 4       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_regnum[1]             ; 4       ;
+; WideOr24~0                                                                  ; 4       ;
+; Current.IDLE                                                                ; 4       ;
+; linkCMP                                                                     ; 4       ;
+; WideOr1~0                                                                   ; 4       ;
+; WideOr11~1                                                                  ; 4       ;
+; WideOr11~0                                                                  ; 4       ;
+; Equal11~1                                                                   ; 4       ;
+; Equal12~1                                                                   ; 4       ;
+; Equal10~2                                                                   ; 4       ;
+; WideOr18~0                                                                  ; 4       ;
+; WideOr21~2                                                                  ; 4       ;
+; Equal13~2                                                                   ; 4       ;
+; Equal21~1                                                                   ; 4       ;
+; Equal4~1                                                                    ; 4       ;
+; Equal5~2                                                                    ; 4       ;
+; Equal2~4                                                                    ; 4       ;
+; Equal10~0                                                                   ; 4       ;
+; spi_slave_b2b:spi_slave_b2b_instance|cnt[0]                                 ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|sckr[1]                                ; 3       ;
+; my_uart_rx:my_uart_rx|Mux2~0                                                ; 3       ;
+; my_uart_rx:my_uart_rx|Mux7~2                                                ; 3       ;
+; speed_select:speed_select|cnt_rx[2]                                         ; 3       ;
+; speed_select:speed_select|cnt_rx[1]                                         ; 3       ;
+; speed_select:speed_select|cnt_rx[4]                                         ; 3       ;
+; speed_select:speed_select|cnt_rx[3]                                         ; 3       ;
+; speed_select:speed_select|cnt_rx[5]                                         ; 3       ;
+; speed_select:speed_select|cnt_rx[6]                                         ; 3       ;
+; speed_select:speed_select|cnt_rx[8]                                         ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[4]                  ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[5]                  ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[7]                  ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[8]                  ; 3       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out_sign              ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|data_valid              ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|data_valid~0            ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|bitcnt[0]~1                            ; 3       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[4]                     ; 3       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[5]                     ; 3       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[7]                     ; 3       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[8]                     ; 3       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|data_valid                 ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|bytecnt[2]                             ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|bytecnt[4]                             ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|bytecnt[5]                             ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|bytecnt[6]                             ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_received[3]                  ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_received[4]                  ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_received[1]                  ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_received[6]                  ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_received[5]                  ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_received[2]                  ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_received[0]                  ; 3       ;
+; spi_slave_b2b:spi_slave_b2b_instance|bytecnt[0]                             ; 3       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[7]~16 ; 3       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[0]                ; 3       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|tran_cnt[3]             ; 3       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[3]     ; 3       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[2]     ; 3       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[5]     ; 3       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[4]     ; 3       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[1]     ; 3       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[0]                   ; 3       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|tran_cnt[3]                ; 3       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_regnum[2]             ; 3       ;
+; WideOr12~2                                                                  ; 3       ;
+; WideOr12~1                                                                  ; 3       ;
+; WideOr25~0                                                                  ; 3       ;
+; WideOr16~0                                                                  ; 3       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[0]                                        ; 3       ;
+; linkPWT                                                                     ; 3       ;
+; linkSHL                                                                     ; 3       ;
+; linkFLP                                                                     ; 3       ;
+; linkFOC                                                                     ; 3       ;
+; linkTRG                                                                     ; 3       ;
+; linkFSP                                                                     ; 3       ;
+; linkGLO                                                                     ; 3       ;
+; Buff_temp[10]                                                               ; 3       ;
+; Buff_temp[2]                                                                ; 3       ;
+; Buff_temp[0]                                                                ; 3       ;
+; Buff_temp[1]                                                                ; 3       ;
+; Buff_temp[11]                                                               ; 3       ;
+; Buff_temp[8]                                                                ; 3       ;
+; Buff_temp[9]                                                                ; 3       ;
+; Buff_temp[12]                                                               ; 3       ;
+; Buff_temp[3]                                                                ; 3       ;
+; Buff_temp[5]                                                                ; 3       ;
+; Buff_temp[6]                                                                ; 3       ;
+; Buff_temp[7]                                                                ; 3       ;
+; Buff_temp[13]                                                               ; 3       ;
+; Buff_temp[15]                                                               ; 3       ;
+; Buff_temp[14]                                                               ; 3       ;
+; Buff_temp[4]                                                                ; 3       ;
+; WideNor1~2                                                                  ; 3       ;
+; WideOr3~2                                                                   ; 3       ;
+; Equal6~1                                                                    ; 3       ;
+; Equal8~3                                                                    ; 3       ;
+; Equal7~1                                                                    ; 3       ;
+; Equal10~1                                                                   ; 3       ;
+; Equal8~2                                                                    ; 3       ;
+; Equal18~1                                                                   ; 3       ;
+; Equal16~2                                                                   ; 3       ;
+; Rx_cmd[18]                                                                  ; 3       ;
+; Equal5~0                                                                    ; 3       ;
+; Equal16~0                                                                   ; 3       ;
+; Equal22~0                                                                   ; 3       ;
+; Equal8~0                                                                    ; 3       ;
+; BusE[85]~9                                                                  ; 3       ;
+; BusA[16]~14                                                                 ; 3       ;
+; uart_top7to7:uart_top7to7|rst_cnt[0]                                        ; 2       ;
+; uart_instance:uart_instance1|rst_cnt[0]                                     ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|cnt[1]                                 ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|cnt[2]                                 ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|cnt[3]                                 ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|cnt[4]                                 ; 2       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[0]                                     ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Equal4~3                ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[11]                 ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[10]                 ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[9]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[8]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[12]                 ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[7]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[6]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[4]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[5]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[3]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[0]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[2]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[1]                  ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|cnt[5]                                 ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Decoder0~5        ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Decoder0~4        ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Decoder0~3        ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Decoder0~1        ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Decoder0~3              ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Decoder0~1              ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Decoder0~0              ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_sign~0             ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[1]~4                                     ; 2       ;
+; my_uart_rx:my_uart_rx|Mux8~0                                                ; 2       ;
+; my_uart_rx:my_uart_rx|rx_complete_reg                                       ; 2       ;
+; speed_select:speed_select|cnt_rx[0]                                         ; 2       ;
+; speed_select:speed_select|always2~1                                         ; 2       ;
+; speed_select:speed_select|cnt_rx[11]                                        ; 2       ;
+; speed_select:speed_select|cnt_rx[10]                                        ; 2       ;
+; speed_select:speed_select|cnt_rx[12]                                        ; 2       ;
+; speed_select:speed_select|cnt_rx[9]                                         ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[7]~1                                     ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[7]~0                                     ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[9]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[0]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[2]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[3]                  ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[11]                 ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|sign_delay              ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|cnt[6]                                 ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[9]                     ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[0]                     ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[2]                     ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[3]                     ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[11]                    ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|bytecnt[3]                             ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|bytecnt[7]                             ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_received[7]                  ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~35                                ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~30                                ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~25                                ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~20                                ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~15                                ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~10                                ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~5                                 ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~0                                 ; 2       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[7]                                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[6]                                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[5]                                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[4]                                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[3]                                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[2]                                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[7]                                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[5]                                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[6]                                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[4]                                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[3]                                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[2]                                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_rx_dbr[4]     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_rx_dbr[5]     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_rx_dbr[7]     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_rx_dbr[6]     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_rx_dbr[3]     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_rx_dbr[2]     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_rx_dbr[1]     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_rx_dbr[0]     ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[7]              ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[5]              ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[4]              ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[3]              ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[6]              ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[1]              ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[0]              ; 2       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_in[2]              ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_regnum[1]~0           ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[5]                                       ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[0]                                       ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[3]                                       ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[4]                                       ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[1]                                       ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[2]                                       ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[6]                                       ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[7]                                       ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[5]                                        ; 2       ;
+; Equal0~2                                                                    ; 2       ;
+; Flag_temp                                                                   ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[2]                ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[5]                ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[6]                ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[4]                ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~1                 ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[7]                ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[3]                ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[1]                ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[4]      ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[7]      ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[6]      ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[5]      ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[0]      ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[3]      ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[1]      ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[2]      ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|sckr[2]                                ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|cnt[7]                                 ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|rs_tx~1                    ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[6]                   ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[5]                   ; 2       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|rs_tx~0                    ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[4]                   ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[3]                   ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[1]                   ; 2       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[2]                   ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[3]                     ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[2]                     ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]                     ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[5]                     ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[4]                     ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[6]                     ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[1]                     ; 2       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[0]                     ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[3]    ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[2]    ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[7]    ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[5]    ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[4]    ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[6]    ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[1]    ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[0]    ; 2       ;
+; WideOr20~0                                                                  ; 2       ;
+; Equal17~0                                                                   ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[7]                ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[5]                ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[4]                ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[3]                ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[6]                ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[1]                ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[0]                ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[2]                ; 2       ;
+; WideOr0~0                                                                   ; 2       ;
+; Equal6~2                                                                    ; 2       ;
+; WideOr1~2                                                                   ; 2       ;
+; WideOr22~0                                                                  ; 2       ;
+; WideOr18~1                                                                  ; 2       ;
+; Equal20~1                                                                   ; 2       ;
+; WideNor1~3                                                                  ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[3]                                        ; 2       ;
+; Equal1~0                                                                    ; 2       ;
+; Equal0~1                                                                    ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[4]                                        ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[1]                                        ; 2       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[6]                                        ; 2       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|rs_tx                   ; 2       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_clkr          ; 2       ;
+; linkFIC                                                                     ; 2       ;
+; linkFDC                                                                     ; 2       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_ok                    ; 2       ;
+; BusA[8]~39                                                                  ; 2       ;
+; BusA[15]~37                                                                 ; 2       ;
+; BusA[15]~36                                                                 ; 2       ;
+; linkFPT                                                                     ; 2       ;
+; linkTSI                                                                     ; 2       ;
+; linkFCP                                                                     ; 2       ;
+; BusA[4]~32                                                                  ; 2       ;
+; linkGII                                                                     ; 2       ;
+; linkEWM                                                                     ; 2       ;
+; linkPMH                                                                     ; 2       ;
+; linkPMS                                                                     ; 2       ;
+; Buff_temp[16]                                                               ; 2       ;
+; Buff_temp[18]                                                               ; 2       ;
+; Buff_temp[20]                                                               ; 2       ;
+; Buff_temp[19]                                                               ; 2       ;
+; Buff_temp[21]                                                               ; 2       ;
+; Buff_temp[23]                                                               ; 2       ;
+; Buff_temp[22]                                                               ; 2       ;
+; Buff_temp[17]                                                               ; 2       ;
+; WideNor1                                                                    ; 2       ;
+; Equal7~2                                                                    ; 2       ;
+; Equal3~1                                                                    ; 2       ;
+; Equal9~2                                                                    ; 2       ;
+; Equal14~0                                                                   ; 2       ;
+; Equal13~3                                                                   ; 2       ;
+; Equal9~0                                                                    ; 2       ;
+; Equal6~0                                                                    ; 2       ;
+; WideNor1~0                                                                  ; 2       ;
+; Equal2~7                                                                    ; 2       ;
+; Equal4~2                                                                    ; 2       ;
+; Equal2~5                                                                    ; 2       ;
+; Equal3~0                                                                    ; 2       ;
+; Equal15~0                                                                   ; 2       ;
+; Equal5~1                                                                    ; 2       ;
+; Equal8~1                                                                    ; 2       ;
+; Equal12~0                                                                   ; 2       ;
+; Equal4~0                                                                    ; 2       ;
+; Equal7~0                                                                    ; 2       ;
+; Equal13~0                                                                   ; 2       ;
+; Equal2~1                                                                    ; 2       ;
+; Equal2~0                                                                    ; 2       ;
+; BusE[97]~14                                                                 ; 2       ;
+; BusE[91]~12                                                                 ; 2       ;
+; BusE[83]~8                                                                  ; 2       ;
+; BusA[15]~13                                                                 ; 2       ;
+; BusA[3]~9                                                                   ; 2       ;
+; WideOr3~4                                                                   ; 1       ;
+; WideOr21~3                                                                  ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[1]                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[1]                                     ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~67                                           ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~65                                           ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[2]                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~67                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~65                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[2]                                     ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~62                                           ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~60                                           ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[3]                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~62                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~60                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[3]                                     ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~57                                           ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~55                                           ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[4]                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~57                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~55                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[4]                                     ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~52                                           ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~50                                           ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[5]                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~52                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~50                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[5]                                     ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~47                                           ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~45                                           ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[6]                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~47                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~45                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[6]                                     ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~42                                           ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~40                                           ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[7]                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~42                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~40                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[7]                                     ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~37                                ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~37                                           ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~35                                           ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[8]                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~37                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~35                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[8]                                     ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~32                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~30                                ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~32                                           ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~30                                           ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[9]                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~32                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~30                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[9]                                     ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_sent[0]                      ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~27                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~25                                ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~27                                           ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~25                                           ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[10]                                       ; 1       ;
+; uart_instance:uart_instance1|Add0~27                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~25                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[10]                                    ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_sent[1]                      ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~22                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~20                                ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~22                                           ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~20                                           ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[11]                                       ; 1       ;
+; uart_instance:uart_instance1|Add0~22                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~20                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[11]                                    ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_sent[2]                      ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~17                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~15                                ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~17                                           ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~15                                           ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[12]                                       ; 1       ;
+; uart_instance:uart_instance1|Add0~17                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~15                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[12]                                    ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_sent[3]                      ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~12                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~10                                ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~12                                           ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~10                                           ; 1       ;
+; uart_top7to7:uart_top7to7|rst_cnt[13]                                       ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|mosir[0]                               ; 1       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[0]~15                                  ; 1       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[0]                                     ; 1       ;
+; uart_instance:uart_instance1|Add0~12                                        ; 1       ;
+; uart_instance:uart_instance1|Add0~10                                        ; 1       ;
+; uart_instance:uart_instance1|rst_cnt[13]                                    ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Equal4~2                ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[11]~26              ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[10]~24              ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[9]~22               ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[8]~20               ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Equal4~1                ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[7]~16               ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[6]~14               ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[4]~12               ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[5]~10               ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Equal4~0                ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[3]~8                ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[0]~6                ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[2]~4                ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|cnt[1]~2                ; 1       ;
+; my_uart_rx:my_uart_rx|rx_complete_reg~1                                     ; 1       ;
+; speed_select:speed_select|LessThan0~1                                       ; 1       ;
+; speed_select:speed_select|LessThan0~0                                       ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~62                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~60                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~57                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~55                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~52                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~50                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~47                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~45                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~42                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~40                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~37                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~35                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~32                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~30                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~25                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~22                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~20                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~17                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~15                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~12                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~10                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~7                  ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~5                  ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~2                  ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add0~0                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_sent[4]                      ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~7                                 ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~5                                 ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~62                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~60                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~57                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~55                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~52                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~50                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~47                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~45                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~42                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~40                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~37                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~35                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~32                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~30                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~25                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~22                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~20                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~17                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~15                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~12                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~10                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~7                     ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~5                     ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~2                     ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add0~0                     ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~7                                            ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~5                                            ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|mosir[1]                               ; 1       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[1]~13                                  ; 1       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[1]                                     ; 1       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[1]~13                                  ; 1       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[1]                                     ; 1       ;
+; uart_instance:uart_instance1|Add0~7                                         ; 1       ;
+; uart_instance:uart_instance1|Add0~5                                         ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Decoder0~4              ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|Decoder0~2              ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|data_sign~1             ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[1]~9           ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[0]~7           ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[3]~5           ; 1       ;
+; uart_instance:uart_instance1|my_uart_rx8to8:rx_inst|tran_cnt[2]~3           ; 1       ;
+; my_uart_rx:my_uart_rx|Mux6~2                                                ; 1       ;
+; my_uart_rx:my_uart_rx|rx_data_temp[0]~6                                     ; 1       ;
+; my_uart_rx:my_uart_rx|Mux7~3                                                ; 1       ;
+; my_uart_rx:my_uart_rx|Mux5~0                                                ; 1       ;
+; my_uart_rx:my_uart_rx|rx_enable_reg~0                                       ; 1       ;
+; speed_select:speed_select|always2~4                                         ; 1       ;
+; speed_select:speed_select|always2~3                                         ; 1       ;
+; speed_select:speed_select|always2~2                                         ; 1       ;
+; speed_select:speed_select|cnt_rx[2]~25                                      ; 1       ;
+; speed_select:speed_select|cnt_rx[1]~23                                      ; 1       ;
+; speed_select:speed_select|cnt_rx[0]~21                                      ; 1       ;
+; speed_select:speed_select|cnt_rx[4]~19                                      ; 1       ;
+; speed_select:speed_select|cnt_rx[3]~17                                      ; 1       ;
+; speed_select:speed_select|cnt_rx[7]~15                                      ; 1       ;
+; speed_select:speed_select|cnt_rx[5]~13                                      ; 1       ;
+; speed_select:speed_select|cnt_rx[6]~11                                      ; 1       ;
+; speed_select:speed_select|cnt_rx[8]~9                                       ; 1       ;
+; speed_select:speed_select|cnt_rx[11]~7                                      ; 1       ;
+; speed_select:speed_select|cnt_rx[10]~5                                      ; 1       ;
+; speed_select:speed_select|always2~0                                         ; 1       ;
+; speed_select:speed_select|cnt_rx[9]~1                                       ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[10]                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[6]                  ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Equal3~1                ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|cnt[12]                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Equal3~0                ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|WideNor0~0              ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|tran_cnt[0]~5           ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add1~1                  ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|tran_cnt[3]~2           ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|sselr[0]                               ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|sckr[0]                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_sent[5]                      ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add4~0                                 ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[10]                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[6]                     ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Equal3~1                   ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|cnt[12]                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Equal3~0                   ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|WideNor0~0                 ; 1       ;
+; uart_top7to7:uart_top7to7|Add0~0                                            ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|always1~1                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Add1~0                     ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|always1~0                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|always5~5                              ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|always5~4                              ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|always5~3                              ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|always5~2                              ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|always5~1                              ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|always5~0                              ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]~25                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~40                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]~24                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~37                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~32                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]~23                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~27                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~22                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]~22                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Equal7~0                               ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~17                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~12                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]~21                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~7                                 ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add1~2                                 ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]~20                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~30                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]~19                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~27                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~25                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~22                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~20                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]~18                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~17                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~15                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~12                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~10                                ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]~17                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Equal6~0                               ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~7                                 ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~5                                 ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~2                                 ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Add2~0                                 ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[7]~16                  ; 1       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[6]~9                                   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[5]~7                                   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|LessThan1~0                                      ; 1       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[4]~5                                   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[3]~3                                   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|rst_count[2]~1                                   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[5]~9                                   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[6]~7                                   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|LessThan0~0                                      ; 1       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[4]~5                                   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[3]~3                                   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|clk_count[2]~1                                   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[7]~21 ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Equal0~0          ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[7]~20 ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[7]~19 ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[7]~18 ; 1       ;
+; uart_instance:uart_instance1|Add0~0                                         ; 1       ;
+; Selector1~0                                                                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~6                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~5                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add1~0                  ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[2]~13             ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~4                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~3                 ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~2                 ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[5]~11             ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[6]~9              ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[4]~7              ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Add2~0                  ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|Mux13~0                 ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[3]~3              ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_out[1]~1              ; 1       ;
+; uart_instance:uart_instance1|my_uart_tx8to8:tx_inst|rs_tx~0                 ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|cnt8[0]~9         ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_mosir~0       ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|cnt8[3]~5         ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Mux0~3            ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[4]~15   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Mux0~2            ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[6]~11   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[5]~9    ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Mux0~1            ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[0]~7    ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Mux0~0            ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[3]~5    ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|cnt8[2]~3         ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[1]~3    ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|cnt8[1]~1         ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_tx_db[2]~1    ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_sent[6]                      ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[3]~13  ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[2]~11  ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Equal1~1          ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[5]~7   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[4]~5   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[6]~3   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Equal1~0          ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|data_count[1]~1   ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|rs_tx~3                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|rs_tx~2                    ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[5]~9                 ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[4]~7                 ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Mux13~1                    ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|Mux13~0                    ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[3]~5                 ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[1]~3                 ; 1       ;
+; uart_top7to7:uart_top7to7|data_deal:data_deal|data_out[2]~1                 ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[3]~15                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[2]~13                  ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Equal9~1                               ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[5]~9                   ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[4]~7                   ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[6]~5                   ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|Equal9~0                               ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[1]~3                   ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|received_memory[0]~1                   ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[3]~15 ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[2]~13 ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Equal2~1          ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[5]~9  ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[4]~7  ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[6]~5  ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|Equal2~0          ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[1]~3  ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|recv_detect[0]~1  ; 1       ;
+; WideOr12~3                                                                  ; 1       ;
+; WideOr13~1                                                                  ; 1       ;
+; WideOr3~3                                                                   ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_ok~1                  ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[5]~13             ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[4]~11             ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[3]~9              ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_ok~0                  ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[6]~7              ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[1]~5              ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[0]~3              ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|data_reg[2]~1              ; 1       ;
+; uart_instance:uart_instance1|data_deal:data_deal|Equal0~0                   ; 1       ;
+; WideOr22~1                                                                  ; 1       ;
+; WideOr6~1                                                                   ; 1       ;
+; WideOr6~0                                                                   ; 1       ;
+; WideOr17~0                                                                  ; 1       ;
+; WideOr16                                                                    ; 1       ;
+; WideOr12~0                                                                  ; 1       ;
+; WideOr13~0                                                                  ; 1       ;
+; always2~0                                                                   ; 1       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[2]                                        ; 1       ;
+; my_uart_rx:my_uart_rx|rx_data_reg[7]                                        ; 1       ;
+; Equal0~0                                                                    ; 1       ;
+; BusE[95]~34                                                                 ; 1       ;
+; BusE[95]~33                                                                 ; 1       ;
+; BusE[87]~32                                                                 ; 1       ;
+; BusE[87]~31                                                                 ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|spi_mosir         ; 1       ;
+; BusE[87]~30                                                                 ; 1       ;
+; spi_slave_b2b:spi_slave_b2b_instance|byte_data_sent[7]                      ; 1       ;
+; spi_ctrl:spi_ctrl_instance|cs_n                                             ; 1       ;
+; BusC[50]~8                                                                  ; 1       ;
+; BusC[50]~7                                                                  ; 1       ;
+; uart_top7to7:uart_top7to7|my_uart_tx7to7:tx_inst|rs_tx                      ; 1       ;
+; BusC[50]~6                                                                  ; 1       ;
+; spi_ctrl:spi_ctrl_instance|spi_master:spi_master_instance|receive_status    ; 1       ;
+; BusA[17]~42                                                                 ; 1       ;
+; BusA[17]~41                                                                 ; 1       ;
+; BusA[17]~40                                                                 ; 1       ;
+; BusA[15]~38                                                                 ; 1       ;
+; BusA[15]~35                                                                 ; 1       ;
+; BusA[15]~34                                                                 ; 1       ;
+; BusA[4]~33                                                                  ; 1       ;
+; Equal4~5                                                                    ; 1       ;
+; Equal8~4                                                                    ; 1       ;
+; Equal15~1                                                                   ; 1       ;
+; Equal14~1                                                                   ; 1       ;
+; Equal2~8                                                                    ; 1       ;
+; Equal11~0                                                                   ; 1       ;
+; Equal9~1                                                                    ; 1       ;
+; WideNor1~1                                                                  ; 1       ;
+; Equal4~3                                                                    ; 1       ;
+; Equal18~0                                                                   ; 1       ;
+; Equal16~3                                                                   ; 1       ;
+; Equal16~1                                                                   ; 1       ;
+; Equal13~1                                                                   ; 1       ;
+; Equal21~0                                                                   ; 1       ;
+; Equal20~0                                                                   ; 1       ;
+; Rx_cmd[6]                                                                   ; 1       ;
+; Equal2~3                                                                    ; 1       ;
+; Equal23~0                                                                   ; 1       ;
+; Rx_cmd[5]                                                                   ; 1       ;
+; Rx_cmd[7]                                                                   ; 1       ;
+; Rx_cmd[13]                                                                  ; 1       ;
+; Rx_cmd[15]                                                                  ; 1       ;
+; Rx_cmd[19]                                                                  ; 1       ;
+; Rx_cmd[21]                                                                  ; 1       ;
+; Rx_cmd[23]                                                                  ; 1       ;
+; led~reg0                                                                    ; 1       ;
+; BusC[51]~1                                                                  ; 1       ;
+; BusB[30]~8                                                                  ; 1       ;
+; BusA[5]~11                                                                  ; 1       ;
+; BusA[2]~8                                                                   ; 1       ;
++-----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------+
+; Fitter Device Options                                              ;
++----------------------------------------------+---------------------+
+; Option                                       ; Setting             ;
++----------------------------------------------+---------------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off                 ;
+; Enable device-wide reset (DEV_CLRn)          ; Off                 ;
+; Enable device-wide output enable (DEV_OE)    ; Off                 ;
+; Enable INIT_DONE output                      ; Off                 ;
+; Configuration scheme                         ; Passive Serial      ;
+; Reserve all unused pins                      ; As input tri-stated ;
++----------------------------------------------+---------------------+
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (119006): Selected device EPM570T100C5 for design "top"
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
+Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info (176445): Device EPM240T100C5 is compatible
+    Info (176445): Device EPM240T100I5 is compatible
+    Info (176445): Device EPM240T100A5 is compatible
+    Info (176445): Device EPM570T100I5 is compatible
+    Info (176445): Device EPM570T100A5 is compatible
+Critical Warning (169085): No exact pin location assignment(s) for 23 pins of 51 total pins. For the list of the pins please refer to the Input Pins, Output Pins, and Bidir Pins tables in the Fitter report and look for the user pins whose location is assigned by Fitter.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'top.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332144): No user constrained base clocks found in the design
+Info (332128): Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
+    Info (332127): Assuming a default timing requirement
+Info (332111): Found 5 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):    1.000          clk
+    Info (332111):    1.000 my_uart_rx:my_uart_rx|rx_enable_reg
+    Info (332111):    1.000     rs232_rx
+    Info (332111):    1.000 speed_select:speed_select|buad_clk_rx_reg
+    Info (332111):    1.000 spi_ctrl:spi_ctrl_instance|spi_clk
+Info (186079): Completed User Assigned Global Signals Promotion Operation
+Info (186215): Automatically promoted signal "clk" to use Global clock in PIN 12
+Info (186216): Automatically promoted some destinations of signal "spi_ctrl:spi_ctrl_instance|spi_clk" to use Global clock
+    Info (186217): Destination "spi_ctrl:spi_ctrl_instance|spi_clk" may be non-global or may not use global clock
+Info (186215): Automatically promoted signal "speed_select:speed_select|buad_clk_rx_reg" to use Global clock
+Info (186216): Automatically promoted some destinations of signal "rst_n" to use Global clock
+    Info (186217): Destination "spi_slave_rst_b2b" may be non-global or may not use global clock
+    Info (186217): Destination "spi_rst" may be non-global or may not use global clock
+    Info (186217): Destination "tx_start_f" may be non-global or may not use global clock
+    Info (186217): Destination "tx_start_f_7bit" may be non-global or may not use global clock
+    Info (186217): Destination "my_uart_rx:my_uart_rx|rx_enable_reg~0" may be non-global or may not use global clock
+    Info (186217): Destination "my_uart_rx:my_uart_rx|rx_complete_reg~1" may be non-global or may not use global clock
+Info (186228): Pin "rst_n" drives global clock, but is not placed in a dedicated clock pin position
+Info (186079): Completed Auto Global Promotion Operation
+Info (176234): Starting register packing
+Info (186468): Started processing fast register assignments
+Info (186469): Finished processing fast register assignments
+Info (176235): Finished register packing
+Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
+    Info (176211): Number of I/O pins in group: 23 (unused VREF, 3.3V VCCIO, 0 input, 0 output, 23 bidirectional)
+        Info (176212): I/O standards used: 3.3-V LVTTL.
+Info (176215): I/O bank details before I/O pin placement
+    Info (176214): Statistics of I/O banks
+        Info (176213): I/O bank number 1 does not use VREF pins and has 3.3V VCCIO pins. 18 total pin(s) used --  18 pins available
+        Info (176213): I/O bank number 2 does not use VREF pins and has 3.3V VCCIO pins. 10 total pin(s) used --  30 pins available
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
+Info (170189): Fitter placement preparation operations beginning
+Error (170011): Design contains 659 blocks of type logic cell.  However, the device contains only 570 blocks.
+Warning (14714): The fitter is having difficulty fitting the design.  Try increasing the "Auto Packed Register" setting in the Fitter Settings page under "More Settings" to minimize area.
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
+Info (11888): Total time spent on timing analysis during the Fitter is 0.01 seconds.
+Error (171000): Can't fit design in device
+Warning (169064): Following 32 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
+    Info (169065): Pin BusA[6] has a permanently disabled output enable
+    Info (169065): Pin BusA[7] has a permanently disabled output enable
+    Info (169065): Pin BusA[9] has a permanently disabled output enable
+    Info (169065): Pin BusA[10] has a permanently disabled output enable
+    Info (169065): Pin BusA[11] has a permanently disabled output enable
+    Info (169065): Pin BusA[12] has a permanently disabled output enable
+    Info (169065): Pin BusA[13] has a permanently disabled output enable
+    Info (169065): Pin BusA[14] has a permanently disabled output enable
+    Info (169065): Pin BusB[31] has a permanently disabled output enable
+    Info (169065): Pin BusB[32] has a permanently disabled output enable
+    Info (169065): Pin BusB[35] has a permanently disabled output enable
+    Info (169065): Pin BusB[36] has a permanently disabled output enable
+    Info (169065): Pin BusB[37] has a permanently disabled output enable
+    Info (169065): Pin BusB[38] has a permanently disabled output enable
+    Info (169065): Pin BusB[39] has a permanently disabled output enable
+    Info (169065): Pin BusE[84] has a permanently disabled output enable
+    Info (169065): Pin BusE[86] has a permanently disabled output enable
+    Info (169065): Pin BusE[88] has a permanently disabled output enable
+    Info (169065): Pin BusE[90] has a permanently disabled output enable
+    Info (169065): Pin BusE[92] has a permanently disabled output enable
+    Info (169065): Pin BusE[93] has a permanently disabled output enable
+    Info (169065): Pin BusE[94] has a permanently disabled output enable
+    Info (169065): Pin BusE[96] has a permanently disabled output enable
+    Info (169065): Pin BusA[2] has a permanently disabled output enable
+    Info (169065): Pin BusA[3] has a permanently disabled output enable
+    Info (169065): Pin BusA[5] has a permanently disabled output enable
+    Info (169065): Pin BusA[16] has a permanently disabled output enable
+    Info (169065): Pin BusB[30] has a permanently disabled output enable
+    Info (169065): Pin BusC[51] has a permanently disabled output enable
+    Info (169065): Pin BusC[52] has a permanently disabled output enable
+    Info (169065): Pin BusE[85] has a permanently disabled output enable
+    Info (169065): Pin BusE[97] has a permanently disabled output enable
+Info (144001): Generated suppressed messages file C:/Code/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdmke15z/top.fit.smsg
+Error: Quartus II 64-Bit Fitter was unsuccessful. 2 errors, 6 warnings
+    Error: Peak virtual memory: 614 megabytes
+    Error: Processing ended: Thu Jun 29 09:51:41 2017
+    Error: Elapsed time: 00:00:03
+    Error: Total CPU time (on all processors): 00:00:02
+
+
++----------------------------+
+; Fitter Suppressed Messages ;
++----------------------------+
+The suppressed messages can be found in C:/Code/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdmke15z/top.fit.smsg.
+
+

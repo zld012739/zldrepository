@@ -1,0 +1,109 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -15.393
+TNS   : -833.811
+
+Type  : Setup 'i2c_slave_lpc8_polling:i2c_slave_lpc8_polling_instance|bus_clk'
+Slack : -9.969
+TNS   : -824.901
+
+Type  : Setup 'spi_ctrl:spi_ctrl_instance|spi_clk'
+Slack : -9.641
+TNS   : -498.918
+
+Type  : Setup 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -5.003
+TNS   : -89.992
+
+Type  : Setup 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : -1.266
+TNS   : -1.266
+
+Type  : Hold 'clk'
+Slack : -2.149
+TNS   : -3.956
+
+Type  : Hold 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -1.127
+TNS   : -9.016
+
+Type  : Hold 'i2c_slave_lpc8_polling:i2c_slave_lpc8_polling_instance|bus_clk'
+Slack : 1.404
+TNS   : 0.000
+
+Type  : Hold 'spi_ctrl:spi_ctrl_instance|spi_clk'
+Slack : 1.447
+TNS   : 0.000
+
+Type  : Hold 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 1.712
+TNS   : 0.000
+
+Type  : Recovery 'rs232_rx'
+Slack : -4.761
+TNS   : -4.761
+
+Type  : Recovery 'i2c_slave_lpc8_polling:i2c_slave_lpc8_polling_instance|bus_clk'
+Slack : -4.338
+TNS   : -415.293
+
+Type  : Recovery 'clk'
+Slack : -3.685
+TNS   : -72.131
+
+Type  : Recovery 'spi_ctrl:spi_ctrl_instance|spi_clk'
+Slack : -2.269
+TNS   : -119.590
+
+Type  : Recovery 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 1.292
+TNS   : 0.000
+
+Type  : Removal 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -1.346
+TNS   : -1.346
+
+Type  : Removal 'spi_ctrl:spi_ctrl_instance|spi_clk'
+Slack : 1.966
+TNS   : 0.000
+
+Type  : Removal 'i2c_slave_lpc8_polling:i2c_slave_lpc8_polling_instance|bus_clk'
+Slack : 2.968
+TNS   : 0.000
+
+Type  : Removal 'clk'
+Slack : 3.014
+TNS   : 0.000
+
+Type  : Removal 'rs232_rx'
+Slack : 5.207
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'rs232_rx'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'i2c_slave_lpc8_polling:i2c_slave_lpc8_polling_instance|bus_clk'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'spi_ctrl:spi_ctrl_instance|spi_clk'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

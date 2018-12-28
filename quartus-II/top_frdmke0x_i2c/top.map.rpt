@@ -1,0 +1,1241 @@
+Analysis & Synthesis report for top
+Mon Sep 18 13:49:59 2017
+Quartus II 64-Bit Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top|Current
+  9. State Machine - |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|sh8in_state
+ 10. State Machine - |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|sh8out_state
+ 11. State Machine - |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|main_state
+ 12. State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state
+ 13. State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state
+ 14. State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state
+ 15. State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|ack_state
+ 16. State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state
+ 17. Registers Removed During Synthesis
+ 18. General Register Statistics
+ 19. Inverted Register Statistics
+ 20. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 21. Parameter Settings for User Entity Instance: Top-level Entity: |top
+ 22. Parameter Settings for User Entity Instance: i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst
+ 23. Parameter Settings for User Entity Instance: I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance
+ 24. Parameter Settings for User Entity Instance: speed_select:speed_select
+ 25. Port Connectivity Checks: "my_uart_tx:my_uart_tx"
+ 26. Port Connectivity Checks: "my_uart_rx:my_uart_rx"
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                             ;
++-----------------------------+--------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Sep 18 13:49:59 2017      ;
+; Quartus II 64-Bit Version   ; 14.0.0 Build 200 06/17/2014 SJ Web Edition ;
+; Revision Name               ; top                                        ;
+; Top-level Entity Name       ; top                                        ;
+; Family                      ; MAX II                                     ;
+; Total logic elements        ; 564                                        ;
+; Total pins                  ; 7                                          ;
+; Total virtual pins          ; 0                                          ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                              ;
++-----------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EPM570T100C5       ;                    ;
+; Top-level entity name                                                      ; top                ; top                ;
+; Family name                                                                ; MAX II             ; Cyclone IV GX      ;
+; Verilog Show LMF Mapping Messages                                          ; Off                ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                        ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+; top.v                            ; yes             ; User Verilog HDL File  ; C:/Users/b48516/Documents/My Received Files/ke0x_i2c/top.v          ;         ;
+; i2c_slave.v                      ; yes             ; User Verilog HDL File  ; C:/Users/b48516/Documents/My Received Files/ke0x_i2c/i2c_slave.v    ;         ;
+; i2c_slave_op.v                   ; yes             ; User Verilog HDL File  ; C:/Users/b48516/Documents/My Received Files/ke0x_i2c/i2c_slave_op.v ;         ;
+; I2C_MASTER.v                     ; yes             ; User Verilog HDL File  ; C:/Users/b48516/Documents/My Received Files/ke0x_i2c/I2C_MASTER.v   ;         ;
+; I2C_wr.v                         ; yes             ; User Verilog HDL File  ; C:/Users/b48516/Documents/My Received Files/ke0x_i2c/I2C_wr.v       ;         ;
+; speed_select.v                   ; yes             ; User Verilog HDL File  ; C:/Users/b48516/Documents/My Received Files/ke0x_i2c/speed_select.v ;         ;
+; uart_rx.v                        ; yes             ; User Verilog HDL File  ; C:/Users/b48516/Documents/My Received Files/ke0x_i2c/uart_rx.v      ;         ;
+; uart_tx.v                        ; yes             ; User Verilog HDL File  ; C:/Users/b48516/Documents/My Received Files/ke0x_i2c/uart_tx.v      ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 564   ;
+;     -- Combinational with no register       ; 258   ;
+;     -- Register only                        ; 66    ;
+;     -- Combinational with a register        ; 240   ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 303   ;
+;     -- 3 input functions                    ; 61    ;
+;     -- 2 input functions                    ; 126   ;
+;     -- 1 input functions                    ; 7     ;
+;     -- 0 input functions                    ; 1     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 499   ;
+;     -- arithmetic mode                      ; 65    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 31    ;
+;     -- asynchronous clear/load mode         ; 274   ;
+;                                             ;       ;
+; Total registers                             ; 306   ;
+; Total logic cells in carry chains           ; 73    ;
+; I/O pins                                    ; 7     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 199   ;
+; Total fan-out                               ; 2466  ;
+; Average fan-out                             ; 4.32  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                           ;
++----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                              ; Library Name ;
++----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------+--------------+
+; |top                                   ; 564 (78)    ; 306          ; 0          ; 7    ; 0            ; 258 (16)     ; 66 (25)           ; 240 (37)         ; 73 (0)          ; 0 (0)      ; |top                                                             ; work         ;
+;    |I2C_MASTER:I2C_MASTER_instance|    ; 277 (64)    ; 109          ; 0          ; 0    ; 0            ; 168 (23)     ; 13 (5)            ; 96 (36)          ; 39 (23)         ; 0 (0)      ; |top|I2C_MASTER:I2C_MASTER_instance                              ; work         ;
+;       |I2C_wr:I2C_wr_instance|         ; 213 (213)   ; 68           ; 0          ; 0    ; 0            ; 145 (145)    ; 8 (8)             ; 60 (60)          ; 16 (16)         ; 0 (0)      ; |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance       ; work         ;
+;    |i2c_slave:i2c_slave_instance|      ; 151 (4)     ; 99           ; 0          ; 0    ; 0            ; 52 (4)       ; 20 (0)            ; 79 (0)           ; 21 (0)          ; 0 (0)      ; |top|i2c_slave:i2c_slave_instance                                ; work         ;
+;       |i2c_slave_op:i2c_slave_op_inst| ; 147 (147)   ; 99           ; 0          ; 0    ; 0            ; 48 (48)      ; 20 (20)           ; 79 (79)          ; 21 (21)         ; 0 (0)      ; |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst ; work         ;
+;    |my_uart_rx:my_uart_rx|             ; 36 (36)     ; 22           ; 0          ; 0    ; 0            ; 14 (14)      ; 8 (8)             ; 14 (14)          ; 0 (0)           ; 0 (0)      ; |top|my_uart_rx:my_uart_rx                                       ; work         ;
+;    |speed_select:speed_select|         ; 22 (22)     ; 14           ; 0          ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 14 (14)          ; 13 (13)         ; 0 (0)      ; |top|speed_select:speed_select                                   ; work         ;
++----------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------+
+; State Machine - |top|Current                                           ;
++--------------+--------------+--------------+--------------+------------+
+; Name         ; Current.IDLE ; Current.SAVE ; Current.WAIT ; Current.S1 ;
++--------------+--------------+--------------+--------------+------------+
+; Current.IDLE ; 0            ; 0            ; 0            ; 0          ;
+; Current.S1   ; 1            ; 0            ; 0            ; 1          ;
+; Current.WAIT ; 1            ; 0            ; 1            ; 0          ;
+; Current.SAVE ; 1            ; 1            ; 0            ; 0          ;
++--------------+--------------+--------------+--------------+------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|sh8in_state                                                                                                                                                                                 ;
++------------------------+----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+------------------------+
+; Name                   ; sh8in_state.read_end ; sh8in_state.read_bit0 ; sh8in_state.read_bit1 ; sh8in_state.read_bit2 ; sh8in_state.read_bit3 ; sh8in_state.read_bit4 ; sh8in_state.read_bit5 ; sh8in_state.read_bit6 ; sh8in_state.read_bit7 ; sh8in_state.read_begin ;
++------------------------+----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+------------------------+
+; sh8in_state.read_begin ; 0                    ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                      ;
+; sh8in_state.read_bit7  ; 0                    ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 1                      ;
+; sh8in_state.read_bit6  ; 0                    ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 1                      ;
+; sh8in_state.read_bit5  ; 0                    ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 1                      ;
+; sh8in_state.read_bit4  ; 0                    ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 1                      ;
+; sh8in_state.read_bit3  ; 0                    ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                      ;
+; sh8in_state.read_bit2  ; 0                    ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                      ;
+; sh8in_state.read_bit1  ; 0                    ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                      ;
+; sh8in_state.read_bit0  ; 0                    ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                      ;
+; sh8in_state.read_end   ; 1                    ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                      ;
++------------------------+----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|sh8out_state                                                                                                                   ;
++---------------------+---------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+; Name                ; sh8out_state.bitend ; sh8out_state.bit0 ; sh8out_state.bit1 ; sh8out_state.bit2 ; sh8out_state.bit3 ; sh8out_state.bit4 ; sh8out_state.bit5 ; sh8out_state.bit6 ; sh8out_state.bit7 ;
++---------------------+---------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+; sh8out_state.bit7   ; 0                   ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ;
+; sh8out_state.bit6   ; 0                   ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 1                 ;
+; sh8out_state.bit5   ; 0                   ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 1                 ;
+; sh8out_state.bit4   ; 0                   ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 1                 ;
+; sh8out_state.bit3   ; 0                   ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; sh8out_state.bit2   ; 0                   ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; sh8out_state.bit1   ; 0                   ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; sh8out_state.bit0   ; 0                   ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; sh8out_state.bitend ; 1                   ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
++---------------------+---------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|main_state                                                                                   ;
++------------------------+-----------------+-----------------+----------------------+-----------------------+------------------------+------------------+-----------------+
+; Name                   ; main_state.ackn ; main_state.stop ; main_state.data_read ; main_state.addr_write ; main_state.write_start ; main_state.ready ; main_state.idle ;
++------------------------+-----------------+-----------------+----------------------+-----------------------+------------------------+------------------+-----------------+
+; main_state.idle        ; 0               ; 0               ; 0                    ; 0                     ; 0                      ; 0                ; 0               ;
+; main_state.ready       ; 0               ; 0               ; 0                    ; 0                     ; 0                      ; 1                ; 1               ;
+; main_state.write_start ; 0               ; 0               ; 0                    ; 0                     ; 1                      ; 0                ; 1               ;
+; main_state.addr_write  ; 0               ; 0               ; 0                    ; 1                     ; 0                      ; 0                ; 1               ;
+; main_state.data_read   ; 0               ; 0               ; 1                    ; 0                     ; 0                      ; 0                ; 1               ;
+; main_state.stop        ; 0               ; 1               ; 0                    ; 0                     ; 0                      ; 0                ; 1               ;
+; main_state.ackn        ; 1               ; 0               ; 0                    ; 0                     ; 0                      ; 0                ; 1               ;
++------------------------+-----------------+-----------------+----------------------+-----------------------+------------------------+------------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state                                                                                                                                                                                   ;
++-----------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+-----------------------------+
+; Name                        ; data_out_state.data_out0 ; data_out_state.data_out1 ; data_out_state.data_out2 ; data_out_state.data_out3 ; data_out_state.data_out4 ; data_out_state.data_out5 ; data_out_state.data_out6 ; data_out_state.data_out7 ; data_out_state.data_out_end ;
++-----------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+-----------------------------+
+; data_out_state.data_out7    ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                           ;
+; data_out_state.data_out6    ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 1                        ; 0                           ;
+; data_out_state.data_out5    ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 1                        ; 0                           ;
+; data_out_state.data_out4    ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 1                        ; 0                           ;
+; data_out_state.data_out3    ; 0                        ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                           ;
+; data_out_state.data_out2    ; 0                        ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                           ;
+; data_out_state.data_out1    ; 0                        ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                           ;
+; data_out_state.data_out0    ; 1                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 0                           ;
+; data_out_state.data_out_end ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 0                        ; 1                        ; 1                           ;
++-----------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+--------------------------+-----------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state                                                                                                                                                          ;
++------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+
+; Name                   ; data_in_state.data_in0 ; data_in_state.data_in1 ; data_in_state.data_in2 ; data_in_state.data_in3 ; data_in_state.data_in4 ; data_in_state.data_in5 ; data_in_state.data_in6 ; data_in_state.data_in7 ; data_in_state.data_end ;
++------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+
+; data_in_state.data_in7 ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ;
+; data_in_state.data_in6 ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 1                      ; 0                      ;
+; data_in_state.data_in5 ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 1                      ; 0                      ;
+; data_in_state.data_in4 ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 1                      ; 0                      ;
+; data_in_state.data_in3 ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ;
+; data_in_state.data_in2 ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ;
+; data_in_state.data_in1 ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ;
+; data_in_state.data_in0 ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ;
+; data_in_state.data_end ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 1                      ;
++------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state                                                                                                                                 ;
++------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+
+; Name                   ; addr_in_state.addr_end ; addr_in_state.addr_in0 ; addr_in_state.addr_in1 ; addr_in_state.addr_in2 ; addr_in_state.addr_in3 ; addr_in_state.addr_in4 ; addr_in_state.addr_in5 ; addr_in_state.addr_in6 ;
++------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+
+; addr_in_state.addr_in6 ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ;
+; addr_in_state.addr_in5 ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 1                      ;
+; addr_in_state.addr_in4 ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 1                      ;
+; addr_in_state.addr_in3 ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 1                      ;
+; addr_in_state.addr_in2 ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 1                      ;
+; addr_in_state.addr_in1 ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ;
+; addr_in_state.addr_in0 ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ;
+; addr_in_state.addr_end ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ;
++------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|ack_state ;
++--------------+--------------+--------------+--------------+--------------------------------+
+; Name         ; ack_state.11 ; ack_state.10 ; ack_state.01 ; ack_state.00                   ;
++--------------+--------------+--------------+--------------+--------------------------------+
+; ack_state.00 ; 0            ; 0            ; 0            ; 0                              ;
+; ack_state.01 ; 0            ; 0            ; 1            ; 1                              ;
+; ack_state.10 ; 0            ; 1            ; 0            ; 1                              ;
+; ack_state.11 ; 1            ; 0            ; 0            ; 1                              ;
++--------------+--------------+--------------+--------------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state                                                                                                                                                        ;
++----------------------------+-------------------------+----------------------+------------------------+-----------------------+---------------------+----------------------------+----------------------+-----------------+-------------------------+
+; Name                       ; main_state.data_out_ack ; main_state.data_read ; main_state.data_in_ack ; main_state.data_write ; main_state.addr_ack ; main_state.write_read_flag ; main_state.addr_read ; main_state.idle ; main_state.if_rep_start ;
++----------------------------+-------------------------+----------------------+------------------------+-----------------------+---------------------+----------------------------+----------------------+-----------------+-------------------------+
+; main_state.idle            ; 0                       ; 0                    ; 0                      ; 0                     ; 0                   ; 0                          ; 0                    ; 0               ; 0                       ;
+; main_state.addr_read       ; 0                       ; 0                    ; 0                      ; 0                     ; 0                   ; 0                          ; 1                    ; 1               ; 0                       ;
+; main_state.write_read_flag ; 0                       ; 0                    ; 0                      ; 0                     ; 0                   ; 1                          ; 0                    ; 1               ; 0                       ;
+; main_state.addr_ack        ; 0                       ; 0                    ; 0                      ; 0                     ; 1                   ; 0                          ; 0                    ; 1               ; 0                       ;
+; main_state.data_write      ; 0                       ; 0                    ; 0                      ; 1                     ; 0                   ; 0                          ; 0                    ; 1               ; 0                       ;
+; main_state.data_in_ack     ; 0                       ; 0                    ; 1                      ; 0                     ; 0                   ; 0                          ; 0                    ; 1               ; 0                       ;
+; main_state.data_read       ; 0                       ; 1                    ; 0                      ; 0                     ; 0                   ; 0                          ; 0                    ; 1               ; 0                       ;
+; main_state.data_out_ack    ; 1                       ; 0                    ; 0                      ; 0                     ; 0                   ; 0                          ; 0                    ; 1               ; 0                       ;
+; main_state.if_rep_start    ; 0                       ; 0                    ; 0                      ; 0                     ; 0                   ; 0                          ; 0                    ; 1               ; 1                       ;
++----------------------------+-------------------------+----------------------+------------------------+-----------------------+---------------------+----------------------------+----------------------+-----------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                    ;
++------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                ; Reason for Removal                     ;
++------------------------------------------------------------------------------+----------------------------------------+
+; speed_select:speed_select|bps_para[9..12]                                    ; Stuck at GND due to stuck port data_in ;
+; speed_select:speed_select|bps_para[7,8]                                      ; Stuck at VCC due to stuck port data_in ;
+; speed_select:speed_select|bps_para[6]                                        ; Stuck at GND due to stuck port data_in ;
+; speed_select:speed_select|bps_para[4,5]                                      ; Stuck at VCC due to stuck port data_in ;
+; speed_select:speed_select|bps_para[2,3]                                      ; Stuck at GND due to stuck port data_in ;
+; speed_select:speed_select|bps_para[1]                                        ; Stuck at VCC due to stuck port data_in ;
+; speed_select:speed_select|bps_para[0]                                        ; Stuck at GND due to stuck port data_in ;
+; speed_select:speed_select|bps_para_2[8..12]                                  ; Stuck at GND due to stuck port data_in ;
+; speed_select:speed_select|bps_para_2[6,7]                                    ; Stuck at VCC due to stuck port data_in ;
+; speed_select:speed_select|bps_para_2[5]                                      ; Stuck at GND due to stuck port data_in ;
+; speed_select:speed_select|bps_para_2[3,4]                                    ; Stuck at VCC due to stuck port data_in ;
+; speed_select:speed_select|bps_para_2[1,2]                                    ; Stuck at GND due to stuck port data_in ;
+; speed_select:speed_select|bps_para_2[0]                                      ; Stuck at VCC due to stuck port data_in ;
+; I2C_MASTER:I2C_MASTER_instance|data_reg[5..7]                                ; Stuck at GND due to stuck port data_in ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state~4 ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state~5 ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_state~6 ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state~4  ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state~5  ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state~6  ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state~4  ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state~5  ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state~6  ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|ack_state~8      ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|ack_state~9      ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state~4     ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state~5     ; Lost fanout                            ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|main_state~6     ; Lost fanout                            ;
+; Total Number of Removed Registers = 43                                       ;                                        ;
++------------------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 306   ;
+; Number of registers using Synchronous Clear  ; 30    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 274   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 129   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                           ;
++------------------------------------------------------------------------------+---------+
+; Inverted Register                                                            ; Fan out ;
++------------------------------------------------------------------------------+---------+
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_out_reg[0]  ; 1       ;
+; I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|cnt_read[0]            ; 3       ;
+; I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|cnt_write[0]           ; 5       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|send_count[0]    ; 3       ;
+; my_uart_rx:my_uart_rx|rx_complete_reg                                        ; 2       ;
+; i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|receive_count[0] ; 3       ;
+; Total number of inverted registers = 6                                       ;         ;
++------------------------------------------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
+; 8:1                ; 6 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; Yes        ; |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|cnt_read[4]         ;
+; 13:1               ; 6 bits    ; 48 LEs        ; 6 LEs                ; 42 LEs                 ; Yes        ; |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|cnt_write[1]        ;
+; 14:1               ; 6 bits    ; 54 LEs        ; 12 LEs               ; 42 LEs                 ; Yes        ; |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|data_buf[5]         ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|addr_in_state ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|data_in_state ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |top|i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|ack_state     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|sh8in_state         ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; No         ; |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|sh8in_state         ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; No         ; |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|Selector47          ;
+; 14:1               ; 2 bits    ; 18 LEs        ; 8 LEs                ; 10 LEs                 ; No         ; |top|I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance|Selector48          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |top ;
++----------------+----------+-----------------------------------------+
+; Parameter Name ; Value    ; Type                                    ;
++----------------+----------+-----------------------------------------+
+; IDLE           ; 000      ; Unsigned Binary                         ;
+; S1             ; 001      ; Unsigned Binary                         ;
+; WAIT           ; 010      ; Unsigned Binary                         ;
+; SAVE           ; 100      ; Unsigned Binary                         ;
+; A              ; 01000001 ; Unsigned Binary                         ;
+; B              ; 01000010 ; Unsigned Binary                         ;
+; C              ; 01000011 ; Unsigned Binary                         ;
+; D              ; 01000100 ; Unsigned Binary                         ;
+; E              ; 01000101 ; Unsigned Binary                         ;
+; F              ; 01000110 ; Unsigned Binary                         ;
+; G              ; 01000111 ; Unsigned Binary                         ;
+; H              ; 01001000 ; Unsigned Binary                         ;
+; I              ; 01001001 ; Unsigned Binary                         ;
+; J              ; 01001010 ; Unsigned Binary                         ;
+; K              ; 01001011 ; Unsigned Binary                         ;
+; L              ; 01001100 ; Unsigned Binary                         ;
+; M              ; 01001101 ; Unsigned Binary                         ;
+; N              ; 01001110 ; Unsigned Binary                         ;
+; O              ; 01001111 ; Unsigned Binary                         ;
+; P              ; 01010000 ; Unsigned Binary                         ;
+; Q              ; 01010001 ; Unsigned Binary                         ;
+; R              ; 01010010 ; Unsigned Binary                         ;
+; S              ; 01010011 ; Unsigned Binary                         ;
+; T              ; 01010100 ; Unsigned Binary                         ;
+; U              ; 01010101 ; Unsigned Binary                         ;
+; V              ; 01010110 ; Unsigned Binary                         ;
+; W              ; 01010111 ; Unsigned Binary                         ;
+; X              ; 01011000 ; Unsigned Binary                         ;
+; Y              ; 01011001 ; Unsigned Binary                         ;
+; Z              ; 01011010 ; Unsigned Binary                         ;
+; Z0             ; 00110000 ; Unsigned Binary                         ;
+; I1             ; 00110001 ; Unsigned Binary                         ;
+; II             ; 00110010 ; Unsigned Binary                         ;
+; III            ; 00110011 ; Unsigned Binary                         ;
+; IV             ; 00110100 ; Unsigned Binary                         ;
+; V5             ; 00110101 ; Unsigned Binary                         ;
+; VI             ; 00110110 ; Unsigned Binary                         ;
+; VII            ; 00110111 ; Unsigned Binary                         ;
+; VIII           ; 00111000 ; Unsigned Binary                         ;
+; VIIII          ; 00111001 ; Unsigned Binary                         ;
++----------------+----------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst ;
++-----------------+-------+--------------------------------------------------------------------------------+
+; Parameter Name  ; Value ; Type                                                                           ;
++-----------------+-------+--------------------------------------------------------------------------------+
+; addr_in6        ; 000   ; Unsigned Binary                                                                ;
+; addr_in5        ; 001   ; Unsigned Binary                                                                ;
+; addr_in4        ; 010   ; Unsigned Binary                                                                ;
+; addr_in3        ; 011   ; Unsigned Binary                                                                ;
+; addr_in2        ; 100   ; Unsigned Binary                                                                ;
+; addr_in1        ; 101   ; Unsigned Binary                                                                ;
+; addr_in0        ; 110   ; Unsigned Binary                                                                ;
+; addr_end        ; 111   ; Unsigned Binary                                                                ;
+; data_in7        ; 0000  ; Unsigned Binary                                                                ;
+; data_in6        ; 0001  ; Unsigned Binary                                                                ;
+; data_in5        ; 0010  ; Unsigned Binary                                                                ;
+; data_in4        ; 0011  ; Unsigned Binary                                                                ;
+; data_in3        ; 0100  ; Unsigned Binary                                                                ;
+; data_in2        ; 0101  ; Unsigned Binary                                                                ;
+; data_in1        ; 0110  ; Unsigned Binary                                                                ;
+; data_in0        ; 0111  ; Unsigned Binary                                                                ;
+; data_end        ; 1000  ; Unsigned Binary                                                                ;
+; data_out7       ; 0000  ; Unsigned Binary                                                                ;
+; data_out6       ; 0001  ; Unsigned Binary                                                                ;
+; data_out5       ; 0010  ; Unsigned Binary                                                                ;
+; data_out4       ; 0011  ; Unsigned Binary                                                                ;
+; data_out3       ; 0100  ; Unsigned Binary                                                                ;
+; data_out2       ; 0101  ; Unsigned Binary                                                                ;
+; data_out1       ; 0110  ; Unsigned Binary                                                                ;
+; data_out0       ; 0111  ; Unsigned Binary                                                                ;
+; data_out_end    ; 1000  ; Unsigned Binary                                                                ;
+; idle            ; 0000  ; Unsigned Binary                                                                ;
+; addr_read       ; 0001  ; Unsigned Binary                                                                ;
+; write_read_flag ; 0010  ; Unsigned Binary                                                                ;
+; addr_ack        ; 0011  ; Unsigned Binary                                                                ;
+; data_write      ; 0100  ; Unsigned Binary                                                                ;
+; data_in_ack     ; 0101  ; Unsigned Binary                                                                ;
+; data_read       ; 0110  ; Unsigned Binary                                                                ;
+; data_out_ack    ; 0111  ; Unsigned Binary                                                                ;
+; if_rep_start    ; 1000  ; Unsigned Binary                                                                ;
++-----------------+-------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance ;
++----------------+-------------+---------------------------------------------------------------------+
+; Parameter Name ; Value       ; Type                                                                ;
++----------------+-------------+---------------------------------------------------------------------+
+; page_write_num ; 0001000000  ; Unsigned Binary                                                     ;
+; page_read_num  ; 0001000000  ; Unsigned Binary                                                     ;
+; idle           ; 0000000001  ; Unsigned Binary                                                     ;
+; ready          ; 0000000010  ; Unsigned Binary                                                     ;
+; write_start    ; 00000000100 ; Unsigned Binary                                                     ;
+; addr_write     ; 00000001000 ; Unsigned Binary                                                     ;
+; data_read      ; 00000010000 ; Unsigned Binary                                                     ;
+; stop           ; 00000100000 ; Unsigned Binary                                                     ;
+; ackn           ; 00001000000 ; Unsigned Binary                                                     ;
+; bit7           ; 000000001   ; Unsigned Binary                                                     ;
+; bit6           ; 000000010   ; Unsigned Binary                                                     ;
+; bit5           ; 000000100   ; Unsigned Binary                                                     ;
+; bit4           ; 000001000   ; Unsigned Binary                                                     ;
+; bit3           ; 000010000   ; Unsigned Binary                                                     ;
+; bit2           ; 000100000   ; Unsigned Binary                                                     ;
+; bit1           ; 001000000   ; Unsigned Binary                                                     ;
+; bit0           ; 010000000   ; Unsigned Binary                                                     ;
+; bitend         ; 100000000   ; Unsigned Binary                                                     ;
+; read_begin     ; 0000000001  ; Unsigned Binary                                                     ;
+; read_bit7      ; 0000000010  ; Unsigned Binary                                                     ;
+; read_bit6      ; 0000000100  ; Unsigned Binary                                                     ;
+; read_bit5      ; 0000001000  ; Unsigned Binary                                                     ;
+; read_bit4      ; 0000010000  ; Unsigned Binary                                                     ;
+; read_bit3      ; 0000100000  ; Unsigned Binary                                                     ;
+; read_bit2      ; 0001000000  ; Unsigned Binary                                                     ;
+; read_bit1      ; 0010000000  ; Unsigned Binary                                                     ;
+; read_bit0      ; 0100000000  ; Unsigned Binary                                                     ;
+; read_end       ; 1000000000  ; Unsigned Binary                                                     ;
++----------------+-------------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: speed_select:speed_select ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; bps9600        ; 5208  ; Signed Integer                                ;
+; bps19200       ; 2603  ; Signed Integer                                ;
+; bps38400       ; 1301  ; Signed Integer                                ;
+; bps57600       ; 867   ; Signed Integer                                ;
+; bps115200      ; 434   ; Signed Integer                                ;
+; bps256000      ; 195   ; Signed Integer                                ;
+; bps9600_2      ; 2604  ; Signed Integer                                ;
+; bps19200_2     ; 1301  ; Signed Integer                                ;
+; bps38400_2     ; 650   ; Signed Integer                                ;
+; bps57600_2     ; 433   ; Signed Integer                                ;
+; bps115200_2    ; 217   ; Signed Integer                                ;
+; bps256000_2    ; 97    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "my_uart_tx:my_uart_tx"                                                                                                                                 ;
++-------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                         ;
++-------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; tx_data     ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "tx_data[7..1]" will be connected to GND. ;
+; tx_complete ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; uart_tx     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
+; error       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "my_uart_rx:my_uart_rx"                                                                     ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; rx_complete ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rx_error    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 14.0.0 Build 200 06/17/2014 SJ Web Edition
+    Info: Processing started: Mon Sep 18 13:49:54 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top -c top
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file top.v
+    Info (12023): Found entity 1: top
+Info (12021): Found 1 design units, including 1 entities, in source file i2c_slave.v
+    Info (12023): Found entity 1: i2c_slave
+Warning (10238): Verilog Module Declaration warning at i2c_slave_op.v(14): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "i2c_slave_op"
+Info (12021): Found 1 design units, including 1 entities, in source file i2c_slave_op.v
+    Info (12023): Found entity 1: i2c_slave_op
+Info (12021): Found 1 design units, including 1 entities, in source file i2c_master.v
+    Info (12023): Found entity 1: I2C_MASTER
+Info (12021): Found 1 design units, including 1 entities, in source file i2c_wr.v
+    Info (12023): Found entity 1: I2C_wr
+Info (12021): Found 1 design units, including 1 entities, in source file speed_select.v
+    Info (12023): Found entity 1: speed_select
+Info (12021): Found 1 design units, including 1 entities, in source file uart_rx.v
+    Info (12023): Found entity 1: my_uart_rx
+Info (12021): Found 1 design units, including 1 entities, in source file uart_tx.v
+    Info (12023): Found entity 1: my_uart_tx
+Warning (10236): Verilog HDL Implicit Net warning at top.v(157): created implicit net for "capture_rst"
+Warning (10236): Verilog HDL Implicit Net warning at top.v(159): created implicit net for "tx_start"
+Warning (10236): Verilog HDL Implicit Net warning at top.v(160): created implicit net for "tx_data"
+Warning (10236): Verilog HDL Implicit Net warning at top.v(163): created implicit net for "rs232_tx"
+Info (12127): Elaborating entity "top" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at top.v(100): object "linkBIM" assigned a value but never read
+Info (10264): Verilog HDL Case Statement information at top.v(192): all case item expressions in this case statement are onehot
+Warning (10230): Verilog HDL assignment warning at top.v(239): truncated value with size 32 to match size of target (24)
+Info (12128): Elaborating entity "i2c_slave" for hierarchy "i2c_slave:i2c_slave_instance"
+Info (12128): Elaborating entity "i2c_slave_op" for hierarchy "i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst"
+Info (12128): Elaborating entity "I2C_MASTER" for hierarchy "I2C_MASTER:I2C_MASTER_instance"
+Info (10041): Inferred latch for "send_memory[0][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[0][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[0][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[0][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[0][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[0][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[0][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[0][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[1][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[1][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[1][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[1][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[1][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[1][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[1][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[1][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[2][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[2][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[2][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[2][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[2][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[2][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[2][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[2][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[3][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[3][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[3][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[3][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[3][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[3][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[3][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[3][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[4][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[4][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[4][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[4][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[4][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[4][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[4][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[4][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[5][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[5][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[5][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[5][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[5][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[5][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[5][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[5][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[6][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[6][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[6][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[6][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[6][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[6][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[6][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[6][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[7][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[7][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[7][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[7][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[7][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[7][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[7][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[7][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[8][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[8][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[8][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[8][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[8][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[8][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[8][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[8][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[9][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[9][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[9][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[9][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[9][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[9][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[9][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[9][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[10][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[10][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[10][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[10][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[10][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[10][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[10][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[10][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[11][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[11][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[11][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[11][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[11][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[11][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[11][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[11][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[12][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[12][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[12][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[12][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[12][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[12][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[12][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[12][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[13][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[13][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[13][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[13][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[13][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[13][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[13][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[13][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[14][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[14][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[14][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[14][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[14][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[14][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[14][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[14][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[15][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[15][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[15][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[15][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[15][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[15][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[15][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[15][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[16][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[16][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[16][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[16][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[16][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[16][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[16][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[16][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[17][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[17][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[17][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[17][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[17][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[17][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[17][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[17][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[18][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[18][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[18][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[18][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[18][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[18][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[18][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[18][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[19][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[19][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[19][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[19][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[19][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[19][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[19][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[19][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[20][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[20][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[20][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[20][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[20][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[20][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[20][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[20][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[21][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[21][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[21][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[21][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[21][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[21][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[21][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[21][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[22][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[22][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[22][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[22][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[22][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[22][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[22][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[22][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[23][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[23][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[23][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[23][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[23][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[23][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[23][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[23][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[24][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[24][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[24][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[24][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[24][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[24][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[24][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[24][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[25][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[25][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[25][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[25][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[25][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[25][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[25][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[25][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[26][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[26][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[26][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[26][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[26][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[26][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[26][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[26][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[27][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[27][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[27][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[27][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[27][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[27][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[27][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[27][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[28][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[28][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[28][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[28][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[28][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[28][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[28][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[28][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[29][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[29][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[29][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[29][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[29][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[29][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[29][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[29][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[30][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[30][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[30][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[30][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[30][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[30][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[30][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[30][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[31][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[31][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[31][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[31][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[31][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[31][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[31][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[31][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[32][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[32][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[32][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[32][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[32][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[32][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[32][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[32][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[33][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[33][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[33][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[33][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[33][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[33][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[33][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[33][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[34][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[34][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[34][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[34][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[34][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[34][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[34][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[34][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[35][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[35][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[35][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[35][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[35][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[35][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[35][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[35][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[36][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[36][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[36][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[36][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[36][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[36][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[36][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[36][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[37][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[37][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[37][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[37][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[37][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[37][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[37][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[37][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[38][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[38][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[38][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[38][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[38][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[38][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[38][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[38][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[39][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[39][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[39][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[39][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[39][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[39][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[39][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[39][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[40][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[40][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[40][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[40][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[40][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[40][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[40][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[40][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[41][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[41][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[41][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[41][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[41][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[41][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[41][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[41][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[42][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[42][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[42][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[42][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[42][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[42][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[42][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[42][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[43][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[43][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[43][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[43][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[43][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[43][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[43][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[43][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[44][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[44][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[44][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[44][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[44][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[44][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[44][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[44][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[45][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[45][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[45][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[45][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[45][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[45][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[45][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[45][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[46][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[46][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[46][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[46][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[46][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[46][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[46][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[46][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[47][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[47][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[47][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[47][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[47][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[47][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[47][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[47][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[48][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[48][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[48][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[48][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[48][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[48][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[48][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[48][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[49][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[49][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[49][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[49][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[49][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[49][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[49][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[49][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[50][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[50][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[50][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[50][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[50][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[50][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[50][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[50][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[51][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[51][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[51][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[51][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[51][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[51][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[51][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[51][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[52][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[52][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[52][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[52][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[52][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[52][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[52][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[52][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[53][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[53][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[53][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[53][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[53][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[53][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[53][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[53][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[54][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[54][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[54][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[54][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[54][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[54][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[54][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[54][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[55][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[55][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[55][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[55][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[55][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[55][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[55][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[55][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[56][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[56][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[56][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[56][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[56][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[56][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[56][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[56][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[57][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[57][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[57][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[57][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[57][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[57][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[57][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[57][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[58][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[58][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[58][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[58][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[58][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[58][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[58][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[58][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[59][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[59][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[59][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[59][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[59][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[59][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[59][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[59][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[60][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[60][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[60][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[60][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[60][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[60][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[60][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[60][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[61][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[61][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[61][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[61][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[61][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[61][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[61][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[61][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[62][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[62][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[62][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[62][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[62][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[62][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[62][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[62][7]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[63][0]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[63][1]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[63][2]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[63][3]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[63][4]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[63][5]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[63][6]" at I2C_MASTER.v(39)
+Info (10041): Inferred latch for "send_memory[63][7]" at I2C_MASTER.v(39)
+Info (12128): Elaborating entity "I2C_wr" for hierarchy "I2C_MASTER:I2C_MASTER_instance|I2C_wr:I2C_wr_instance"
+Info (12128): Elaborating entity "speed_select" for hierarchy "speed_select:speed_select"
+Warning (10230): Verilog HDL assignment warning at speed_select.v(40): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at speed_select.v(41): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at speed_select.v(44): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at speed_select.v(45): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at speed_select.v(48): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at speed_select.v(49): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at speed_select.v(52): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at speed_select.v(53): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at speed_select.v(56): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at speed_select.v(57): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at speed_select.v(60): truncated value with size 32 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at speed_select.v(61): truncated value with size 32 to match size of target (13)
+Warning (10240): Verilog HDL Always Construct warning at speed_select.v(31): inferring latch(es) for variable "uart_ctrl", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "uart_ctrl.101" at speed_select.v(31)
+Info (10041): Inferred latch for "uart_ctrl.100" at speed_select.v(31)
+Info (10041): Inferred latch for "uart_ctrl.011" at speed_select.v(31)
+Info (10041): Inferred latch for "uart_ctrl.010" at speed_select.v(31)
+Info (10041): Inferred latch for "uart_ctrl.001" at speed_select.v(31)
+Info (10041): Inferred latch for "uart_ctrl.000" at speed_select.v(31)
+Info (12128): Elaborating entity "my_uart_rx" for hierarchy "my_uart_rx:my_uart_rx"
+Info (12128): Elaborating entity "my_uart_tx" for hierarchy "my_uart_tx:my_uart_tx"
+Warning (10034): Output port "error" at uart_tx.v(10) has no driver
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "scl_slv" to the node "i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|scl_regi" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "i2c_slave:i2c_slave_instance|sda_in" to the node "i2c_slave:i2c_slave_instance|i2c_slave_op:i2c_slave_op_inst|sda_regi" into an OR gate
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_MASTER:I2C_MASTER_instance|data[7]" to the node "I2C_MASTER:I2C_MASTER_instance|receive_memory" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_MASTER:I2C_MASTER_instance|data[6]" to the node "I2C_MASTER:I2C_MASTER_instance|receive_memory" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_MASTER:I2C_MASTER_instance|data[5]" to the node "I2C_MASTER:I2C_MASTER_instance|receive_memory" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_MASTER:I2C_MASTER_instance|data[4]" to the node "I2C_MASTER:I2C_MASTER_instance|receive_memory" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_MASTER:I2C_MASTER_instance|data[3]" to the node "I2C_MASTER:I2C_MASTER_instance|receive_memory" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_MASTER:I2C_MASTER_instance|data[2]" to the node "I2C_MASTER:I2C_MASTER_instance|receive_memory" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_MASTER:I2C_MASTER_instance|data[1]" to the node "I2C_MASTER:I2C_MASTER_instance|receive_memory" into an OR gate
+    Warning (13047): Converted the fan-out from the tri-state buffer "I2C_MASTER:I2C_MASTER_instance|data[0]" to the node "I2C_MASTER:I2C_MASTER_instance|receive_memory" into an OR gate
+Info (18000): Registers with preset signals will power-up high
+Info (17049): 14 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 571 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21060): Implemented 3 bidirectional pins
+    Info (21061): Implemented 564 logic cells
+Info (144001): Generated suppressed messages file C:/Users/b48516/Documents/My Received Files/ke0x_i2c/top.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 35 warnings
+    Info: Peak virtual memory: 507 megabytes
+    Info: Processing ended: Mon Sep 18 13:49:59 2017
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/b48516/Documents/My Received Files/ke0x_i2c/top.map.smsg.
+
+

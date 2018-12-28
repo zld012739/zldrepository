@@ -1,0 +1,93 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clk'
+Slack : -13.467
+TNS   : -616.122
+
+Type  : Setup 'speed_select:speed_select|buad_clk_tx_reg'
+Slack : -5.953
+TNS   : -55.579
+
+Type  : Setup 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -5.347
+TNS   : -94.115
+
+Type  : Setup 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : -1.257
+TNS   : -1.257
+
+Type  : Hold 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -2.631
+TNS   : -8.551
+
+Type  : Hold 'clk'
+Slack : 0.334
+TNS   : 0.000
+
+Type  : Hold 'speed_select:speed_select|buad_clk_tx_reg'
+Slack : 1.538
+TNS   : 0.000
+
+Type  : Hold 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 1.703
+TNS   : 0.000
+
+Type  : Recovery 'my_uart_rx:my_uart_rx|rx_complete_reg'
+Slack : -6.315
+TNS   : -6.315
+
+Type  : Recovery 'speed_select:speed_select|buad_clk_tx_reg'
+Slack : -1.327
+TNS   : -1.327
+
+Type  : Recovery 'rs232_rx'
+Slack : 0.431
+TNS   : 0.000
+
+Type  : Recovery 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 1.079
+TNS   : 0.000
+
+Type  : Removal 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : -1.133
+TNS   : -1.133
+
+Type  : Removal 'rs232_rx'
+Slack : -0.485
+TNS   : -0.485
+
+Type  : Removal 'speed_select:speed_select|buad_clk_tx_reg'
+Slack : 1.773
+TNS   : 0.000
+
+Type  : Removal 'my_uart_rx:my_uart_rx|rx_complete_reg'
+Slack : 6.761
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'rs232_rx'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'my_uart_rx:my_uart_rx|rx_complete_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'my_uart_rx:my_uart_rx|rx_enable_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'speed_select:speed_select|buad_clk_rx_reg'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'speed_select:speed_select|buad_clk_tx_reg'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------

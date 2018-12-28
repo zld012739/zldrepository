@@ -1,0 +1,263 @@
+#FRDM: A-B-C-D
+SINGLE: 0
+
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: JJ2_8
+        A_PIN: B58
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: JJ1_8
+        A_PIN: A35
+        DIRECTION: T2A
+
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: JJ1_16
+        A_PIN: B58
+        DIRECTION: A2T
+
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: JJ1_16
+        A_PIN: B58
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: JJ1_8
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_8
+        A_PIN: A40
+        DIRECTION: T2A
+
+LPTMR:
+    CMD: LPT
+    FUNC0:
+        T_PIN: JJ1_8
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_8
+        A_PIN: A40
+        DIRECTION: T2A
+
+MCG:
+    CMD: MCG
+    FUNC0:
+        T_PIN: JJ1_8
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_8
+        A_PIN: A40
+        DIRECTION: T2A
+
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: JJ1_14
+        A_PIN: B58
+        DIRECTION: A2T
+
+POWER_MODE_SWITCH:
+    CMD: PMS
+    FUNC0:
+        T_PIN: JJ1_14
+        A_PIN: B58
+        DIRECTION: A2T
+
+FTM_INPUT_CAPTURE:
+    CMD: FIC
+    FUNC0:
+        T_PIN: JJ1_4
+        A_PIN: A40
+        DIRECTION: A2T
+
+FTM_DUALEDGE_CAPTURE:
+    CMD: FDC
+    FUNC0:
+        T_PIN: JJ1_4
+        A_PIN: A40
+        DIRECTION: A2T
+
+FTM_OUTPUT_COMPARE:
+    CMD: FOC
+    FUNC0:
+        T_PIN: JJ1_8
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_8
+        A_PIN: A40
+        DIRECTION: T2A
+
+FTM_COMBINE_PWM:
+    CMD: FCP
+    FUNC0:
+        T_PIN: JJ1_8
+        A_PIN: A40
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_8
+        A_PIN: A39
+        DIRECTION: T2A
+
+FTM_SIMPLE_PWM:
+    CMD: FSP
+    FUNC0:
+        T_PIN: JJ1_8
+        A_PIN: A40
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_8
+        A_PIN: A39
+        DIRECTION: T2A
+
+FTM_PWM_TWOCHANNEL:
+    CMD: FPT
+    FUNC0:
+        T_PIN: JJ1_8
+        A_PIN: A40
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: JJ1_8
+        A_PIN: A39
+        DIRECTION: T2A
+
+SHELL:
+    CMD: SHL
+    FUNC0:
+        T_PIN: JJ1_8
+        A_PIN: A35
+        DIRECTION: T2A
+
+
+
+
+
+# EWM:
+#     CMD: EWM
+#     FUNC0:
+#         T_PIN: B7
+#         A_PIN: B58
+#         DIRECTION: A2T
+
+# FTM:
+#     CMD: FTM
+#     PWM0:
+#         T_PIN: B4
+#         A_PIN: PWM0_K70
+#         DIRECTION: T2A
+#     PWM1:
+#         T_PIN: B4
+#         A_PIN: PWM1_K70
+#         DIRECTION: T2A
+
+# GPIO:
+#     CMD: GPI
+#     FUNC0:
+#         T_PIN: B7
+#         A_PIN: B58
+#         DIRECTION: A2T
+
+# POWER_MANAGER:
+#     CMD: PMH
+#     FUNC0:
+#         T_PIN: B14
+#         A_PIN: B58
+#         DIRECTION: A2T
+DSPI_MASTER:
+    IP: __SPI_SLAVE_B2B256
+    CMD: SPI
+    ALT: a 
+    ss_sck_b2b:
+        PIN: JJ2_12
+        DIRECTION: IN
+    ss_mosi_b2b:
+        PIN: JJ2_8
+        DIRECTION: IN
+    ss_ssel_b2b:
+        PIN: JJ2_6
+        DIRECTION: IN   
+    ss_miso_b2b:
+        PIN: JJ2_10
+        DIRECTION: OUT
+    spi_slave_result_b2b:
+        PIN: A35_K70
+        DIRECTION: OUT 
+
+DSPI_SLAVE:
+    IP: __SPI_MASTER
+    CMD: SSI
+    ALT: a
+    sm_sck:
+        PIN: JJ2_12
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: JJ2_10
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: JJ2_6
+        DIRECTION: OUT   
+    sm_miso:
+        PIN: JJ2_8
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A35_K70
+        DIRECTION: OUT
+
+FREERTOS_DSPI:
+    IP: __SPI_SLAVE_B2B256
+    CMD: SPT
+    ALT: b 
+    ss_sck_b2b:
+        PIN: JJ2_12
+        DIRECTION: IN
+    ss_mosi_b2b:
+        PIN: JJ2_8
+        DIRECTION: IN
+    ss_ssel_b2b:
+        PIN: JJ2_6
+        DIRECTION: IN   
+    ss_miso_b2b:
+        PIN: JJ2_10
+        DIRECTION: OUT
+    spi_slave_result_b2b:
+        PIN: A35_K70
+        DIRECTION: OUT 
+WDOG:
+    CMD: WDG
+    FUNC0:
+        T_PIN: JJ1_7
+        A_PIN: B58
+        DIRECTION: A2T
+# I2C_MASTER:
+#     IP: __I2C_MASTER
+#     CMD: ICW
+#     ALT: a 
+#     scl:
+#         PIN: CPLD_IO2
+#         DIRECTION: INOUT
+#     receive_status:
+#         PIN: A35_K70
+#         DIRECTION: OUT
+#     sda:
+#         PIN: CPLD_IO3
+#         DIRECTION: INOUT
+
+# I2C_SLAVE:
+#     IP: __I2C_SLAVE_FOR_CASE
+#     CMD: ICS
+#     scl:
+#         PIN: CPLD_IO2
+#         DIRECTION: INOUT
+#     sda:
+#         PIN: CPLD_IO3
+#         DIRECTION: INOUT

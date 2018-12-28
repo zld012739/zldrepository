@@ -1,0 +1,90 @@
+CMP:
+    CMD: CMP
+    CMP_IN:
+        T_PIN: A58
+        A_PIN: B58
+        DIRECTION: A2T
+    LED_OUT:
+        T_PIN: B47
+        A_PIN: A35
+        DIRECTION: T2A
+
+DSPI:
+    CMD: SPI
+    PCS:
+        T_PIN_1: B46
+        T_PIN_2: B9
+        DIRECTION: T2T
+    SCK:
+        T_PIN_1: B48
+        T_PIN_2: B7
+        DIRECTION: T2T
+    SOUT:
+        T_PIN_1: B45
+        T_PIN_2: B11
+        DIRECTION: T2T
+    SIN:
+        T_PIN_1: B10
+        T_PIN_2: B44
+        DIRECTION: T2T
+
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: A59
+        A_PIN: B58
+        DIRECTION: A2T
+
+FTM:
+    CMD: FTM
+    PWM0:
+        T_PIN: B47
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: B47
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: A59
+        A_PIN: B58
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: B38
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: B38
+        A_PIN: A40
+        DIRECTION: T2A
+
+MCG:
+    CMD: MCG
+    PWM0:
+        T_PIN: B38
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: B38
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: A58
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: A58-SW1
+POWER_SWITCH:
+    CMD: PMS
+    FUNC0:
+        T_PIN: A58
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: A58-SW1

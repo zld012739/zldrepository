@@ -1,0 +1,157 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/simulation/modelsim
+vpwm_out
+Z1 !s110 1495446868
+!i10b 1
+!s100 e;dLg:elci<a]O:]Q[2AF1
+IFzL<3gJPNo[iO6IRgTLke1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1495102274
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/pwm_out.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/pwm_out.v
+L0 8
+Z4 OV;L;10.4b;61
+r1
+!s85 0
+31
+Z5 !s108 1495446868.000000
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/pwm_out.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/pwm_out.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull
+vspeed_select
+R1
+!i10b 1
+!s100 F2NkiEPTFMz;ZQ4DX:?K03
+IX8cL[=<_aXCR8iabCNjfM1
+R2
+R0
+R3
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/speed_select.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/speed_select.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/speed_select.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/speed_select.v|
+!i113 1
+R6
+R7
+vspi_ctrl
+Z8 !s110 1495446867
+!i10b 1
+!s100 D`=KYRj<4n2F848J1L=bf2
+IVH]J>6mNGaPS=ig64ENaY0
+R2
+R0
+R3
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_ctrl.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_ctrl.v
+L0 1
+R4
+r1
+!s85 0
+31
+Z9 !s108 1495446867.000000
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_ctrl.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_ctrl.v|
+!i113 1
+R6
+R7
+vspi_master
+R8
+!i10b 1
+!s100 i[aV<ECW1QjWj<h1dRK1Y2
+IMNnJ4o^HokB4;8f80^CM_2
+R2
+R0
+R3
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_master.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_master.v
+L0 7
+R4
+r1
+!s85 0
+31
+R9
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_master.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_master.v|
+!i113 1
+R6
+R7
+vspi_slave_b2b
+R1
+!i10b 1
+!s100 9l2PGf_:1Fh>D`VD24^M=0
+IIFneD3hGJfdnQVR8<?aBD1
+R2
+R0
+R3
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_slave_b2b.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_slave_b2b.v
+L0 12
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_slave_b2b.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_slave_b2b.v|
+!i113 1
+R6
+R7
+vspi_slave_cpha0
+R1
+!i10b 1
+!s100 IaY1Qg_mGA27SYa]G`=gC3
+IInK[WW8o4mgKJ_`OJa]8D0
+R2
+R0
+R3
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_slave_cpha0.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_slave_cpha0.v
+L0 10
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_slave_cpha0.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/spi_slave_cpha0.v|
+!i113 1
+R6
+R7
+vtop
+R8
+!i10b 1
+!s100 5^=NSn7E<8bmDPkAlUIL80
+IGzYKL_XZMFFDIVhOodc=X0
+R2
+R0
+R3
+8D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/top.v
+FD:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/top.v
+L0 4
+R4
+r1
+!s85 0
+31
+R9
+!s107 D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull|D:/projects/07_source_code/auto_tools/mcu_cpld_prd/Auto_Generator/pycpld/quartus-II/top_frdm_evkmcimx6ull/top.v|
+!i113 1
+R6
+R7

@@ -1,0 +1,114 @@
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58_K70
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: CPLD_IO3
+        A_PIN: A35_K70
+        DIRECTION: T2A
+
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC0:
+        T_PIN: CPLD_IO5
+        A_PIN: B58_K70
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO14
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO14
+        A_PIN: A40_K70
+        DIRECTION: T2A
+MCG:
+    CMD: MCG
+    FUNC0:
+        T_PIN: CPLD_IO14
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO14
+        A_PIN: A40_K70
+        DIRECTION: T2A
+
+SPI:
+    CMD: SPI
+    PCS:
+        T_PIN_1: B46
+        T_PIN_2: B9
+        DIRECTION: T2T
+    SCK:
+        T_PIN_1: B48
+        T_PIN_2: B7
+        DIRECTION: T2T
+    SOUT:
+        T_PIN_1: B45
+        T_PIN_2: B10
+        DIRECTION: T2T
+    SIN:
+        T_PIN_1: B11
+        T_PIN_2: B44
+        DIRECTION: T2T
+TPM_INPUT_CAPTURE:
+    CMD: TIC
+    FUNC0:
+        T_PIN: CPLD_IO50
+        A_PIN: B58_K70
+        DIRECTION: A2T
+TPM_OUTPUT_COMPARE:
+    CMD: TOC
+    FUNC0:
+        T_PIN: CPLD_IO50
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO50
+        A_PIN: A40_K70
+        DIRECTION: T2A
+TPM_PWM_TWO:
+    CMD: TPT
+    FUNC0:
+        T_PIN: CPLD_IO50
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO50
+        A_PIN: A40_K70
+        DIRECTION: T2A
+TPM_SIMPLE_PWM:
+    CMD: TSP
+    FUNC0:
+        T_PIN: CPLD_IO50
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO50
+        A_PIN: A40_K70
+        DIRECTION: T2A
+TSI:
+    CMD: TSI
+    TOUCH_PAD:
+        T_PIN: CPLD_IO4
+        A_PIN: A35_K70
+        DIRECTION: A2T
+        NOTE: CPLD_IO4(TSI_PAD--B66)
+    FUNC0:
+        T_PIN: CPLD_IO14
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO14
+        A_PIN: A40_K70
+        DIRECTION: T2A
+SHELL:
+    CMD: SHL
+    FUNC0:
+        T_PIN: CPLD_IO3
+        A_PIN: A35_K70
+        DIRECTION: T2A

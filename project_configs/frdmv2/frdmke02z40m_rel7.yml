@@ -1,0 +1,99 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+ACMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: JJ2_2
+        A_PIN: B58
+        DIRECTION: A2T
+    FUNC1:
+        T_PIN: CPLD_IO2
+        A_PIN: A35
+        DIRECTION: T2A
+
+SPI_MASTER:
+    IP: __SPI_SLAVE_CPHA0
+    CMD: SPS
+    ALT: a 
+    ss_sck_cpha0:
+        PIN: JJ4_1
+        DIRECTION: IN
+    ss_mosi_cpha0:
+        PIN: JJ4_3
+        DIRECTION: IN
+    ss_ssel_cpha0:
+        PIN: JJ4_7
+        DIRECTION: IN   
+    ss_miso_cpha0:
+        PIN: JJ4_5
+        DIRECTION: OUT
+
+SPI_SLAVE:
+    IP: __SPI_MASTER_KL
+    CMD: SIO
+    ALT: a 
+    sm_sck_kl:
+        PIN: JJ4_1
+        DIRECTION: OUT
+    sm_mosi_kl:
+        PIN: JJ4_3
+        DIRECTION: OUT
+    sm_cs_n_kl:
+        PIN: JJ4_7
+        DIRECTION: OUT   
+    sm_miso_kl:
+        PIN: JJ4_5
+        DIRECTION: IN
+    spi_receive_status_kl:
+        PIN: A3
+        DIRECTION: OUT
+
+ACMP:
+    CMD: KBI
+    FUNC0:
+        T_PIN_1: JJ2_12
+        T_PIN_2: JJ2_2
+        DIRECTION: T2T
+        
+BUTTON_RST1:
+    IP: __BUTTON_RST
+    CMD: BUP
+    ALT: a 
+    button_out_status:
+        PIN: CPLD_IO14
+        DIRECTION: OUT
+
+BUTTON_RST2:
+    IP: __BUTTON_RST
+    CMD: BDP
+    ALT: b
+    button_out_status:
+        PIN: CPLD_IO14
+        DIRECTION: OUT
+        
+CTIMER_PWM:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO5
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO5
+        A_PIN: PWM1_K70
+        DIRECTION: T2A 

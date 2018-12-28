@@ -1,0 +1,206 @@
+# DS2
+CAPTURE_CONNECTION_LED:
+    IP: __LED_CAPTURE
+    CMD: CAC
+    led_input:
+        PIN: JJ1_1
+        DIRECTION: in
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+# DS3
+CAPTURE_IDLE_LED:
+    IP: __LED_CAPTURE
+    CMD: CAI
+    led_input:
+        PIN: JJ1_3
+        DIRECTION: in
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+
+
+
+
+
+
+ASSISTANT_RESET:
+    IP: __BUTTON_HOLD
+    CMD: BSA
+    out_status[0]:
+        PIN: JJ3_1
+        DIRECTION: OUT
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+
+ASSISTANT2_RESET:
+    IP: __BUTTON_HOLD
+    CMD: BSB
+    out_status[1]:
+        PIN: JJ3_3
+        DIRECTION: OUT
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+
+MULTI_ASSISTANTS_RESET:
+    IP: __BUTTON_HOLD
+    CMD: BSM
+    out_status[12]:
+        PIN: JJ3_7
+        DIRECTION: OUT
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+
+
+
+TARGET_RESET:
+    IP: __BUTTON_HOLD
+    CMD: BST
+    out_status[19]:
+        PIN: JJ1_2
+        DIRECTION: OUT
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+TARGET_LOW:
+    IP: __BUTTON_HOLD
+    CMD: BDT
+    out_status[19]:
+        PIN: JJ1_2
+        DIRECTION: OUT
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+TARGET_HIGH:
+    IP: __BUTTON_HOLD
+    CMD: BHT
+    out_status[19]:
+        PIN: JJ1_2
+        DIRECTION: OUT
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+
+START_SHORT:
+    IP: __BUTTON_HOLD
+    CMD: BSS
+    out_status[18]:
+        PIN: JJ1_6
+        DIRECTION: OUT
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+START_LONG:
+    IP: __BUTTON_HOLD
+    CMD: BLS
+    out_status[18]:
+        PIN: JJ1_6
+        DIRECTION: OUT
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+START_VERY_LONG:
+    IP: __BUTTON_HOLD
+    CMD: BVS
+    out_status[18]:
+        PIN: JJ1_6
+        DIRECTION: OUT
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+
+SWITCH_SHORT:
+    IP: __BUTTON_HOLD
+    CMD: BSC
+    out_status[2]:
+        PIN: JJ1_8
+        DIRECTION: OUT
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+
+ENTER_ISP:
+    IP: __BUTTON_HOLD
+    CMD: BSI
+    out_status[8]:
+        PIN: JJ1_8
+        DIRECTION: OUT
+        PIN: JJ1_2
+        DIRECTION: OUT
+    # ISP:
+    #     T_PIN: JJ1_8
+    #     A_PIN: JJ4_13
+    #     DIRECTION: A2T
+    rs232_tx:
+        PIN: JJ1_14
+        DIRECTION: OUT
+
+
+
+
+
+
+
+
+# MULTI_CONNECTION_S3:
+#     IP: __BUTTON_HOLD
+#     CMD: BSD
+#     out_status[3]:
+#         PIN: JJ4_1
+#         DIRECTION: OUT
+#     rs232_tx:
+#         PIN: JJ1_14
+#         DIRECTION: OUT
+
+# MULTI_CONNECTION_S4:
+#     IP: __BUTTON_HOLD
+#     CMD: BSE
+#     out_status[4]:
+#         PIN: JJ4_3
+#         DIRECTION: OUT
+#     rs232_tx:
+#         PIN: JJ1_14
+#         DIRECTION: OUT
+
+# MULTI_CONNECTION_S5:
+#     IP: __BUTTON_HOLD
+#     CMD: BSF
+#     out_status[5]:
+#         PIN: JJ4_5
+#         DIRECTION: OUT
+#     rs232_tx:
+#         PIN: JJ1_14
+#         DIRECTION: OUT
+
+# MULTI_CONNECTION_S6:
+#     IP: __BUTTON_HOLD
+#     CMD: BSG
+#     out_status[6]:
+#         PIN: JJ4_7
+#         DIRECTION: OUT
+#     rs232_tx:
+#         PIN: JJ1_14
+#         DIRECTION: OUT
+
+# MULTI_CONNECTION_S7:
+#     IP: __BUTTON_HOLD
+#     CMD: BSH
+#     out_status[7]:
+#         PIN: JJ4_9
+#         DIRECTION: OUT
+#     rs232_tx:
+#         PIN: JJ1_14
+#         DIRECTION: OUT
+
+# MULTI_CONNECTION_S8:
+#     IP: __BUTTON_HOLD
+#     CMD: BSJ
+#     out_status[9]:
+#         PIN: JJ4_11
+#         DIRECTION: OUT
+#     rs232_tx:
+#         PIN: JJ1_14
+#         DIRECTION: OUT

@@ -1,0 +1,3 @@
+Warning (10273): Verilog HDL warning at I2C_MASTER_reduced.v(161): extended using "x" or "z" File: C:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_MASTER_reduced.v Line: 161
+Warning (10273): Verilog HDL warning at test_i2c_master.v(155): extended using "x" or "z" File: C:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v Line: 155
+Warning (10273): Verilog HDL warning at uart_tx.v(85): extended using "x" or "z" File: C:/github/pycpld.git/quartus-II/top_evkmimx8mm/uart_tx.v Line: 85

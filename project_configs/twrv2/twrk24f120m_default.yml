@@ -1,0 +1,129 @@
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: A58
+        A_PIN: B58_K70
+        DIRECTION: A2T
+    LED_OUT:
+        T_PIN: CPLD_IO14
+        A_PIN: A35_K70
+        DIRECTION: T2A
+FTM:
+    CMD: FTM
+    PWM0:
+        T_PIN: B63
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: B63
+        A_PIN: A40_K70
+        DIRECTION: T2A
+FTM_INPUT:
+    CMD: FDC
+    FUNC0:
+        T_PIN: B63
+        A_PIN: A40_K70
+        DIRECTION: A2T
+FTM_OUTPUT:
+    CMD: FSP
+    PWM0:
+        T_PIN: CPLD_IO5
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: CPLD_IO5
+        A_PIN: A40_K70
+        DIRECTION: T2A
+MCG:
+    CMD: MCG
+    PWM0:
+        T_PIN: CPLD_IO5
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    PWM1:
+        T_PIN: CPLD_IO5
+        A_PIN: A40_K70
+        DIRECTION: T2A
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    FUNC:
+        T_PIN: A59
+        A_PIN: B58_K70
+        DIRECTION: A2T
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: CPLD_IO5
+        A_PIN: A39_K70
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: CPLD_IO5
+        A_PIN: A40_K70
+        DIRECTION: T2A
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: A58
+        A_PIN: B58_K70
+        DIRECTION: A2T
+DSPI_LOOP:
+    CMD: SPI
+    CS:
+        T_PIN_1: B63
+        T_PIN_2: B9
+        DIRECTION: T2T
+    CLK:
+        T_PIN_1: B64
+        T_PIN_2: B7
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: B45
+        T_PIN_2: B11
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: B10
+        T_PIN_2: B44
+        DIRECTION: T2T
+DSPI_B2B_MASTER:
+    IP: __SPI_SLAVE_B2B
+    CMD: SBM
+    ALT: a
+    ss_ssel_b2b:
+        PIN: B63
+        DIRECTION: IN
+    ss_sck_b2b:
+        PIN: B64
+        DIRECTION: IN
+    ss_mosi_b2b:
+        PIN: B45
+        DIRECTION: IN
+    ss_miso_b2b:
+        PIN: B44
+        DIRECTION: OUT
+    spi_slave_result_b2b:
+        PIN: A35_K70
+        DIRECTION: OUT
+DSPI_B2B_SLAVE:
+    IP: __SPI_MASTER
+    CMD: SBS
+    sm_cs_n:
+        PIN: B9
+        DIRECTION: OUT
+    sm_sck:
+        PIN: B7
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: B11
+        DIRECTION: OUT
+    sm_miso:
+        PIN: B10
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A35_K70
+        DIRECTION: OUT
+EWM:
+    CMD: EWM
+    FUNC0:
+        T_PIN: A59
+        A_PIN: B58_K70
+        DIRECTION: A2T

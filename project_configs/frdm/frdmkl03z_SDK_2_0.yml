@@ -1,0 +1,177 @@
+#FRDM: A-B-C-D
+SINGLE: 0
+
+CMP:
+    CMD: CMP
+    BUTTON:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+        NOTE: CPLD_IO2(T)(J4.3) 
+    GREEN_LED:
+        T_PIN: A4
+        A_PIN: A35
+        DIRECTION: T2A
+
+GPIO_INPUT_INTERRUPT:
+    CMD: GII
+    BUTTON:
+        T_PIN: B14
+        A_PIN: B58
+        DIRECTION: A2T
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    RED_LED0:
+        T_PIN: A2
+        A_PIN: A39
+        DIRECTION: T2A
+    RED_LED1:
+        T_PIN: A2
+        A_PIN:  A40
+        DIRECTION: T2A
+        # red led
+
+POWER_MANAGER:
+    CMD: PMH
+    BUTTON:
+        T_PIN: A12
+        A_PIN: B58
+        DIRECTION: A2T
+
+POWER_SWITCH:
+    CMD: PMS
+    FUNC0:
+        T_PIN: A12
+        A_PIN: B58
+        DIRECTION: A2T
+
+LPTMER_EXAMPLE:
+    CMD: LPT
+    RED_LED:
+        T_PIN: A2
+        A_PIN: A39
+        DIRECTION: T2A
+    RED_LED1:
+        T_PIN: A2
+        A_PIN: A40
+        DIRECTION: T2A
+        #red led 
+
+MCG:
+    CMD: MCG
+    RED_LED:
+        T_PIN: A2
+        A_PIN: A39
+        DIRECTION: T2A
+    RED_LED1:
+        T_PIN: A2
+        A_PIN: A40
+        DIRECTION: T2A
+
+SHELL:
+    CMD: SHL 
+    FUNC0:
+        T_PIN: A4
+        A_PIN: A35
+        DIRECTION: T2A
+        NOTE: A2-GREEN_LED
+
+SPI_B2B_MASTER:
+    CMD: SPI
+    CLK:
+        T_PIN: A12
+        A_PIN: SPI1_CLK_K70
+        DIRECTION: T2A
+    CS:
+        T_PIN: A6
+        A_PIN: SPI1_CS0_K70
+        DIRECTION: T2A
+    MISO:
+        T_PIN: A10
+        A_PIN: SPI1_MISO_K70
+        DIRECTION: A2T
+    MOSI:
+        T_PIN: A8
+        A_PIN: SPI1_MOSI_K70
+        DIRECTION: T2A
+
+SPI_MASTER_KL:
+    IP: __SPI_MASTER_KL
+    CMD: SIO
+    ALT: a 
+    sm_sck:
+        PIN: A12
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: A8
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: A6
+        DIRECTION: OUT   
+    sm_miso:
+        PIN: A10
+        DIRECTION: IN
+    spi_receive_status:
+        PIN: A35_K70
+        DIRECTION: OUT
+
+# SPI_B2B_SLAVE:
+#     CMD: SSI
+#     CLK:
+#         T_PIN: A12
+#         A_PIN: SPI1_CLK_K70
+#         DIRECTION: A2T
+#     CS:
+#         T_PIN: A6
+#         A_PIN: SPI1_CS0_K70
+#         DIRECTION: A2T
+#     MISO:
+#         T_PIN: A10
+#         A_PIN: SPI1_MISO_K70
+#         DIRECTION: A2T
+#     MOSI:
+#         T_PIN: A8
+#         A_PIN: SPI1_MOSI_K70
+#         DIRECTION: T2A
+
+TPM_INPUT_CAPTURE:
+    CMD: TIC
+    INPUT_PIN:
+        T_PIN: A4
+        A_PIN: B58
+        DIRECTION: A2T
+
+TPM_OUTPUT_COMPARE:
+    CMD: TOC
+    GREEN_LED0:
+        T_PIN: A4
+        A_PIN: A39
+        DIRECTION: T2A
+    GREEN_LED1:
+        T_PIN: A4
+        A_PIN: A40
+        DIRECTION: T2A
+
+
+TPM_PWM_TWOCHANNEL:
+    CMD: TPT
+    GREEN_LED0:
+        T_PIN: A4
+        A_PIN: A39
+        DIRECTION: T2A
+    GREEN_LED1:
+        T_PIN: A4
+        A_PIN: A40
+        DIRECTION: T2A
+
+TPM_SIMPLE_PWM:
+    CMD: TSP
+    GREEN_LED0:
+        T_PIN: A4
+        A_PIN: A39
+        DIRECTION: T2A
+    GREEN_LED1:
+        T_PIN: A4
+        A_PIN: A40
+        DIRECTION: T2A

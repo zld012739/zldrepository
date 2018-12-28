@@ -1,0 +1,253 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/github/pycpld.git/quartus-II/top_evkmimx8mm/simulation/modelsim
+vI2C_MASTER_reduced
+Z1 !s110 1533181032
+!i10b 1
+!s100 UGYMeSYkh^?eBMVDiV2oP0
+I_[XonP:K>Z;d?j_d:>0`c3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1533017672
+8C:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_MASTER_reduced.v
+FC:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_MASTER_reduced.v
+L0 9
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1533181032.000000
+!s107 C:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_MASTER_reduced.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm|C:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_MASTER_reduced.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm
+Z7 tCvgOpt 0
+n@i2@c_@m@a@s@t@e@r_reduced
+vi2c_slave_op_reduced
+Z8 !s110 1533181033
+!i10b 1
+!s100 :z7ec?OB3^g;_4B`^J]Bb3
+I<@V>S?jd=@`ZU^KJJNLCQ3
+R2
+R0
+w1531478970
+8C:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_op_reduced.v
+FC:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_op_reduced.v
+L0 7
+R3
+r1
+!s85 0
+31
+Z9 !s108 1533181033.000000
+!s107 C:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_op_reduced.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm|C:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_op_reduced.v|
+!i113 1
+R5
+R6
+R7
+vi2c_slave_reduced
+R8
+!i10b 1
+!s100 K[fcJTl3If?Ko2boHM[i71
+Ia^1iO4EXPcOz;UoT0o?TK3
+R2
+R0
+w1531835296
+8C:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_reduced.v
+FC:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_reduced.v
+L0 7
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_reduced.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm|C:/github/pycpld.git/quartus-II/top_evkmimx8mm/i2c_slave_reduced.v|
+!i113 1
+R5
+R6
+R7
+vI2C_wr_reduced
+R8
+!i10b 1
+!s100 _4;0;J1h]EU=Vg@a6XjUN1
+I;D[n>O7A9g^LnT=f95jTm0
+R2
+R0
+w1533180929
+8C:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_wr_reduced.v
+FC:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_wr_reduced.v
+L0 9
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_wr_reduced.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm|C:/github/pycpld.git/quartus-II/top_evkmimx8mm/I2C_wr_reduced.v|
+!i113 1
+R5
+R6
+R7
+n@i2@c_wr_reduced
+vpwm_out
+R1
+!i10b 1
+!s100 e;dLg:elci<a]O:]Q[2AF1
+Ie9=mXd4<9X;]JLbaaWj:83
+R2
+R0
+Z10 w1531478219
+8C:/github/pycpld.git/quartus-II/top_evkmimx8mm/pwm_out.v
+FC:/github/pycpld.git/quartus-II/top_evkmimx8mm/pwm_out.v
+L0 8
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/github/pycpld.git/quartus-II/top_evkmimx8mm/pwm_out.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm|C:/github/pycpld.git/quartus-II/top_evkmimx8mm/pwm_out.v|
+!i113 1
+R5
+R6
+R7
+vspeed_select
+Z11 !s110 1533181034
+!i10b 1
+!s100 F2NkiEPTFMz;ZQ4DX:?K03
+IiJKg1eGFDKYkId@[jXa?m2
+R2
+R0
+R10
+8C:/github/pycpld.git/quartus-II/top_evkmimx8mm/speed_select.v
+FC:/github/pycpld.git/quartus-II/top_evkmimx8mm/speed_select.v
+L0 1
+R3
+r1
+!s85 0
+31
+Z12 !s108 1533181034.000000
+!s107 C:/github/pycpld.git/quartus-II/top_evkmimx8mm/speed_select.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm|C:/github/pycpld.git/quartus-II/top_evkmimx8mm/speed_select.v|
+!i113 1
+R5
+R6
+R7
+vspi_ctrl_reduced
+R11
+!i10b 1
+!s100 a?jcTUOf^HiTTGjZG^7_P0
+Ib^Q5I]emN=41o_7IW2<<H3
+R2
+R0
+R10
+8C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_ctrl_reduced.v
+FC:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_ctrl_reduced.v
+L0 1
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_ctrl_reduced.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm|C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_ctrl_reduced.v|
+!i113 1
+R5
+R6
+R7
+vspi_master_reduced
+R11
+!i10b 1
+!s100 gMa4lkSD7ECo0bV0J_@B`3
+IKgVK43EOgV2?oV^:bT>j>2
+R2
+R0
+R10
+8C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_master_reduced.v
+FC:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_master_reduced.v
+L0 7
+R3
+r1
+!s85 0
+31
+R12
+!s107 C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_master_reduced.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm|C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_master_reduced.v|
+!i113 1
+R5
+R6
+R7
+vspi_slave_b2b_reduced
+R8
+!i10b 1
+!s100 W0hWzAT@nKccgokaFN5GW2
+IT?DKUG`f:FWRIEU4^X1c71
+R2
+R0
+w1532274681
+8C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_slave_b2b_reduced.v
+FC:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_slave_b2b_reduced.v
+L0 12
+R3
+r1
+!s85 0
+31
+R9
+!s107 C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_slave_b2b_reduced.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm|C:/github/pycpld.git/quartus-II/top_evkmimx8mm/spi_slave_b2b_reduced.v|
+!i113 1
+R5
+R6
+R7
+vtest_i2c_master
+!s110 1533181044
+!i10b 1
+!s100 Z2F;G`VdWSO0KnDOWRdei1
+IEE^g7R=8[TZ6`GW3TOJRC0
+R2
+R0
+w1533023746
+8C:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v
+FC:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v
+L0 6
+R3
+r1
+!s85 0
+31
+!s108 1533181044.000000
+!s107 C:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v|
+!s90 -reportprogress|300|-work|work|C:/github/pycpld.git/quartus-II/top_evkmimx8mm/test_i2c_master.v|
+!i113 1
+o-work work
+R7
+vtop
+R1
+!i10b 1
+!s100 Zf6IJh6zoUF>@Lje:AWQf3
+I;hFmFHoRo>1HVnNhnBj>b3
+R2
+R0
+w1532070039
+8C:/github/pycpld.git/quartus-II/top_evkmimx8mm/top.v
+FC:/github/pycpld.git/quartus-II/top_evkmimx8mm/top.v
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/github/pycpld.git/quartus-II/top_evkmimx8mm/top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/github/pycpld.git/quartus-II/top_evkmimx8mm|C:/github/pycpld.git/quartus-II/top_evkmimx8mm/top.v|
+!i113 1
+R5
+R6
+R7

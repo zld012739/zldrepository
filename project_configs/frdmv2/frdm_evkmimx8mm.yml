@@ -1,0 +1,94 @@
+
+GPT:
+  IP: __PWM_OUT
+  CMD: GPC
+  pha:
+      PIN: JJ2_1
+      DIRECTION: out
+  phb:
+      PIN: JJ2_2
+      DIRECTION: out
+
+IPWM:
+    CMD: PWM
+    FUNC0:
+        T_PIN_1: JJ2_9
+        T_PIN_2: JJ2_5
+        DIRECTION: T2T
+
+GLO:
+    CMD: GLO
+    FUNC0:
+        T_PIN_1: JJ2_7
+        T_PIN_2: JJ2_5
+        DIRECTION: T2T
+
+
+I2C_MASTER:
+    IP: __I2C_MASTER_reduced
+    CMD: ICW
+    ALT: a 
+    scl_rd:
+        PIN: JJ2_19
+        DIRECTION: out
+    sda:
+        PIN: JJ2_17
+        DIRECTION: INOUT
+
+I2C_MASTER1:
+    IP: __I2C_MASTER_reduced
+    CMD: ICR
+    ALT: b
+    scl_rd:
+        PIN: JJ2_19
+        DIRECTION: out
+    sda:
+        PIN: JJ2_17
+        DIRECTION: INOUT
+
+
+I2C_SLAVE_FOR_CASE:
+    IP: __I2C_SLAVE_FOR_CASE_reduced
+    CMD: ICS
+    scl_slv_rd:
+        PIN: JJ2_19
+        DIRECTION: in
+    sda:
+        PIN: JJ2_17
+        DIRECTION: INOUT
+
+SPI_MASTER:
+    IP: __SPI_MASTER_reduced
+    CMD: SPM
+    ALT: a 
+    sm_rd_sck:
+        PIN: JJ1_1
+        DIRECTION: OUT
+    sm_rd_mosi:
+        PIN: JJ1_2
+        DIRECTION: OUT
+    sm_rd_cs_n:
+        PIN: JJ1_3
+        DIRECTION: OUT   
+    sm_rd_miso:
+        PIN: JJ1_4
+        DIRECTION: IN
+
+SPI_SLAVE_B2B:
+    IP: __SPI_SLAVE_B2B_reduced
+    CMD: SPS
+    ALT: a 
+    ss_rd_sck_b2b:
+        PIN: JJ1_1
+        DIRECTION: IN
+    ss_rd_mosi_b2b:
+        PIN: JJ1_2
+        DIRECTION: IN
+    ss_rd_ssel_b2b:
+        PIN: JJ1_3
+        DIRECTION: IN
+    ss_rd_miso_b2b:
+        PIN: JJ1_4
+        DIRECTION: OUT
+
+

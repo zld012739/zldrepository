@@ -1,0 +1,206 @@
+
+FTM_COMBINE_PWM:
+  CMD: FCP
+  FUNC0:
+      T_PIN: JJ2_5
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: JJ2_7
+      A_PIN: A40
+      DIRECTION: T2A
+
+FTM_DUAL_EDGE_CAPTURE:
+  CMD: FDC
+  IP: __PWM_OUT
+  pha:
+      PIN: CPLD_IO3
+      DIRECTION: out
+
+FTM_INPUT_CAPTURE:
+  CMD: FIC
+  IP: __PWM_OUT
+  pha:
+      PIN: CPLD_IO3
+      DIRECTION: out
+
+FTM_PWM_TWOCHANNEL:
+  CMD: FPT
+  FUNC0:
+      T_PIN: JJ2_5
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: JJ2_7
+      A_PIN: A40
+      DIRECTION: T2A
+
+FTM_OUTPUT_CAMPARE:
+  CMD: FOC
+  FUNC0:
+      T_PIN: JJ2_7
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: JJ2_7
+      A_PIN: A40
+      DIRECTION: T2A
+
+FTM_PWM_SIMPLE:
+  CMD: FSP
+  FUNC0:
+      T_PIN: JJ2_7
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: JJ2_7
+      A_PIN: A40
+      DIRECTION: T2A
+
+GLO:
+  CMD: GLO
+  FUNC0:
+      T_PIN: JJ2_9
+      A_PIN: A39
+      DIRECTION: T2A
+
+
+RGLO:
+  CMD: RLO 
+  FUNC0:
+      T_PIN: CPLD_IO3
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: CPLD_IO3
+      A_PIN: A40
+      DIRECTION: T2A
+
+SPI_INTERRUPT_MMASTER:
+    IP: __SPI_SLAVE_0_BASE
+    CMD: SPS
+    ALT: a 
+    ss_sck_0_base:
+        PIN: JJ2_9
+        DIRECTION: IN
+    ss_mosi_0_base:
+        PIN: JJ2_5
+        DIRECTION: IN
+    ss_ssel_0_base:
+        PIN: JJ2_11
+        DIRECTION: IN   
+    ss_miso_0_base:
+        PIN: JJ2_7
+        DIRECTION: OUT
+
+
+ECSPI_MASTER_B2B:
+  IP: __SPI_SLAVE_B2B
+  CMD: EMB
+  ALT: a 
+  ss_sck_b2b:
+      PIN: JJ2_9
+      DIRECTION: IN
+  ss_mosi_b2b:
+      PIN: JJ2_5
+      DIRECTION: IN
+  ss_ssel_b2b:
+      PIN: JJ2_11
+      DIRECTION: IN
+  ss_miso_b2b:
+      PIN: JJ2_7
+      DIRECTION: OUT
+
+DSPI_SLAVER:
+  IP: __SPI_MASTER
+  CMD: DSS
+  ALT: a 
+  sm_sck:
+      PIN: JJ2_9
+      DIRECTION: OUT
+  sm_mosi:
+      PIN: JJ2_7
+      DIRECTION: OUT
+  sm_cs_n:
+      PIN: JJ2_11
+      DIRECTION: OUT   
+  sm_miso:
+      PIN: JJ2_5
+      DIRECTION: IN
+
+DSPI_SLAVER_512:
+  IP: __SPI_MASTER_reduced
+  CMD: SDS
+  ALT: a
+  sm_rd_sck:
+      PIN: JJ2_9
+      DIRECTION: OUT
+  sm_rd_mosi:
+      PIN: JJ2_7
+      DIRECTION: OUT
+  sm_rd_cs_n:
+      PIN: JJ2_11
+      DIRECTION: OUT   
+  sm_rd_miso:
+      PIN: JJ2_5
+      DIRECTION: IN
+
+
+tpm_combined_pwm:
+  CMD: TCP
+  FUNC0:
+      T_PIN: CPLD_IO3
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: CPLD_IO4
+      A_PIN: A40
+      DIRECTION: T2A
+
+tpm_dual_edge_capture:
+  CMD: TDC
+  IP: __PWM_OUT
+  pha:
+      PIN: CPLD_IO3
+      DIRECTION: out
+
+tpm_input_capture:
+  CMD: TIC
+  IP: __PWM_OUT
+  pha:
+      PIN: CPLD_IO3
+      DIRECTION: out
+
+tpm_output_compare:
+  CMD: TOC
+  FTM0:
+      T_PIN: CPLD_IO3 
+      A_PIN: A39
+      DIRECTION: T2A
+  FTM1:
+      T_PIN: CPLD_IO4
+      A_PIN: A40
+      DIRECTION: T2A
+
+tpm_pwm_twochannel:
+  CMD: TPT
+  FTM0:
+      T_PIN: CPLD_IO3 
+      A_PIN: A39
+      DIRECTION: T2A
+  FTM1:
+      T_PIN: CPLD_IO4
+      A_PIN: A40
+      DIRECTION: T2A
+
+tpm_simple_pwm:
+  CMD: TSP
+  FUNC0:
+      T_PIN: CPLD_IO3
+      A_PIN: A39
+      DIRECTION: T2A
+  FUNC1:
+      T_PIN: CPLD_IO4
+      A_PIN: A40
+      DIRECTION: T2A
+

@@ -1,0 +1,16 @@
+Info: Using NativeLink to launch synthesis Tool
+Error: Can't open Synplify parts mapping file lib/altera/realpart.txt from Synplify installation
+Error: Can't launch the Synplify software -- the path to the location of the executables for the Synplify software not specified.
+Error: You can specify the path to the executable in the EDA Tool Options page of the Options dialog box or using the Tcl command set_user_option.
+Error: Encountered error while running NativeLink synthesis script
+Error: NativeLink flow failed to complete synthesis
+
+================The following information is provided to Debug NativeLink Script=================
+Nativelink TCL script failed with errorCode:  NONE
+Nativelink TCL script failed with errorInfo:  
+    while executing
+"error ""  """
+    (procedure "launch_synplify" line 54)
+    invoked from within
+"launch_synplify synplify "
+PATH Environment Variable is set to :  c:\altera_lite\15.1\quartus\bin64\;c:\altera_lite\15.1\quartus\bin64\;C:\STAF\bin;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Ruby23-x64\bin;C:\Python27;C:\Program Files (x86)\CMake\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\GNU Tools ARM Embedded\4.9 2015q3\bin;C:\MinGW\bin;C:\Program Files\doxygen\bin;C:\Python27\Scripts;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\CooCox\CoIDE_V2Beta\gcc\bin;C:\CooCox\CoIDE_V2Beta\bin;C:\Program Files\Anaconda2;C:\Program Files\Anaconda2\Scripts;C:\Program Files\Anaconda2\Library\bin;C:\Keil_v5\ARM\ARMCC\bin;C:\Program Files\LLVM\bin;c:\jruby-9.1.12.0\bin;C:\Users\b20222\AppData\Roaming\npm;C:\altera_lite\15.1\modelsim_ase\win32aloem;C:\nxp\LPCXpresso_8.1.4_606\lpcxpresso\bin;C:\nxp\LPCXpresso_8.1.4_606\lpcxpresso\tools\bin;C:\nxp\LPCXpresso_8.1.4_606\lpcxpresso\msys\bin;C:\Program Files\Git\bin;

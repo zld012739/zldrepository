@@ -1,0 +1,38 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+      
+SPI_SLAVE_FREERTOS:
+    IP: __SPI_SLAVE_FREERTOS
+    CMD: SPS
+    ALT: a 
+    ss_sck_freertos:
+        PIN: JJ3_3
+        DIRECTION: IN
+    ss_mosi_freertos:
+        PIN: JJ3_7
+        DIRECTION: IN
+    ss_ssel_freertos:
+        PIN: JJ3_6
+        DIRECTION: IN   
+    ss_miso_freertos:
+        PIN: JJ3_5
+        DIRECTION: OUT
+    spi_slave_result_freertos:
+        PIN: A35_K70
+        DIRECTION: OUT

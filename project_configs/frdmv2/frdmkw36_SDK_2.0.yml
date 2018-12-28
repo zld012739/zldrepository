@@ -1,0 +1,164 @@
+#FRDM: A-B-C-D
+#A--J2
+#B--J1
+#C--J4
+#D--J3
+
+SINGLE: 0
+
+CMP:
+    CMD: CMP
+    FUNC0:
+        T_PIN: C4
+        A_PIN: B58
+        DIRECTION: A2T
+    LED_OUT:
+        T_PIN: A4
+        A_PIN: A35
+        DIRECTION: T2A
+
+DSPI_MASTER:
+    CMD: SBM
+    CLK:
+        T_PIN: B14
+        A_PIN: B7
+        DIRECTION: T2A
+    CS:
+        T_PIN: A6
+        A_PIN: B9
+        DIRECTION: T2A
+    MISO:
+        T_PIN: B10
+        A_PIN: B11
+        DIRECTION: A2T
+        NOTE: SIN
+    MOSI:
+        T_PIN: A2 
+        A_PIN: B10
+        DIRECTION: T2A
+        NOTE: SOUT
+
+DSPI_SLAVE:
+    CMD: SBS
+    CLK:
+        T_PIN: B14
+        A_PIN: B7
+        DIRECTION: A2T
+    CS:
+        T_PIN: A6
+        A_PIN: B9
+        DIRECTION: A2T
+    MISO:
+        T_PIN: B10
+        A_PIN: B11
+        DIRECTION: A2T
+        NOTE: SIN
+    MOSI:
+        T_PIN: A2
+        A_PIN: B10
+        DIRECTION: T2A
+        NOTE: SOUT
+
+GPIO_INPUT:
+    CMD: GII
+    SW2:
+        T_PIN: C4
+        A_PIN: B58
+        DIRECTION: A2T
+    LED:
+        T_PIN: A4
+        A_PIN: A35
+        DIRECTION: T2A
+
+GPIO_LED_OUTPUT:
+    CMD: GLO
+    FUNC0:
+        T_PIN: A4
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A4
+        A_PIN: A40
+        DIRECTION: T2A
+
+MCG:
+    CMD: MCG
+    FUNC0:
+        T_PIN: A4
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: A4
+        A_PIN: A40
+        DIRECTION: T2A
+
+tpm_combined_pwm:
+    CMD: TCP
+    FUNC0:
+        T_PIN: C5
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: C5
+        A_PIN: A40
+        DIRECTION: T2A
+
+tpm_dual_edge_capture:
+    CMD: TDC
+    PWM:
+        T_PIN: C5
+        A_PIN: A40
+        DIRECTION: A2T
+
+tpm_input_capture:
+    CMD: TIC
+    PWM:
+        T_PIN: C5
+        A_PIN: A40
+        DIRECTION: A2T
+
+tpm_output_compare:
+    CMD: TOC
+    FTM0:
+        T_PIN: A4
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FTM1:
+        T_PIN: A4
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+tpm_pwm_twochannel:
+    CMD: TPT
+    FTM0:
+        T_PIN: C5 
+        A_PIN: PWM0_K70
+        DIRECTION: T2A
+    FTM1:
+        T_PIN: C5
+        A_PIN: PWM1_K70
+        DIRECTION: T2A
+
+tpm_simple_pwm:
+    CMD: TSP
+    FUNC0:
+        T_PIN: C5
+        A_PIN: A39
+        DIRECTION: T2A
+    FUNC1:
+        T_PIN: C5
+        A_PIN: A40
+        DIRECTION: T2A
+
+POWER_MANAGER:
+    CMD: PMH
+    FUNC0:
+        T_PIN: CPLD_IO2
+        A_PIN: B58
+        DIRECTION: A2T
+SHELL:
+    CMD: SHL
+    CLK:
+        T_PIN: A2
+        A_PIN: A35
+        DIRECTION: T2A

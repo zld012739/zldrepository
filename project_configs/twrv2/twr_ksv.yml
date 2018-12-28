@@ -1,0 +1,82 @@
+#Descriptions:
+#CMD: cpld command
+#A: Assitant Board
+#T: Target Board
+#FUNC0: the function of this pin connection
+#DIRECTION: A2T  T2A  T2T
+
+
+#FRDM A-B-C-D DEFINITION
+#| NAME |  SIZE  | CPLD_SCH | FRDM_SCH
+#|  A   | (10*2) |   JJ_2   | ?
+#|  B   | (8*2)  |   JJ_1   | ?
+#|  C   | (5*2)  |   JJ_3   | ?
+#|  D   | (8*2)  |   JJ_4   | ?
+
+
+#SINGLE: default 0, if the pin header is single on FRDM-Board, this should be set 1
+SINGLE: 0
+
+
+#TWRK81
+TPM:
+    CMD: TPM 
+    FUNC0:
+        T_PIN_1: A38
+        T_PIN_2: A34
+        DIRECTION: T2T
+        
+EWM:
+    CMD: EWM 
+    FUNC0:
+        T_PIN_1: CPLD_IO2
+        T_PIN_2: A11
+        DIRECTION: T2T
+
+#TWRKM34        
+QTMR_PWM:
+    CMD: QTP 
+    FUNC0:
+        T_PIN_1: CPLD_IO2
+        T_PIN_2: CPLD_IO3
+        DIRECTION: T2T
+        
+QTMR:
+    CMD: QTM
+    External_input_signal1:
+        T_PIN_1: A35
+        T_PIN_2: CPLD_IO2
+        DIRECTION: T2T
+    External_input_signal2:
+        T_PIN_1: CPLD_IO4
+        T_PIN_2: CPLD_IO3
+        DIRECTION: T2T  
+
+SWP:
+    IP: __SW_PULSE
+    CMD: SWP
+    sw_out:
+        PIN: B35
+        DIRECTION: out
+        
+#TWRKV46                
+ENC:
+    IP: __ENC
+    CMD: ENC
+    pha_out:
+        PIN: B38
+        DIRECTION: out
+    phb_out:
+        PIN: B37
+        DIRECTION: out
+    index_out:
+        PIN: B61
+        DIRECTION: out
+                
+XBAR:
+    CMD: XBA
+    FUNC0:
+        T_PIN_1: CPLD_IO4
+        T_PIN_2: B52
+        DIRECTION: T2T
+        

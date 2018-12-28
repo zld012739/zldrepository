@@ -1,0 +1,54 @@
+FLEXIO_SPI_MASTER:
+    CMD: FSM
+    CLK:
+        T_PIN_1: B48
+        T_PIN_2: CPLD_IO2
+        DIRECTION: T2T
+    CS:
+        T_PIN_1: B46
+        T_PIN_2: CPLD_IO3
+        DIRECTION: T2T
+    MISO:
+        T_PIN_1: CPLD_IO4
+        T_PIN_2: B44
+        DIRECTION: T2T
+    MOSI:
+        T_PIN_1: B45
+        T_PIN_2: CPLD_IO5
+        DIRECTION: T2T
+
+SPI_MASTER:
+    IP: __SPI_MASTER
+    CMD: SSI
+    ALT: a
+    sm_sck:
+        PIN: B48
+        DIRECTION: OUT
+    sm_mosi:
+        PIN: B44
+        DIRECTION: OUT
+    sm_cs_n:
+        PIN: B46
+        DIRECTION: OUT   
+    sm_miso:
+        PIN: B45
+        DIRECTION: IN
+
+
+SPI_SLAVE_B2B:
+    IP: __SPI_SLAVE_B2B
+    CMD: SPS
+    ALT: a
+    ss_sck_b2b:
+        PIN: B48
+        DIRECTION: IN
+    ss_mosi_b2b:
+        PIN: B45
+        DIRECTION: IN
+    ss_ssel_b2b:
+        PIN: B46
+        DIRECTION: IN   
+    ss_miso_b2b:
+        PIN: B44
+        DIRECTION: OUT
+
